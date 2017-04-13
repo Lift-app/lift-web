@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <img src="./assets/images/logo.svg">
     <router-view></router-view>
 
   </div>
@@ -8,9 +8,14 @@
 
 <script>
 export default {
-  name: 'app'
+  name: 'lift',
+  data: () => {
+    return {
+      userStatus: 1
+    }
+  }
 }
 </script>
 
 <!-- Import the global styles from ./global_styles folder -->
-<style src="./global_styles/app.scss" lang="scss"></style>
+<style src="./assets/styles/app.scss" lang="scss"></style>

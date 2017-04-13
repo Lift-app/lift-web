@@ -19,15 +19,4 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 
-  h1  {
-    text-align: center;
-    color: rgba(8, 8, 18, 0.92);
-    font-weight: bold;
-    font-family: 'Source Sans Pro', Arial, sans-serif;
-  }
-
-  .link {
-    text-align: center;
-    display: block;
-  }
 </style>
