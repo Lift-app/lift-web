@@ -17,6 +17,10 @@ module.exports = {
   ],
   // add your custom rules here
   'rules': {
+    // enforce consistent spacing before function definition opening parenthesis
+    'space-before-function-paren': 0,
+    // Add a space after keywords
+    'keyword-spacing': 0,
     // allow paren-less arrow functions
     'arrow-parens': 0,
     // allow async-await
