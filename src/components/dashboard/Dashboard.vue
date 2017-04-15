@@ -7,6 +7,7 @@
         <h2>{{ post.question }}</h2>
       </li>
     </ul>
+    <button @click="getPosts">Load posts</button>
   </div>
 </template>
 

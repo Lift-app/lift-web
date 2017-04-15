@@ -3,10 +3,8 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-// Import Vuex store
-import store from './store'
-// Import vue-router routes
-import router from './router'
+import store from './store' // Import Vuex store
+import router from './router' // Import vue-router routes
 
 Vue.config.productionTip = false
 
