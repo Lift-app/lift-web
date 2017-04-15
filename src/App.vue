@@ -2,19 +2,17 @@
   <div id="app">
     <img src="./assets/images/logo.svg">
     <router-view></router-view>
-
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'lift',
-  data: () => {
-    return {
-      userStatus: 1
-    }
+  components: {
   }
 }
+
 </script>
 
 <!-- Import the global styles from ./global_styles folder -->

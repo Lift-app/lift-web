@@ -1,7 +1,12 @@
 <template>
   <div class="component--dashboard">
     <h1>{{ msg }}</h1>
-    <pre>{{ userStatus }}</pre>
+    <ul>
+      <li v-for="post in posts">
+        <span>{{ post.author }} - {{ post.timestamp }}</span>
+        <h2>{{ post.question }}</h2>
+      </li>
+    </ul>
   </div>
 </template>
 

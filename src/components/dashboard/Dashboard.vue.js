@@ -1,9 +1,15 @@
+import store from '../../store'
+
 export default {
   name: 'dashboard',
-  props: ['userStatus'],
   data () {
     return {
       msg: 'dashboard'
+    }
+  },
+  computed: {
+    posts() {
+      return store.state.posts
     }
   }
 }
