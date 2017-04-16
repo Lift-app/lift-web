@@ -22,7 +22,7 @@ export default {
     getPosts() {
       this.getPostsFromApi()
     },
-    makePost(data) {
+    makePost() {
       this.placePost({
         user_id: 1,
         category_id: 1,
