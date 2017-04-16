@@ -1,12 +1,9 @@
 <template>
   <div class="component--dashboard">
     <h1>{{ msg }}</h1>
-    <ul>
-      <li v-for="post in posts">
-        <span>{{ post.user.username }} - {{ post.category.name }}</span>
-        <h2>{{ post.body }}</h2>
-      </li>
-    </ul>
+
+    <post v-for="post in posts" :key="post.id" :post-data="post"></post>
+
     <button @click="getPosts">Load posts</button>
     <label for="postText">Stel een vraag
       <input type="text" id="postText" v-model="postText">

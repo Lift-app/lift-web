@@ -1,5 +1,7 @@
-import store from '../../store'
+import store from '@/store'
 import { mapActions } from 'vuex'
+
+import Post from '@/components/post/Post'
 
 export default {
   name: 'dashboard',
@@ -29,5 +31,8 @@ export default {
         body: this.postText
       })
     }
+  },
+  components: {
+    Post
   }
 }
