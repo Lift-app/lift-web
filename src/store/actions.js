@@ -1,4 +1,4 @@
-import config from '../services/config.service'
+import config from '@/config/config'
 import axios from 'axios' // We use Axios for AJAX calls
 
 export const getPostsFromApi = ({ commit }) => {
