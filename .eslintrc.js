@@ -17,6 +17,8 @@ module.exports = {
   ],
   // add your custom rules here
   'rules': {
+    // Enforce trailing ;'s
+    // "semi": [2, "always"],
     // enforce consistent spacing before function definition opening parenthesis
     'space-before-function-paren': 0,
     // Add a space after keywords
