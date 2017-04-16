@@ -1,5 +1,4 @@
-export default {
-  SET_POSTS(state, data) {
-    state.posts = data
-  }
+export const SET_POSTS = (state, posts) => {
+  state.posts = posts.data
 }
+

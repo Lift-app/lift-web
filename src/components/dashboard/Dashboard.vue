@@ -3,11 +3,15 @@
     <h1>{{ msg }}</h1>
     <ul>
       <li v-for="post in posts">
-        <span>{{ post.author }} - {{ post.timestamp }}</span>
-        <h2>{{ post.question }}</h2>
+        <span>{{ post.user.username }} - {{ post.category.name }}</span>
+        <h2>{{ post.body }}</h2>
       </li>
     </ul>
     <button @click="getPosts">Load posts</button>
+    <label for="postText">Stel een vraag
+      <input type="text" id="postText" v-model="postText">
+    </label>
+    <button @click="makePost">Post maken</button>
   </div>
 </template>
 

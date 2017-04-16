@@ -5,7 +5,8 @@ export default {
   name: 'dashboard',
   data () {
     return {
-      msg: 'dashboard'
+      msg: 'dashboard',
+      postText: ''
     }
   },
   computed: {
@@ -15,10 +16,18 @@ export default {
   },
   methods: {
     ...mapActions([
-      'getPostsFromApi'
+      'getPostsFromApi',
+      'placePost'
     ]),
     getPosts() {
-      this.getPostsFromApi({limit: 15})
+      this.getPostsFromApi()
+    },
+    makePost(data) {
+      this.placePost({
+        user_id: 1,
+        category_id: 1,
+        body: this.postText
+      })
     }
   }
 }
