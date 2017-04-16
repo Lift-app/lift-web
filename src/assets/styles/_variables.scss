@@ -20,6 +20,18 @@ $orange:      #FF5537;
 
 $primary-color: $orange;
 
+// Category colors
+// All the Lift categories, assigned to color variables in a map
+$POST_CATEGORIES: (
+        gezondheid:       $green,
+        werk:             $blue,
+        financiën:        $yellow,
+        dagelijks-leven:  $primary-color
+);
+
+// Element specific colors
+$text-dark: $dark;
+$text-light: $porcelain;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Fonts
@@ -30,6 +42,8 @@ $secondary-font:    'Source Sans Pro', 'Arial', sans-serif;
 $title-font:        $primary-font;
 $text-font:         $secondary-font;
 $topic-title-font:  $primary-font;
+
+$default-radius:    4px; // Default radius for buttons, posts etc.
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Animations
