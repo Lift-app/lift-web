@@ -1,0 +1,23 @@
+$font-path: '~/static/fonts/'; // Path to the fonts folder
+
+
+$primary-font-name: 'Orkney'; // Name that will be used for the font
+
+// All the weights of the font, used for finding files with the same name, and applying correct font-weight
+$PRIMARY_FONT_WEIGHTS: (
+  'Light': 300,
+  'Regular': normal,
+  'Medium': 500,
+  'Bold': bold
+);
+
+@each $weight, $weight-val in $PRIMARY_FONT_WEIGHTS {
+  @font-face {
+    font-family: $primary-font-name;
+    src: url('#{$font_path}hinted-#{$primary-font-name}-#{$weight}.eot');
+    src:     url('#{$font_path}hinted-#{$primary-font-name}-#{$weight}.woff') format('woff'),
+    url('#{$font_path}hinted-#{$primary-font-name}-#{$weight}.ttf') format('truetype');
+    font-weight: $weight-val;
+    font-style: normal;
+  }
+}
