@@ -36,7 +36,7 @@ $text-light: $porcelain;
 // ---------------------------------------------------------------------------------------------------------------------
 // Fonts
 // ---------------------------------------------------------------------------------------------------------------------
-$primary-font:      'Orkney', 'Source Sans Pro', 'Arial', sans-serif;
+$primary-font:      '#{$primary-font-name}', 'Source Sans Pro', 'Arial', sans-serif;
 $secondary-font:    'Source Sans Pro', 'Arial', sans-serif;
 
 $title-font:        $primary-font;

@@ -15,8 +15,8 @@ $PRIMARY_FONT_WEIGHTS: (
   @font-face {
     font-family: $primary-font-name;
     src: url('#{$font_path}hinted-#{$primary-font-name}-#{$weight}.eot');
-    src:     url('#{$font_path}hinted-#{$primary-font-name}-#{$weight}.woff') format('woff'),
-    url('#{$font_path}hinted-#{$primary-font-name}-#{$weight}.ttf') format('truetype');
+    src: url('#{$font_path}hinted-#{$primary-font-name}-#{$weight}.woff') format('woff'),
+         url('#{$font_path}hinted-#{$primary-font-name}-#{$weight}.ttf') format('truetype');
     font-weight: $weight-val;
     font-style: normal;
   }
