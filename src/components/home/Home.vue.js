@@ -4,16 +4,17 @@ import { mapActions } from 'vuex'
 import Post from '@/components/post/Post'
 
 export default {
-  name: 'dashboard',
+  name: 'home',
   data () {
     return {
-      msg: 'dashboard',
-      postText: ''
+      msg: 'home',
+      postText: '',
+      loading: false
     }
   },
   computed: {
     posts() {
-      return store.state.posts
+      return store.getters.getPosts
     }
   },
   methods: {
@@ -22,7 +23,10 @@ export default {
       'placePost'
     ]),
     getPosts() {
-      this.getPostsFromApi()
+      this.loading = true
+      this.getPostsFromApi().then(() => {
+        this.loading = false
+      })
     },
     makePost() {
       this.placePost({
@@ -34,5 +38,12 @@ export default {
   },
   components: {
     Post
+  },
+  mounted() {
+    this.getPosts()
+  },
+  watch: {
+    // call again the method if the route changes
+    '$route': 'fetchData'
   }
 }
