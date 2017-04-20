@@ -1,11 +1,11 @@
 import store from '@/store'
 import { mapActions } from 'vuex'
 
-import Post from '@/components/post/Post'
+import Card from '@/components/card/Card'
 
 export default {
   name: 'home',
-  data () {
+  data() {
     return {
       msg: 'home',
       postText: '',
@@ -15,19 +15,21 @@ export default {
   computed: {
     posts() {
       return store.getters.getPosts
-    }
+    },
   },
   methods: {
     ...mapActions([
       'getPostsFromApi',
       'placePost'
     ]),
+
     getPosts() {
       this.loading = true
       this.getPostsFromApi().then(() => {
         this.loading = false
       })
     },
+
     makePost() {
       this.placePost({
         user_id: 1,
@@ -37,7 +39,7 @@ export default {
     }
   },
   components: {
-    Post
+    Card
   },
   mounted() {
     this.getPosts()

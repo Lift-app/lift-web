@@ -1,6 +1,6 @@
 
 export default {
-  name: 'post',
+  name: 'card',
   props: {
     postData: {
       type: Object,
@@ -14,6 +14,11 @@ export default {
   computed: {
     normalizedCategory() {
       return this.postData.category.name.toLowerCase().replace(/\s/g, '-');
+    }
+  },
+  methods: {
+    openPost() {
+      console.log(this.postData.id)
     }
   }
 }

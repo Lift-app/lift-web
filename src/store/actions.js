@@ -2,14 +2,20 @@ import config from '@/config/config'
 import axios from 'axios' // We use Axios for AJAX calls
 
 export const getPostsFromApi = ({ commit }) => {
-  axios.get(`${config.apiUrl}/posts`)
-    .then((response) => {
-      // Commit the data into SET_POSTS - see mutations.js
-      commit('SET_POSTS', response.data)
-    })
-    .catch((error) => {
-      if(config.debug) { console.error(error) }
-    })
+  return new Promise((resolve, reject) => {
+    axios.get(`${config.apiUrl}/posts`)
+      .then((response) => {
+        // Commit the data into SET_POSTS - see mutations.js
+        commit('SET_POSTS', response.data)
+        resolve()
+      })
+      .catch((error) => {
+        if (config.debug) {
+          console.error(error)
+          reject(error)
+        }
+      })
+  })
 }
 
 export const placePost = ({ commit }, arg) => {

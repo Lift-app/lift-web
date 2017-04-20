@@ -2,10 +2,10 @@
   <div class="component--home">
     <h1>{{ msg }}</h1>
 
-    <h2 v-if="loading">Laden...</h2>
+    <h2 v-if="loading" style="background: red">Laden...</h2>
 
-    <transition-group name="list" tag="span">
-      <post v-for="post in posts" :key="post.id" :post-data="post"></post>
+    <transition-group name="slide-up">
+      <card v-for="post in posts" :key="post.id" :post-data="post"></card>
     </transition-group>
 
     <label for="postText">Stel een vraag

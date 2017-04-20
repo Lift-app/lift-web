@@ -1,14 +1,13 @@
 .component--home {
 
-  .list-item {
+  .slide-up-item {
     display: inline-block;
-    margin-right: 10px;
   }
-  .list-enter-active, .list-leave-active {
+  .slide-up-enter-active, .slide-up-leave-active {
     transition: all 1s;
   }
-  .list-enter, .list-leave-to /* .list-leave-active for <2.1.8 */ {
+  .slide-up-enter, .slide-up-leave-to {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(50px);
   }
 }
