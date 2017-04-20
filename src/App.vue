@@ -6,9 +6,22 @@
 
 <script>
 
+import config from '@/config/config'
+import router from '@/router'
+
 export default {
   name: 'lift',
   components: {
+  },
+  methods: {
+    checkLogin() {
+      if(!config.isLoggedIn()) {
+        router.push({name: 'Login'})
+      }
+    }
+  },
+  mounted() {
+    this.checkLogin()
   }
 }
 
