@@ -1,10 +1,10 @@
 html, body {
   font-size: 100%;
-  height: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: block;
   font-family: $text-font;
+  height: 100%;
 }
 
 h1,
@@ -15,4 +15,20 @@ h5,
 h6,
 .title {
   font-family: $title-font;
+}
+
+#app {
+  height: 100%;
+  max-width: $max-app-width;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.button {
+  font-family: $primary-font;
+  background: #fff;
+  color: $primary-color;
+  border-radius: 4px;
+  padding: 17px 25px 15px;
+  border: 0;
 }
