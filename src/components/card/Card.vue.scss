@@ -1,5 +1,4 @@
 .card {
-
   $padding: 10px 20px;
   $margin: 10px 5px;
   $radius: $default-radius;
@@ -13,8 +12,27 @@
 
   .title {
     font-size: 1.2em;
+    text-align: center;
   }
-
+    header {
+        float: left;
+        width: 100%;
+        clear: both;
+        .inner-left {
+            float: left;
+            span {
+                float: left;
+            }
+            .avatar {
+                -webkitborder-radius: 50%;
+                border-radius: 50%;
+                float: left;
+            }
+        }
+        .inner-right {
+            float: right;
+        }
+    }
   // make a class for every category name in $POST_CATEGORIES and set the correct background and color
   @each $category, $bgcolor in $POST_CATEGORIES {
     &.#{$category} {
