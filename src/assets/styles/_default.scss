@@ -23,16 +23,17 @@ h6,
 
   max-width: $max-app-width;
   margin: 0 auto;
+  height: 100%;
   box-sizing: border-box;
+  position: relative;
 
   > .view {
-    position: fixed;
     overflow-y: scroll;
     height: calc(100% - #{$nav-height});
   }
 
   > .navigation {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     left: 0;
     height: $nav-height;

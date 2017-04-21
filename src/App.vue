@@ -5,8 +5,8 @@
     </div>
 
     <nav class="navigation">
-      <router-link :to="{ name: 'Home' }">Home</router-link>
-      <router-link :to="{ name: 'Login' }">Login</router-link>
+      <router-link :to="{ name: 'Home' }" exact>Home</router-link>
+      <router-link :to="{name: 'Login'}">Login</router-link>
     </nav>
   </div>
 </template>
