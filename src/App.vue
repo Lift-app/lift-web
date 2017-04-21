@@ -32,7 +32,8 @@ export default {
     }
   },
   mounted() {
-    this.checkLogin()
+    // TODO: put this back on
+    // this.checkLogin()
   }
 }
 
