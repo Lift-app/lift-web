@@ -41,7 +41,7 @@ export default {
   components: {
     Card
   },
-  mounted() {
+  created() {
     this.getPosts()
   }
 }
