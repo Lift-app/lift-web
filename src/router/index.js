@@ -14,7 +14,6 @@ export default new Router({
       path: '/',
       name: 'Home',
       component: Home,
-      props: true,
       children: [
         {
           path: 'post/:id',
@@ -24,7 +23,7 @@ export default new Router({
       ]
     },
     {
-      path: '/login',
+      path: '/',
       name: 'Login',
       component: Login
     }
