@@ -1,9 +1,8 @@
 <template>
-  <div class="component--login">
+  <div class="page--login">
 
     <div class="login-container">
       <img class="logo" src="./../../assets/images/logo/white.svg">
-      <!--<router-link to="/" class="link">Login</router-link>-->
       <button class="button" v-on:click="login()">Inloggen</button>
     </div>
 

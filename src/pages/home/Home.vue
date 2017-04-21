@@ -1,12 +1,15 @@
 <template>
-  <div class="component--home">
+  <div class="page--home">
     <h1>{{ msg }}</h1>
 
     <h2 v-if="loading" style="background: red">Laden...</h2>
 
-    <transition-group name="slide-up">
-      <card v-for="post in posts" :key="post.id" :post-data="post"></card>
-    </transition-group>
+    <router-view></router-view>
+    <div class="card-group" v-if="!loading">
+      <transition-group name="slide-up">
+        <card v-for="post in posts" :key="post.id" :post_data="post"></card>
+      </transition-group>
+    </div>
 
     <label for="postText">Stel een vraag
       <input type="text" id="postText" v-model="postText">
