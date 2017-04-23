@@ -15,7 +15,7 @@ export default {
     }),
 
     close() {
-      router.go(-1)
+      router.push({name: 'Home'})
     },
 
     loadPost() {

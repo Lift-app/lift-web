@@ -18,8 +18,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      actionGetPosts: 'getPosts',
-      placePost: 'placePost'
+      actionGetPosts: 'getPosts'
     }),
 
     getPosts() {
@@ -27,14 +26,6 @@ export default {
       this.actionGetPosts().then(() => {
         this.loading = false
       })
-    },
-
-    makePost() {
-      this.placePost({
-        user_id: 1,
-        category_id: 1,
-        body: this.postText
-      }, arg)
     }
   },
   components: {

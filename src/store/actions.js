@@ -31,17 +31,16 @@ const actions = {
   },
 
   placePost({ commit }, arg) {
-    axios.post(`${config.apiUrl}/posts`, {
-      user_id: arg.user_id,
-      category_id: arg.category_id,
-      body: arg.body
+    return new Promise((resolve, reject) => {
+      axios.post(`${config.apiUrl}/posts`, arg)
+        .then((response) => {
+          console.log('Post created', response)
+          resolve()
+        })
+        .catch((error) => {
+          reject(error)
+        })
     })
-      .then((response) => {
-        console.log('success', response)
-      })
-      .catch((error) => {
-        if(config.debug) { console.error(error) }
-      })
   }
 }
 

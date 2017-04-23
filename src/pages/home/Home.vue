@@ -11,11 +11,6 @@
         <card v-for="post in posts" :key="post.id" :post_data="post"></card>
       </transition-group>
     </div>
-
-    <label for="postText">Stel een vraag
-      <input type="text" id="postText" v-model="postText">
-    </label>
-    <button @click="makePost">Post maken</button>
   </div>
 </template>
 
