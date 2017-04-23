@@ -1,5 +1,5 @@
 import router from '@/router'
-
+import store from '@/store'
 import Post from '@/pages/post/Post'
 
 export default {
@@ -8,6 +8,11 @@ export default {
     post_data: {}
   },
   computed: {
+
+    posts() {
+      return store.getters.getPostWithId
+    },
+
     normalizedCategory() {
       return this.post_data.category.name.toLowerCase().replace(/\s/g, '-');
     }
@@ -16,10 +21,7 @@ export default {
     openPost() {
       router.push({
         name: 'Post',
-        params: {
-          id: this.post_data.id,
-          post_data: this.post_data
-        }
+        params: { id: this.post_data.id }
       })
     }
   }

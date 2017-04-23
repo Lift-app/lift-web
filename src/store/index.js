@@ -1,14 +1,15 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import getters from './getters'
-import * as actions from './actions'
+import * as getters from './getters'
+import actions from './actions'
 import * as mutations from './mutations'
 
 Vue.use(Vuex)
 
 const state = {
-  posts: {}
+  posts: {},
+  post: {}
 }
 
 export default new Vuex.Store({

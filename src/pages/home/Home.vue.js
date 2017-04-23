@@ -7,25 +7,24 @@ export default {
   name: 'home',
   data() {
     return {
-      msg: 'home',
       postText: '',
       loading: false
     }
   },
   computed: {
     posts() {
-      return store.getters.getPosts
-    },
+      return store.getters.fetchPosts
+    }
   },
   methods: {
-    ...mapActions([
-      'getPostsFromApi',
-      'placePost'
-    ]),
+    ...mapActions({
+      actionGetPosts: 'getPosts',
+      placePost: 'placePost'
+    }),
 
     getPosts() {
       this.loading = true
-      this.getPostsFromApi().then(() => {
+      this.actionGetPosts().then(() => {
         this.loading = false
       })
     },
@@ -35,7 +34,7 @@ export default {
         user_id: 1,
         category_id: 1,
         body: this.postText
-      })
+      }, arg)
     }
   },
   components: {

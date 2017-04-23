@@ -26,6 +26,15 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login
+    },
+
+    // Default route if none of the above can be matched
+    {
+      name: '404',
+      path: '/404',
+      component: {
+        template: '<div><p>Pagina kon niet gevonden worden.</p> <router-link to="/">Ga terug</router-link></div>'
+      }
     }
   ]
 })

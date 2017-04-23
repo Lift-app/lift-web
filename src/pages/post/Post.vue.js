@@ -1,31 +1,40 @@
 import router from '@/router'
+import store from '@/store'
+import { mapActions } from 'vuex'
 
 export default {
   name: 'post',
   data () {
     return {
-      post_data: {
-        id: Number,
-        user: { username: null, id: 0 },
-        updated_at: null,
-        is_locked: false,
-        created_at: null,
-        category: { name: null, id: 4, description: null },
-        body: null
-      }
+      post: undefined
     }
   },
   methods: {
-
-    fetchData() {
-      this.post_data = this.$route.params.post_data
-    },
+    ...mapActions({
+      actionGetPost: 'getPost'
+    }),
 
     close() {
       router.go(-1)
-    }
+    },
+
+    loadPost() {
+      this.actionGetPost(this.$route.params.id)
+        .then(() => {
+          this.post = store.state.post
+        })
+        .catch(() => {
+          router.push({name: '404'})
+        })
+
+    },
   },
-  created() {
-    this.fetchData()
+  mounted() {
+    this.loadPost()
+  },
+  watch: {
+    '$route' (to, from) {
+      this.loadPost()
+    }
   }
 }

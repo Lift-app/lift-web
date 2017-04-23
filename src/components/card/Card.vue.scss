@@ -18,13 +18,14 @@
         float: left;
         width: 100%;
         clear: both;
+
         .inner-left {
             float: left;
+
             span {
                 float: left;
             }
             .avatar {
-                -webkitborder-radius: 50%;
                 border-radius: 50%;
                 float: left;
             }

@@ -1,10 +1,11 @@
 <template>
   <div class="page--home">
-    <h1>{{ msg }}</h1>
+    <router-view></router-view>
 
     <h2 v-if="loading" style="background: red">Laden...</h2>
 
-    <router-view></router-view>
+    <p v-show="!posts.length"><i>Geen berichten gevonden</i></p>
+
     <div class="card-group" v-if="!loading">
       <transition-group name="slide-up">
         <card v-for="post in posts" :key="post.id" :post_data="post"></card>
