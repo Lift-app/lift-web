@@ -41,6 +41,21 @@
 
       <div class="create-voice-post" v-if="post_type === 'voice'">
         <button class="back" @click="setPostType('choose')" aria-label="Terug naar: Type bericht kiezen">< Terug</button>
+        <br><br>
+
+        <button class="button red-button" @click="toggleRecording">
+          <span v-show="!isRecording">Start recording</span>
+          <span v-show="isRecording">Stop recording</span>
+        </button>
+        <button class="button green-button" @click="togglePlay" v-if="dataUrl.length > 0">
+          <i class="play icon"></i> Play recording
+        </button>
+        <button class="remove-recording" @click="removeRecording">
+          <i class="remove icon"></i> Delete recording
+        </button>
+
+        <audio id="audio" preload="auto" :src="dataUrl" controls></audio>
+
         Voice post
 
       </div>
