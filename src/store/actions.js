@@ -34,7 +34,21 @@ const actions = {
     return new Promise((resolve, reject) => {
       axios.post(`${config.apiUrl}/posts`, arg)
         .then((response) => {
-          console.log('Post created', response)
+          if(config.debug) { console.log('Post created', response) }
+          resolve()
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  },
+
+  getCategories({ commit }) {
+    return new Promise((resolve, reject) => {
+      axios.get(`${config.apiUrl}/categories`)
+        .then((response) => {
+          commit('SET_CATEGORIES', response.data)
+          if(config.debug) { console.log('Get categories', response) }
           resolve()
         })
         .catch((error) => {

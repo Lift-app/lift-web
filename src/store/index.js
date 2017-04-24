@@ -9,7 +9,8 @@ Vue.use(Vuex)
 
 const state = {
   posts: {},
-  post: {}
+  post: {},
+  categories: {}
 }
 
 export default new Vuex.Store({

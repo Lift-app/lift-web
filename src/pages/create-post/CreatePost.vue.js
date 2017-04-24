@@ -1,11 +1,15 @@
+import store from '@/store'
 import { mapActions } from 'vuex'
 
 export default {
   name: 'createPost',
   data () {
     return {
-      post: {},
-      post_type: 'choose'
+      body: undefined,
+      category: 0,
+      anonymity: false,
+      categories: [],
+      post_type: 'choose',
     }
   },
   computed: {
@@ -13,14 +17,24 @@ export default {
   },
   methods: {
     ...mapActions({
+      fetchCategories: 'getCategories',
       placePost: 'placePost'
     }),
+
+    getCategories() {
+      this.fetchCategories()
+        .then(() => {
+          this.categories = store.state.categories
+          // add a choose a category option
+          this.categories.unshift({name: 'Kies een categorie...', id: 0, disabled: true})
+        })
+    },
 
     makePost() {
       this.placePost({
         user_id: 1,
-        category_id: 1,
-        body: this.postText
+        category_id: this.post.category,
+        body: this.post.body
       })
         .then(() => {
 
@@ -30,9 +44,13 @@ export default {
         })
     },
 
+    // set the post type to given name, and clean this.post if type is different then current type
     setPostType(type) {
-      this.post = {}
+      if(type !== this.post_type) {this.post = {}}
       this.post_type = type
     }
+  },
+  created() {
+    this.getCategories()
   }
 }

@@ -1,8 +1,5 @@
 .page--create-post {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
+  @extend %absolute-view;
+  
   background-color: $primary-color;
 }
