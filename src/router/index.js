@@ -3,8 +3,11 @@ import Router from 'vue-router'
 
 import Login from '@/pages/login/Login'
 import Home from '@/pages/home/Home'
+
 import Post from '@/pages/post/Post'
+
 import CreatePost from '@/pages/create-post/CreatePost'
+import CreatePostSuccess from '@/pages/create-post/success/Success'
 
 Vue.use(Router)
 
@@ -31,7 +34,14 @@ export default new Router({
     {
       path: '/post-maken',
       name: 'CreatePost',
-      component: CreatePost
+      component: CreatePost,
+      children: [
+        {
+          path: 'gemaakt',
+          name: 'CreatePostSuccess',
+          component: CreatePostSuccess
+        }
+      ]
     },
 
     // Default route if none of the above can be matched
