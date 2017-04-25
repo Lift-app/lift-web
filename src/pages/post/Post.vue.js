@@ -6,7 +6,22 @@ export default {
   name: 'post',
   data () {
     return {
-      post: undefined
+      post: {
+        user: {
+          'username': '',
+          'id': 0
+        },
+        'updated_at': '',
+        'is_locked': false,
+        'id': 0,
+        'created_at': '',
+        'category': {
+          'name': '',
+          'id': 0,
+        },
+        'body': ''
+      },
+      loading: false
     }
   },
   methods: {
@@ -19,9 +34,11 @@ export default {
     },
 
     loadPost() {
+      this.loading = true
       this.actionGetPost(this.$route.params.id)
         .then(() => {
           this.post = store.state.post
+          this.loading = false
         })
         .catch(() => {
           router.push({name: '404'})

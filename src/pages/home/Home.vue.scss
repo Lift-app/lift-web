@@ -3,9 +3,11 @@
   .slide-up-item {
     display: inline-block;
   }
+
   .slide-up-enter-active, .slide-up-leave-active {
     transition: all 1s;
   }
+
   .slide-up-enter, .slide-up-leave-to {
     opacity: 0;
     transform: translateY(50px);

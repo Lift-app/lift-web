@@ -1,85 +1,80 @@
-.avatar {
-  -webkitborder-radius: 50%;
-  border-radius: 50%;
-  margin: 0 15px 0 0;
-  float: left;
-  border: 1px solid $white;
-}
-
 .card {
+
   $padding: 15px 20px;
-  $margin: 0 10px 10px;
+  $margin: 10px;
   $radius: $default-radius;
+
   background: $blue;
   color: $white;
   padding: $padding;
-  margin: $margin;
+  margin: 0 $margin $margin $margin;
   border-radius: $radius;
   font-family: $title-font;
-    
-    &:first-child {
-        margin: 10px;
-    }
+
+  &:first-child {
+    margin-top: $margin;
+  }
 
   .title {
     font-size: 1.2em;
+    padding: $padding;
     text-align: center;
     display: inline-block;
     width: 100%;
   }
 
-  .cat_button {
-    text-decoration: none;
-    padding: 7px 10px 5px;
-    font-size: 11px;
-    order: 2;
-    margin-left: auto;
-    position: relative;
-    top: 10px;
-  }
-
   header {
     width: 100%;
-    clear: both;
     display: flex;
-   align-items: flex-start;
-    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .user {
+      display: flex;
+      align-items: center;
 
       .avatar {
         border-radius: 50%;
-        width: auto;
         height: 60px;
         width: 60px;
+        display: inline-block;
       }
 
-        h4,
-        h5 {
-          margin: 0;
-          width: 100%;
-          clear: both;
-        }
+      .user-details {
+        margin-left: $margin;
+        display: inline-block;
+      }
 
-        h4 {
-          padding: 11px 0 0;
-          font-size: 1.2rem;
-          text-transform: capitalize;
-        }
+      .u-name,
+      .u-date {
+        display: block;
+        margin: 0;
+      }
+
+      .u-name {
+        font-size: 1.2rem;
+      }
+    }
+
+    .cat-button {
+      text-decoration: none;
+      padding: 7px 10px 5px;
+      font-size: 11px;
+    }
   }
 
   footer {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    img {
-      padding: 0 7px 0 0;
-    }
+    .footer-action {
+      padding: 0 10px;
+      display: flex;
+      align-items: center;
 
-    span {
-      position: relative;
-      top: -3px;
-      margin: 0 20px 0 0;
-
-      &:last-child {
-        margin: 0;
+      .count {
+        margin-left: 5px;
       }
     }
   }
@@ -90,9 +85,8 @@
       // determine if the text should be black or white based on the lightness level of the given color
       @if lightness($bgcolor) > lightness(#ccc) {
         color: $text-dark;
-      }
-      @else {
-        color: $text-light;
+      } @else {
+        color: $white;
       }
     }
   }
