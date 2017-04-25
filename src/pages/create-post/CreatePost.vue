@@ -3,18 +3,18 @@
     <div class="page--create-post">
 
       <div v-if="post_type === 'choose'" class="create-type-picker">
-        <h1>Ik wil wat zeggen...</h1>
-
-        <button class="button" @click="setPostType('text')">Bericht typen</button>
-        <button class="button" @click="setPostType('voice')">Bericht inspreken</button>
+        <h1>Ik wil iets zeggen...</h1>
+        <h3>Maak hieronder een keuze hoe je iets wilt zeggen</h3>
+        <button class="button" @click="setPostType('text')">Mijn bericht typen &#124; <img src="../../assets/images/icons/pencil-lift-blue.svg" alt="Mijn bericht typen" style="height: 18px;"></button>
+        <button class="button" @click="setPostType('voice')">Mijn bericht inspreken &#124; <img src="../../assets/images/icons/microphone-lift-blue.svg" alt="Mijn bericht inspreken" style="height: 18px;"></button>
       </div>
 
       <div class="create-text-post" v-if="post_type === 'text'">
-        <button class="back" @click="setPostType('choose')" aria-label="Terug naar: Type bericht kiezen">< Terug</button>
+        <button class="back" @click="setPostType('choose')" aria-label="Terug naar: Type bericht kiezen">&lang; Terug</button>
 
         <br>
 
-        <label for="body">Ik wil wat zeggen...
+        <label for="body">Ik wil iets zeggen...
           <textarea id="body" name="body" v-model="body" placeholder="Typ hier je bericht..."></textarea>
         </label>
 
@@ -31,7 +31,7 @@
         </label>
 
         <div class="anonymity" v-if="anonymity">
-          <p>Als je kiest om anoniem te blijven, zal je naam en profielfoto niet bij het bericht komen te staan.</p>
+          <p>Als je kiest om anoniem te blijven, zullen je naam en profielfoto niet bij het bericht komen te staan.</p>
         </div>
 
         <br><br>
@@ -40,7 +40,7 @@
       </div>
 
       <div class="create-voice-post" v-if="post_type === 'voice'">
-        <button class="back" @click="setPostType('choose')" aria-label="Terug naar: Type bericht kiezen">< Terug</button>
+        <button class="back" @click="setPostType('choose')" aria-label="Terug naar: Type bericht kiezen">&lang; Terug</button>
         <br><br>
 
         <button class="button red-button" @click="toggleRecording">

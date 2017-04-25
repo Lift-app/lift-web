@@ -17,8 +17,8 @@
         <h1 class="title">{{ post_data.body }}</h1>
 
         <footer>
-          <button class="like" aria-label="Vraag leuk vinden"><img src="../../assets/images/icons/heart-single.svg" alt="Vind ik leuk"><span class="like-count">12</span></button>
-          <button class="comment" aria-label="Reacties op deze vraag"><img src="../../assets/images/icons/comment-single.svg" alt="Reageren op deze vraag"><span class="like-count">12</span></button>
+          <button class="like" aria-label="Vraag leuk vinden"><img src="../../assets/images/icons/heart-single-lift.svg" alt="Vind ik leuk"><span class="like-count">12</span></button>
+          <button class="comment" aria-label="Reacties op deze vraag"><img src="../../assets/images/icons/comment-single-lift.svg" alt="Reageren op deze vraag"><span class="like-count">12</span></button>
         </footer>
       </article>
 

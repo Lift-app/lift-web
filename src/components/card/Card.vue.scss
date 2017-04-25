@@ -8,7 +8,7 @@
 
 .card {
   $padding: 15px 20px;
-  $margin: 0 5px 20px 5px;
+  $margin: 0 10px 10px;
   $radius: $default-radius;
   background: $blue;
   color: $white;
@@ -16,6 +16,10 @@
   margin: $margin;
   border-radius: $radius;
   font-family: $title-font;
+    
+    &:first-child {
+        margin: 10px;
+    }
 
   .title {
     font-size: 1.2em;
@@ -25,29 +29,28 @@
   }
 
   .cat_button {
-    display: inline-block;
     text-decoration: none;
     padding: 7px 10px 5px;
-    font-size: 0.83rem;
+    font-size: 11px;
+    order: 2;
+    margin-left: auto;
+    position: relative;
+    top: 10px;
   }
 
   header {
-    float: left;
     width: 100%;
     clear: both;
-
-    .inner-left {
-      float: left;
-
-      span {
-        float: left;
-      }
+    display: flex;
+   align-items: flex-start;
+    flex-direction: row;
 
       .avatar {
         border-radius: 50%;
-        float: left;
         width: auto;
         height: 60px;
+        width: 60px;
+      }
 
         h4,
         h5 {
@@ -61,12 +64,6 @@
           font-size: 1.2rem;
           text-transform: capitalize;
         }
-      }
-    }
-
-    .inner-right {
-      float: right;
-    }
   }
 
   footer {

@@ -1,5 +1,33 @@
 .page--create-post {
-  @extend %absolute-view;
-  
-  background-color: $primary-color;
+    @extend %absolute-view;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: $white;
+    background-color: $primary-color;
+    
+    .create-type-picker {
+        margin: 0 auto;
+        max-width: 80%;
+        
+        .button {
+            position: relative;
+            color: #4990E2;
+            font-weight: normal;
+            display: block;
+            margin: 0 auto 20px auto;
+            
+            &:last-child {
+                margin: 0 auto;
+            }
+            
+            img {
+                position: relative;
+                top: 3px;
+                left: 5px;
+            }
+            
+        }
+    }
 }

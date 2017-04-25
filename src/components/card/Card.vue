@@ -1,16 +1,12 @@
 <template>
   <div class="card" :class="normalizedCategory" @click="openPost">
     <header>
-     <div class="inner-left">
          <img class="avatar" src="https://placehold.it/60x60" :alt="post_data.user.username">
          <div id="user_details">
              <h4 class="u_name">{{ post_data.user.username }}</h4>
-             <h5 class="u_date">Eergisteren</h5> 
-         </div>
+             <h5 class="u_date">Eergisteren</h5>
       </div>
-      <div class="inner-right">
           <a href="#" class="button cat_button">{{ post_data.category.name }}</a>
-      </div>
       </header>
       <section id="card-content">
           <h2 class="title">{{ post_data.body }}</h2>

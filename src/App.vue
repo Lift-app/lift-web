@@ -5,9 +5,11 @@
     </div>
 
     <nav class="navigation">
-      <router-link :to="{ name: 'Home' }" exact>Home</router-link>
-      <router-link :to="{name: 'Login'}">Login</router-link>
-      <router-link :to="{name: 'CreatePost'}">Ik wil iets zeggen...</router-link>
+      <router-link :to="{ name: 'Home' }" exact id="feed-nav">Home</router-link>
+      <router-link :to="{ name: 'Home' }" id="interests-nav">Interesses</router-link>
+      <router-link :to="{name: 'CreatePost'}" id="add_post-nav">Iets zeggen</router-link>
+      <router-link :to="{ name: 'Home' }" id="search-nav">Zoeken</router-link>
+      <router-link :to="{name: 'Login'}" id="profile-nav">Account</router-link>
     </nav>
   </div>
 </template>

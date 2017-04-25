@@ -11,6 +11,11 @@ html, body {
   display: block;
   font-family: $text-font;
   height: 100%;
+  width: 100%;
+}
+
+body {
+    overflow: hidden;
 }
 
 h1,
@@ -40,13 +45,62 @@ h6,
 
   > .navigation {
     position: absolute;
+    display: flex;
     bottom: 0;
     left: 0;
     height: $nav-height;
-
+    width: 100%;
+    background: $white;
+    
+      a {
+          width: 20%;
+          flex-direction: row;
+          color: $pantzer;
+          text-decoration: none;
+          font-size: 11px;
+          text-align: center;
+          padding: 30px 0 0 0;
+      }
+      
+      // Navigation icons
+      #feed-nav {
+        background-image: url(https://placehold.it/16x16);
+        background-size: 16px 16px;
+        background-repeat: no-repeat;
+        background-position: 50% 11px;
+      }
+      
+      #interests-nav {
+        background-image: url(https://placehold.it/16x16);
+        background-size: 16px 16px;
+        background-repeat: no-repeat;
+        background-position: 50% 11px;
+      }
+      
+      #search-nav {
+        background-image: url(https://placehold.it/16x16);
+        background-size: 16px 16px;
+        background-repeat: no-repeat;
+        background-position: 50% 11px;
+      }
+      
+      #add_post-nav {
+        background-image: url(https://placehold.it/16x16);
+        background-size: 16px 16px;
+        background-repeat: no-repeat;
+        background-position: 50% 11px;
+      }
+      
+      #profile-nav {
+        background-image: url(https://placehold.it/16x16);
+        background-size: 16px 16px;
+        background-repeat: no-repeat;
+        background-position: 50% 11px;
+      }
 
     .router-link-active {
-      color: red;
+      background: $orange;
+      color: $white;
     }
   }
 }
