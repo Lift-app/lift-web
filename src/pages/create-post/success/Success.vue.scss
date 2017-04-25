@@ -1,0 +1,5 @@
+.page--create-post-success {
+  @extend %absolute-view;
+
+  background-color: $green;
+}

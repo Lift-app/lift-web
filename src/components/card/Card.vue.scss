@@ -33,9 +33,19 @@
         float: left;
         width: 100%;
         clear: both;
+
         .inner-left {
             float: left;
+<<<<<<< HEAD
             #user_details {
+=======
+
+            span {
+                float: left;
+            }
+            .avatar {
+                border-radius: 50%;
+>>>>>>> 73035a5db2fbeed6816152c5943084bbf0b9433e
                 float: left;
                 width: auto;
                 height: 60px;
