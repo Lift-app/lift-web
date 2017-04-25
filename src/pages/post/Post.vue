@@ -3,24 +3,18 @@
     <div class="post-container">
       <button @click="close" class="close" aria-label="Ga terug">sluiten x</button>
 
-      <article class="post" v-if="post">
+      <article class="post">
         <header>
           <div class="user">
-<<<<<<< HEAD
           <img class="avatar" src="https://placehold.it/60x60" :alt="post_data.user.username">
             <h3 class="username" v-bind="post_data.user">{{ post_data.user.username }}</h3>
             <span class="created-on">2 dagen geleden</span>
             <!-- <span class="created-on">{{ post_data.created_at }} </span>-->
-=======
-            <img src="" alt="Profielfoto" class="avatar">
-            <h3 class="username" v-bind="post.user">{{ post.user.username }}</h3>
-            <span class="created-on">{{ post.created_at }}</span>
->>>>>>> 73035a5db2fbeed6816152c5943084bbf0b9433e
           </div>
-          <button class="button category-button">{{ post.category.name }}</button>
+          <button class="button category-button">{{ post_data.category.name }}</button>
         </header>
 
-        <h1 class="title">{{ post.body }}</h1>
+        <h1 class="title">{{ post_data.body }}</h1>
 
         <footer>
           <button class="like" aria-label="Vraag leuk vinden"><img src="../../assets/images/icons/heart-single.svg" alt="Vind ik leuk"><span class="like-count">12</span></button>
