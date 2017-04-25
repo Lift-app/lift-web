@@ -1,15 +1,15 @@
 .avatar {
-    -webkitborder-radius: 50%;
-    border-radius: 50%;
-    margin: 0 15px 0 0;
-    float: left;
-    border: 1px solid $white;
+  -webkitborder-radius: 50%;
+  border-radius: 50%;
+  margin: 0 15px 0 0;
+  float: left;
+  border: 1px solid $white;
 }
+
 .card {
   $padding: 15px 20px;
   $margin: 0 5px 20px 5px;
   $radius: $default-radius;
-
   background: $blue;
   color: $white;
   padding: $padding;
@@ -23,71 +23,78 @@
     display: inline-block;
     width: 100%;
   }
-    .cat_button {
-        display: inline-block;
-        text-decoration: none;
-        padding: 7px 10px 5px;
-        font-size: .83rem;
-    }
-    header {
+
+  .cat_button {
+    display: inline-block;
+    text-decoration: none;
+    padding: 7px 10px 5px;
+    font-size: 0.83rem;
+  }
+
+  header {
+    float: left;
+    width: 100%;
+    clear: both;
+
+    .inner-left {
+      float: left;
+
+      span {
         float: left;
-        width: 100%;
-        clear: both;
+      }
 
-        .inner-left {
-            float: left;
-<<<<<<< HEAD
-            #user_details {
-=======
+      .avatar {
+        border-radius: 50%;
+        float: left;
+        width: auto;
+        height: 60px;
 
-            span {
-                float: left;
-            }
-            .avatar {
-                border-radius: 50%;
->>>>>>> 73035a5db2fbeed6816152c5943084bbf0b9433e
-                float: left;
-                width: auto;
-                height: 60px;
-                h4, h5 {
-                    margin: 0;
-                    width: 100%;
-                    clear: both;
-                }
-                h4 {
-                    padding: 11px 0 0 0;
-                    font-size: 1.2rem;
-                    text-transform: capitalize;
-                }
-            }
+        h4,
+        h5 {
+          margin: 0;
+          width: 100%;
+          clear: both;
         }
-        .inner-right {
-            float: right;
+
+        h4 {
+          padding: 11px 0 0;
+          font-size: 1.2rem;
+          text-transform: capitalize;
         }
+      }
     }
-    footer {
-        text-align: center;
-        img {
-            padding: 0 7px 0 0;
-        }
-        span {
-            position: relative;
-            top: -3px;
-            margin: 0 20px 0 0;
-            &:last-child {
-                margin: 0;
-            }
-        }
+
+    .inner-right {
+      float: right;
     }
+  }
+
+  footer {
+    text-align: center;
+
+    img {
+      padding: 0 7px 0 0;
+    }
+
+    span {
+      position: relative;
+      top: -3px;
+      margin: 0 20px 0 0;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
   // make a class for every category name in $POST_CATEGORIES and set the correct background and color
   @each $category, $bgcolor in $POST_CATEGORIES {
     &.#{$category} {
       background: $bgcolor;
-
       // determine if the text should be black or white based on the lightness level of the given color
       @if lightness($bgcolor) > lightness(#ccc) {
         color: $text-dark;
-      } @else {
+      }
+      @else {
         color: $text-light;
       }
     }
