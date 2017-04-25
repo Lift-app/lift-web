@@ -6,9 +6,10 @@
       <article class="post">
         <header>
           <div class="user">
-            <img src="" alt="Profielfoto" class="avatar">
+          <img class="avatar" src="https://placehold.it/60x60" :alt="post_data.user.username">
             <h3 class="username" v-bind="post_data.user">{{ post_data.user.username }}</h3>
-            <span class="created-on">{{ post_data.created_at }}</span>
+            <span class="created-on">2 dagen geleden</span>
+            <!-- <span class="created-on">{{ post_data.created_at }} </span>-->
           </div>
           <button class="button category-button">{{ post_data.category.name }}</button>
         </header>
@@ -16,8 +17,8 @@
         <h1 class="title">{{ post_data.body }}</h1>
 
         <footer>
-          <button class="like" aria-label="Bericht leuk vinden">like icon - like count</button>
-          <button class="comment" aria-label="Bericht leuk vinden">comment icon - comment count</button>
+          <button class="like" aria-label="Vraag leuk vinden"><img src="../../assets/images/icons/heart-single.svg" alt="Vind ik leuk"><span class="like-count">12</span></button>
+          <button class="comment" aria-label="Reacties op deze vraag"><img src="../../assets/images/icons/comment-single.svg" alt="Reageren op deze vraag"><span class="like-count">12</span></button>
         </footer>
       </article>
 

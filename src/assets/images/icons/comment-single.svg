@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="29px" height="28px" viewBox="0 0 29 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-2.5%" y="-2.7%" width="249.3%" height="107.6%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.15 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Feed-page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="iPhone-5/SE---Keuze-vraag-stellen" transform="translate(-166.000000, -216.000000)" fill="#FFFFFF">
+            <g id="card-2" filter="url(#filter-1)" transform="translate(20.000000, 69.000000)">
+                <g id="footer" transform="translate(89.000000, 149.000000)">
+                    <g id="Group-3" transform="translate(61.000000, 0.000000)">
+                        <path d="M16.6896154,6.68961538 L16.6896154,4.67038462 L4.67038462,4.67038462 L4.67038462,6.68961538 L16.6896154,6.68961538 Z M16.6896154,9.69442308 L16.6896154,7.67519231 L4.67038462,7.67519231 L4.67038462,9.69442308 L16.6896154,9.69442308 Z M16.6896154,12.6992308 L16.6896154,10.68 L4.67038462,10.68 L4.67038462,12.6992308 L16.6896154,12.6992308 Z M20.68,2.65115385 L20.68,20.68 L16.6896154,16.6896154 L2.65115385,16.6896154 C2.10627933,16.6896154 1.64154038,16.4892969 1.25692308,16.0886538 C0.872305769,15.6880108 0.68,15.2152591 0.68,14.6703846 L0.68,2.65115385 C0.68,2.10627933 0.872305769,1.64154038 1.25692308,1.25692308 C1.64154038,0.872305769 2.10627933,0.68 2.65115385,0.68 L18.7088462,0.68 C19.2537207,0.68 19.7184596,0.872305769 20.1030769,1.25692308 C20.4876942,1.64154038 20.68,2.10627933 20.68,2.65115385 Z" id="comment---material"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
