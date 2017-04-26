@@ -5,38 +5,41 @@
       <div v-if="post_type === 'choose'" class="create-type-picker">
         <h1>Ik wil iets zeggen...</h1>
         <h3>Maak hieronder een keuze hoe je iets wilt zeggen</h3>
-        <button class="button" @click="setPostType('text')">Mijn bericht typen &#124; <img src="../../assets/images/icons/pencil-lift-blue.svg" alt="Mijn bericht typen" style="height: 18px;"></button>
-        <button class="button" @click="setPostType('voice')">Mijn bericht inspreken &#124; <img src="../../assets/images/icons/microphone-lift-blue.svg" alt="Mijn bericht inspreken" style="height: 18px;"></button>
+        <button class="button has_icon" @click="setPostType('text')">Mijn bericht typen</button>
+        <button class="button has_icon" @click="setPostType('voice')">Mijn bericht inspreken</button>
       </div>
 
       <div class="create-text-post" v-if="post_type === 'text'">
-        <button class="back" @click="setPostType('choose')" aria-label="Terug naar: Type bericht kiezen">&lang; Terug</button>
-
-        <br>
-
-        <label for="body">Ik wil iets zeggen...
-          <textarea id="body" name="body" v-model="body" placeholder="Typ hier je bericht..."></textarea>
-        </label>
-
-        <br>
-
-        <label for="categories">Categorie
+       <header>
+          <nav>
+              <button class="back" @click="setPostType('choose')" aria-label="Terug naar: Type bericht kiezen">&lang; Terug</button>
+              <img src="../../assets/images/icons/info-lift.svg" alt="Informatie over dit scherm" title="Informatie over dit scherm" class="info-icon">
+          </nav>
+          <img src="../../assets/images/icons/pencil-lift-white.svg" alt="Jou bericht typen" class="header-icon">
+          <h2>Jou bericht typen...</h2>
+       </header>
+      <div class="inner">
+        <label for="categories">
           <select name="categories" id="categories" v-model="category">
             <option v-for="category in categories" :value="category.id" :disabled="category.disabled">{{ category.name }}</option>
           </select>
         </label>
-
-        <label for="anonymity">Ik wil anoniem blijven
-          <input type="checkbox" name="anonymity" id="anonymity" v-model="anonymity" aria-label="Ik wil anoniem blijven">
+        
+        <label for="body">
+          <textarea id="body" name="body" v-model="body" placeholder="Typ hier jou bericht..."></textarea>
         </label>
-
-        <div class="anonymity" v-if="anonymity">
-          <p>Als je kiest om anoniem te blijven, zullen je naam en profielfoto niet bij het bericht komen te staan.</p>
+        
+        <div id="anonymity-container" class="anonymity">
+        <label id="anonymity-check" class="anonymity" for="anonymity">
+          <input type="checkbox" name="anonymity" v-model="anonymity" aria-label="Ik wil anoniem blijven">
+          Ik wil anoniem blijven.
+        </label>
+          <small>Als je kiest om anoniem te blijven, zullen je naam en profielfoto niet bij het bericht komen te staan.</small>
         </div>
-
-        <br><br>
-        <button class="button" @click="makePost">Post maken</button>
-
+        
+        <button class="button medium has_icon btn-orange btn-cancel">Annuleren</button>
+        <button class="button medium has_icon btn-green btn-create" @click="makePost">Plaatsen</button>
+        </div>
       </div>
 
       <div class="create-voice-post" v-if="post_type === 'voice'">

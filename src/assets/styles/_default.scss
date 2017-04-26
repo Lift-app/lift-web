@@ -40,6 +40,7 @@ h6,
 
   > .view {
     overflow-y: scroll;
+    position: relative;
     height: calc(100% - #{$nav-height});
   }
 
@@ -106,11 +107,76 @@ h6,
 }
 
 .button {
+  position: relative;
   font-family: $primary-font;
   background: #fff;
   color: $primary-color;
   border-radius: 4px;
-  padding: 17px 25px 15px;
+  padding: $large-btn-padding;
   border: 0;
+  font-size: 14px;
   font-weight: 500;
+}
+.button.medium {
+    padding: $medium-btn-padding;
+}
+.btn-orange {
+    background: $orange;
+    color: $white;
+}
+
+.btn-green {
+    background: $green;
+    color: $white;
+}
+
+
+// Button icons
+.btn-has-icon {
+    background-repeat: no-repeat;
+    background-position: 88% center;
+    background-size: 16px 16px;
+}
+
+.btn-create {
+    @extend .btn-has-icon;
+    background-image: url(https://placehold.it/16x16);
+}
+
+.btn-cancel {
+    @extend .btn-has-icon;
+    background-image: url(https://placehold.it/16x16);
+}
+
+.button.has_icon {
+  padding-right: 45px;
+    
+    &:after {
+        content: '';
+        position: absolute;
+        top: 10px;
+        right: 36px;
+        height: 50%;
+        width: 1px;
+        background: rgba(255,255,255,.5);
+    }
+}
+
+textarea,
+input,
+select,
+button {
+    outline: none;
+}
+
+textarea,
+input,
+select {
+    border-bottom: 3px solid transparant !important;
+}
+
+textarea:focus,
+input:focus,
+select:focus {
+    border-bottom: 3px solid $blue !important;
 }

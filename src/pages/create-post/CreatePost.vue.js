@@ -31,7 +31,7 @@ export default {
         .then(() => {
           this.categories = store.state.categories
           // add a choose a category option
-          this.categories.unshift({name: 'Kies een categorie...', id: 0, disabled: true})
+          this.categories.unshift({name: 'Plaatsen in...', id: 0, disabled: true})
         })
     },
 
