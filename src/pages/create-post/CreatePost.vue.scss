@@ -33,6 +33,9 @@
   // Create text post
   // -------------------------------------------------------------------------------------------------------------------
   .create-text-post {
+
+    $inner-overflow-amount: 30px;
+
     header {
       background: $orange;
       padding: $default-padding;
@@ -68,8 +71,20 @@
     .inner {
       background-color: transparent;
       padding: $default-padding;
-      margin: -30px 0 0;
+      margin-top: -$inner-overflow-amount;
       text-align: center;
+
+      #body {
+        transition: .2s $animation-snap;
+        will-change: margin;
+
+        &.focussed {
+          transition: .2s $animation-snap;
+          margin-top: $inner-overflow-amount;
+          background: $porcelain;
+          min-height: 280px;
+        }
+      }
 
       .anonymity-container {
         display: block;
@@ -78,13 +93,9 @@
         text-align: left;
         color: $dark;
 
-        input {
-          margin: 5px 5px 10px 0;
-        }
-
         small {
           display: block;
-          margin: 0 0 15px;
+          margin: 0 0 25px;
         }
       }
     }
