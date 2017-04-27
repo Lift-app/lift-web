@@ -9,7 +9,7 @@
           <h5 class="u-date">Eergisteren</h5>
         </div>
       </div>
-      <a href="#" class="button cat-button">{{ post_data.category.name }}</a>
+      <a href="#" class="btn cat-button">{{ post_data.category.name }}</a>
     </header>
 
     <section>

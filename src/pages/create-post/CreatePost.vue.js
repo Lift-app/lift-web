@@ -106,6 +106,7 @@ export default {
       this.recordingData = [];
       this.dataUrl = '';
     },
+
     togglePlay() {
       console.log('play')
       let audioElement = document.getElementById("audio");
@@ -120,6 +121,17 @@ export default {
     setPostType(type) {
       if(type !== this.post_type) {this.post = {}}
       this.post_type = type
+    },
+
+    // Focus and blur functions to hide the navbar
+    focusInput(e) {
+       e.srcElement.classList.add('focussed')
+      document.querySelector('#app').classList.add('input-focussed')
+    },
+
+    blurInput(e) {
+       e.srcElement.classList.remove('focussed')
+      document.querySelector('#app').classList.remove('input-focussed')
     }
   },
   created() {

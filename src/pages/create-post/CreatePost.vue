@@ -5,52 +5,57 @@
       <div v-if="post_type === 'choose'" class="create-type-picker">
         <h1>Ik wil iets zeggen...</h1>
         <h3>Maak hieronder een keuze hoe je iets wilt zeggen</h3>
-        <button class="button has_icon" @click="setPostType('text')">Mijn bericht typen</button>
-        <button class="button has_icon" @click="setPostType('voice')">Mijn bericht inspreken</button>
+        <button class="btn has_icon" @click="setPostType('text')">Mijn bericht typen</button>
+        <button class="btn has_icon" @click="setPostType('voice')">Mijn bericht inspreken</button>
       </div>
+
+
 
       <div class="create-text-post" v-if="post_type === 'text'">
        <header>
           <nav>
-              <button class="back" @click="setPostType('choose')" aria-label="Terug naar: Type bericht kiezen">&lang; Terug</button>
+              <button class="btn btn-back" @click="setPostType('choose')" aria-label="Terug naar: Type bericht kiezen">&lang; Terug</button>
               <img src="../../assets/images/icons/info-lift.svg" alt="Informatie over dit scherm" title="Informatie over dit scherm" class="info-icon">
           </nav>
-          <img src="../../assets/images/icons/pencil-lift-white.svg" alt="Jou bericht typen" class="header-icon">
-          <h2>Jou bericht typen...</h2>
+          <img src="../../assets/images/icons/pencil-lift-white.svg" alt="Jouw bericht typen" class="header-icon">
+          <h2 class="title">Ik wil wat zeggen over...</h2>
        </header>
+
       <div class="inner">
+
+        <textarea id="body" name="body" v-model="body" @focus="focusInput" @blur="blurInput" placeholder="Typ hier jouw bericht..."></textarea>
+
         <label for="categories">
           <select name="categories" id="categories" v-model="category">
             <option v-for="category in categories" :value="category.id" :disabled="category.disabled">{{ category.name }}</option>
           </select>
         </label>
         
-        <label for="body">
-          <textarea id="body" name="body" v-model="body" placeholder="Typ hier jou bericht..."></textarea>
-        </label>
-        
-        <div id="anonymity-container" class="anonymity">
-        <label id="anonymity-check" class="anonymity" for="anonymity">
+        <div class="anonymity-container">
+        <label class="anonymity" for="anonymity">
           <input type="checkbox" name="anonymity" v-model="anonymity" aria-label="Ik wil anoniem blijven">
           Ik wil anoniem blijven.
         </label>
           <small>Als je kiest om anoniem te blijven, zullen je naam en profielfoto niet bij het bericht komen te staan.</small>
         </div>
         
-        <button class="button medium has_icon btn-orange btn-cancel">Annuleren</button>
-        <button class="button medium has_icon btn-green btn-create" @click="makePost">Plaatsen</button>
+        <button class="btn medium has_icon btn-orange btn-cancel" @click="post_type = 'choose'">Annuleren</button>
+        <button class="btn medium has_icon btn-green btn-create" @click="makePost">Plaatsen</button>
         </div>
+
       </div>
 
+
+
       <div class="create-voice-post" v-if="post_type === 'voice'">
-        <button class="back" @click="setPostType('choose')" aria-label="Terug naar: Type bericht kiezen">&lang; Terug</button>
+        <button class="btn btn-back" @click="setPostType('choose')" aria-label="Terug naar: Type bericht kiezen">&lang; Terug</button>
         <br><br>
 
-        <button class="button red-button" @click="toggleRecording">
+        <button class="btn red-button" @click="toggleRecording">
           <span v-show="!isRecording">Start recording</span>
           <span v-show="isRecording">Stop recording</span>
         </button>
-        <button class="button green-button" @click="togglePlay" v-if="dataUrl.length > 0">
+        <button class="btn green-button" @click="togglePlay" v-if="dataUrl.length > 0">
           <i class="play icon"></i> Play recording
         </button>
         <button class="remove-recording" @click="removeRecording">
