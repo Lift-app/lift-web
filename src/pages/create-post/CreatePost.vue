@@ -29,8 +29,8 @@
           <textarea id="body" name="body" v-model="body" placeholder="Typ hier jou bericht..."></textarea>
         </label>
         
-        <div id="anonymity-container" class="anonymity">
-        <label id="anonymity-check" class="anonymity" for="anonymity">
+        <div class="anonymity anonymity-container">
+        <label class="anonymity anonymity-check" for="anonymity">
           <input type="checkbox" name="anonymity" v-model="anonymity" aria-label="Ik wil anoniem blijven">
           Ik wil anoniem blijven.
         </label>
