@@ -10,7 +10,7 @@
     text-align: center;
     padding-top: 30% !important;
 
-    .button {
+    .btn {
       position: relative;
       color: #4990E2;
       font-weight: normal;
@@ -29,7 +29,13 @@
     }
   }
 
+  // -------------------------------------------------------------------------------------------------------------------
+  // Create text post
+  // -------------------------------------------------------------------------------------------------------------------
   .create-text-post {
+
+    $inner-overflow-amount: 30px;
+
     header {
       background: $orange;
       padding: $default-padding;
@@ -53,6 +59,10 @@
         top: 10px;
       }
 
+      .title {
+        font-weight: bold;
+      }
+
       h2 {
         text-align: center;
       }
@@ -61,23 +71,19 @@
     .inner {
       background-color: transparent;
       padding: $default-padding;
-      margin: -30px 0 0;
+      margin-top: -$inner-overflow-amount;
       text-align: center;
 
-      select,
-      textarea {
-        margin: 0 0 15px;
-        width: 100%;
-        clear: both;
-        box-shadow: $box-shadow;
-        color: $dark;
-        border: none;
-      }
+      #body {
+        transition: .2s $animation-snap;
+        will-change: margin;
 
-      select {
-        background: $white;
-        padding: 8px 12px;
-        border: none;
+        &.focussed {
+          transition: .2s $animation-snap;
+          margin-top: $inner-overflow-amount;
+          background: $porcelain;
+          min-height: 280px;
+        }
       }
 
       .anonymity-container {
@@ -85,31 +91,12 @@
         width: 100%;
         clear: both;
         text-align: left;
-
-        input {
-          margin: 5px 5px 10px 0;
-        }
+        color: $dark;
 
         small {
           display: block;
-          margin: 0 0 15px;
+          margin: 0 0 25px;
         }
-      }
-
-      .anonymity {
-        color: $dark;
-      }
-
-      .anonymity-check {
-        display: inline-block;
-        text-align: right;
-      }
-
-      textarea {
-        height: 175px;
-        border-radius: $default-radius;
-        padding: 8px 12px;
-        resize: none;
       }
     }
   }

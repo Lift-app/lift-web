@@ -3,7 +3,7 @@
 
     <div class="login-container">
       <img class="logo" src="./../../assets/images/logo/white.svg">
-      <button class="button" v-on:click="login()">Inloggen</button>
+      <button class="btn" v-on:click="login()">Inloggen</button>
     </div>
 
   </div>

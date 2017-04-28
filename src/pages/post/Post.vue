@@ -11,7 +11,7 @@
             <span class="created-on">2 dagen geleden</span>
             <!-- <span class="created-on">{{ post.created_at }} </span>-->
           </div>
-          <button class="button category-button">{{ post.category.name }}</button>
+          <button class="btn category-button">{{ post.category.name }}</button>
         </header>
 
         <h1 class="title">{{ post.body }}</h1>

@@ -1,10 +1,14 @@
 * {
+<<<<<<< HEAD
     box-sizing: border-box;
+=======
+  box-sizing: border-box;
+>>>>>>> fecbff74bf750136acefc1f2b050e3feb86dbcbf
 }
 
 html, body {
   font-size: 100%;
-    background-color: $porcelain;
+  background-color: $porcelain;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: block;
@@ -14,7 +18,7 @@ html, body {
 }
 
 body {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 h1,
@@ -28,6 +32,10 @@ h6,
   font-weight: 500;
 }
 
+p, a {
+  font-size: $text-font-size;
+}
+
 #app {
 
   $nav-height: 50px;
@@ -37,146 +45,192 @@ h6,
   height: 100%;
   box-sizing: border-box;
   position: relative;
+  font-size: $text-font-size;
 
   > .view {
     overflow-y: scroll;
     position: relative;
     height: calc(100% - #{$nav-height});
+    transition: .2s $animation-snap;
   }
 
   > .navigation {
-    @extend %absolute-view;
-    top: auto;
-    bottom: 0;
     display: flex;
+    flex-direction: row;
+    align-items: stretch;
     height: $nav-height;
     background: $white;
+    transform: translateY(0);
+    transition: .2s $animation-snap;
 
-      a {
-          width: 20%;
-          flex-direction: row;
-          color: $pantzer;
-          text-decoration: none;
-          font-size: 11px;
-          text-align: center;
-          padding: 30px 0 0 0;
-      }
+    a {
+      width: 20%;
+      color: $pantzer;
+      text-decoration: none;
+      font-size: 11px;
+      text-align: center;
+      padding: 30px 0 0 0;
+    }
 
-      // Navigation icons
-      #feed-nav {
-        background-image: url(https://placehold.it/16x16);
-        background-size: 16px 16px;
-        background-repeat: no-repeat;
-        background-position: 50% 11px;
-      }
+    // Navigation icons
+    #feed-nav {
+      background-image: url(https://placehold.it/16x16);
+      background-size: 16px 16px;
+      background-repeat: no-repeat;
+      background-position: 50% 11px;
+    }
 
-      #interests-nav {
-        background-image: url(https://placehold.it/16x16);
-        background-size: 16px 16px;
-        background-repeat: no-repeat;
-        background-position: 50% 11px;
-      }
+    #interests-nav {
+      background-image: url(https://placehold.it/16x16);
+      background-size: 16px 16px;
+      background-repeat: no-repeat;
+      background-position: 50% 11px;
+    }
 
-      #search-nav {
-        background-image: url(https://placehold.it/16x16);
-        background-size: 16px 16px;
-        background-repeat: no-repeat;
-        background-position: 50% 11px;
-      }
+    #search-nav {
+      background-image: url(https://placehold.it/16x16);
+      background-size: 16px 16px;
+      background-repeat: no-repeat;
+      background-position: 50% 11px;
+    }
 
-      #add_post-nav {
-        background-image: url(https://placehold.it/16x16);
-        background-size: 16px 16px;
-        background-repeat: no-repeat;
-        background-position: 50% 11px;
-      }
+    #add_post-nav {
+      background-image: url(https://placehold.it/16x16);
+      background-size: 16px 16px;
+      background-repeat: no-repeat;
+      background-position: 50% 11px;
+    }
 
-      #profile-nav {
-        background-image: url(https://placehold.it/16x16);
-        background-size: 16px 16px;
-        background-repeat: no-repeat;
-        background-position: 50% 11px;
-      }
+    #profile-nav {
+      background-image: url(https://placehold.it/16x16);
+      background-size: 16px 16px;
+      background-repeat: no-repeat;
+      background-position: 50% 11px;
+    }
 
     .router-link-active {
       background: $orange;
       color: $white;
     }
   }
+
+  &.input-focussed {
+
+    > .view {
+      height: 100%;
+    }
+
+    > .navigation {
+      transform: translateY($nav-height);
+      transition: .2s $animation-snap;
+    }
+  }
 }
 
-.button {
+.btn {
   position: relative;
   font-family: $primary-font;
   background: $white;
   color: $primary-color;
   padding: $large-btn-padding;
   border-radius: $default-radius;
-  padding: 17px 25px 15px;
+  font-size: $text-font-size;
   border: 0;
-  font-size: 14px;
   font-weight: 500;
 }
-.button.medium {
-    padding: $medium-btn-padding;
+
+.btn.medium {
+  padding: $medium-btn-padding;
 }
+
 .btn-orange {
-    background: $orange;
-    color: $white;
+  background: $orange;
+  color: $white;
 }
 
 .btn-green {
-    background: $green;
-    color: $white;
+  background: $green;
+  color: $white;
 }
 
+.btn-back {
+  background: transparent;
+  color: $white;
+}
 
 // Button icons
 .btn-has-icon {
-    background-repeat: no-repeat;
-    background-position: 88% center;
-    background-size: 16px 16px;
+  background-repeat: no-repeat;
+  background-position: 88% center;
+  background-size: 16px 16px;
 }
 
 .btn-create {
-    @extend .btn-has-icon;
-    background-image: url(https://placehold.it/16x16);
+  @extend .btn-has-icon;
+  background-image: url(https://placehold.it/16x16);
 }
 
 .btn-cancel {
-    @extend .btn-has-icon;
-    background-image: url(https://placehold.it/16x16);
+  @extend .btn-has-icon;
+  background-image: url(https://placehold.it/16x16);
 }
 
-.button.has_icon {
+.btn.has_icon {
   padding-right: 45px;
 
-    &:after {
-        content: '';
-        position: absolute;
-        top: 10px;
-        right: 36px;
-        height: 50%;
-        width: 1px;
-        background: rgba(255,255,255,.5);
-    }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 36px;
+    height: 50%;
+    width: 1px;
+    background: rgba(255, 255, 255, .5);
+  }
+}
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Forms and inputs
+// ---------------------------------------------------------------------------------------------------------------------
+
+$form-margin-bottom: 15px;
+
+$form-bg: $white;
+$form-color: $dark;
+$form-border-color: transparent;
+$form-border-color-active: $blue;
+$form-border-size: 3px;
+$form-radius: $default-radius;
+$form-padding: $default-padding;
+$form-max-width: 465px;
+$form-font-size: $text-font-size;
+
+input {
+  font-size: $form-font-size;
 }
 
 textarea,
-input,
-select,
-button {
-    outline: none;
-}
-
-textarea,
-input,
+input[type=text],
 select {
-    border-bottom: 3px solid transparant !important;
+  background: $form-bg;
+  color: $form-color;
+  border-radius: $form-radius;
+  border: 0;
+  border-bottom: $form-border-size solid $form-border-color;
+  padding: $form-padding;
+  width: 100%;
+  max-width: $form-max-width;
+  margin-bottom: $form-margin-bottom;
+  resize: none;
+
+  &:focus {
+    outline: 0;
+    border-bottom: $form-border-size solid $form-border-color-active;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
 }
 
-textarea:focus,
-input:focus,
-select:focus {
-    border-bottom: 3px solid $blue !important;
+textarea {
+  min-height: $form-max-width / 3;
 }
