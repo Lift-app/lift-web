@@ -31,17 +31,12 @@
           </select>
         </label>
         
-<<<<<<< HEAD
         <label for="body">
           <textarea id="body" name="body" v-model="body" placeholder="Typ hier jou bericht..."></textarea>
         </label>
         
         <div class="anonymity anonymity-container">
         <label class="anonymity anonymity-check" for="anonymity">
-=======
-        <div class="anonymity-container">
-        <label class="anonymity" for="anonymity">
->>>>>>> fecbff74bf750136acefc1f2b050e3feb86dbcbf
           <input type="checkbox" name="anonymity" v-model="anonymity" aria-label="Ik wil anoniem blijven">
           Ik wil anoniem blijven.
         </label>
