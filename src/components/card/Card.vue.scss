@@ -56,7 +56,7 @@
       }
     }
 
-    .cat-button {
+    .cat-btn {
       text-decoration: none;
       padding: 7px 10px 5px;
       font-size: 11px;
@@ -87,6 +87,10 @@
         color: $text-dark;
       } @else {
         color: $white;
+      }
+
+      .cat-btn {
+        color: $bgcolor;
       }
     }
   }

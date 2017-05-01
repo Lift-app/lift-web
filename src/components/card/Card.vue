@@ -1,15 +1,17 @@
 <template>
   <div class="card" :class="normalizedCategory" @click="openPost">
 
+
     <header>
       <div class="user">
-        <img class="avatar" src="https://placehold.it/60x60" :alt="post_data.user.username">
+        <img class="avatar" src="https://placehold.it/60x60">
         <div class="user-details">
-          <h4 class="u-name">{{ post_data.user.username }}</h4>
+          <h4 class="u-name" v-if="post_data.user">{{ post_data.user.username }}</h4>
+          <h4 class="u-name" v-else>Anoniem</h4>
           <h5 class="u-date">Eergisteren</h5>
         </div>
       </div>
-      <a href="#" class="btn cat-button">{{ post_data.category.name }}</a>
+      <a href="#" class="btn cat-btn">{{ post_data.category.name }}</a>
     </header>
 
     <section>
@@ -19,7 +21,7 @@
     <footer>
       <div class="footer-action like">
         <a href="#" title="Bericht leuk vinden"><img src="https://placehold.it/20x20" alt="like"></a>
-        <span class="count like-count" aria-label="23 likes">23</span>
+        <span class="count like-count" v-bind:aria-label="post_data.likes">{{ post_data.likes }}</span>
       </div>
 
       <div class="footer-action comment">
