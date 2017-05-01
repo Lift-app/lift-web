@@ -2,7 +2,7 @@
   <div class="page--home">
     <router-view></router-view>
 
-    <h2 v-if="loading" style="background: red">Laden...</h2>
+    <h2 v-if="loading">Laden...</h2>
 
     <p v-show="!posts.length"><i>Geen berichten gevonden</i></p>
 

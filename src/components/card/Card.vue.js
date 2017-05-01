@@ -9,10 +9,6 @@ export default {
   },
   computed: {
 
-    posts() {
-      return store.getters.getPostWithId
-    },
-
     normalizedCategory() {
       return this.post_data.category.name.toLowerCase().replace(/\s/g, '-');
     }
