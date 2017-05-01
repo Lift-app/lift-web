@@ -33,17 +33,22 @@
   // -------------------------------------------------------------------------------------------------------------------
   .create-text-post,
   .create-voice-post {
+    color: $dark;
     $inner-overflow-amount: 30px;
 
     header {
       background: $orange;
-      padding: $default-padding;
+      padding: 50px 20px 10px 20px;
       color: $white;
       text-align: center;
       nav {
         display: flex;
         flex-direction: row;
-
+        position: absolute;
+        width: 100%;
+        left: 0;
+        padding: 15px 20px;
+        top: 0;
         .info-icon {
           order: 2;
           margin-left: auto;
@@ -102,6 +107,13 @@
 
 // Create voice post  //
 .create-voice-post {
+  .block {
+    margin: 0 0 20px 0;
+    h3 {
+      color: $dark;
+      &.recording {
+        color: $orange;
+      }
   .record-button {
     position: relative;
     display: block;
@@ -117,13 +129,71 @@
       width: 29px;
       height: 44px;
     }
-  }
-  .isRecording {
-    &:after {
-      content: '';
-      position: absolute;
-      width: 120px;
-      height: 120px;
+    h4 {
+      color: $dark;
+    }
+    .record-button {
+      background: transparent;
+      padding: 0;
+      clear: both;
+      margin: 0 auto;
+      width: 100%;
+      outline: none;
+      .isRecording,
+      .notRecording {
+        position: relative;
+        background: $white;
+        text-align: center;
+        z-index: 2;
+        display: block;
+        clear: both;
+        margin: 0 auto;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 3px solid $gray;
+      }
+      .record-animation {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        width: 120px;
+        height: 120px;
+        left: 50%;
+        margin-left: -60px;
+        top: 0;
+        background: transparentize($blue, .3);
+        border-radius: 50%;
+        transform: scale(1);
+        animation: record 1600ms linear infinite;
+        @keyframes record {
+          from {
+            transform: scale(1);
+            opacity: 1;
+          }
+          to {
+            transform: scale(1.5);
+            opacity: 0;
+          }
+        }
+      }
+      img {
+        width: 29px;
+        height: 44px;
+        position: relative;
+        top: 30px;
+      }
+      small {
+        position: absolute;
+        bottom: 20px;
+        color: $gray;
+        font-size: 12px;
+        text-transform: lowercase;
+        text-align: center;
+        line-height: normal;
+        transform: translateX(-50%);
+        left: 50%;
+      }
     }
   }
 }

@@ -12,7 +12,7 @@
       <div class="create-text-post" v-if="post_type === 'text'">
        <header>
           <nav>
-              <button class="btn btn-back" @click="setPostType('choose')" aria-label="Terug naar: Type bericht kiezen">&lang; Terug</button>
+              <a class="btn-back" @click="setPostType('choose')" aria-label="Terug naar: Type bericht kiezen">&lang; Terug</a>
               <img src="../../assets/images/icons/info-lift.svg" alt="Informatie over dit scherm" title="Informatie over dit scherm" class="info-icon">
           </nav>
           <img src="../../assets/images/icons/pencil-lift-white.svg" alt="Jouw bericht typen" class="header-icon">
@@ -49,36 +49,39 @@
        
        <header>
           <nav>
-              <button class="btn btn-back" @click="setPostType('choose')" aria-label="Terug naar: Type bericht kiezen">&lang; Terug</button>
+              <a class="btn-back" @click="setPostType('choose')" aria-label="Terug naar: Type bericht kiezen">&lang; Terug</a>
               <img src="../../assets/images/icons/info-lift.svg" alt="Informatie over dit scherm" title="Informatie over dit scherm" class="info-icon">
           </nav>
-          <img src="../../assets/images/icons/pencil-lift-white.svg" alt="Jouw bericht typen" class="header-icon">
+          <img src="../../assets/images/icons/microphone-lift-white.svg" alt="Jouw bericht typen" class="header-icon">
           <h2 class="title">Ik wil iets inspreken...</h2>
        </header>
 
       <div class="inner">
+        <div class="block record-block">
+          <h5>Neem een stembericht op door hieronder op de microfoon te klikken.</h5>
+
+          <button class="btn record-button" @click="toggleRecording">
+            <span v-show="!isRecording && firstRecord" class="notRecording"><img src="./../../assets/images/icons/microphone-lift-blue.svg" alt="Start opname"></span>
+            <span v-show="!isRecording && !firstRecord" class="reRecording"><img src="./../../assets/images/icons/reload-lift-blue.svg" alt="Herstart opname"></span>
+            <span v-show="isRecording" class="isRecording"><img src="./../../assets/images/icons/stop-lift-blue.svg" alt="Stop opname"></span>
+            <i v-show="isRecording" class="record-animation"></i>
+          </button>
+
+          <h5 v-if="!isRecording">Je kunt maximaal 2 minuten inspreken.</h5>
+          <h6 class="recording" v-if="isRecording">Aan het opnemen!</h6>
+
+          <button class="btn green-button" @click="togglePlay" v-if="dataUrl.length > 0">
+            <i class="play icon"></i> Play recording
+          </button>
+
+
+          <audio id="audio" preload="auto" :src="dataUrl"></audio>
 
        <label for="categories">
           <select name="categories" id="categories" v-model="category">
             <option v-for="category in categories" :value="category.id" :disabled="category.disabled">{{ category.name }}</option>
           </select>
         </label>
-
-        <div v-if="!isRecording && recordingData">rerecord</div>
-
-        <button class="btn red-button record-button" @click="toggleRecording">
-          <span v-show="!isRecording && firstRecord" class="notRecording"><img src="./../../assets/images/icons/microphone-lift-blue.svg" alt="Start opname"></span>
-          <span v-show="!isRecording && !firstRecord" class="reRecording"><img src="./../../assets/images/icons/reload-lift-blue.svg" alt="Herstart opname"></span>
-          <span v-show="isRecording" class="isRecording"><img src="./../../assets/images/icons/stop-lift-blue.svg" alt="Stop opname"></span>
-        </button>
-        <button class="btn green-button" @click="togglePlay" v-if="dataUrl.length > 0">
-          <i class="play icon"></i> Play recording
-        </button>
-
-
-        <audio id="audio" preload="auto" :src="dataUrl" controls></audio>
-
-        Voice post
         
         <div class="anonymity anonymity-container">
         <label class="anonymity anonymity-check" for="anonymity">
