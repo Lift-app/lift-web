@@ -90,7 +90,7 @@ export default {
             this.recordingData.push(event.data)
           }
           this.audioRecorder.onstop = (event) => {
-            let blob = new Blob(this.recordingData, { type: 'audio/webm'});
+            let blob = new Blob(this.recordingData, { type: 'audio/ogg'});
             this.dataUrl = window.URL.createObjectURL(blob);
             this.firstRecord = false;
           }
