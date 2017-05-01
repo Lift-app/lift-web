@@ -9,8 +9,6 @@
         <button class="btn has_icon" @click="setPostType('voice')">Mijn bericht inspreken</button>
       </div>
 
-
-
       <div class="create-text-post" v-if="post_type === 'text'">
        <header>
           <nav>
@@ -22,14 +20,14 @@
        </header>
 
       <div class="inner">
+       
+        <textarea id="body" name="body" v-model="body" @focus="focusInput" @blur="blurInput" placeholder="Typ hier jouw bericht..."></textarea>
 
-       <label for="categories">
+        <label for="categories">
           <select name="categories" id="categories" v-model="category">
             <option v-for="category in categories" :value="category.id" :disabled="category.disabled">{{ category.name }}</option>
           </select>
         </label>
-       
-        <textarea id="body" name="body" v-model="body" @focus="focusInput" @blur="blurInput" placeholder="Typ hier jouw bericht..."></textarea>
         
         <div class="anonymity anonymity-container">
         <label class="anonymity anonymity-check" for="anonymity">
@@ -65,17 +63,18 @@
             <option v-for="category in categories" :value="category.id" :disabled="category.disabled">{{ category.name }}</option>
           </select>
         </label>
-        
+
+        <div v-if="!isRecording && recordingData">rerecord</div>
+
         <button class="btn red-button record-button" @click="toggleRecording">
-          <span v-show="!isRecording" class="notRecording"><img src="./../../assets/images/icons/microphone-lift-blue.svg" alt="Start opname"></span>
+          <span v-show="!isRecording && firstRecord" class="notRecording"><img src="./../../assets/images/icons/microphone-lift-blue.svg" alt="Start opname"></span>
+          <span v-show="!isRecording && !firstRecord" class="reRecording"><img src="./../../assets/images/icons/reload-lift-blue.svg" alt="Herstart opname"></span>
           <span v-show="isRecording" class="isRecording"><img src="./../../assets/images/icons/stop-lift-blue.svg" alt="Stop opname"></span>
         </button>
         <button class="btn green-button" @click="togglePlay" v-if="dataUrl.length > 0">
           <i class="play icon"></i> Play recording
         </button>
-        <button class="remove-recording" @click="removeRecording">
-          <i class="remove icon"></i> Delete recording
-        </button>
+
 
         <audio id="audio" preload="auto" :src="dataUrl" controls></audio>
 
