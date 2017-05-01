@@ -10,7 +10,7 @@ export default {
       anonymity: false,
       categories: [],
       post_type: 'choose',
-
+      firstRecord: true,
       isRecording: false,
       audioRecorder: null,
       recordingData: [],
@@ -53,6 +53,8 @@ export default {
       this.isRecording = !this.isRecording;
 
       if (this.isRecording) {
+        this.recordingData = [];
+        this.dataUrl = '';
 
         // check for browsersupport for mimeType
         let mimeType;
@@ -90,6 +92,7 @@ export default {
           this.audioRecorder.onstop = (event) => {
             let blob = new Blob(this.recordingData, { type: 'audio/webm'});
             this.dataUrl = window.URL.createObjectURL(blob);
+            this.firstRecord = false;
           }
 
         }, (error) => { // error
@@ -99,12 +102,6 @@ export default {
       else {
         this.audioRecorder.stop();
       }
-    },
-
-    removeRecording() {
-      this.isRecording = false;
-      this.recordingData = [];
-      this.dataUrl = '';
     },
 
     togglePlay() {
