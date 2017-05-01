@@ -52,5 +52,22 @@
 
   .title {
     font-size: 1.4em;
+  
+  footer {
+    display: flex;
+    justify-content: space-around;
+    
+    .like {
+      border: 0px;
+      background: rgba(255, 255, 255, 0);
+      width: 50px;
+      
+    }
+    
+    .comment {
+      border: 0px;
+      background: rgba(255, 255, 255, 0);
+      width: 50px;
+    }
   }
 }
