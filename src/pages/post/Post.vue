@@ -1,10 +1,15 @@
 <template>
   <div class="page--post">
     <div class="post-container">
-      <button @click="close" class="close" aria-label="Ga terug">sluiten x</button>
+     <nav>
+      <button class="btn btn-back" @click="setPostType('choose')" aria-label="Terug naar: Type bericht kiezen">&lang; Terug</button>
+      <button class="report" aria-label="Vraag leuk vinden"><img src="../../assets/images/icons/report-white.svg" alt="rapporteer"></button>      
+     </nav>
+      <!--<button @click="close" class="close" aria-label="Ga terug">sluiten x</button>-->
 
       <article class="post">
         <header v-if="!loading">
+          
 
           <div class="user" v-if="post.user">
             <img class="avatar" src="https://placehold.it/60x60" :alt="post.user.username + '\'s profielfoto'">
