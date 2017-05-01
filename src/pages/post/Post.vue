@@ -5,11 +5,17 @@
 
       <article class="post">
         <header v-if="!loading">
-          <div class="user">
-          <img class="avatar" src="https://placehold.it/60x60" :alt="post.user.username + '\'s profielfoto'">
+
+          <div class="user" v-if="post.user">
+            <img class="avatar" src="https://placehold.it/60x60" :alt="post.user.username + '\'s profielfoto'">
             <h3 class="username" v-model="post.user.username"></h3>
             <span class="created-on">2 dagen geleden</span>
-            <!-- <span class="created-on">{{ post.created_at }} </span>-->
+          </div>
+
+          <div class="user" v-else>
+            <img class="avatar" src="https://placehold.it/60x60" alt="Anoniem's profielfoto">
+            <h3 class="username anonymous">Anoniem</h3>
+            <span class="created-on">2 dagen geleden</span>
           </div>
           <button class="btn category-button">{{ post.category.name }}</button>
         </header>
