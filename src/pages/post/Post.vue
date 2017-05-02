@@ -2,7 +2,7 @@
   <div class="page--post">
     <div class="post-container">
      <nav>
-      <router-link to="home" class="btn btn-back" aria-label="Terug naar: Home">&lang; Terug</router-link>
+      <router-link to="/" class="btn btn-back" aria-label="Terug naar: Home">&lang; Terug</router-link>
       <button class="report" aria-label="Vraag leuk vinden"><img src="../../assets/images/icons/report-white.svg" alt="rapporteer"></button>      
      </nav>
       <!--<button @click="close" class="close" aria-label="Ga terug">sluiten x</button>-->
