@@ -80,6 +80,7 @@
         will-change: margin;
 
         &.focussed {
+          margin-top: $inner-overflow-amount;
           transition: .2s $animation-snap;
           background: $porcelain;
           min-height: 220px;
