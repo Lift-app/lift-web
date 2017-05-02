@@ -102,32 +102,10 @@
   }
 }
 
-// Create text post  //
-.create-text-post {
-}
-
 // Create voice post  //
 .create-voice-post {
   .block {
     margin: 0 0 20px 0;
-
-    h3 {
-      color: $dark;
-      &.recording {
-        color: $orange;
-      }
-    }
-    
-    .record-button {
-      position: relative;
-      display: block;
-      clear: both;
-      margin: 0 auto;
-      width: 120px;
-      height: 120px;
-      line-height: 120px;
-      text-align: center;
-      border-radius: 50%;
 
       img {
         width: 29px;
@@ -145,8 +123,7 @@
         width: 100%;
         outline: none;
 
-        .isRecording,
-        .notRecording {
+        .record-action {
           position: relative;
           background: $white;
           text-align: center;
@@ -185,6 +162,38 @@
             }
           }
         }
+        .svg-container {
+          width:120px;
+          height:120px;
+          overflow: hidden;
+          position: absolute;
+          top: 0;
+          left: 50%;
+          margin-left: -60px;
+          transform: rotate(-90deg);
+          z-index: 6;
+
+          &.animate {
+            .circle {
+              animation: dash 120s linear forwards;
+            }
+          }
+
+          .circle {
+            fill: none;
+            stroke: $blue;
+            stroke-width: 6;
+            stroke-dasharray: 750;
+            stroke-dashoffset: 750;
+          }
+
+          @keyframes dash {
+            to {
+              stroke-dashoffset: 0;
+            }
+          }
+
+        }
 
         img {
           width: 29px;
@@ -207,4 +216,3 @@
       }
     }
   }
-}

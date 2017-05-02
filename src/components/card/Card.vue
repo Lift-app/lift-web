@@ -19,13 +19,14 @@
     </section>
 
     <footer>
-      <div class="footer-action like">
-        <a href="#" title="Bericht leuk vinden"><img src="https://placehold.it/20x20" alt="like"></a>
+      <div class="footer-action">
+        <button class="like" aria-label="Vraag leuk vinden"><img src="../../assets/images/icons/heart-white.svg" alt="Vind ik leuk"></button>
         <span class="count like-count" v-bind:aria-label="post_data.likes">{{ post_data.likes }}</span>
       </div>
 
-      <div class="footer-action comment">
-        <a href="#" title="Reageren op bericht"><img src="https://placehold.it/20x20" alt="reactie"></a>
+      <div class="footer-action">
+        <button class="comment" aria-label="Vraag leuk vinden"><img src="../../assets/images/icons/speech-bubble-white.svg" alt="Reageren op deze vraag"></button>
+
         <span class="count comment-count" aria-label="15 reacties">15</span>
       </div>
     </footer>

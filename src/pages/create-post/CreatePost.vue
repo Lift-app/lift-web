@@ -61,10 +61,24 @@
             <h5>Neem een stembericht op door hieronder op de microfoon te klikken.</h5>
 
             <button class="btn record-button" @click="toggleRecording">
-              <span v-show="!isRecording && firstRecord" class="notRecording"><img src="./../../assets/images/icons/microphone-lift-blue.svg" alt="Start opname"></span>
-              <span v-show="!isRecording && !firstRecord" class="reRecording"><img src="./../../assets/images/icons/reload-lift-blue.svg" alt="Herstart opname"></span>
-              <span v-show="isRecording" class="isRecording"><img src="./../../assets/images/icons/stop-lift-blue.svg" alt="Stop opname"></span>
+              <span v-show="!isRecording && firstRecord" class="notRecording record-action"><img src="./../../assets/images/icons/microphone-lift-blue.svg" alt="Start opname">
+                <small>Start</small>
+              </span>
+              <span v-show="!isRecording && !firstRecord" class="reRecording record-action"><img src="./../../assets/images/icons/reload-lift-blue.svg" alt="Herstart opname">
+                <small>Opnieuw</small>
+              </span>
+              <span v-show="isRecording" class="isRecording record-action"><img src="./../../assets/images/icons/stop-lift-blue.svg" alt="Stop opname">
+                <small>Stop</small>
+              </span>
+
               <i v-show="isRecording" class="record-animation"></i>
+
+              <div class="svg-container" :class="isRecording ? 'animate' : ''">
+                <svg version="1.1" viewBox="0 0 240 240"
+                     preserveAspectRatio="xMinYMin meet" class="svg-content">
+                  <circle class="circle" cx="120" cy="120" r="117" />
+                </svg>
+              </div>
             </button>
 
             <h5 v-if="!isRecording">Je kunt maximaal 2 minuten inspreken.</h5>
