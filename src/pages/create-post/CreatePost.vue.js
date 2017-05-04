@@ -8,7 +8,7 @@ export default {
   name: 'createPost',
   data () {
     return {
-      body: undefined,
+      body: '',
       category: 0,
       anonymity: false,
       categories: [],
