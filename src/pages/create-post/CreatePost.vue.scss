@@ -43,6 +43,7 @@
       text-align: center;
       nav {
         display: flex;
+        z-index: 999;
         flex-direction: row;
         position: absolute;
         width: 100%;
@@ -84,6 +85,15 @@
           transition: .2s $animation-snap;
           background: $porcelain;
           min-height: 220px;
+        }
+      }
+
+      .recording-controls {
+        background: transparent;
+        padding: 0 15px;
+
+        img {
+          width: 20px;
         }
       }
 
@@ -213,6 +223,35 @@
           line-height: normal;
           transform: translateX(-50%);
           left: 50%;
+        }
+      }
+    }
+    .modal {
+      background: $white;
+      position: absolute;
+      position: fixed;
+      bottom: 50px;
+      transform: translateY(100%);
+      z-index: 3;
+      color: $dark;
+      transition: $default-transition;
+      box-shadow: $top-shadow;
+
+      &.show {
+        transform: translateY(0);
+        transition: $default-transition;
+
+      }
+      .modal-inner {
+        text-align: center;
+        padding:30px;
+
+        .modal-title {
+          color: $orange;
+          margin: 0 0 20px 0;
+        }
+        .modal-content {
+          margin: 0 0 20px 0;
         }
       }
     }

@@ -12,7 +12,9 @@ export default {
       post_type: 'choose',
       firstRecord: true,
       isRecording: false,
+      isPlaying: false,
       audioRecorder: null,
+      showModel: false,
       recordingData: [],
       dataUrl: ''
     }
@@ -92,7 +94,8 @@ export default {
           this.audioRecorder.onstop = (event) => {
             let blob = new Blob(this.recordingData, { type: 'audio/ogg'});
             this.dataUrl = window.URL.createObjectURL(blob);
-            this.firstRecord = false;
+            this.firstRecord = false
+            this.isPlaying = false
           }
 
         }, (error) => { // error
@@ -105,13 +108,16 @@ export default {
     },
 
     togglePlay() {
-      console.log('play')
+
       let audioElement = document.getElementById("audio");
-      if (audioElement.paused === false) {
-        audioElement.pause();
+      if (this.isPlaying) {
+        console.log('pause')
+        audioElement.pause()
       } else {
-        audioElement.play();
+        console.log('play')
+        audioElement.play()
       }
+        this.isPlaying = !this.isPlaying;
     },
 
     // set the post type to given name, and clean this.post if type is different then current type
@@ -131,6 +137,7 @@ export default {
       document.querySelector('#app').classList.remove('input-focussed')
     }
   },
+
   created() {
     this.getCategories()
   }
