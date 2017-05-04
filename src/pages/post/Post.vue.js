@@ -21,7 +21,8 @@ export default {
         },
         'body': ''
       },
-      loading: false
+      loading: false,
+      topOffset: 0
     }
   },
   methods: {

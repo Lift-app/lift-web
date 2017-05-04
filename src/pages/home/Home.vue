@@ -8,7 +8,9 @@
         </ul>
       </nav>
     </header>
-    <router-view></router-view>
+    <transition name="slide-right">
+      <router-view></router-view>
+    </transition>
 
     <h2 v-if="loading">Laden...</h2>
 

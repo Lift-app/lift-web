@@ -1,9 +1,12 @@
 .page--post {
-  @extend %absolute-view;
+  position: fixed;
   top: 0;
-  left: 0;
   height: 100%;
   width: 100%;
+  max-width: $max-app-width;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0 auto;
   padding: 0 1em;
   z-index: 2;
   background-color: $porcelain;
@@ -23,7 +26,7 @@
      
      .report{
        width: 45px;
-       border: 0px;
+       border: 0;
        background: rgba(255, 255, 255, 0);
      }
   }
@@ -71,15 +74,24 @@
     justify-content: space-around;
     
     .like {
-      border: 0px;
+      border: 0;
       background: rgba(255, 255, 255, 0);
       width: 50px;
     }
     
     .comment {
-      border: 0px;
+      border: 0;
       background: rgba(255, 255, 255, 0);
       width: 50px;
     }
   }
+}
+
+.slide-right-enter-active, .slide-right-leave-active {
+  transition: transform .4s, opacity .5s;
+}
+
+.slide-right-enter, .slide-right-leave-to {
+  opacity: 0;
+  transform: translateX(50%);
 }
