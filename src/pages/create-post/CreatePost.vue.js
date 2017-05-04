@@ -70,17 +70,17 @@ export default {
 
     sendPost() {
 
-      let call_data = {
-        type: 'text',
-        user_id: 1,
-        category_id: this.category,
-        body: this.body
-      }
+      let call_data = new FormData()
+
+      call_data.append('type', 'text')
+      call_data.append('user_id', 1)
+      call_data.append('category_id', this.category)
+      call_data.append('body', this.body)
 
       if (this.post_type === 'voice') {
-        call_data.type = 'audio'
-        delete call_data.body
-        call_data.audio = this.audioBlob
+        call_data.set('type', 'audio')
+        call_data.delete('body')
+        call_data.set('audio', this.audioBlob)
       }
 
       console.log(call_data)
@@ -137,7 +137,7 @@ export default {
             this.recordingData.push(event.data)
           }
           this.audioRecorder.onstop = (event) => {
-            this.audioBlob = new Blob(this.recordingData, { type: 'audio/ogg'})
+            this.audioBlob = new Blob(this.recordingData, {type: mimeType})
             this.dataUrl = window.URL.createObjectURL(this.audioBlob)
             this.firstRecord = false
             this.isPlaying = false
