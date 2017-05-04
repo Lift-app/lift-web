@@ -80,7 +80,7 @@ export default {
       if (this.post_type === 'voice') {
         call_data.set('type', 'audio')
         call_data.delete('body')
-        call_data.set('audio', this.audioBlob)
+        call_data.set('audio', this.audioBlob, "audio.ogg")
       }
 
       console.log(call_data)
@@ -104,17 +104,7 @@ export default {
         this.dataUrl = ''
 
         // check for browsersupport for mimeType
-        let mimeType
-        if (MediaRecorder.isTypeSupported('audio/ogg')) {
-          mimeType = 'audio/ogg'
-        } else if (MediaRecorder.isTypeSupported('audio/webm')) {
-          mimeType = 'audio/webm'
-        } else if (MediaRecorder.isTypeSupported('audio/wav')) {
-          mimeType = 'audio/wav'
-        } else {
-          console.log('not supported')
-        }
-        console.log(mimeType)
+        let mimeType = 'audio/ogg'
 
         // check for browser support for getUserMedia
         navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia
