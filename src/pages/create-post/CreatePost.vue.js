@@ -10,7 +10,7 @@ export default {
     return {
       body: '',
       category: 0,
-      anonymity: false,
+      anonymous: false,
       categories: [],
       post_type: 'choose',
       firstRecord: true,
@@ -79,6 +79,7 @@ export default {
       call_data.append('user_id', 1)
       call_data.append('category_id', this.category)
       call_data.append('body', this.body)
+      call_data.append('anonymous', this.anonymous)
 
       if (this.post_type === 'voice') {
         call_data.set('type', 'audio')

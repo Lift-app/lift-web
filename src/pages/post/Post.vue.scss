@@ -47,6 +47,13 @@
     clear: both;
     margin: -50px auto 0 auto;
 
+    &.anonymous {
+
+      .username {
+        color: $porcelain;
+      }
+    }
+
     h3,
     span {
       padding-top: 7px;

@@ -17,9 +17,9 @@
             <span class="created-on">2 dagen geleden</span>
           </div>
 
-          <div class="user" v-else>
+          <div class="user anonymous" v-else>
             <img class="avatar" src="https://placehold.it/60x60" alt="Anoniem's profielfoto">
-            <h3 class="username anonymous">Anoniem</h3>
+            <h3 class="username">Anoniem</h3>
             <span class="created-on">2 dagen geleden</span>
           </div>
           <button class="btn category-button">{{ post.category.name }}</button>

@@ -35,8 +35,8 @@
           </label>
 
           <div class="anonymity anonymity-container">
-            <label class="anonymity anonymity-check" for="anonymity">
-              <input type="checkbox" name="anonymity" v-model="anonymity" aria-label="Ik wil anoniem blijven">
+            <label class="anonymity anonymity-check" for="anonymous">
+              <input type="checkbox" name="anonymous" v-model="anonymous" aria-label="Ik wil anoniem blijven">
               Ik wil anoniem blijven.
             </label>
             <small>
@@ -126,8 +126,8 @@
           </label>
 
           <div class="anonymity anonymity-container">
-            <label class="anonymity anonymity-check" for="anonymity">
-              <input type="checkbox" name="anonymity" v-model="anonymity" aria-label="Ik wil anoniem blijven">
+            <label class="anonymity anonymity-check" for="anonymous">
+              <input type="checkbox" name="anonymous" v-model="anonymous" aria-label="Ik wil anoniem blijven">
               Ik wil anoniem blijven.
             </label>
             <small>
