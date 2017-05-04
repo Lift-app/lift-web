@@ -1,4 +1,15 @@
 .page--create-post {
+
+  .btn-create {
+    @extend .btn-has-icon;
+    background-image: url(./checkmark-lift.svg);
+  }
+
+  .btn-cancel {
+    @extend .btn-has-icon;
+    background-image: url(./cancel-lift.svg);
+  }
+
   @extend %absolute-view;
   color: $white;
 

@@ -1,0 +1,55 @@
+.navigation {
+
+  $ICONS: (
+    feed: 'home',
+    interests: 'star',
+    search: 'search',
+    add_post: 'add',
+    profile: 'profile'
+  );
+
+  display: flex;
+  position: relative;
+  z-index: 999;
+  flex-direction: row;
+  align-items: stretch;
+  height: $nav-height;
+  background: $white;
+  box-shadow: $top-shadow;
+  transform: translateY(0);
+  transition: .2s $animation-snap;
+
+  a {
+    width: 20%;
+    color: $pantzer;
+    text-decoration: none;
+    font-size: 11px;
+    text-align: center;
+    padding: 30px 0 0 0;
+  }
+
+  %nav-icons-positioning {
+    background-size: 16px 16px;
+    background-repeat: no-repeat;
+    background-position: 50% 11px;
+  }
+
+  // Create icons based on $ICONS map for the nav
+  @each $name, $icon in $ICONS {
+
+    ##{$name}-nav {
+      @extend %nav-icons-positioning;
+      background-image: url('./navigation/#{$icon}-lift.svg');
+
+      // if link is active change color of the icon.
+      &.router-link-active {
+        background-image: url('./navigation/active/#{$icon}-lift.svg');
+      }
+    }
+  }
+
+  .router-link-active {
+    background: $orange;
+    color: $white;
+  }
+}

@@ -64,9 +64,6 @@ p, a {
 }
 
 #app {
-
-  $nav-height: 50px;
-
   max-width: $max-app-width;
   margin: 0 auto;
   height: 100%;
@@ -79,69 +76,6 @@ p, a {
     position: relative;
     height: calc(100% - #{$nav-height});
     transition: .2s $animation-snap;
-  }
-
-  > .navigation {
-    display: flex;
-    position: relative;
-    z-index: 999;
-    flex-direction: row;
-    align-items: stretch;
-    height: $nav-height;
-    background: $white;
-    box-shadow: $top-shadow;
-    transform: translateY(0);
-    transition: .2s $animation-snap;
-
-    a {
-      width: 20%;
-      color: $pantzer;
-      text-decoration: none;
-      font-size: 11px;
-      text-align: center;
-      padding: 30px 0 0 0;
-    }
-
-    // Navigation icons
-    #feed-nav {
-      background-image: url(https://placehold.it/16x16);
-      background-size: 16px 16px;
-      background-repeat: no-repeat;
-      background-position: 50% 11px;
-    }
-
-    #interests-nav {
-      background-image: url(https://placehold.it/16x16);
-      background-size: 16px 16px;
-      background-repeat: no-repeat;
-      background-position: 50% 11px;
-    }
-
-    #search-nav {
-      background-image: url(https://placehold.it/16x16);
-      background-size: 16px 16px;
-      background-repeat: no-repeat;
-      background-position: 50% 11px;
-    }
-
-    #add_post-nav {
-      background-image: url(https://placehold.it/16x16);
-      background-size: 16px 16px;
-      background-repeat: no-repeat;
-      background-position: 50% 11px;
-    }
-
-    #profile-nav {
-      background-image: url(https://placehold.it/16x16);
-      background-size: 16px 16px;
-      background-repeat: no-repeat;
-      background-position: 50% 11px;
-    }
-
-    .router-link-active {
-      background: $orange;
-      color: $white;
-    }
   }
 
   &.input-focussed {
@@ -195,18 +129,8 @@ p, a {
 // Button icons
 .btn-has-icon {
   background-repeat: no-repeat;
-  background-position: 90% center;
+  background-position: 92% center;
   background-size: 16px 16px;
-}
-
-.btn-create {
-  @extend .btn-has-icon;
-  background-image: url(https://placehold.it/16x16);
-}
-
-.btn-cancel {
-  @extend .btn-has-icon;
-  background-image: url(https://placehold.it/16x16);
 }
 
 .btn.has_icon {
