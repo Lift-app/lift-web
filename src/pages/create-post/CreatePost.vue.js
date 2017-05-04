@@ -1,4 +1,5 @@
 import store from '@/store'
+import router from '@/router'
 import Modal from '@/components/modal/Modal'
 import { mapActions } from 'vuex'
 import config from '@/config/config'
@@ -89,11 +90,11 @@ export default {
       this.placePost(call_data)
         .then(() => {
           this.$toasted.success('Wohoo! Het bericht is geplaatst!')
-          $router.push({name: 'home'});
+          router.push({name: 'Home'});
         })
         .catch((error) => {
           this.$toasted.error('Er ging wat mis. Probeer opnieuw!')
-          console.log(error.response.data.errors)
+          console.log(error)
         })
     },
 
