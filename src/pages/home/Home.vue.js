@@ -36,3 +36,12 @@ export default {
     this.getPosts()
   }
 }
+// let view = document.querySelector('.view');
+// view.onscroll = function() { slideDown() }
+//
+// function slideDown() {
+//   if (view.scrollY > 100) {
+//     console.log('test')
+//     document.getElementsByClassName('header')[0].classList.add('slideDown')
+//   }
+// }
