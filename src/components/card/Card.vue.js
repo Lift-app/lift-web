@@ -1,5 +1,4 @@
 import router from '@/router'
-import store from '@/store'
 import Post from '@/pages/post/Post'
 
 export default {

@@ -261,3 +261,19 @@ select {
 textarea {
   min-height: $form-max-width / 3;
 }
+
+select {
+  position: relative;
+
+  &::after {
+    display: block;
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 10px;
+    height: 20px;
+    background-color: red;
+    @include background-triangle($color: $black);
+  }
+}
