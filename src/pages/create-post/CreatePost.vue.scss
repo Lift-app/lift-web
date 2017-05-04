@@ -237,33 +237,4 @@
         }
       }
     }
-    .modal {
-      background: $white;
-      position: absolute;
-      position: fixed;
-      bottom: 50px;
-      transform: translateY(100%);
-      z-index: 3;
-      color: $dark;
-      transition: $default-transition;
-      box-shadow: $top-shadow;
-
-      &.show {
-        transform: translateY(0);
-        transition: $default-transition;
-
-      }
-      .modal-inner {
-        text-align: center;
-        padding:30px;
-
-        .modal-title {
-          color: $orange;
-          margin: 0 0 20px 0;
-        }
-        .modal-content {
-          margin: 0 0 20px 0;
-        }
-      }
-    }
   }

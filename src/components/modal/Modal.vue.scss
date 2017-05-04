@@ -23,16 +23,6 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
     transition: all .3s ease;
   }
-
-  &:before {
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 0.50);
-    z-index: 998;
-  }
 }
 
 

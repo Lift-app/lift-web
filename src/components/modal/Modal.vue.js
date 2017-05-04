@@ -6,14 +6,7 @@ export default {
   ],
   data() {
     return {
-      modalData: {
-        type: 'default',
-        title: '',
-        submit: true,
-        submitText: '',
-        cancel: false,
-        cancelText: ''
-      }
+
     }
   },
   methods: {

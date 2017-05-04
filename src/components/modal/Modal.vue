@@ -4,14 +4,16 @@
     <div class="modal-mask" @click="hideModal">
       <div class="modal-container" transition="modal">
         <header>
-          <h2 class="title">{{modalData.title}}</h2>
+          <h2 class="modal-title">{{modalData.title}}</h2>
         </header>
 
-        <slot></slot>
+        <section class="modal-content">
+          <slot></slot>
+        </section>
 
         <footer>
-          <button @click="hideModal" v-if="modalData.cancel" class="btn btn-cancel">{{modalData.cancelText}}</button>
-          <button @click="submitModal" v-if="modalData.submit" class="btn btn-submit">{{modalData.submitText}}</button>
+          <button @click="hideModal" v-if="modalData.cancel" class="btn modal-button btn-cancel">{{modalData.cancelText}}</button>
+          <button @click="submitModal" v-if="modalData.submit" class="btn modal-button btn-submit">{{modalData.submitText}}</button>
         </footer>
       </div>
     </div>

@@ -9,16 +9,7 @@ export default {
   data() {
     return {
       postText: '',
-      loading: false,
-      showModal: false,
-      modalData: {
-        type: 'default',
-        title: 'Modaltitel',
-        submit: true,
-        submitText: 'Post plaatsen',
-        cancel: true,
-        cancelText: 'Annuleren'
-      }
+      loading: false
     }
   },
   computed: {
@@ -39,14 +30,9 @@ export default {
     }
   },
   components: {
-    Card,
-    Modal
+    Card
   },
   created() {
     this.getPosts()
-
-    this.$on('hideModal', (value) => {
-      this.showModal = false
-    });
   }
 }

@@ -1,4 +1,5 @@
 import store from '@/store'
+import Modal from '@/components/modal/Modal'
 import { mapActions } from 'vuex'
 
 export default {
@@ -14,9 +15,29 @@ export default {
       isRecording: false,
       isPlaying: false,
       audioRecorder: null,
-      showModel: false,
       recordingData: [],
-      dataUrl: ''
+      dataUrl: '',
+
+      showTextModal: false,
+      showVoiceModal: false,
+      modalTextData: {
+        id: 1,
+        type: 'default ask-modal',
+        title: 'Vraag stellen?',
+        submit: true,
+        submitText: 'Bericht plaatsen',
+        cancel: true,
+        cancelText: 'Annuleren'
+      },
+      modalVoiceData: {
+        id: 2,
+        type: 'default ask-modal',
+        title: 'Stembericht plaatsen?',
+        submit: true,
+        submitText: 'Bericht plaatsen',
+        cancel: true,
+        cancelText: 'Annuleren'
+      }
     }
   },
   computed: {
@@ -37,14 +58,38 @@ export default {
         })
     },
 
-    makePost() {
-      this.placePost({
-        user_id: 1,
-        category_id: this.post.category,
-        body: this.post.body
-      })
-        .then(() => {
+    createPost() {
 
+      if (this.post_type === 'text') {
+        this.showTextModal = true
+      } else if (this.post_type === 'voice') {
+        this.showVoiceModal = true
+      }
+      // todo: check if valid
+    },
+
+    sendPost() {
+
+      let call_data = {
+        type: 'text',
+        user_id: 1,
+        category_id: this.category,
+        body: this.body
+      }
+
+      if (this.post_type === 'voice') {
+        call_data.type = 'audio'
+        delete call_data.body
+        call_data.audio = this.audioBlob
+      }
+
+      console.log(call_data)
+      console.log(this.audioBlob)
+
+      // make the call
+      this.placePost(call_data)
+        .then(() => {
+          console.log('success')
         })
         .catch((error) => {
           console.log(error.response.data.errors)
@@ -52,14 +97,14 @@ export default {
     },
 
     toggleRecording() {
-      this.isRecording = !this.isRecording;
+      this.isRecording = !this.isRecording
 
       if (this.isRecording) {
-        this.recordingData = [];
-        this.dataUrl = '';
+        this.recordingData = []
+        this.dataUrl = ''
 
         // check for browsersupport for mimeType
-        let mimeType;
+        let mimeType
         if (MediaRecorder.isTypeSupported('audio/ogg')) {
           mimeType = 'audio/ogg'
         } else if (MediaRecorder.isTypeSupported('audio/webm')) {
@@ -72,44 +117,44 @@ export default {
         console.log(mimeType)
 
         // check for browser support for getUserMedia
-        navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+        navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia
         navigator.getUserMedia({
           audio: true,
           video: false
         }, (stream) => { // success
-          this.stream = stream;
+          this.stream = stream
 
           this.audioRecorder = new MediaRecorder(stream, {
             mimeType: mimeType,
             audioBitsPerSecond : 96000
           })
 
-          this.audioRecorder.start();
+          this.audioRecorder.start()
 
-          console.log('Media recorder started');
+          console.log('Media recorder started')
 
           this.audioRecorder.ondataavailable = (event) => {
             this.recordingData.push(event.data)
           }
           this.audioRecorder.onstop = (event) => {
-            let blob = new Blob(this.recordingData, { type: 'audio/ogg'});
-            this.dataUrl = window.URL.createObjectURL(blob);
+            this.audioBlob = new Blob(this.recordingData, { type: 'audio/ogg'})
+            this.dataUrl = window.URL.createObjectURL(this.audioBlob)
             this.firstRecord = false
             this.isPlaying = false
           }
 
         }, (error) => { // error
-          console.log(JSON.stringify(error));
-        });
+          console.log(JSON.stringify(error))
+        })
       }
       else {
-        this.audioRecorder.stop();
+        this.audioRecorder.stop()
       }
     },
 
     togglePlay() {
 
-      let audioElement = document.getElementById("audio");
+      let audioElement = document.getElementById("audio")
       if (this.isPlaying) {
         console.log('pause')
         audioElement.pause()
@@ -117,7 +162,7 @@ export default {
         console.log('play')
         audioElement.play()
       }
-        this.isPlaying = !this.isPlaying;
+        this.isPlaying = !this.isPlaying
     },
 
     // set the post type to given name, and clean this.post if type is different then current type
@@ -138,7 +183,21 @@ export default {
     }
   },
 
+  components: {
+    Modal
+  },
+
   created() {
     this.getCategories()
+
+    this.$on('hideModal', () => {
+      this.showTextModal = false
+      this.showVoiceModal = false
+    })
+    this.$on('submitModal', (data) => {
+      this.showTextModal = false
+      this.showVoiceModal = false
+      this.sendPost()
+    })
   }
 }

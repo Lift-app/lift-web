@@ -12,8 +12,10 @@
       <div class="create-text-post" v-if="post_type === 'text'">
         <header>
           <nav>
-            <a class="btn-back" @click="setPostType('choose')" aria-label="Terug naar: Type bericht kiezen">&lang; Terug</a>
-            <img src="../../assets/images/icons/info-lift.svg" alt="Informatie over dit scherm" title="Informatie over dit scherm" class="info-icon">
+            <a class="btn-back" @click="setPostType('choose')" aria-label="Terug naar: Type bericht kiezen">&lang;
+              Terug</a>
+            <img src="../../assets/images/icons/info-lift.svg" alt="Informatie over dit scherm"
+                 title="Informatie over dit scherm" class="info-icon">
           </nav>
           <img src="../../assets/images/icons/pencil-lift-white.svg" alt="Jouw bericht typen" class="header-icon">
           <h2 class="title">Ik wil iets zeggen...</h2>
@@ -21,11 +23,14 @@
 
         <div class="inner">
 
-          <textarea id="body" name="body" v-model="body" @focus="focusInput" @blur="blurInput" placeholder="Typ hier jouw bericht..."></textarea>
+          <textarea id="body" name="body" v-model="body" @focus="focusInput" @blur="blurInput"
+                    placeholder="Typ hier jouw bericht..."></textarea>
 
           <label for="categories">
             <select name="categories" id="categories" v-model="category">
-              <option v-for="category in categories" :value="category.id" :disabled="category.disabled">{{ category.name }}</option>
+              <option v-for="category in categories" :value="category.id" :disabled="category.disabled">{{ category.name
+                }}
+              </option>
             </select>
           </label>
 
@@ -34,23 +39,33 @@
               <input type="checkbox" name="anonymity" v-model="anonymity" aria-label="Ik wil anoniem blijven">
               Ik wil anoniem blijven.
             </label>
-            <small>Als je kiest om anoniem te blijven, zullen je naam en profielfoto niet bij het bericht komen te staan.</small>
+            <small>
+              Als je kiest om anoniem te blijven, zullen je naam en profielfoto niet bij het bericht komen te staan.
+            </small>
           </div>
 
           <button class="btn medium has_icon btn-orange btn-cancel" @click="post_type = 'choose'">Annuleren</button>
-          <button class="btn medium has_icon btn-green btn-create" @click="makePost">Plaatsen</button>
+          <button class="btn medium has_icon btn-green btn-create" @click="createPost">Plaatsen</button>
+
+          <modal :show.sync="showTextModal" v-show="showTextModal" :modal-data="modalTextData">
+            <p>Weet je zeker dat je dit wilt plaatsen?
+              Houdt er rekening mee dat iedereen je bericht kan lezen wanneer je deze plaatst.
+              Zorg ervoor dat je geen persoonlijke, gevoelige informatie deelt.
+              Meer hierover vind je</p> <a href="#">hier</a>
+          </modal>
         </div>
 
       </div>
-
 
 
       <div class="create-voice-post" v-if="post_type === 'voice'">
 
         <header>
           <nav>
-            <a class="btn-back" @click="setPostType('choose')" aria-label="Terug naar: Type bericht kiezen">&lang; Terug</a>
-            <img src="../../assets/images/icons/info-lift.svg" alt="Informatie over dit scherm" title="Informatie over dit scherm" class="info-icon">
+            <a class="btn-back" @click="setPostType('choose')" aria-label="Terug naar: Type bericht kiezen">&lang;
+              Terug</a>
+            <img src="../../assets/images/icons/info-lift.svg" alt="Informatie over dit scherm"
+                 title="Informatie over dit scherm" class="info-icon">
           </nav>
           <img src="../../assets/images/icons/microphone-lift-white.svg" alt="Jouw bericht typen" class="header-icon">
           <h2 class="title">Ik wil iets inspreken...</h2>
@@ -61,13 +76,16 @@
             <h5>Neem een stembericht op door hieronder op de microfoon te klikken.</h5>
 
             <button class="btn record-button" @click="toggleRecording">
-              <span v-show="!isRecording && firstRecord" class="notRecording record-action"><img src="./../../assets/images/icons/microphone-lift-blue.svg" alt="Start opname">
+              <span v-show="!isRecording && firstRecord" class="notRecording record-action"><img
+                      src="./../../assets/images/icons/microphone-lift-blue.svg" alt="Start opname">
                 <small>Start</small>
               </span>
-              <span v-show="!isRecording && !firstRecord" class="reRecording record-action"><img src="./../../assets/images/icons/reload-lift-blue.svg" alt="Herstart opname">
+              <span v-show="!isRecording && !firstRecord" class="reRecording record-action"><img
+                      src="./../../assets/images/icons/reload-lift-blue.svg" alt="Herstart opname">
                 <small>Opnieuw</small>
               </span>
-              <span v-show="isRecording" class="isRecording record-action"><img src="./../../assets/images/icons/stop-lift-blue.svg" alt="Stop opname">
+              <span v-show="isRecording" class="isRecording record-action"><img
+                      src="./../../assets/images/icons/stop-lift-blue.svg" alt="Stop opname">
                 <small>Stop</small>
               </span>
 
@@ -76,7 +94,7 @@
               <div class="svg-container" :class="isRecording ? 'animate' : ''">
                 <svg version="1.1" viewBox="0 0 240 240"
                      preserveAspectRatio="xMinYMin meet" class="svg-content">
-                  <circle class="circle" cx="120" cy="120" r="117" />
+                  <circle class="circle" cx="120" cy="120" r="117"/>
                 </svg>
               </div>
             </button>
@@ -84,11 +102,13 @@
             <h5 v-if="!isRecording">Je kunt maximaal 2 minuten inspreken.</h5>
             <h6 class="recording" v-if="isRecording">Aan het opnemen!</h6>
 
-            <button class="btn recording-controls btn-play-recording" @click="togglePlay" v-if="dataUrl.length > 0 && !isPlaying">
+            <button class="btn recording-controls btn-play-recording" @click="togglePlay"
+                    v-if="dataUrl.length > 0 && !isPlaying">
               <img src="../../assets/images/icons/play-lift.svg" alt="Afspelen" title="Afspelen">
             </button>
 
-            <button class="btn recording-controls btn-pause-recording" @click="togglePlay" v-if="dataUrl.length > 0 && isPlaying">
+            <button class="btn recording-controls btn-pause-recording" @click="togglePlay"
+                    v-if="dataUrl.length > 0 && isPlaying">
               <img src="../../assets/images/icons/pause-lift.svg" alt="Pauzeren" title="Pauzeren">
             </button>
 
@@ -97,43 +117,40 @@
 
           </div>
 
-            <label for="categories">
-              <select name="categories" id="categories" v-model="category">
-                <option v-for="category in categories" :value="category.id" :disabled="category.disabled">{{ category.name }}</option>
-              </select>
+          <label for="categories">
+            <select name="categories" id="categories" v-model="category">
+              <option v-for="category in categories" :value="category.id" :disabled="category.disabled">{{ category.name
+                }}
+              </option>
+            </select>
+          </label>
+
+          <div class="anonymity anonymity-container">
+            <label class="anonymity anonymity-check" for="anonymity">
+              <input type="checkbox" name="anonymity" v-model="anonymity" aria-label="Ik wil anoniem blijven">
+              Ik wil anoniem blijven.
             </label>
-
-            <div class="anonymity anonymity-container">
-              <label class="anonymity anonymity-check" for="anonymity">
-                <input type="checkbox" name="anonymity" v-model="anonymity" aria-label="Ik wil anoniem blijven">
-                Ik wil anoniem blijven.
-              </label>
-              <small>Als je kiest om anoniem te blijven, zullen je naam en profielfoto niet bij het bericht komen te staan.</small>
-            </div>
-
-            <button class="btn medium has_icon btn-orange btn-cancel" @click="post_type = 'choose'">Annuleren</button>
-            <button class="btn medium has_icon btn-green btn-create" @click="makePost">Plaatsen</button>
+            <small>
+              Als je kiest om anoniem te blijven, zullen je naam en profielfoto niet bij het bericht komen te staan.
+            </small>
           </div>
-        <div class="modal ask-modal" :class="placePost ? 'show' : ''">
-          <div class="modal-inner">
-            <h3 class="modal-title">Vraag stellen?</h3>
-            <p class="modal-content">Weet je zeker dat je dit wilt plaatsen?
+
+          <button class="btn medium has_icon btn-orange btn-cancel" @click="post_type = 'choose'">Annuleren</button>
+          <button class="btn medium has_icon btn-green btn-create" @click="createPost">Plaatsen</button>
+
+          <modal :show.sync="showVoiceModal" v-show="showVoiceModal" :modal-data="modalVoiceData">
+            <p>Weet je zeker dat je dit wilt plaatsen?
               Houdt er rekening mee dat iedereen je bericht kan lezen wanneer je deze plaatst.
               Zorg ervoor dat je geen persoonlijke, gevoelige informatie deelt.
-              Meer hierover vind je <a href="#">hier</a></p>
-            <button class="btn modal-button btn-grey">
-              Annuleren
-            </button>
-            <button class="btn modal-button btn-green">
-              Plaatsen
-            </button>
-          </div>
+              Meer hierover vind je</p> <a href="#">hier</a>
+          </modal>
         </div>
-        </div>
-      </div>
 
-      <router-view></router-view>
+      </div>
     </div>
+
+    <router-view></router-view>
+  </div>
 </template>
 
 <script src="./CreatePost.vue.js"></script>
