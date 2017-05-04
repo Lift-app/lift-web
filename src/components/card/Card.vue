@@ -15,7 +15,8 @@
     </header>
 
     <section>
-      <h2 class="title">{{ post_data.body }}</h2>
+      <h2 class="title" v-if="post_data.type !== 'audio'">{{ post_data.body }}</h2>
+      <audio style="width: 100%; margin: 20px 0;" preload="auto" v-else :src="post_data.body" controls></audio>
     </section>
 
     <footer>
