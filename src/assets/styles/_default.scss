@@ -8,7 +8,7 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: block;
-  font-family: $text-font;
+  font-family: $title-font;
   height: 100%;
   width: 100%;
 }
@@ -73,6 +73,7 @@ p, a {
 
   > .view {
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     position: relative;
     height: calc(100% - #{$nav-height});
     transition: .2s $animation-snap;
@@ -82,6 +83,7 @@ p, a {
 
     > .view {
       height: 100%;
+      -webkit-overflow-scrolling: touch;
     }
 
     > .navigation {

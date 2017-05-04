@@ -1,10 +1,18 @@
 <template>
   <div class="page--home">
+    <header class="header">
+      <nav class="feed-nav">
+        <ul>
+          <li class="active"><a href="#">Voor jou <img src="./star-red-lift.svg" alt="Voor jou" class="feed-cat-img" style="max-width: 20px;"></a></li>
+          <li><a href="#">Populair <img src="./hot-red-lift.svg" alt="Populair" class="feed-cat-img" style="max-width: 17px;"></a></li>
+        </ul>
+      </nav>
+    </header>
     <router-view></router-view>
 
     <h2 v-if="loading">Laden...</h2>
 
-    <p v-show="!posts.length"><i>Geen berichten gevonden</i></p>
+    <p class="not-found" v-show="!posts.length"><i>Geen berichten gevonden</i></p>
 
     <div class="card-group" v-if="!loading">
       <transition-group name="slide-up">
@@ -17,4 +25,6 @@
 <script src="./Home.vue.js"></script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<!--<style scoped lang="scss" src="./Home.vue.scss"></style>-->
+<style scoped lang="scss" src="./Home.vue.scss"></style>
+
+<!-- Scroll down for feed navigation -->
