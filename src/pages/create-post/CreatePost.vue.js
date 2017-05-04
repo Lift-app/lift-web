@@ -1,6 +1,7 @@
 import store from '@/store'
 import Modal from '@/components/modal/Modal'
 import { mapActions } from 'vuex'
+import config from '@/config/config'
 
 export default {
   name: 'createPost',
@@ -13,6 +14,7 @@ export default {
       post_type: 'choose',
       firstRecord: true,
       isRecording: false,
+      stream: [],
       isPlaying: false,
       audioRecorder: null,
       recordingData: [],
@@ -83,9 +85,6 @@ export default {
         call_data.set('audio', this.audioBlob, "audio.ogg")
       }
 
-      console.log(call_data)
-      console.log(this.audioBlob)
-
       // make the call
       this.placePost(call_data)
         .then(() => {
@@ -126,23 +125,25 @@ export default {
         }, (stream) => { // success
           this.stream = stream
 
-          this.audioRecorder = new MediaRecorder(stream, {
+          this.audioRecorder = new MediaRecorder(this.stream, {
             mimeType: mimeType,
             audioBitsPerSecond : 96000
           })
 
           this.audioRecorder.start()
 
-          console.log('Media recorder started')
+          if (config.debug) {console.log('Media recorder started')}
 
           this.audioRecorder.ondataavailable = (event) => {
             this.recordingData.push(event.data)
           }
           this.audioRecorder.onstop = (event) => {
+
             this.audioBlob = new Blob(this.recordingData, {type: mimeType})
             this.dataUrl = window.URL.createObjectURL(this.audioBlob)
             this.firstRecord = false
             this.isPlaying = false
+
           }
 
         }, (error) => { // error
@@ -150,18 +151,24 @@ export default {
         })
       }
       else {
-        this.audioRecorder.stop()
+        this.stopRecording()
       }
+    },
+
+    stopRecording() {
+      let track = this.stream.getTracks()[0];
+      track.stop();
+      this.audioRecorder.stop()
     },
 
     togglePlay() {
 
       let audioElement = document.getElementById("audio")
       if (this.isPlaying) {
-        console.log('pause')
+        if (config.debug) {console.log('pause')}
         audioElement.pause()
       } else {
-        console.log('play')
+        if (config.debug) {console.log('play')}
         audioElement.play()
       }
         this.isPlaying = !this.isPlaying
