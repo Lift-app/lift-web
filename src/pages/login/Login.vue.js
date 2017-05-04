@@ -1,31 +1,33 @@
 import config from '@/config/config'
 import router from '@/router'
-
 import auth from '@/auth'
 
 export default {
   name: 'login',
-  data () {
+  data() {
     return {
-      email: '',
-      password: '',
+      credentials: {
+        email: '',
+        password: '',
+      },
       error: '',
       msg: 'login'
     }
   },
   methods: {
     login() {
-      const credentials = {
-        email: this.email,
-        password: this.password,
-      }
-
+      const credentials = this.credentials
       auth.login(credentials)
         .then(() => {
-          router.push({name: 'Home'})
+          const redirect = this.$route.query.redirect
+          if (redirect) {
+            router.push(redirect)
+          } else {
+            router.push({name: 'Home'})
+          }
         })
-        .catch((err) => {
-          this.error = err.response.data.message
+        .catch((error) => {
+          console.log("Failed to log in: ${error}")
         })
     }
   }

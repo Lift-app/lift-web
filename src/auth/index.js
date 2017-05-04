@@ -2,38 +2,33 @@ import config from '@/config/config'
 import axios from 'axios'
 
 export default {
-  user: {
-    authenticated: false
-  },
-
   login(credentials) {
     return new Promise((resolve, reject) => {
       return axios.post(`${config.apiUrl}/tokens`, credentials)
-      .then((response) => {
-        localStorage.setItem('access_token', response.data.jwt)
+        .then((response) => {
+          localStorage.access_token = response.data.jwt
 
-        this.user.authenticated = true
-        resolve()
-      }).catch((error) => {
-        reject(error)
-      })
+          axios.defaults.headers.common = {
+            'Authorization': this.getAuthHeader()
+          }
+
+          resolve()
+        })
+        .catch((error) => {
+          reject(error)
+        })
     })
   },
 
   logout() {
-    localStorage.removeItem('access_token')
-    this.user.authenticated = false
+    delete localStorage.access_token
   },
 
-  checkAuth() {
-    var jwt = localStorage.getItem('access_token')
-
-    this.user.authenticated = !!jwt
+  isLoggedIn() {
+    return !!localStorage.access_token
   },
 
   getAuthHeader() {
-    return {
-      'Authorization': 'Bearer ' + localStorage.getItem('access_token')
-    }
+    return `Bearer ${localStorage.access_token}`
   }
 }

@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Router from 'vue-router'
+import VueRouter from 'vue-router'
 
 import Login from '@/pages/login/Login'
 import Home from '@/pages/home/Home'
@@ -9,15 +9,29 @@ import Post from '@/pages/post/Post'
 import CreatePost from '@/pages/create-post/CreatePost'
 import CreatePostSuccess from '@/pages/create-post/success/Success'
 
-Vue.use(Router)
+import auth from '@/auth'
 
-export default new Router({
+Vue.use(VueRouter)
+
+function requireAuth(to, from, next) {
+  if (!auth.isLoggedIn()) {
+    next({
+      name: 'Login',
+      query: { redirect: to.fullPath }
+    })
+  } else {
+    next()
+  }
+}
+
+export default new VueRouter({
   mode: 'history', // This removes the trailing # on the URL
   routes: [
     {
       path: '/',
       name: 'Home',
       component: Home,
+      beforeEnter: requireAuth,
       children: [
         {
           path: 'post/:id',
@@ -32,9 +46,17 @@ export default new Router({
       component: Login
     },
     {
+      path: '/logout',
+      beforeEnter(to, from, next) {
+        auth.logout()
+        next('/login')
+      }
+    },
+    {
       path: '/post-maken',
       name: 'CreatePost',
       component: CreatePost,
+      beforeEnter: requireAuth,
       children: [
         {
           path: 'gemaakt',
