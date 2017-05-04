@@ -28,7 +28,7 @@
       <div class="footer-action">
         <button class="comment" aria-label="Vraag leuk vinden"><img src="../../assets/images/icons/speech-bubble-white.svg" alt="Reageren op deze vraag"></button>
 
-        <span class="count comment-count" aria-label="15 reacties">15</span>
+        <span class="count comment-count" :aria-label="post_data.comments + ' reacties'">{{ post_data.comments }}</span>
       </div>
     </footer>
 
