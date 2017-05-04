@@ -39,5 +39,5 @@
 
 </script>
 
-<!-- Import the global styles from ./global_styles folder -->
+<!-- Import the global styles from styles folder -->
 <style src="./assets/styles/app.scss" lang="scss"></style>
