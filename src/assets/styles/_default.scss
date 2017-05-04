@@ -64,9 +64,6 @@ p, a {
 }
 
 #app {
-
-  $nav-height: 50px;
-
   max-width: $max-app-width;
   margin: 0 auto;
   height: 100%;
@@ -79,66 +76,6 @@ p, a {
     position: relative;
     height: calc(100% - #{$nav-height});
     transition: .2s $animation-snap;
-  }
-
-  > .navigation {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    height: $nav-height;
-    background: $white;
-    transform: translateY(0);
-    transition: .2s $animation-snap;
-
-    a {
-      width: 20%;
-      color: $pantzer;
-      text-decoration: none;
-      font-size: 11px;
-      text-align: center;
-      padding: 30px 0 0 0;
-    }
-
-    // Navigation icons
-    #feed-nav {
-      background-image: url(https://placehold.it/16x16);
-      background-size: 16px 16px;
-      background-repeat: no-repeat;
-      background-position: 50% 11px;
-    }
-
-    #interests-nav {
-      background-image: url(https://placehold.it/16x16);
-      background-size: 16px 16px;
-      background-repeat: no-repeat;
-      background-position: 50% 11px;
-    }
-
-    #search-nav {
-      background-image: url(https://placehold.it/16x16);
-      background-size: 16px 16px;
-      background-repeat: no-repeat;
-      background-position: 50% 11px;
-    }
-
-    #add_post-nav {
-      background-image: url(https://placehold.it/16x16);
-      background-size: 16px 16px;
-      background-repeat: no-repeat;
-      background-position: 50% 11px;
-    }
-
-    #profile-nav {
-      background-image: url(https://placehold.it/16x16);
-      background-size: 16px 16px;
-      background-repeat: no-repeat;
-      background-position: 50% 11px;
-    }
-
-    .router-link-active {
-      background: $orange;
-      color: $white;
-    }
   }
 
   &.input-focussed {
@@ -179,6 +116,10 @@ p, a {
   background: $green;
   color: $white;
 }
+.btn-grey {
+  background: $gray;
+  color: $white;
+}
 
 .btn-back {
   background: transparent;
@@ -188,28 +129,18 @@ p, a {
 // Button icons
 .btn-has-icon {
   background-repeat: no-repeat;
-  background-position: 88% center;
+  background-position: 92% center;
   background-size: 16px 16px;
 }
 
-.btn-create {
-  @extend .btn-has-icon;
-  background-image: url(https://placehold.it/16x16);
-}
-
-.btn-cancel {
-  @extend .btn-has-icon;
-  background-image: url(https://placehold.it/16x16);
-}
-
 .btn.has_icon {
-  padding-right: 45px;
+  padding-right: 40px;
 
   &:after {
     content: '';
     position: absolute;
     top: 10px;
-    right: 36px;
+    right: 33px;
     height: 50%;
     width: 1px;
     background: rgba(255, 255, 255, .5);

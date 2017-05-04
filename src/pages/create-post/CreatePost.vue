@@ -84,8 +84,12 @@
             <h5 v-if="!isRecording">Je kunt maximaal 2 minuten inspreken.</h5>
             <h6 class="recording" v-if="isRecording">Aan het opnemen!</h6>
 
-            <button class="btn green-button" @click="togglePlay" v-if="dataUrl.length > 0">
-              <i class="play icon"></i> Play recording
+            <button class="btn recording-controls btn-play-recording" @click="togglePlay" v-if="dataUrl.length > 0 && !isPlaying">
+              <img src="../../assets/images/icons/play-lift.svg" alt="Afspelen" title="Afspelen">
+            </button>
+
+            <button class="btn recording-controls btn-pause-recording" @click="togglePlay" v-if="dataUrl.length > 0 && isPlaying">
+              <img src="../../assets/images/icons/pause-lift.svg" alt="Pauzeren" title="Pauzeren">
             </button>
 
 
@@ -110,9 +114,22 @@
             <button class="btn medium has_icon btn-orange btn-cancel" @click="post_type = 'choose'">Annuleren</button>
             <button class="btn medium has_icon btn-green btn-create" @click="makePost">Plaatsen</button>
           </div>
-
+        <div class="modal ask-modal" :class="placePost ? 'show' : ''">
+          <div class="modal-inner">
+            <h3 class="modal-title">Vraag stellen?</h3>
+            <p class="modal-content">Weet je zeker dat je dit wilt plaatsen?
+              Houdt er rekening mee dat iedereen je bericht kan lezen wanneer je deze plaatst.
+              Zorg ervoor dat je geen persoonlijke, gevoelige informatie deelt.
+              Meer hierover vind je <a href="#">hier</a></p>
+            <button class="btn modal-button btn-grey">
+              Annuleren
+            </button>
+            <button class="btn modal-button btn-green">
+              Plaatsen
+            </button>
+          </div>
         </div>
-
+        </div>
       </div>
 
       <router-view></router-view>

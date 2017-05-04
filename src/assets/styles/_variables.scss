@@ -55,6 +55,7 @@ $text-font-size:    17px;
 $default-radius:    4px; // Default radius for buttons, posts etc.
 $default-padding:   10px 20px; // Default padding for multiple pages.
 $box-shadow:        0 0 20px 0 rgba(163,163,163,0.24); // Default box shadow
+$top-shadow:        0px 0px 5px 0px rgba(0,0,0,0.10); // Default top shadow
 
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -68,9 +69,10 @@ $medium-btn-padding: 12px 20px 10px;
 // Animations
 // ---------------------------------------------------------------------------------------------------------------------
 $animation-snap: cubic-bezier(1, .005, .240, 1);
-
+$default-transition: ease 200ms all;
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Sizes
 // ---------------------------------------------------------------------------------------------------------------------
 $max-app-width: 768px;
+$nav-height: 50px;
