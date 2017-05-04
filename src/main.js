@@ -6,6 +6,8 @@ import App from './App.vue'
 import store from './store' // Import Vuex store
 import router from './router' // Import vue-router routes
 
+import notifications from './config/notifications'
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
@@ -13,6 +15,7 @@ new Vue({
   el: '#lift',
   store,
   router,
+  notifications,
   template: '<App/>',
   components: {
     App

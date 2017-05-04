@@ -88,9 +88,11 @@ export default {
       // make the call
       this.placePost(call_data)
         .then(() => {
-          console.log('success')
+          this.$toasted.success('Wohoo! Het bericht is geplaatst!')
+          $router.push({name: 'home'});
         })
         .catch((error) => {
+          this.$toasted.error('Er ging wat mis. Probeer opnieuw!')
           console.log(error.response.data.errors)
         })
     },
