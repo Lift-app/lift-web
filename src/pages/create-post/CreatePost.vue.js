@@ -104,7 +104,19 @@ export default {
         this.dataUrl = ''
 
         // check for browsersupport for mimeType
-        let mimeType = 'audio/ogg'
+        // let mimeType = 'audio/ogg'
+
+        let mimeType
+        if (MediaRecorder.isTypeSupported('audio/ogg')) {
+          mimeType = 'audio/ogg'
+        } else if (MediaRecorder.isTypeSupported('audio/webm')) {
+          mimeType = 'audio/webm'
+        } else if (MediaRecorder.isTypeSupported('audio/wav')) {
+          mimeType = 'audio/wav'
+        } else {
+          mimeType = 'audio/ogg'
+          console.log('not supported')
+        }
 
         // check for browser support for getUserMedia
         navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia
