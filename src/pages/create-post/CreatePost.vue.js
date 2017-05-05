@@ -10,7 +10,7 @@ export default {
   data () {
     return {
       body: '',
-      category: null,
+      category: 0,
       anonymous: false,
       categories: [],
       post_type: 'choose',

@@ -119,10 +119,7 @@
 
           <label for="categories">
             <v-select label="name" v-model="category" :options="categories" placeholder="Plaatsen in..."></v-select>
-
           </label>
-
-          {{category.id}}
 
           <div class="anonymity anonymity-container">
             <label class="anonymity anonymity-check" for="anonymous">
