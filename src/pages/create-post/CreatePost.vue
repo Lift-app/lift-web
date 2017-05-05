@@ -73,7 +73,7 @@
 
         <div class="inner">
           <div class="block record-block">
-            <h5>Neem een stembericht op door hieronder op de microfoon te klikken.</h5>
+            <h4>Neem een stembericht op door hieronder op de microfoon te klikken.</h4>
 
             <button class="btn record-button" @click="toggleRecording">
               <span v-show="!isRecording && firstRecord" class="notRecording record-action"><img
@@ -99,8 +99,8 @@
               </div>
             </button>
 
-            <h5 v-if="!isRecording">Je kunt maximaal 2 minuten inspreken.</h5>
-            <h6 class="recording" v-if="isRecording">Aan het opnemen!</h6>
+            <h5 class="recording-time" v-if="!isRecording">Je kunt maximaal 2 minuten inspreken.</h5>
+            <h4 class="recording-active" v-if="isRecording">Aan het opnemen!</h4>
 
             <button class="btn recording-controls btn-play-recording" @click="togglePlay"
                     v-if="dataUrl.length > 0 && !isPlaying">
