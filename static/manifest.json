@@ -4,10 +4,10 @@
     "name": "Lift",
     "display": "standalone",
     "short_name": "Lift",
-    "theme_color": "#FF7809",
+    "theme_color": "#FF5A0B",
     "description": "Wajong community",
     "orientation": "portrait-primary",
-    "background_color": "#FF7809",
+    "background_color": "#FF5A0B",
     "related_applications": [],
     "prefer_related_applications": false,
     "icons": [
