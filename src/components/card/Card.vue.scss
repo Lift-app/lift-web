@@ -14,13 +14,22 @@
   &:first-child {
     margin-top: $margin;
   }
-
-  .title {
-    font-size: 1.2em;
-    padding: $padding;
+  section {
     text-align: center;
-    display: inline-block;
-    width: 100%;
+
+    .title {
+      padding: $padding;
+      text-align: center;
+      display: inline-block;
+      width: 100%;
+      margin: 12px 0;
+    }
+
+    .audio-post {
+      width: 100%;
+      max-width: 420px;
+      margin: 20px auto !important;
+    }
   }
 
   header {
@@ -48,6 +57,7 @@
       .u-name,
       .u-date {
         display: block;
+        text-transform: capitalize;
         margin: 0;
       }
 
@@ -63,7 +73,6 @@
     .cat-btn {
       text-decoration: none;
       padding: 7px 10px 5px;
-      font-size: 11px;
     }
   }
 
@@ -80,13 +89,13 @@
       .like{
         border: 0px;
         background: rgba(255, 255, 255, 0);
-        width: 50px;
+        width: 40px;
       }
       
       .comment{
         border: 0px;
         background: rgba(255, 255, 255, 0);
-        width: 50px;
+        width: 40px;
       }
       
 

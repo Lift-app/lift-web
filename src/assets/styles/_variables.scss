@@ -46,7 +46,105 @@ $title-font:        $primary-font;
 $text-font:         $secondary-font;
 $topic-title-font:  $primary-font;
 
-$text-font-size:    17px;
+$text-font-size:      17px;
+$header-font-weight:  500;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.title {
+  font-family: $title-font;
+  font-weight: $header-font-weight;
+}
+
+$d-font-sizes: (
+  null  : $text-font-size,
+  480px : 18px,
+  640px : 19px,
+  1024px: 21px
+);
+
+
+@mixin font-size($fs-map) {
+  @each $fs-breakpoint, $fs-font-size in $fs-map {
+    @if $fs-breakpoint == null {
+      font-size: $fs-font-size;
+    }
+    @else {
+      @media screen and (min-width: $fs-breakpoint) {
+        font-size: $fs-font-size;
+      }
+    }
+  }
+}
+
+// Heading sizes
+$h1-font-sizes: (
+  null  : 26px,
+  480px : 29px,
+  768px : 31px
+);
+
+$h2-font-sizes: (
+  null  : 22px,
+  480px : 25px,
+  768px : 27px
+);
+
+$h3-font-sizes: (
+  null  : 18px,
+  480px : 21px,
+  768px : 23px
+);
+
+$h4-font-sizes: (
+  null  : 14px,
+  480px : 17px,
+  768px : 19px
+);
+
+$h5-font-sizes: (
+  null  : 10px,
+  480px : 13px,
+  768px : 15px
+);
+
+$h6-font-sizes: (
+  null  : 6px,
+  480px : 9px,
+  768px : 11px
+);
+
+h1 {
+  @include font-size($h1-font-sizes);
+}
+
+h2 {
+  @include font-size($h2-font-sizes);
+}
+
+h3 {
+  @include font-size($h3-font-sizes);
+}
+
+h4 {
+  @include font-size($h4-font-sizes);
+}
+
+h5 {
+  @include font-size($h5-font-sizes);
+}
+
+h6 {
+  @include font-size($h6-font-sizes);
+}
+
+p, ul, li, a {
+  @include font-size($d-font-sizes);
+}
 
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -72,7 +170,7 @@ $animation-snap: cubic-bezier(1, .005, .240, 1);
 $default-transition: ease 200ms all;
 
 // ---------------------------------------------------------------------------------------------------------------------
-// Sizes
+// App component sizes
 // ---------------------------------------------------------------------------------------------------------------------
 $max-app-width: 768px;
 $nav-height: 50px;
