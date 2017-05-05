@@ -4,7 +4,7 @@
 
     <header>
       <div class="user">
-        <img class="avatar" src="https://placehold.it/60x60">
+        <img class="avatar" src="https://placehold.it/60x60" alt="Avatar">
         <div class="user-details">
           <h4 class="u-name" v-if="post_data.user">{{ post_data.user.username }}</h4>
           <h4 class="u-name anonymous" v-else>Anoniem</h4>
