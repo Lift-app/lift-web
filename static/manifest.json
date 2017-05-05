@@ -12,43 +12,37 @@
     "prefer_related_applications": false,
     "icons": [
         {
-            "src": "./images/windows10/LockScreenLogo.scale-200.png.png",
-            "sizes": "48x48",
-            "type": "image/png",
-            "generated": true
-        },
-        {
-            "src": "./images/windows10/SplashScreen.scale-200.png.png",
+            "src": "./images/windows10/SplashScreen.scale-200.png",
             "sizes": "1240x600",
             "type": "image/png",
             "generated": true
         },
         {
-            "src": "./images/windows10/Square150x150Logo.scale-200.png.png",
+            "src": "./images/windows10/Square150x150Logo.scale-200.png",
             "sizes": "300x300",
             "type": "image/png",
             "generated": true
         },
         {
-            "src": "./images/windows10/Square44x44Logo.scale-200.png.png",
+            "src": "./images/windows10/Square44x44Logo.scale-200.png",
             "sizes": "88x88",
             "type": "image/png",
             "generated": true
         },
         {
-            "src": "./images/windows10/Square44x44Logo.targetsize-24_altform-unplated.png.png",
+            "src": "./images/windows10/Square44x44Logo.targetsize-24_altform-unplated.png",
             "sizes": "24x24",
             "type": "image/png",
             "generated": true
         },
         {
-            "src": "./images/windows10/StoreLogo.png.png",
+            "src": "./images/windows10/StoreLogo.png",
             "sizes": "50x50",
             "type": "image/png",
             "generated": true
         },
         {
-            "src": "./images/windows10/Wide310x150Logo.scale-200.png.png",
+            "src": "./images/windows10/Wide310x150Logo.scale-200.png",
             "sizes": "620x300",
             "type": "image/png",
             "generated": true
