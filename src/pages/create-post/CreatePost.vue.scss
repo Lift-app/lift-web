@@ -133,9 +133,11 @@
         width: 29px;
         height: 44px;
       }
-
-      h4 {
-        color: $dark;
+      .recording-time {
+        color: $gray;
+      }
+      .recording-active {
+        color: $orange;
       }
       .record-button {
         background: transparent;

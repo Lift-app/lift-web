@@ -17,46 +17,6 @@ body {
   overflow: hidden;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.title {
-  font-family: $title-font;
-  font-weight: 500;
-}
-
-// Heading sizes
-h1 {
-  font-size: 1.8rem;
-}
-
-h2 {
-  font-size: 1.6rem;
-}
-
-h3 {
-  font-size: 1.4rem;
-}
-
-h4 {
-  font-size: 1.2rem;
-}
-
-h5 {
-  font-size: 1rem;
-}
-
-h6 {
-  font-size: .8rem;
-}
-
-p, a {
-  font-size: $text-font-size;
-}
-
 .block {
   padding: $default-padding;
   border-radius: $default-radius;
@@ -70,6 +30,11 @@ p, a {
   box-sizing: border-box;
   position: relative;
   font-size: $text-font-size;
+
+  @media only screen and (min-width: 767px) {
+    border-left: 1px solid $gray;
+    border-right: 1px solid $gray;
+  }
 
   > .view {
     overflow-y: scroll;

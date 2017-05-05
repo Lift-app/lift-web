@@ -33,9 +33,11 @@
           list-style: none;
           padding: 13px;
           border-bottom: 3px solid $gray;
+          transition: $default-transition;
 
           &.active {
             border-bottom: 3px solid $red;
+            transition: $default-transition;
           }
 
           a {
@@ -44,6 +46,7 @@
             text-decoration: none;
             position: relative;
             padding: 0 30px 0 0;
+            user-select: none;
 
             .feed-cat-img {
               position: absolute;
