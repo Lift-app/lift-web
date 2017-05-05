@@ -27,11 +27,7 @@
                     placeholder="Typ hier jouw bericht..."></textarea>
 
           <label for="categories">
-            <select name="categories" id="categories" v-model="category">
-              <option v-for="category in categories" :value="category.id" :disabled="category.disabled">{{ category.name
-                }}
-              </option>
-            </select>
+            <v-select label="name" v-model="category" :options="categories" :searchable="false" placeholder="Plaatsen in..."></v-select>
           </label>
 
           <div class="anonymity anonymity-container">
@@ -118,7 +114,7 @@
           </div>
 
           <label for="categories">
-            <v-select label="name" v-model="category" :options="categories" placeholder="Plaatsen in..."></v-select>
+            <v-select label="name" v-model="category" :options="categories" :searchable="false" placeholder="Plaatsen in..."></v-select>
           </label>
 
           <div class="anonymity anonymity-container">
