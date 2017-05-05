@@ -3,13 +3,14 @@ import router from '@/router'
 import Modal from '@/components/modal/Modal'
 import { mapActions } from 'vuex'
 import config from '@/config/config'
+import vSelect from "vue-select"
 
 export default {
   name: 'createPost',
   data () {
     return {
       body: '',
-      category: 0,
+      category: null,
       anonymous: false,
       categories: [],
       post_type: 'choose',
@@ -56,8 +57,6 @@ export default {
       this.fetchCategories()
         .then(() => {
           this.categories = store.state.categories
-          // add a choose a category option
-          this.categories.unshift({name: 'Plaatsen in...', id: 0, disabled: true})
         })
     },
 
@@ -77,7 +76,7 @@ export default {
 
       call_data.append('type', 'text')
       call_data.append('user_id', 1)
-      call_data.append('category_id', this.category)
+      call_data.append('category_id', this.category.id)
       call_data.append('body', this.body)
       call_data.append('anonymous', this.anonymous)
 
@@ -197,7 +196,8 @@ export default {
   },
 
   components: {
-    Modal
+    Modal,
+    vSelect
   },
 
   created() {
