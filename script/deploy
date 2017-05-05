@@ -23,7 +23,7 @@ deploy() {
 
   rsync -avz -e "ssh -o StrictHostKeyChecking=no" --progress \
     dist/ lift@liftapp.nl:$target_dir
-  ssh -oStrictHostKeyChecking=no lift@liftapp.nl ln -sf "$target_dir" "$base_dir/lift-web"
+  ssh -oStrictHostKeyChecking=no lift@liftapp.nl ln -sfn "$target_dir" "$base_dir/lift-web"
 }
 
 main() {
