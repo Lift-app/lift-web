@@ -12,3 +12,6 @@ deploy:
   script: script/deploy
   on:
     branch: master
+
+notifications:
+  email: false
