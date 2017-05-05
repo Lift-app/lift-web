@@ -1,0 +1,35 @@
+#! /usr/bin/env bash
+
+setup_ssh() {
+  openssl aes-256-cbc -K "$encrypted_5353ba26737d_key" \
+    -iv "$encrypted_5353ba26737d_iv" -in secrets/id_rsa.enc \
+    -out secrets/id_rsa -d
+
+  chmod 0600 ./secrets/id_rsa
+  eval "$(ssh-agent)"
+  ssh-add ./secrets/id_rsa
+}
+
+build() {
+  npm run build
+}
+
+deploy() {
+  local base_dir
+  local target_dir
+
+  base_dir="/var/www/html"
+  target_dir="$base_dir/releases/lift-web-$TRAVIS_COMMIT"
+
+  rsync -avz -e "ssh -o StrictHostKeyChecking=no" --progress \
+    dist/ lift@liftapp.nl:$target_dir
+  ssh -oStrictHostKeyChecking=no lift@liftapp.nl ln -sf "$target_dir" "$base_dir/lift-web"
+}
+
+main() {
+  setup_ssh
+  build
+  deploy
+}
+
+main
