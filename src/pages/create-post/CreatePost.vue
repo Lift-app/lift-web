@@ -5,8 +5,8 @@
       <div v-if="post_type === 'choose'" class="create-type-picker">
         <h1>Ik wil iets zeggen...</h1>
         <h3>Maak hieronder een keuze hoe je iets wilt zeggen</h3>
-        <button class="btn has_icon" @click="setPostType('text')">Mijn bericht typen</button>
-        <button class="btn has_icon" @click="setPostType('voice')">Mijn bericht inspreken</button>
+        <button class="btn has_icon create-text-post" @click="setPostType('text')">Mijn bericht typen</button>
+        <button class="btn has_icon create-voice-post" @click="setPostType('voice')">Mijn bericht inspreken</button>
       </div>
 
       <div class="create-text-post" v-if="post_type === 'text'">
