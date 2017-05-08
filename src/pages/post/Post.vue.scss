@@ -33,7 +33,7 @@
 
   .post {
     background: $white;
-    padding: 20px;
+    padding: 15px;
     margin: 60px auto 0 auto;
     text-align: center;
     box-shadow: $box-shadow;
@@ -45,7 +45,7 @@
     flex-direction: row;
     width: 100%;
     clear: both;
-    margin: -50px auto 0 auto;
+    margin: -45px auto 0 auto;
 
     &.anonymous {
 
@@ -54,9 +54,8 @@
       }
     }
 
-    h3,
-    span {
-      padding-top: 7px;
+    h3 {
+      padding: 7px 0 0 7px;
       color: $white;
     }
 
@@ -66,30 +65,44 @@
       text-transform: capitalize;
     }
 
-    span {
+    .created-on {
       order: 2;
+      padding-top: 11px;
       margin-left: auto;
+      font-size: 12px;
+      color: $white;
     }
   }
 
   .title {
     font-size: 1.4em;
   }
-  
-  footer {
+
+  .post-details {
     display: flex;
-    justify-content: space-around;
-    
-    .like {
-      border: 0;
-      background: rgba(255, 255, 255, 0);
-      width: 50px;
-    }
-    
-    .comment {
-      border: 0;
-      background: rgba(255, 255, 255, 0);
-      width: 50px;
+    align-items: center;
+    justify-content: center;
+
+    .footer-action {
+      padding: 0 10px;
+      display: flex;
+      align-items: center;
+
+      .like{
+        border: 0px;
+        background: rgba(255, 255, 255, 0);
+        width: 40px;
+      }
+
+      .comment{
+        border: 0px;
+        background: rgba(255, 255, 255, 0);
+        width: 40px;
+      }
+
+      .count {
+        margin-left: 5px;
+      }
     }
   }
 }
