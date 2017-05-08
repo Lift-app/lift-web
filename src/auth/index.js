@@ -8,9 +8,7 @@ export default {
         .then((response) => {
           localStorage.access_token = response.data.jwt
 
-          axios.defaults.headers.common = {
-            'Authorization': this.getAuthHeader()
-          }
+          this.setAuthHeader()
 
           resolve()
         })
@@ -26,6 +24,12 @@ export default {
 
   isLoggedIn() {
     return !!localStorage.access_token
+  },
+
+  setAuthHeader() {
+    axios.defaults.headers.common = {
+      'Authorization': this.getAuthHeader()
+    }
   },
 
   getAuthHeader() {
