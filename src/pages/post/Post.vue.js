@@ -19,7 +19,8 @@ export default {
           'name': '',
           'id': 0,
         },
-        'body': ''
+        'body': '',
+        'likes': 0
       },
       loading: false,
       topOffset: 0
@@ -27,8 +28,16 @@ export default {
   },
   methods: {
     ...mapActions({
-      actionGetPost: 'getPost'
+      actionGetPost: 'getPost',
+      actionLikePost: 'likePost'
     }),
+
+    toggleLike() {
+      this.actionLikePost(this.post.id)
+        .then(() => {
+          this.post.likes++
+        })
+    },
 
     close() {
       router.push({name: 'Home'})

@@ -30,7 +30,7 @@
 
           <footer class="post-details">
               <div class="footer-action">
-                  <button class="like" aria-label="Vraag leuk vinden"><img src="../../assets/images/icons/heart-dark.svg" alt="Vind ik leuk!"></button>
+                  <button class="like" v-on:click="toggleLike()" aria-label="Vraag leuk vinden"><img src="../../assets/images/icons/heart-dark.svg" alt="Vind ik leuk!"></button>
                   <span class="count like-count" v-bind:aria-label="post.likes">{{ post.likes }}</span>
               </div>
 
