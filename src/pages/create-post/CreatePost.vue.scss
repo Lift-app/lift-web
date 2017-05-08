@@ -1,5 +1,27 @@
 .page--create-post {
 
+  .btn.create-voice-post {
+    @extend .btn-has-icon;
+    background-image: url(./microphone-lift.svg);
+    padding-right: 60px;
+    background-size: 30px 30px;
+
+    &:after {
+      right: 60px;
+    }
+  }
+
+  .btn.create-text-post {
+    @extend .btn-has-icon;
+    background-image: url(./write-lift.svg);
+    padding-right: 60px;
+    background-size: 30px 30px;
+
+    &:after {
+      right: 60px;
+    }
+  }
+
   .btn-create {
     @extend .btn-has-icon;
     background-image: url(./checkmark-lift.svg);
