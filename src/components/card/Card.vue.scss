@@ -43,10 +43,7 @@
       align-items: center;
 
       .avatar {
-        border-radius: 50%;
-        height: 60px;
-        width: 60px;
-        display: inline-block;
+        @extend .avatar;
       }
 
       .user-details {
@@ -76,7 +73,7 @@
     }
   }
 
-  footer {
+  .post-details {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -85,25 +82,25 @@
       padding: 0 10px;
       display: flex;
       align-items: center;
-      
+
       .like{
         border: 0px;
         background: rgba(255, 255, 255, 0);
         width: 40px;
       }
-      
+
       .comment{
         border: 0px;
         background: rgba(255, 255, 255, 0);
         width: 40px;
       }
-      
 
       .count {
         margin-left: 5px;
       }
     }
   }
+
   // make a class for every category name in $POST_CATEGORIES and set the correct background and color
   @each $category, $bgcolor in $POST_CATEGORIES {
     &.#{$category} {

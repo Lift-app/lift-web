@@ -4,7 +4,8 @@
 
     <header>
       <div class="user">
-        <img class="avatar" src="https://placeimg.com/60/60/people" alt="Avatar">
+        <img class="avatar" src="https://placeimg.com/60/60/people" :alt="post_data.user.username + '\'s profielfoto'" v-if="post_data.user">
+        <img class="avatar anonymous" src="../../assets/images/icons/anonymous.svg" alt="Anonieme profielfoto" v-else>
         <div class="user-details">
           <h4 class="u-name" v-if="post_data.user">{{ post_data.user.username }}</h4>
           <h4 class="u-name" v-else>Anoniem</h4>
@@ -17,9 +18,10 @@
     <section>
       <h2 class="title" v-if="post_data.type !== 'audio'">{{ post_data.body }}</h2>
       <audio style="width: 100%; margin: 20px 0;" preload="auto" v-else :src="post_data.body" class="audio-post" controls></audio>
+
     </section>
 
-    <footer>
+    <footer class="post-details">
       <div class="footer-action">
         <button class="like" aria-label="Vraag leuk vinden"><img src="../../assets/images/icons/heart-white.svg" alt="Vind ik leuk!"></button>
         <span class="count like-count" v-bind:aria-label="post_data.likes">{{ post_data.likes }}</span>

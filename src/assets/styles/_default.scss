@@ -91,6 +91,8 @@ body {
 .btn-back {
   background: transparent;
   color: $white;
+  text-decoration: none;
+  padding-left: 0;
 }
 
 // Button icons
@@ -173,5 +175,16 @@ select {
     height: 20px;
     background-color: red;
     @include background-triangle($color: $black);
+  }
+}
+
+.avatar {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  display: inline-block;
+  border: 1px solid rgba($black, .2%);
+  &.anonymous {
+    background: $white;
   }
 }
