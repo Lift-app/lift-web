@@ -9,8 +9,6 @@
 
 <script>
 
-  import config from '@/config/config'
-  import router from '@/router'
   import Navigation from '@/components/navigation/Navigation'
 
   export default {
@@ -19,18 +17,6 @@
       return {
         active: 'home'
       }
-    },
-    methods: {
-
-      checkLogin() {
-        if (!config.isLoggedIn()) {
-          router.push({name: 'Login'})
-        }
-      }
-    },
-    mounted() {
-      // TODO: put this back on
-      // this.checkLogin()
     },
     components: {
       Navigation
