@@ -4,6 +4,10 @@ node_js:
 
 dist: trusty
 
+branches:
+  only:
+  - master
+
 script: ":"
 
 deploy:
@@ -15,3 +19,5 @@ deploy:
 
 notifications:
   email: false
+  slack:
+    secure: W/zjlWmIWYrOkKA8YSsRgqspKD24mTG+BQyBKspidGjcPAf1O3ENCoTATs7LSEDEtRCOBptoN1T77raw6cbjy1hbwpPekqfXddVBVV3btxfHTZZlAQfA0Pcl8YAjxnxKHqZmfbHSKaPCthYPgDCGc0fAqJYUtXFKzdeemGmZIUW9HnjrcY/VhB3v4Oybp8ymwlkX7ISKjc4ffCNLeVlMEzjYswpDF5wCZ7M9rcUE5bYM8ItzXB4MkNz6zG155p8S4YkwYUj07QUIF9mPUH3g0lzh83dd40Tw2Zh5zAypZeqDn4AucGinjKs1A/NejBiIJhkviqXDTM+yPJFd1pgSOY1Nui5mkrWbcPDOxIf9Qam8gkBzbLhHqzmQ+LLSAcyWqngVLnKk6mDy52nskqsh2m60m9OdP9OnmKm90HsNnSjJ+TcL0wGvSmB+SpM00RQnO+Um8FBXkukV5rXigtYhzwS0Y5KUhM6jwZcGo7zCEqbg/NvJiQxaiIQ5cI+eSGBWX2aD93ki4hXHyFvBwwhnSRXQe5DZttGI/oe2VaW2nIF42vHkPNUhmnpVB3cqah7s+T76sAN3MHx5fI7AKVqWWT2r2wJqxDZBQss28irQHjhbKymFa/DrDcObUtUEalZcij10YGwy8h7gWBvteiuNnPE6yRo/UXJNEHHGyJ0+Mtk=
