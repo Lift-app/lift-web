@@ -1,9 +1,13 @@
 import router from '@/router'
 import store from '@/store'
+import LikeButton from '@/components/like-button/LikeButton'
 import { mapActions } from 'vuex'
 
 export default {
   name: 'post',
+  components: {
+    LikeButton
+  },
   data () {
     return {
       post: {
@@ -19,7 +23,9 @@ export default {
           'name': '',
           'id': 0,
         },
-        'body': ''
+        'body': '',
+        'likes': 0,
+        'liked': false
       },
       loading: false,
       topOffset: 0

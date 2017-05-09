@@ -20,12 +20,12 @@
     background: $yellow;
     z-index: -1;
   }
-  
+
    nav {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-     
+
      .report{
        width: 35px;
        border: 0;
@@ -90,6 +90,7 @@
       display: flex;
       align-items: center;
 
+<<<<<<< HEAD
       button.like{
         border: 0px;
         background: rgba(255, 255, 255, 0);
@@ -97,6 +98,9 @@
       }
 
       button.comment {
+=======
+      .comment{
+>>>>>>> 67e402771b4899b01d1c68728d261ed6df1a4b57
         border: 0px;
         background: rgba(255, 255, 255, 0);
         width: 40px;
