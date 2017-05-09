@@ -9,7 +9,7 @@
         <div class="user-details">
           <h4 class="u-name" v-if="post_data.user">{{ post_data.user.username }}</h4>
           <h4 class="u-name" v-else>Anoniem</h4>
-          <h5 class="u-date">Eergisteren</h5>
+          <h5 class="u-date">{{post_data.created_at}}</h5>
         </div>
       </div>
       <a href="#" class="btn cat-btn">{{ post_data.category.name }}</a>
