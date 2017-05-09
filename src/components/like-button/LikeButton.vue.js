@@ -1,3 +1,4 @@
+import store from '@/store'
 import { mapActions } from 'vuex'
 
 export default {
@@ -15,14 +16,12 @@ export default {
       if (this.post.liked) {
         this.actionUnlikePost(this.post.id)
           .then(() => {
-            this.post.likes--
-            this.post.liked = false
+            store.commit('unlikePost', this.post.id)
           })
       } else {
         this.actionLikePost(this.post.id)
           .then(() => {
-            this.post.likes++
-            this.post.liked = true
+            store.commit('likePost', this.post.id)
           })
       }
     },
