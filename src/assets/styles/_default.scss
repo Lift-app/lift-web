@@ -16,7 +16,6 @@ html, body {
 body {
   overflow: hidden;
 }
-
 .block {
   padding: $default-padding;
   border-radius: $default-radius;
@@ -96,6 +95,10 @@ body {
 }
 
 // Button icons
+button:focus {
+  display: none;
+}
+
 .btn-has-icon {
   background-repeat: no-repeat;
   background-position: 92% center;

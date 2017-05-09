@@ -1,4 +1,4 @@
-<script src="Audio-player.vue.js"></script>
+<script src="./audio-player.vue.js"></script>
 <template>
   <div class="audio green-audio-player">
     <div class="loading">

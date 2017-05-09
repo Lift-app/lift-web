@@ -1,0 +1,17 @@
+.loader {
+  position: absolute;
+  text-align: center;
+  display: table;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,.8);
+  .loader-text {
+    margin: 0;
+    color: #fff;
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
