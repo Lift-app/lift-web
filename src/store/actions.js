@@ -59,9 +59,19 @@ const actions = {
 
   likePost({ commit }, id) {
     return new Promise((resolve, reject) => {
-      axios.put(`${config.apiUrl}/posts/${id}/like`, {}, {
-        headers: {'authorization': 'Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJVc2VyOjEiLCJleHAiOjE0OTY4NDQxMzYsImlhdCI6MTQ5NDI1MjEzNiwiaXNzIjoiTGlmdCIsImp0aSI6ImUxNDVlZWRkLWMyNWItNGFlZi1hN2U1LTc4MGQzMGY4YjlhYiIsInBlbSI6e30sInN1YiI6IlVzZXI6MSIsInR5cCI6ImFjY2VzcyJ9.9W7iJS3MypQGorYL879VRqexqUrRhDteHQ31GBG0OjiB9GyT24QnLF8u8Smyq_ol50_Pmn7cI6JQPjK6ScdcvQ'}
-      })
+      axios.put(`${config.apiUrl}/posts/${id}/like`)
+        .then((response) => {
+          resolve()
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  },
+
+  unlikePost({ commit }, id) {
+    return new Promise((resolve, reject) => {
+      axios.put(`${config.apiUrl}/posts/${id}/unlike`)
         .then((response) => {
           resolve()
         })

@@ -20,7 +20,8 @@ export default {
           'id': 0,
         },
         'body': '',
-        'likes': 0
+        'likes': 0,
+        'liked': false
       },
       loading: false,
       topOffset: 0
@@ -29,14 +30,24 @@ export default {
   methods: {
     ...mapActions({
       actionGetPost: 'getPost',
-      actionLikePost: 'likePost'
+      actionLikePost: 'likePost',
+      actionUnlikePost: 'unlikePost'
     }),
 
     toggleLike() {
-      this.actionLikePost(this.post.id)
-        .then(() => {
-          this.post.likes++
-        })
+      if (this.post.liked) {
+        this.actionUnlikePost(this.post.id)
+          .then(() => {
+            this.post.likes--
+            this.post.liked = false
+          })
+      } else {
+        this.actionLikePost(this.post.id)
+          .then(() => {
+            this.post.likes++
+            this.post.liked = true
+          })
+      }
     },
 
     close() {
