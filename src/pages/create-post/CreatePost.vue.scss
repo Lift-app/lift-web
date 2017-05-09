@@ -5,6 +5,7 @@
     background-image: url(./microphone-lift.svg);
     padding-right: 60px;
     background-size: 30px 30px;
+    width: 85%;
 
     &:after {
       right: 60px;
@@ -16,6 +17,7 @@
     background-image: url(./write-lift.svg);
     padding-right: 60px;
     background-size: 30px 30px;
+    width: 85%;
 
     &:after {
       right: 60px;
@@ -48,7 +50,7 @@
       color: #4990E2;
       font-weight: normal;
       display: block;
-      margin: 0 auto 20px;
+      margin: 50px auto 20px;
 
       &:last-child {
         margin: 0 auto;
