@@ -9,9 +9,8 @@
 
 <script>
 
-  import config from '@/config/config'
-  import router from '@/router'
   import Navigation from '@/components/navigation/Navigation'
+  import auth from '@/auth'
 
   export default {
     name: 'lift',
@@ -20,17 +19,10 @@
         active: 'home'
       }
     },
-    methods: {
-
-      checkLogin() {
-        if (!config.isLoggedIn()) {
-          router.push({name: 'Login'})
-        }
+    beforeMount() {
+      if (auth.isLoggedIn()) {
+        auth.setAuthHeader()
       }
-    },
-    mounted() {
-      // TODO: put this back on
-      // this.checkLogin()
     },
     components: {
       Navigation
