@@ -3,7 +3,8 @@ import { mapActions } from 'vuex'
 export default {
   name: 'like-button',
   props: {
-    post: {}
+    post: {},
+    dark: Boolean
   },
   methods: {
     ...mapActions({

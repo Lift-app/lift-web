@@ -30,7 +30,7 @@
 
           <footer class="post-details">
               <div class="footer-action">
-                <like-button :post="post"></like-button>
+                <like-button :post="post" :dark="true"></like-button>
               </div>
 
               <div class="footer-action">

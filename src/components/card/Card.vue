@@ -23,7 +23,7 @@
 
     <footer class="post-details">
       <div class="footer-action">
-        <like-button :post="post_data"></like-button>
+        <like-button :post="post_data" :dark="false"></like-button>
       </div>
 
       <div class="footer-action">
