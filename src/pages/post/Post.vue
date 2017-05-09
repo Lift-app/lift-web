@@ -3,7 +3,7 @@
     <div class="post-container">
      <nav>
       <router-link to="/" class="btn btn-back" aria-label="Terug naar: Home">&lang; Terug</router-link>
-      <button class="report" aria-label="Vraag leuk vinden"><img src="../../assets/images/icons/report-white.svg" alt="rapporteer"></button>      
+      <button class="report" aria-label="Vraag leuk vinden"><img src="../../assets/images/icons/warning-lift-white.svg" alt="Bericht rapporteren"></button>
      </nav>
 
       <article class="post">

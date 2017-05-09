@@ -56,7 +56,6 @@
       }
 
       .u-name {
-        font-size: 1.2rem;
 
         &.anonymous {
           color: $porcelain;
@@ -111,6 +110,7 @@
 
       .cat-btn {
         color: $bgcolor;
+        font-size: $text-font-size - 1px;
       }
     }
   }

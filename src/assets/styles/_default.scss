@@ -64,7 +64,6 @@ body {
   color: $primary-color;
   padding: $large-btn-padding;
   border-radius: $default-radius;
-  font-size: $text-font-size;
   border: 0;
   font-weight: 500;
 }
@@ -143,6 +142,7 @@ input {
 
 textarea,
 input[type=text],
+input[type=password],
 select {
   background: $form-bg;
   color: $form-color;
@@ -221,11 +221,15 @@ textarea {
 
 .avatar {
   border-radius: 50%;
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
   display: inline-block;
   border: 1px solid rgba($black, .2%);
   &.anonymous {
     background: $white;
+  }
+  @media only screen and (min-width: 480px) {
+    height: 60px;
+    width: 60px;
   }
 }

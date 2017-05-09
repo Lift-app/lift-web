@@ -13,7 +13,7 @@
       <router-view></router-view>
     </transition>
 
-
+    <preloader></preloader>
 
     <p class="not-found" v-show="!posts.length"><i>Geen berichten gevonden</i></p>
 

@@ -47,7 +47,7 @@ $title-font:        $primary-font;
 $text-font:         $secondary-font;
 $topic-title-font:  $primary-font;
 
-$text-font-size:      17px;
+$text-font-size:      14px;
 $header-font-weight:  500;
 
 h1,
@@ -59,15 +59,16 @@ h6,
 .title {
   font-family: $title-font;
   font-weight: $header-font-weight;
+  &:first-letter {
+    text-transform: capitalize;
+  }
 }
 
 $d-font-sizes: (
   null  : $text-font-size,
-  480px : 18px,
-  640px : 19px,
-  1024px: 21px
+  480px : 16px,
+  768px : 18px
 );
-
 
 @mixin font-size($fs-map) {
   @each $fs-breakpoint, $fs-font-size in $fs-map {
@@ -108,15 +109,15 @@ $h4-font-sizes: (
 );
 
 $h5-font-sizes: (
-  null  : 10px,
-  480px : 13px,
-  768px : 15px
+  null  : 11px,
+  480px : 14px,
+  768px : 16px
 );
 
 $h6-font-sizes: (
-  null  : 6px,
-  480px : 9px,
-  768px : 11px
+  null  : 7px,
+  480px : 10px,
+  768px : 12px
 );
 
 h1 {
