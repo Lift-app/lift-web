@@ -23,8 +23,7 @@
 
     <footer class="post-details">
       <div class="footer-action">
-        <button class="like" aria-label="Vraag leuk vinden"><img src="../../assets/images/icons/heart-white.svg" alt="Vind ik leuk!"></button>
-        <span class="count like-count" v-bind:aria-label="post_data.likes">{{ post_data.likes }}</span>
+        <like-button :post="post_data"></like-button>
       </div>
 
       <div class="footer-action">

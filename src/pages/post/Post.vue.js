@@ -1,9 +1,13 @@
 import router from '@/router'
 import store from '@/store'
+import LikeButton from '@/components/like-button/LikeButton'
 import { mapActions } from 'vuex'
 
 export default {
   name: 'post',
+  components: {
+    LikeButton
+  },
   data () {
     return {
       post: {
@@ -29,26 +33,8 @@ export default {
   },
   methods: {
     ...mapActions({
-      actionGetPost: 'getPost',
-      actionLikePost: 'likePost',
-      actionUnlikePost: 'unlikePost'
+      actionGetPost: 'getPost'
     }),
-
-    toggleLike() {
-      if (this.post.liked) {
-        this.actionUnlikePost(this.post.id)
-          .then(() => {
-            this.post.likes--
-            this.post.liked = false
-          })
-      } else {
-        this.actionLikePost(this.post.id)
-          .then(() => {
-            this.post.likes++
-            this.post.liked = true
-          })
-      }
-    },
 
     close() {
       router.push({name: 'Home'})

@@ -18,12 +18,12 @@
     background: $yellow;
     z-index: -1;
   }
-  
+
    nav {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-     
+
      .report{
        width: 35px;
        border: 0;
@@ -87,12 +87,6 @@
       padding: 0 10px;
       display: flex;
       align-items: center;
-
-      .like{
-        border: 0px;
-        background: rgba(255, 255, 255, 0);
-        width: 40px;
-      }
 
       .comment{
         border: 0px;

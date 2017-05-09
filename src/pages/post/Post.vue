@@ -8,7 +8,7 @@
 
       <article class="post">
         <header v-if="!loading">
-          
+
 
           <div class="user" v-if="post.user">
             <img class="avatar" src="https://placeimg.com/60/60/people" :alt="post.user.username + '\'s profielfoto'">
@@ -30,8 +30,7 @@
 
           <footer class="post-details">
               <div class="footer-action">
-                  <button class="like" v-on:click="toggleLike()" aria-label="Vraag leuk vinden"><img src="../../assets/images/icons/heart-dark.svg" alt="Vind ik leuk!"></button>
-                  <span class="count like-count" v-bind:aria-label="post.likes">{{ post.likes }}</span>
+                <like-button :post="post"></like-button>
               </div>
 
               <div class="footer-action">

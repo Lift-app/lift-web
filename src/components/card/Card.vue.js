@@ -1,8 +1,12 @@
 import router from '@/router'
 import Post from '@/pages/post/Post'
+import LikeButton from '@/components/like-button/LikeButton'
 
 export default {
   name: 'card',
+  components: {
+    LikeButton
+  },
   props: {
     post_data: {}
   },
