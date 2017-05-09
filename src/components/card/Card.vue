@@ -22,9 +22,7 @@
     </section>
 
     <footer class="post-details">
-      <div class="footer-action">
-        <like-button :post="post_data" :dark="false"></like-button>
-      </div>
+      <like-button :post="post_data" :dark="false"></like-button>
 
       <div class="footer-action">
         <button class="comment" aria-label="Reageren op deze vraag"><img src="../../assets/images/icons/speech-bubble-white.svg" alt="Reageren op deze vraag"></button>

@@ -1,5 +1,15 @@
 .like {
-  border: 0;
-  background: rgba(255, 255, 255, 0);
-  width: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+
+  .like-button {
+    border: 0;
+    background: rgba(255, 255, 255, 0);
+    width: 40px;
+  }
+
+  .like-count {
+    margin-left: 5px;
+  }
 }
