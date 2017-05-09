@@ -1,6 +1,6 @@
 <template>
   <div class="like">
-    <button class="like-button" v-on:click="toggleLike()" aria-label="Vraag leuk vinden">
+    <button class="like-button" v-on:click.stop="toggleLike()" aria-label="Vraag leuk vinden">
       <img v-if="dark" src="../../assets/images/icons/heart-dark.svg" alt="Vind ik leuk!">
       <img v-if="!dark" src="../../assets/images/icons/heart-white.svg" alt="Vind ik leuk!">
     </button>
