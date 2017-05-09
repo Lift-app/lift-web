@@ -55,6 +55,30 @@ const actions = {
           reject(error)
         })
     })
+  },
+
+  likePost({ commit }, id) {
+    return new Promise((resolve, reject) => {
+      axios.put(`${config.apiUrl}/posts/${id}/like`)
+        .then((response) => {
+          resolve()
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  },
+
+  unlikePost({ commit }, id) {
+    return new Promise((resolve, reject) => {
+      axios.put(`${config.apiUrl}/posts/${id}/unlike`)
+        .then((response) => {
+          resolve()
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
   }
 }
 

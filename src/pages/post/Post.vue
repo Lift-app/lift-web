@@ -8,7 +8,7 @@
 
       <article class="post">
         <header v-if="!loading">
-          
+
 
           <div class="user" v-if="post.user">
             <img class="avatar" src="https://placeimg.com/60/60/people" :alt="post.user.username + '\'s profielfoto'">
@@ -29,10 +29,7 @@
         <p class="title" aria-hidden="true" v-if="loading">Laden...</p>
 
           <footer class="post-details">
-              <div class="footer-action">
-                  <button class="like" aria-label="Vraag leuk vinden"><img src="../../assets/images/icons/heart-dark.svg" alt="Vind ik leuk!"></button>
-                  <span class="count like-count" v-bind:aria-label="post.likes">{{ post.likes }}</span>
-              </div>
+              <like-button :post="post" :dark="true"></like-button>
 
               <div class="footer-action">
                   <button class="comment" aria-label="Reageren op deze vraag"><img src="../../assets/images/icons/speech-bubble-dark.svg" alt="Reageren op deze vraag"></button>
