@@ -8,7 +8,12 @@ import router from './router' // Import vue-router routes
 
 import notifications from './config/notifications'
 
+import moment from 'moment'
+
 Vue.config.productionTip = false
+
+moment.locale('nl')
+Vue.use(require('vue-moment'))
 
 /* eslint-disable no-new */
 new Vue({
