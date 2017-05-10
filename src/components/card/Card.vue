@@ -4,8 +4,7 @@
 
     <header>
       <div class="user">
-        <img class="avatar" src="https://placeimg.com/60/60/people" :alt="post_data.user.username + '\'s profielfoto'" v-if="post_data.user">
-        <img class="avatar anonymous" src="../../assets/images/icons/anonymous.svg" alt="Anonieme profielfoto" v-else>
+        <avatar :post="post_data"></avatar>
         <div class="user-details">
           <h4 class="u-name" v-if="post_data.user">{{ post_data.user.username }}</h4>
           <h4 class="u-name" v-else>Anoniem</h4>
