@@ -27,7 +27,7 @@ export default {
           }
         })
         .catch((error) => {
-          console.log("Failed to log in: ${error}")
+          console.log(`Failed to log in: ${error}`)
         })
     }
   }

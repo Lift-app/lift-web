@@ -7,15 +7,17 @@
         <p>{{ error }}</p>
       </div>
 
-      <input
-        type="text"
-        placeholder="E-mail"
-        v-model="credentials.email">
-      <input
-        type="password"
-        placeholder="Password"
-        v-model="credentials.password">
-      <button class="btn" v-on:click="login()">Inloggen</button>
+      <div class="inputs">
+        <input
+                type="email"
+                placeholder="E-mail"
+                v-model="credentials.email">
+        <input
+                type="password"
+                placeholder="Password"
+                v-model="credentials.password">
+        <button class="btn" v-on:click="login()">Inloggen</button>
+      </div>
     </div>
   </div>
 </template>

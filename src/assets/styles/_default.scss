@@ -93,12 +93,10 @@ body {
   padding-left: 0;
 }
 
+
+// ---------------------------------------------------------------------------------------------------------------------
 // Button icons
-/*
-button:focus {
-  display: none;
-}
-*/
+// ---------------------------------------------------------------------------------------------------------------------
 
 .btn-has-icon {
   background-repeat: no-repeat;
@@ -119,6 +117,7 @@ button:focus {
     background: rgba(255, 255, 255, .5);
   }
 }
+
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Forms and inputs
@@ -143,6 +142,7 @@ input {
 textarea,
 input[type=text],
 input[type=password],
+input[type=email],
 select {
   background: $form-bg;
   color: $form-color;
@@ -166,6 +166,11 @@ select {
 textarea {
   min-height: $form-max-width / 3;
 }
+
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Overrides
+// ---------------------------------------------------------------------------------------------------------------------
 
 .v-select {
   margin-bottom: $form-margin-bottom;
@@ -225,6 +230,7 @@ textarea {
   width: 50px;
   display: inline-block;
   border: 1px solid rgba($black, .2%);
+
   &.anonymous {
     background: $white;
   }
