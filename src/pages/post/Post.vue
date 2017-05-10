@@ -11,7 +11,7 @@
 
 
           <div class="user" v-if="post.user">
-            <img class="avatar" src="https://placeimg.com/60/60/people" :alt="post.user.username + '\'s profielfoto'">
+            <avatar :post="post"></avatar>
             <h3 class="username" v-model="post.user.username">{{ post.user.username }}</h3>
             <span class="created-on">2 dagen geleden</span>
           </div>

@@ -1,12 +1,14 @@
 import router from '@/router'
 import store from '@/store'
 import LikeButton from '@/components/like-button/LikeButton'
+import Avatar from '@/components/avatar/Avatar'
 import { mapActions } from 'vuex'
 
 export default {
   name: 'post',
   components: {
-    LikeButton
+    LikeButton,
+    Avatar
   },
   data () {
     return {
