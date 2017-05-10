@@ -3,6 +3,7 @@ import { mapActions } from 'vuex'
 
 import Modal from '@/components/modal/Modal'
 import Card from '@/components/card/Card'
+import Preloader from '@/components/preloader/Preloader'
 
 export default {
   name: 'home',
@@ -30,18 +31,10 @@ export default {
     }
   },
   components: {
-    Card
+    Card,
+    Preloader
   },
   created() {
     this.getPosts()
   }
 }
-// let view = document.querySelector('.view');
-// view.onscroll = function() { slideDown() }
-//
-// function slideDown() {
-//   if (view.scrollY > 100) {
-//     console.log('test')
-//     document.getElementsByClassName('header')[0].classList.add('slideDown')
-//   }
-// }

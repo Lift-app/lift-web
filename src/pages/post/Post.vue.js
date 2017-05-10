@@ -45,7 +45,6 @@ export default {
       this.actionGetPost(this.$route.params.id)
         .then(() => {
           this.post = store.state.post
-          console.log(this.post)
           this.loading = false
         })
         .catch(() => {

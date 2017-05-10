@@ -13,11 +13,13 @@
       <router-view></router-view>
     </transition>
 
-    <preloader></preloader>
-
     <p class="not-found" v-show="!posts.length"><i>Geen berichten gevonden</i></p>
 
-    <div class="card-group" v-if="!loading">
+    <div v-if="loading">
+      <preloader></preloader>
+    </div>
+
+    <div class="card-group" v-else>
       <transition-group name="slide-up">
         <card v-for="post in posts" :key="post.id" :post_data="post"></card>
       </transition-group>
@@ -29,5 +31,3 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss" src="./Home.vue.scss"></style>
-
-<!-- Scroll down for feed navigation -->
