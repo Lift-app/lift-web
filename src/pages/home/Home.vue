@@ -19,11 +19,11 @@
       <preloader></preloader>
     </div>
 
-    <div class="card-group" v-else>
-      <transition-group name="slide-up">
-        <card v-for="post in posts" :key="post.id" :post_data="post"></card>
-      </transition-group>
-    </div>
+    <transition name="slide-up">
+      <div class="card-group" v-if="!loading">
+          <card v-for="post in posts" :key="post.id" :post_data="post"></card>
+      </div>
+    </transition>
   </div>
 </template>
 
