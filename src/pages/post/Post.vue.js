@@ -29,6 +29,7 @@ export default {
         'like_count': 0,
         'liked': false
       },
+      comments: null,
       loading: false,
       topOffset: 0
     }
@@ -66,7 +67,7 @@ export default {
     loadComments() {
       this.actionGetComments(this.$route.params.id)
         .then(() => {
-          console.log('done')
+        this.comments = store.state.post.comments
         })
     }
   },

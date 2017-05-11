@@ -36,12 +36,16 @@
           <h3>Reacties</h3>
         </header>
 
-        <article>
+        <article v-for="comment in comments">
           <header>
-            post
+            <img v-if="comment.user" :src="comment.user.avatar.thumbnail" alt="Avatar">
+            <p v-if="comment.user">{{ comment.user.username }}</p>
           </header>
 
+            {{ comment.body }}
+
           <footer>
+            {{ comment.like_count }}
 
           </footer>
         </article>

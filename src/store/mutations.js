@@ -9,7 +9,7 @@ export const SET_POST = (state, post) => {
 export const SET_COMMENTS = (state, data) => {
   // const postIndex = state.posts.findIndex((post) => post.id === parseInt(data.id))
 
-  // state.post.comments = data.comments
+  state.post.comments = data.comments
 }
 
 export const SET_CATEGORIES = (state, cat) => {
