@@ -25,7 +25,7 @@
       <div class="footer-action">
         <button class="comment" aria-label="Reageren op deze vraag"><img src="../../assets/images/icons/speech-bubble-white.svg" alt="Reageren op deze vraag"></button>
 
-        <span class="count comment-count"  :aria-label="post_data.comments + ' reacties'">{{ post_data.comments }}</span>
+        <span class="count comment-count"  :aria-label="post_data.comment_count + ' reacties'">{{ post_data.comment_count }}</span>
       </div>
     </footer>
 
