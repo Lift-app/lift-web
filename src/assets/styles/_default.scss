@@ -43,7 +43,7 @@ body {
     transition: .2s $animation-snap;
   }
 
-  &.input-focussed {
+  &.nav-hidden {
 
     > .view {
       height: 100%;

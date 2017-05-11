@@ -186,12 +186,12 @@ export default {
     // Focus and blur functions to hide the navbar
     focusInput(e) {
        e.srcElement.classList.add('focussed')
-      document.querySelector('#app').classList.add('input-focussed')
+      document.querySelector('#app').classList.add('nav-hidden')
     },
 
     blurInput(e) {
        e.srcElement.classList.remove('focussed')
-      document.querySelector('#app').classList.remove('input-focussed')
+      document.querySelector('#app').classList.remove('nav-hidden')
     }
   },
 
