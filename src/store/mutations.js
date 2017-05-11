@@ -14,11 +14,11 @@ export const likePost = (state, id) => {
   const postIndex = state.posts.findIndex((post) => post.id === id)
 
   state.posts[postIndex].liked = true
-  state.posts[postIndex].likes++
+  state.posts[postIndex].like_count++
 
   if (state.post) {
     state.post.liked = true
-    state.post.likes++
+    state.post.like_count++
   }
 }
 
@@ -26,10 +26,10 @@ export const unlikePost = (state, id) => {
   const postIndex = state.posts.findIndex((post) => post.id === id)
 
   state.posts[postIndex].liked = false
-  state.posts[postIndex].likes--
+  state.posts[postIndex].like_count--
 
   if (state.post) {
     state.post.liked = false
-    state.post.likes--
+    state.post.like_count--
   }
 }
