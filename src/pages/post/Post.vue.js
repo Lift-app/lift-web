@@ -40,7 +40,8 @@ export default {
   },
   methods: {
     ...mapActions({
-      actionGetPost: 'getPost'
+      actionGetPost: 'getPost',
+      actionGetComments: 'getComments'
     }),
 
     close() {
@@ -53,12 +54,21 @@ export default {
         .then(() => {
           this.post = store.state.post
           this.loading = false
+
+          this.loadComments()
         })
         .catch(() => {
           router.push({name: '404'})
         })
 
     },
+
+    loadComments() {
+      this.actionGetComments(this.$route.params.id)
+        .then(() => {
+          console.log('done')
+        })
+    }
   },
   mounted() {
     this.loadPost()

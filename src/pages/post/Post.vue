@@ -32,7 +32,20 @@
       </article>
 
       <div class="comments">
-        comments
+        <header>
+          <h3>Reacties</h3>
+        </header>
+
+        <article>
+          <header>
+            post
+          </header>
+
+          <footer>
+
+          </footer>
+        </article>
+
       </div>
     </div>
   </div>

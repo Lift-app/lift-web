@@ -6,6 +6,12 @@ export const SET_POST = (state, post) => {
   state.post = post.data
 }
 
+export const SET_COMMENTS = (state, data) => {
+  // const postIndex = state.posts.findIndex((post) => post.id === parseInt(data.id))
+
+  // state.post.comments = data.comments
+}
+
 export const SET_CATEGORIES = (state, cat) => {
   state.categories = cat.data
 }
