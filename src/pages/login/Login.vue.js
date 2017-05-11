@@ -14,6 +14,12 @@ export default {
       msg: 'login'
     }
   },
+  mounted() {
+    document.querySelector('#app').classList.add('nav-hidden')
+  },
+  beforeDestroy() {
+    document.querySelector('#app').classList.remove('nav-hidden')
+  },
   methods: {
     login() {
       const credentials = this.credentials
