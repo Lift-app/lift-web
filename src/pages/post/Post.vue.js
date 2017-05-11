@@ -26,7 +26,7 @@ export default {
           'id': 0,
         },
         'body': '',
-        'likes': 0,
+        'like_count': 0,
         'liked': false
       },
       loading: false,
