@@ -20,7 +20,7 @@ export default {
         'updated_at': '',
         'is_locked': false,
         'id': 0,
-        'created_at': '',
+        'created_at': '0000-01-01T00:00:00',
         'category': {
           'name': '',
           'id': 0,
