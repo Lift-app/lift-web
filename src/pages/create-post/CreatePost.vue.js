@@ -54,10 +54,14 @@ export default {
     }),
 
     getCategories() {
-      this.fetchCategories()
-        .then(() => {
-          this.categories = store.state.categories
-        })
+      if(!store.state.categories) {
+        this.fetchCategories()
+          .then(() => {
+            this.categories = store.state.categories
+          })
+      } else {
+        this.categories = store.state.categories
+      }
     },
 
     createPost() {
