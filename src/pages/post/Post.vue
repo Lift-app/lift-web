@@ -38,18 +38,22 @@
 
         <article v-for="comment in comments" class="comment">
           <aside class="comment-sidebar">
-            <img v-if="comment.user" :src="comment.user.avatar.thumbnail" alt="Avatar">
+            <figure class="avatar-container" v-if="comment.user">
+              <img class="avatar" :src="comment.user.avatar.thumbnail" alt="Avatar">
+            </figure>
           </aside>
 
           <div class="comment-content">
             <header>
               <p v-if="comment.user">{{ comment.user.username }}</p>
+              <span class="date">{{ comment.updated_at | moment("from", "now") }}</span>
             </header>
 
             <p>{{ comment.body }}</p>
 
             <footer>
-              {{ comment.like_count }}
+              <p>👍 {{ comment.like_count }}</p>
+              <p>comment</p>
 
             </footer>
           </div>

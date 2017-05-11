@@ -138,18 +138,54 @@
   .comments {
 
     .comment {
-      margin-bottom: 20px;
+
+      $margin: 20px;
+      $color: $white;
+
+      margin-bottom: $margin;
 
       display: flex;
       align-items: stretch;
 
       .comment-sidebar {
         width: 80px;
+
+        .avatar-container {
+          margin: 0;
+          width: 45px;
+
+          .avatar {
+            border-radius: 50%;
+            width: 100%;
+            height: auto;
+          }
+        }
       }
 
       .comment-content {
         background: $white;
         width: 100%;
+        padding: ($margin / 2) $margin;
+        border-radius: $default-radius;
+        position: relative;
+
+        &:before {
+          content: "";
+          position: absolute;
+          top: ($margin / 1.5);
+          left: -$margin;
+          border-width: $margin $margin 0;
+          border-style: solid;
+          border-color: $color transparent;
+          display: block;
+          width: 0;
+          transform: rotate(90deg);
+        }
+
+        footer {
+          display: flex;
+          align-items: center;
+        }
       }
     }
   }
