@@ -124,13 +124,32 @@
       align-items: center;
 
       .comment{
-        border: 0px;
+        border: 0;
         background: rgba(255, 255, 255, 0);
         width: 40px;
       }
 
       .count {
         margin-left: 5px;
+      }
+    }
+  }
+
+  .comments {
+
+    .comment {
+      margin-bottom: 20px;
+
+      display: flex;
+      align-items: stretch;
+
+      .comment-sidebar {
+        width: 80px;
+      }
+
+      .comment-content {
+        background: $white;
+        width: 100%;
       }
     }
   }

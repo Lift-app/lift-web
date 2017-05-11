@@ -36,18 +36,23 @@
           <h3>Reacties</h3>
         </header>
 
-        <article v-for="comment in comments">
-          <header>
+        <article v-for="comment in comments" class="comment">
+          <aside class="comment-sidebar">
             <img v-if="comment.user" :src="comment.user.avatar.thumbnail" alt="Avatar">
-            <p v-if="comment.user">{{ comment.user.username }}</p>
-          </header>
+          </aside>
 
-            {{ comment.body }}
+          <div class="comment-content">
+            <header>
+              <p v-if="comment.user">{{ comment.user.username }}</p>
+            </header>
 
-          <footer>
-            {{ comment.like_count }}
+            <p>{{ comment.body }}</p>
 
-          </footer>
+            <footer>
+              {{ comment.like_count }}
+
+            </footer>
+          </div>
         </article>
 
       </div>
