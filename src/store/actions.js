@@ -57,9 +57,9 @@ const actions = {
     })
   },
 
-  likePost({ commit }, id) {
+  like({ commit }, [id, type]) {
     return new Promise((resolve, reject) => {
-      axios.put(`${config.apiUrl}/posts/${id}/like`)
+      axios.put(`${config.apiUrl}/${type}/${id}/like`)
         .then((response) => {
           resolve()
         })
@@ -69,9 +69,9 @@ const actions = {
     })
   },
 
-  unlikePost({ commit }, id) {
+  unlike({ commit }, [id, type]) {
     return new Promise((resolve, reject) => {
-      axios.put(`${config.apiUrl}/posts/${id}/unlike`)
+      axios.put(`${config.apiUrl}/${type}/${id}/unlike`)
         .then((response) => {
           resolve()
         })
