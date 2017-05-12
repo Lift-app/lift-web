@@ -1,10 +1,10 @@
 <template>
   <div class="like">
-    <button class="like-button" v-on:click.stop="toggleLike()" aria-label="Vraag leuk vinden">
+    <button class="like-button" v-on:click.stop="toggleLike()" :aria-label="like_message">
       <img v-if="dark" src="../../assets/images/icons/heart-dark.svg" alt="Vind ik leuk!">
       <img v-if="!dark" src="../../assets/images/icons/heart-white.svg" alt="Vind ik leuk!">
     </button>
-    <span class="count like-count" v-bind:aria-label="post.like_count">{{ post.like_count }}</span>
+    <span class="count like-count" v-bind:aria-label="data.like_count">{{ data.like_count }}</span>
   </div>
 </template>
 

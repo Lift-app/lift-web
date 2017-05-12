@@ -22,7 +22,7 @@
         <p class="title" aria-hidden="true" v-if="loading">Laden...</p>
 
         <footer class="post-details">
-          <like-button :post="post" :dark="true"></like-button>
+          <like-button :data="post" type="posts" :dark="true"></like-button>
 
           <div class="footer-action">
             <button class="comment" aria-label="Reageren op deze vraag"><img src="../../assets/images/icons/speech-bubble-dark.svg" alt="Reageren op deze vraag"></button>

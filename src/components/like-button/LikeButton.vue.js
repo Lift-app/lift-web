@@ -4,24 +4,31 @@ import { mapActions } from 'vuex'
 export default {
   name: 'like-button',
   props: {
-    post: {},
+    data: {},
+    type: String,
     dark: Boolean
+  },
+  computed: {
+    like_message() {
+      const typeName = this.type === 'posts' ? 'Vraag' : 'Reactie'
+      return `${typeName} leuk vinden`
+    }
   },
   methods: {
     ...mapActions({
-      actionLikePost: 'likePost',
-      actionUnlikePost: 'unlikePost'
+      actionLike: 'like',
+      actionUnlike: 'unlike'
     }),
     toggleLike() {
-      if (this.post.liked) {
-        this.actionUnlikePost(this.post.id)
+      if (this.data.liked) {
+        this.actionUnlike([this.data.id, this.type])
           .then(() => {
-            store.commit('unlikePost', this.post.id)
+            store.commit('unlike', [this.data.id, this.type])
           })
       } else {
-        this.actionLikePost(this.post.id)
+        this.actionLike([this.data.id, this.type])
           .then(() => {
-            store.commit('likePost', this.post.id)
+            store.commit('like', [this.data.id, this.type])
           })
       }
     },
