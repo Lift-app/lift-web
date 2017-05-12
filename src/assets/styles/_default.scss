@@ -91,6 +91,15 @@ body {
   color: $white;
   text-decoration: none;
   padding-left: 0;
+  position: relative;
+
+  img {
+    height: 14px;
+    position: absolute;
+  }
+  span {
+    padding-left: 15px;
+  }
 }
 
 
