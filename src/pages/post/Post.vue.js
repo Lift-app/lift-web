@@ -33,6 +33,11 @@ export default {
       topOffset: 0
     }
   },
+  computed: {
+    normalizedCategory() {
+      return this.post.category.name.toLowerCase().replace(/\s/g, '-');
+    }
+  },
   methods: {
     ...mapActions({
       actionGetPost: 'getPost'

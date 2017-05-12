@@ -15,8 +15,29 @@
     @extend %absolute-view;
     content: '';
     height: 40%;
-    background: $yellow;
+    background: $porcelain;
     z-index: -1;
+  }
+
+  // make a class for every category name in $POST_CATEGORIES and set the correct background and color
+  @each $category, $bgcolor in $POST_CATEGORIES {
+    &.#{$category} {
+
+      &:before {
+        background-color: $bgcolor;
+        // determine if the text should be black or white based on the lightness level of the given color
+        @if lightness($bgcolor) > lightness(#ccc) {
+          color: $text-dark;
+        } @else {
+          color: $white;
+        }
+      }
+
+      .cat-btn {
+        color: $bgcolor;
+        font-size: $text-font-size - 1px;
+      }
+    }
   }
 
    nav {

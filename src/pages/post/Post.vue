@@ -1,5 +1,5 @@
 <template>
-  <div class="page--post">
+  <div class="page--post" :class="normalizedCategory">
     <div class="post-container">
       <nav>
         <router-link to="/" class="btn btn-back" aria-label="Terug naar: Home">&lang; Terug</router-link>
