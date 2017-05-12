@@ -67,6 +67,13 @@ body {
   border: 0;
   font-weight: 500;
   outline: 0;
+  transition: $default-transition;
+  cursor: pointer;
+
+  &:hover, &:focus {
+    background: darken($white, 5);
+    transition: $default-transition;
+  }
 }
 
 .btn.medium {
