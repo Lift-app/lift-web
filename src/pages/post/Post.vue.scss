@@ -158,6 +158,7 @@
             border-radius: 50%;
             width: 100%;
             height: auto;
+            max-width: 40px;
           }
         }
       }
@@ -165,16 +166,34 @@
       .comment-content {
         background: $white;
         width: 100%;
-        padding: ($margin / 2) $margin;
+        padding: 15px 20px;
         border-radius: $default-radius;
         position: relative;
+
+        .username, .date {
+          margin: 0;
+          display: inline-block;
+        }
+
+        .username {
+          text-transform: capitalize;
+        }
+
+        .date {
+          float: right;
+        }
+
+        .content {
+          margin: 0;
+          padding: 20px 0;
+        }
 
         &:before {
           content: "";
           position: absolute;
           top: ($margin / 1.5);
-          left: -$margin;
-          border-width: $margin $margin 0;
+          left: -15px;
+          border-width: 15px 15px 0;
           border-style: solid;
           border-color: $color transparent;
           display: block;
@@ -182,9 +201,13 @@
           transform: rotate(90deg);
         }
 
-        footer {
+        .footer {
           display: flex;
           align-items: center;
+
+          .like-count {
+            margin: 0;
+          }
         }
       }
     }
