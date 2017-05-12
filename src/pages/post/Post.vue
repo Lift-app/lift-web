@@ -45,12 +45,10 @@
           </aside>
 
           <div class="comment-content">
-            <header>
-              <p v-if="comment.user">{{ comment.user.username }}</p>
             <header class="header">
               <span class="username" v-if="comment.user">{{ comment.user.username }}</span>
-	       <span v-else="!comment.user">Anoniem</span>
-              <span class="date">{{ comment.updated_at | moment("from", "now") }}</span>
+	          <span v-else="!comment.user">Anoniem</span>
+              <small class="date">{{ comment.updated_at | moment("from", "now") }}</small>
             </header>
 
             <h3 v-if="comment.type !== 'audio'" class="content">{{ comment.body }}</h3>

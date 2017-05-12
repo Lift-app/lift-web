@@ -181,11 +181,13 @@
 
         .date {
           float: right;
+          padding: 2px 0 0 0;
         }
 
         .content {
           margin: 0;
           padding: 20px 0;
+          font-weight: 400;
         }
 
         &:before {
