@@ -38,14 +38,16 @@
 
         <article v-for="comment in comments" class="comment">
           <aside class="comment-sidebar">
-            <figure class="avatar-container" v-if="comment.user">
-              <img class="avatar" :src="comment.user.avatar.thumbnail" alt="Avatar">
+            <figure class="avatar-container">
+              <img class="avatar" v-if="comment.user" :src="comment.user.avatar.thumbnail" alt="Avatar">
+              <img class="avatar anonymous" v-else src="../../assets/images/icons/anonymous.svg" alt="Anonieme profielfoto">
             </figure>
           </aside>
 
           <div class="comment-content">
             <header>
               <p v-if="comment.user">{{ comment.user.username }}</p>
+              <p v-else="!comment.user">Anoniem</p>
               <span class="date">{{ comment.updated_at | moment("from", "now") }}</span>
             </header>
 
