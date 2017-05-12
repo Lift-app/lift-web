@@ -28,12 +28,12 @@ export const like = (state, [id, type]) => {
       state.post.like_count++
     }
   } else if (type === 'comments') {
-    const commentIndex = state.posts.comments.findIndex(
+    const commentIndex = state.post.comments.findIndex(
       (comment) => comment.id === id
     )
 
-    state.posts.comments[commentIndex].liked = true
-    state.posts.comments[commentIndex].like_count++
+    state.post.comments[commentIndex].liked = true
+    state.post.comments[commentIndex].like_count++
   }
 }
 
@@ -49,11 +49,11 @@ export const unlike = (state, [id, type]) => {
       state.post.like_count--
     }
   } else if (type === 'comments') {
-    const commentIndex = state.posts.comments.findIndex(
+    const commentIndex = state.post.comments.findIndex(
       (comment) => comment.id === id
     )
 
-    state.posts.comments[commentIndex].liked = true
-    state.posts.comments[commentIndex].like_count++
+    state.post.comments[commentIndex].liked = false
+    state.post.comments[commentIndex].like_count--
   }
 }
