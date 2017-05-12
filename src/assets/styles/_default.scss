@@ -230,6 +230,7 @@ textarea {
   width: 50px;
   display: inline-block;
   border: 1px solid rgba($black, .2%);
+  background: $white;
 
   &.anonymous {
     background: $white;
