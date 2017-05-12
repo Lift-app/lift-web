@@ -49,7 +49,8 @@
               <span class="date">{{ comment.updated_at | moment("from", "now") }}</span>
             </header>
 
-            <p>{{ comment.body }}</p>
+            <h3  v-if="comment.type !== 'audio'">{{ comment.body }}</h3>
+            <audio style="width: 100%; margin: 20px 0;" preload="auto" v-else :src="comment.body" class="audio-post" controls></audio>
 
             <footer>
               <p>👍 {{ comment.like_count }}</p>
