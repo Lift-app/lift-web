@@ -6,10 +6,6 @@ import { mapActions } from 'vuex'
 
 export default {
   name: 'post',
-  components: {
-    LikeButton,
-    Avatar
-  },
   data () {
     return {
       post: {
@@ -78,5 +74,9 @@ export default {
     '$route' (to, from) {
       this.loadPost()
     }
+  },
+  components: {
+    LikeButton,
+    Avatar
   }
 }

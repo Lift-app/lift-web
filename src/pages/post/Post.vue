@@ -51,11 +51,12 @@
               <small class="date">{{ comment.updated_at | moment("from", "now") }}</small>
             </header>
 
-            <h3 v-if="comment.type !== 'audio'" class="content">{{ comment.body }}</h3>
+            <h3 v-if="comment.type !== 'audio'" class="body">{{ comment.body }}</h3>
             <audio style="width: 100%; margin: 20px 0;" preload="auto" v-else :src="comment.body" class="audio-post" controls></audio>
 
             <footer class="footer">
-              <p class="like-count">👍 {{ comment.like_count }} comment</p>
+              <like-button type="comments" :data="comment" :dark="true"></like-button>
+              <button class="btn comment" aria-label="Reageren op deze comment"><img src="../../assets/images/icons/speech-bubble-dark.svg" alt="Reageren op deze comment"></button>
 
             </footer>
           </div>

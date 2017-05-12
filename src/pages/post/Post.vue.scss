@@ -123,7 +123,7 @@
       display: flex;
       align-items: center;
 
-      .comment{
+      .comment {
         border: 0;
         background: rgba(255, 255, 255, 0);
         width: 40px;
@@ -137,18 +137,19 @@
 
   .comments {
 
+    $margin: 20px;
+    $color: $white;
+    $sidebar-width: 70px;
+
+    padding: $margin 0 $nav-height;
+
     .comment {
-
-      $margin: 20px;
-      $color: $white;
-
       margin-bottom: $margin;
-
       display: flex;
       align-items: stretch;
 
       .comment-sidebar {
-        width: 75px;
+        width: $sidebar-width;
 
         .avatar-container {
           margin: 0;
@@ -169,6 +170,7 @@
         padding: 15px 20px;
         border-radius: $default-radius;
         position: relative;
+        box-shadow: $box-shadow;
 
         .username, .date {
           margin: 0;
@@ -177,6 +179,7 @@
 
         .username {
           text-transform: capitalize;
+          font-size: 1rem;
         }
 
         .date {
@@ -184,14 +187,15 @@
           padding: 2px 0 0 0;
         }
 
-        .content {
+        .body {
           margin: 0;
           padding: 20px 0;
           font-weight: 400;
+          font-size: 1rem;
         }
 
         &:before {
-          content: "";
+          content: '';
           position: absolute;
           top: ($margin / 1.5);
           left: -15px;
@@ -207,8 +211,19 @@
           display: flex;
           align-items: center;
 
-          .like-count {
-            margin: 0;
+          .like {
+            padding-left: 0;
+          }
+
+          .comment {
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            margin-bottom: 0;
+
+            img {
+              width: 28px;
+            }
           }
         }
       }
