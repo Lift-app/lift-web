@@ -54,9 +54,12 @@
 
         <h3 class="title"><span class="comment-count">{{ post.comment_count }}</span> reacties</h3>
 
-        <article v-for="comment in comments" class="comment">
+        <article v-for="(comment, index) in comments"
+                 v-bind:item="comment"
+                 v-bind:index="index"
+                 v-bind:key="comment.id" class="comment">
           <aside class="comment-sidebar">
-            <figure class="avatar-container">
+            <figure class="avatar-container" v-if="comment.user">
               <img class="avatar" v-if="comment.user.avatar" :src="comment.user.avatar.thumbnail" alt="Avatar">
               <img class="avatar anonymous" v-else src="../../assets/images/icons/anonymous.svg" alt="Anonieme profielfoto">
             </figure>

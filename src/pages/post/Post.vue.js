@@ -65,7 +65,8 @@ export default {
     loadComments() {
       this.actionGetComments(this.$route.params.id)
         .then(() => {
-        this.comments = store.state.post.comments
+          this.comments = store.state.post.comments
+          this.post.comment_count++
         })
     },
 
@@ -78,6 +79,7 @@ export default {
       this.actionPlaceComment(call_data)
         .then(() => {
           console.log('posted')
+          this.comments = store.state.post.comments
         })
     },
 

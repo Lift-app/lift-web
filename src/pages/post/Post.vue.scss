@@ -283,16 +283,13 @@
 
           &:focus,
           .focussed {
-            border-bottom: 0;
+            border-bottom-color: transparent;
           }
         }
 
         footer {
           display: flex;
           justify-content: flex-end;
-
-          .btn-submit {
-          }
         }
       }
     }
