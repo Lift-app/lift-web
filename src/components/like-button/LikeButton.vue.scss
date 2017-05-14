@@ -3,13 +3,47 @@
   align-items: center;
   padding: 0 10px;
 
+  .like-count {
+    margin-left: 5px;
+  }
+
+
   .like-button {
     border: 0;
     background: rgba(255, 255, 255, 0);
     width: 40px;
+
+    &.liked {
+
+      .heart {
+        .heart-fill {
+          fill: #FE6E88;
+          transition: fill $animation-snap .2s;
+        }
+
+        .heart-border {
+          fill: $red;
+          transition: fill $animation-snap .2s;
+        }
+      }
+    }
   }
 
-  .like-count {
-    margin-left: 5px;
+  .heart {
+    .heart-fill {
+      fill: transparent;
+      transition: fill $animation-snap .2s;
+    }
+
+    .heart-border {
+      fill: $white;
+      transition: fill $animation-snap .2s;
+    }
+  }
+
+  &.dark {
+    .heart-border {
+      fill: $dark;
+    }
   }
 }
