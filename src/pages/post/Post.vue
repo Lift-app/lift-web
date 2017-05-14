@@ -57,7 +57,7 @@
         <article v-for="(comment, index) in comments"
                  v-bind:item="comment"
                  v-bind:index="index"
-                 v-bind:key="comment.id" class="comment">
+                 v-bind:key="comment.id" class="comment" :id="'comment-' + comment.id">
           <aside class="comment-sidebar">
             <figure class="avatar-container" v-if="comment.user">
               <img class="avatar" v-if="comment.user.avatar" :src="comment.user.avatar.thumbnail" alt="Avatar">

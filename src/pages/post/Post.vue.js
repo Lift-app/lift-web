@@ -77,9 +77,14 @@ export default {
         body: this.commentBody
       }
       this.actionPlaceComment(call_data)
-        .then(() => {
+        .then((response) => {
           console.log('posted')
           this.comments = store.state.post.comments
+          function scrollTo(){
+            let topPos = document.getElementById(`comment-${response.id}`).offsetTop;
+            document.getElementById('view').scrollTop = topPos-10;
+          }
+          scrollTo()
         })
     },
 
