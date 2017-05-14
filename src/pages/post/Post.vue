@@ -45,9 +45,9 @@
               <span class="username">Teun</span>
             </header>
 
-              <textarea name="body" class="body" placeholder="Typ hier je reactie..." @focus="focusInput" @blur="blurInput"></textarea>
+              <textarea name="body" class="body" placeholder="Typ hier je reactie..." @focus="focusInput" @blur="blurInput" v-model="commentBody"></textarea>
             <footer>
-              <button class="btn btn-orange btn-submit" type="submit">Plaatsen</button>
+              <button class="btn btn-orange btn-submit" @click="placeComment">Plaatsen</button>
             </footer>
           </div>
         </div>
@@ -57,7 +57,7 @@
         <article v-for="comment in comments" class="comment">
           <aside class="comment-sidebar">
             <figure class="avatar-container">
-              <img class="avatar" v-if="comment.user" :src="comment.user.avatar.thumbnail" alt="Avatar">
+              <img class="avatar" v-if="comment.user.avatar" :src="comment.user.avatar.thumbnail" alt="Avatar">
               <img class="avatar anonymous" v-else src="../../assets/images/icons/anonymous.svg" alt="Anonieme profielfoto">
             </figure>
           </aside>

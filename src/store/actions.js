@@ -44,6 +44,20 @@ const actions = {
     })
   },
 
+  placeComment({ commit }, data) {
+    return new Promise((resolve, reject) => {
+      return axios.post(`${config.apiUrl}/posts/${data.id}/comments`, data)
+        .then((response) => {
+          commit('SET_COMMENT', {comment: response.data.data, data: data})
+          console.log(response.data)
+          resolve()
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  },
+
   placePost({ commit }, arg) {
     return new Promise((resolve, reject) => {
       axios.post(`${config.apiUrl}/posts`, arg)

@@ -26,6 +26,7 @@ export default {
         'liked': false
       },
       comments: null,
+      commentBody: null,
       loading: false,
       topOffset: 0
     }
@@ -38,7 +39,8 @@ export default {
   methods: {
     ...mapActions({
       actionGetPost: 'getPost',
-      actionGetComments: 'getComments'
+      actionGetComments: 'getComments',
+      actionPlaceComment: 'placeComment'
     }),
 
     close() {
@@ -64,6 +66,18 @@ export default {
       this.actionGetComments(this.$route.params.id)
         .then(() => {
         this.comments = store.state.post.comments
+        })
+    },
+
+    placeComment() {
+      let call_data = {
+        id: this.$route.params.id,
+        type: 'text',
+        body: this.commentBody
+      }
+      this.actionPlaceComment(call_data)
+        .then(() => {
+          console.log('posted')
         })
     },
 

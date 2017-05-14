@@ -280,13 +280,10 @@
         .body {
           max-width: 100%;
           min-height: 80px;
-          transition: $animation-snap .2s;
 
           &:focus,
           .focussed {
-            min-height: 200px;
             border-bottom: 0;
-            transition: $animation-snap .2s;
           }
         }
 
