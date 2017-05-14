@@ -49,8 +49,7 @@ const actions = {
       return axios.post(`${config.apiUrl}/posts/${data.id}/comments`, data)
         .then((response) => {
           commit('SET_COMMENT', {comment: response.data.data, data: data})
-          console.log(response.data)
-          resolve()
+          resolve(response.data.data)
         })
         .catch((error) => {
           reject(error)
