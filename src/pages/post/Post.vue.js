@@ -65,6 +65,17 @@ export default {
         .then(() => {
         this.comments = store.state.post.comments
         })
+    },
+
+    // Focus and blur functions to hide the navbar
+    focusInput(e) {
+      e.srcElement.classList.add('focussed')
+      document.querySelector('#app').classList.add('nav-hidden')
+    },
+
+    blurInput(e) {
+      e.srcElement.classList.remove('focussed')
+      document.querySelector('#app').classList.remove('nav-hidden')
     }
   },
   mounted() {

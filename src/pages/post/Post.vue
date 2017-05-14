@@ -27,7 +27,6 @@
 
             <div class="footer-action">
               <button class="comment" aria-label="Reageren op deze vraag"><img src="../../assets/images/icons/speech-bubble-dark.svg" alt="Reageren op deze vraag"></button>
-              <span class="count comment-count"  :aria-label="post.comment_count + ' reacties'">{{ post.comment_count }}</span>
             </div>
           </footer>
         </div>
@@ -42,20 +41,18 @@
             </figure>
           </aside>
           <div class="comment-content">
-            <form>
             <header>
               <span class="username">Teun</span>
             </header>
 
-              <textarea name="body" class="body" placeholder="Typ hier je reactie..."></textarea>
+              <textarea name="body" class="body" placeholder="Typ hier je reactie..." @focus="focusInput" @blur="blurInput"></textarea>
             <footer>
-              <button class="btn btn-orange btn-small" type="submit">Plaatsen</button>
+              <button class="btn btn-orange btn-submit" type="submit">Plaatsen</button>
             </footer>
-            </form>
           </div>
         </div>
 
-        <h3 class="title">Reacties</h3>
+        <h3 class="title"><span class="comment-count">{{ post.comment_count }}</span> reacties</h3>
 
         <article v-for="comment in comments" class="comment">
           <aside class="comment-sidebar">

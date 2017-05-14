@@ -170,6 +170,10 @@
       font-weight: bold;
       font-size: 24px;
       text-align: center;
+
+      .comment-count {
+        color: $orange-pure;
+      }
     }
 
     .comment {
@@ -270,10 +274,28 @@
     }
 
     .create-comment {
+      margin-bottom: $margin * 2;
 
-      .body {
-        &:focus {
-          border-bottom: 0;
+      .comment-content {
+        .body {
+          max-width: 100%;
+          min-height: 80px;
+          transition: $animation-snap .2s;
+
+          &:focus,
+          .focussed {
+            min-height: 200px;
+            border-bottom: 0;
+            transition: $animation-snap .2s;
+          }
+        }
+
+        footer {
+          display: flex;
+          justify-content: flex-end;
+
+          .btn-submit {
+          }
         }
       }
     }
