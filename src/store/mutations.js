@@ -14,6 +14,10 @@ export const SET_COMMENT = (state, data) => {
   state.post.comments.push(data.comment)
 }
 
+export const SET_USER = (state, user) => {
+  state.user = user
+}
+
 export const SET_CATEGORIES = (state, cat) => {
   state.categories = cat.data
 }

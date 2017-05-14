@@ -2,6 +2,19 @@ import config from '@/config/config'
 import axios from 'axios' // We use Axios for AJAX calls
 
 const actions = {
+  getCurrentUser({ commit }) {
+    return new Promise((resolve, reject) => {
+      return axios.get(`${config.apiUrl}/users/me`)
+        .then((response) => {
+          commit('SET_USER', response.data)
+          resolve()
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  },
+
   getPosts({ commit }) {
     return new Promise((resolve, reject) => {
       return axios.get(`${config.apiUrl}/posts`)

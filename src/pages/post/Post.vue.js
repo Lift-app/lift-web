@@ -6,7 +6,7 @@ import { mapActions } from 'vuex'
 
 export default {
   name: 'post',
-  data () {
+  data() {
     return {
       post: {
         user: {
@@ -28,7 +28,8 @@ export default {
       comments: null,
       commentBody: null,
       loading: false,
-      topOffset: 0
+      topOffset: 0,
+      currentUser: {}
     }
   },
   computed: {
@@ -38,6 +39,7 @@ export default {
   },
   methods: {
     ...mapActions({
+      actionGetCurrentUser: 'getCurrentUser',
       actionGetPost: 'getPost',
       actionGetComments: 'getComments',
       actionPlaceComment: 'placeComment'
@@ -54,6 +56,7 @@ export default {
           this.post = store.state.post
           this.loading = false
 
+
           this.loadComments()
         })
         .catch(() => {
@@ -66,7 +69,7 @@ export default {
       this.actionGetComments(this.$route.params.id)
         .then(() => {
           this.comments = store.state.post.comments
-        })
+      })
     },
 
     placeComment() {
@@ -101,6 +104,10 @@ export default {
   },
   mounted() {
     this.loadPost()
+    this.actionGetCurrentUser()
+      .then(() => {
+        this.currentUser = store.state.user
+      })
   },
   watch: {
     '$route' (to, from) {

@@ -33,12 +33,12 @@
         <div class="comment create-comment">
           <aside class="comment-sidebar">
             <figure class="avatar-container">
-              <img class="avatar" src="../../assets/images/icons/anonymous.svg" alt="Anonieme profielfoto">
+              <img class="avatar" :src="currentUser.avatar.thumbnail" :alt="currentUser.username + '\'s profielfoto'">
             </figure>
           </aside>
           <div class="comment-content">
             <header>
-              <span class="username">Teun</span>
+              <span class="username">{{ currentUser.username }}</span>
             </header>
 
               <textarea name="body" class="body" placeholder="Typ hier je reactie..." @focus="focusInput" @blur="blurInput" v-model="commentBody"></textarea>
