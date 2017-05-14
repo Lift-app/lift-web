@@ -66,7 +66,6 @@ export default {
       this.actionGetComments(this.$route.params.id)
         .then(() => {
           this.comments = store.state.post.comments
-          this.post.comment_count++
         })
     },
 
@@ -80,6 +79,7 @@ export default {
         .then((response) => {
           console.log('posted')
           this.comments = store.state.post.comments
+          this.post.comment_count++
           function scrollTo(){
             let topPos = document.getElementById(`comment-${response.id}`).offsetTop;
             document.getElementById('view').scrollTop = topPos-10;
