@@ -8,84 +8,102 @@
   transform: translateX(-50%);
   margin: 0 auto;
   overflow: scroll;
-  padding: 0 1em;
   z-index: 2;
   background-color: $porcelain;
 
-  &:before {
-    @extend %absolute-view;
-    content: '';
-    height: 40%;
-    background: $porcelain;
-    z-index: -1;
-  }
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    padding: 0 1em;
+    width: 100%;
+    z-index: 1;
 
-  // make a class for every category name in $POST_CATEGORIES and set the correct background and color
-  @each $category, $bgcolor in $POST_CATEGORIES {
-    &.#{$category} {
+    .report {
+      width: auto;
+      color: $white;
+      font-weight: 500;
+      border: 0;
+      background: rgba(255, 255, 255, 0);
+      position: relative;
+      padding-right: 30px;
+      font-size: 12px;
 
-      &:before {
-        background-color: $bgcolor;
-        // determine if the text should be black or white based on the lightness level of the given color
-        @if lightness($bgcolor) > lightness(#ccc) {
-          color: $text-dark;
-        } @else {
-          color: $white;
-        }
-      }
-
-      .category-button {
-        color: $bgcolor;
-        padding: 5px 10px;
+      .report-icon {
+        max-width: 20px;
+        position: absolute;
+        right: 0;
+        top: 15px;
       }
     }
   }
 
-   nav {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-
-     .report{
-       width: auto;
-       color: $white;
-       font-weight: 500;
-       border: 0;
-       background: rgba(255, 255, 255, 0);
-       position: relative;
-       padding-right: 30px;
-       font-size: 12px;
-
-       .report-icon {
-         max-width: 20px;
-         position: absolute;
-         right:0;
-         top: 15px;
-       }
-     }
-  }
-
   .post {
-    background: $white;
-    padding: 15px;
-    margin: 60px auto 0 auto;
-    text-align: center;
-    box-shadow: $box-shadow;
-    border-radius: $default-radius;
+    width: 100%;
+    position: relative;
+    left: 0;
+    top: 0;
+    padding: 80px 1em 50px;
+
+    &:before {
+      @extend %absolute-view;
+      content: '';
+      height: 100%;
+      background: $porcelain;
+      z-index: -1;
+    }
+
+    // make a class for every category name in $POST_CATEGORIES and set the correct background and color
+    @each $category, $cat-color in $POST_CATEGORIES {
+      &.#{$category} {
+
+        &:before {
+          background-color: $cat-color;
+          // determine if the text should be black or white based on the lightness level of the given color
+          @if lightness($cat-color) > lightness(#ccc) {
+            color: $text-dark;
+          } @else {
+            color: $white;
+          }
+        }
+
+        .category-button {
+          color: $cat-color;
+          padding: 5px 10px;
+        }
+      }
+    }
+
+    .inner-post {
+      background: $white;
+      padding: 15px;
+      margin: 60px auto 0 auto;
+      text-align: center;
+      box-shadow: $box-shadow;
+      border-radius: $default-radius;
+    }
   }
 
   .user {
+
+    $img-height: 60px;
+
     display: flex;
     flex-direction: row;
     width: 100%;
     clear: both;
-    margin: -40px auto 0 auto;
+    margin: -($img-height / 2 + 15px) auto 0 auto;
 
     &.anonymous {
 
       .username {
         color: $porcelain;
       }
+    }
+
+    .avatar {
+      height: $img-height;
     }
 
     h3 {
@@ -109,8 +127,13 @@
   }
 
   .title {
-    font-size: 1.4em;
-    margin: 10px 0 20px 0;
+    font-size: 1.8em;
+    margin: 10px auto 20px auto;
+    max-width: 70%;
+
+    @media screen and (max-width: $sm) {
+      max-width: 100%;
+    }
   }
 
   .post-details {
@@ -141,7 +164,13 @@
     $color: $white;
     $sidebar-width: 70px;
 
-    padding: $margin 0 $nav-height;
+    padding: $margin 1em $nav-height;
+
+    .title {
+      font-weight: bold;
+      font-size: 24px;
+      text-align: center;
+    }
 
     .comment {
       margin-bottom: $margin;
@@ -159,7 +188,7 @@
             border-radius: 50%;
             width: 100%;
             height: auto;
-            max-width: 40px;
+            max-width: 50px;
           }
         }
       }
@@ -167,29 +196,35 @@
       .comment-content {
         background: $white;
         width: 100%;
-        padding: 15px 20px;
         border-radius: $default-radius;
         position: relative;
         box-shadow: $box-shadow;
 
-        .username, .date {
-          margin: 0;
-          display: inline-block;
-        }
+        header {
+          border-bottom: 1px solid $porcelain;
+          padding: 15px $margin 10px;
 
-        .username {
-          text-transform: capitalize;
-          font-size: 1rem;
-        }
+          .username, .date {
+            margin: 0;
+            display: inline-block;
+          }
 
-        .date {
-          float: right;
-          padding: 2px 0 0 0;
+          .username {
+            text-transform: capitalize;
+            font-size: 18px;
+            font-weight: 500;
+          }
+
+          .date {
+            float: right;
+            padding: 2px 0 0 0;
+            color: $regent;
+          }
         }
 
         .body {
           margin: 0;
-          padding: 20px 0;
+          padding: $margin;
           font-weight: 400;
           font-size: 1rem;
         }
@@ -207,24 +242,38 @@
           transform: rotate(90deg);
         }
 
-        .footer {
+        footer {
           display: flex;
           align-items: center;
+          justify-content: space-between;
+          padding: 0 $margin 15px;
 
           .like {
             padding-left: 0;
           }
 
-          .comment {
-            display: flex;
-            align-items: center;
+          .btn.reply {
+            color: $regent;
+            font-weight: normal;
             padding: 0 10px;
             margin-bottom: 0;
+            display: flex;
+            align-items: center;
 
             img {
               width: 28px;
+              margin-right: 10px;
             }
           }
+        }
+      }
+    }
+
+    .create-comment {
+
+      .body {
+        &:focus {
+          border-bottom: 0;
         }
       }
     }

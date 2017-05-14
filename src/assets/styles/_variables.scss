@@ -1,26 +1,27 @@
 // ---------------------------------------------------------------------------------------------------------------------
 // Colors
 // ---------------------------------------------------------------------------------------------------------------------
-$white:       #fff;
-$porcelain:   #EDF0F2;
-$mystic:      #DBE3E8;
-$gray:        #BBC8D0;
-$clay:        #A7B7C2;
-$teal:        #4dabab;
-$pantzer:     #5E6068;
-$comet:       #373940;
-$dark:        #202227;
-$black:       #000;
+$white: #fff;
+$porcelain: #EDF0F2;
+$mystic: #DBE3E8;
+$gray: #BBC8D0;
+$clay: #A7B7C2;
+$regent: #849199;
+$pantzer: #5E6068;
+$comet: #373940;
+$dark: #202227;
+$black: #000;
 
-$red:         #EF2626;
-$green:       #4BC54F;
-$purple:      #c077cd;
-$blue:        #4A90E2;
-$yellow:      #FFC146;
+$red: #EF2626;
+$green: #4BC54F;
+$purple: #c077cd;
+$blue: #4A90E2;
+$teal: #4dabab;
+$yellow: #FFC146;
 
-$orange:      #FF7809;
-$orange_l:    #ff942d;
-$orange_d:    #e76c00;
+$orange: #FF7809;
+$orange_l: #ff942d;
+$orange_d: #e76c00;
 $orange-pure: #FF5A0B;
 
 $primary-color: $orange;
@@ -28,29 +29,28 @@ $primary-color: $orange;
 // Category colors
 // All the Lift categories, assigned to color variables in a map
 $POST_CATEGORIES: (
-        gezondheid:       $green,
-        werk:             $blue,
-        financiën:        $teal,
-        dagelijks-leven:  $pantzer
+        gezondheid: $green,
+        werk: $blue,
+        financiën: $teal,
+        dagelijks-leven: $pantzer
 );
 
 // Element specific colors
 $text-dark: $dark;
 $text-light: $porcelain;
 
-
 // ---------------------------------------------------------------------------------------------------------------------
 // Fonts
 // ---------------------------------------------------------------------------------------------------------------------
-$primary-font:      '#{$primary-font-name}', 'Source Sans Pro', 'Arial', sans-serif;
-$secondary-font:    'Source Sans Pro', 'Arial', sans-serif;
+$primary-font: '#{$primary-font-name}', 'Source Sans Pro', 'Arial', sans-serif;
+$secondary-font: 'Source Sans Pro', 'Arial', sans-serif;
 
-$title-font:        $primary-font;
-$text-font:         $secondary-font;
-$topic-title-font:  $primary-font;
+$title-font: $primary-font;
+$text-font: $secondary-font;
+$topic-title-font: $primary-font;
 
-$text-font-size:      14px;
-$header-font-weight:  500;
+$text-font-size: 14px;
+$header-font-weight: 500;
 
 h1,
 h2,
@@ -66,18 +66,24 @@ h6,
   }
 }
 
+// Breakpoints
+
+$xs: 480px;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+
 $d-font-sizes: (
-  null  : $text-font-size,
-  480px : 16px,
-  768px : 18px
+        null : $text-font-size,
+        $sm : 16px,
+        $md : 18px
 );
 
 @mixin font-size($fs-map) {
   @each $fs-breakpoint, $fs-font-size in $fs-map {
     @if $fs-breakpoint == null {
       font-size: $fs-font-size;
-    }
-    @else {
+    } @else {
       @media screen and (min-width: $fs-breakpoint) {
         font-size: $fs-font-size;
       }
@@ -87,39 +93,39 @@ $d-font-sizes: (
 
 // Heading sizes
 $h1-font-sizes: (
-  null  : 26px,
-  480px : 29px,
-  768px : 31px
+        null : 26px,
+        $sm : 29px,
+        $md : 31px
 );
 
 $h2-font-sizes: (
-  null  : 22px,
-  480px : 25px,
-  768px : 27px
+        null : 22px,
+        $sm : 25px,
+        $md : 27px
 );
 
 $h3-font-sizes: (
-  null  : 18px,
-  480px : 21px,
-  768px : 23px
+        null : 18px,
+        $sm : 21px,
+        $md : 23px
 );
 
 $h4-font-sizes: (
-  null  : 14px,
-  480px : 17px,
-  768px : 19px
+        null : 14px,
+        $sm : 17px,
+        $md : 19px
 );
 
 $h5-font-sizes: (
-  null  : 11px,
-  480px : 14px,
-  768px : 16px
+        null : 11px,
+        $sm : 14px,
+        $md : 16px
 );
 
 $h6-font-sizes: (
-  null  : 7px,
-  480px : 10px,
-  768px : 12px
+        null : 7px,
+        $sm : 10px,
+        $md : 12px
 );
 
 h1 {
@@ -150,22 +156,19 @@ p, ul, li, a {
   @include font-size($d-font-sizes);
 }
 
-
 // ---------------------------------------------------------------------------------------------------------------------
 // Block settings
 // ---------------------------------------------------------------------------------------------------------------------
-$default-radius:    4px; // Default radius for buttons, posts etc.
-$default-padding:   10px 20px; // Default padding for multiple pages.
-$box-shadow:        0 0 20px 0 rgba(163,163,163,0.24); // Default box shadow
-$top-shadow:        0px 0px 5px 0px rgba(0,0,0,0.10); // Default top shadow
-
+$default-radius: 4px; // Default radius for buttons, posts etc.
+$default-padding: 10px 20px; // Default padding for multiple pages.
+$box-shadow: 0 0 20px 0 rgba(163, 163, 163, 0.24); // Default box shadow
+$top-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.10); // Default top shadow
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Buttons
 // ---------------------------------------------------------------------------------------------------------------------
 $large-btn-padding: 17px 25px 15px;
 $medium-btn-padding: 12px 20px 10px;
-
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Animations
