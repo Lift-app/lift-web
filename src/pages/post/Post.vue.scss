@@ -291,6 +291,7 @@
       margin-bottom: $margin * 2;
 
       .comment-content {
+
         .body {
           max-width: 100%;
           min-height: 80px;
@@ -299,6 +300,11 @@
           .focussed {
             border-bottom-color: transparent;
           }
+        }
+
+        .comment-length {
+          padding: 0 10px;
+          color: $pantzer;
         }
 
         footer {

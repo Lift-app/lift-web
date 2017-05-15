@@ -43,8 +43,9 @@
               <span class="username">{{ currentUser.username }}</span>
             </header>
 
-              <textarea name="body" class="body" placeholder="Typ hier je reactie..." @focus="focusInput" @blur="blurInput" v-model="commentBody"></textarea>
+              <textarea name="body" class="body" placeholder="Typ hier je reactie..." @focus="focusInput" @blur="blurInput" v-model="commentBody" maxlength="600" v-on:keyup="commentLengthCount"></textarea>
             <footer>
+              <span class="comment-length">{{commentLength}}</span>
               <button class="btn btn-green btn-submit has_icon" @click="placeComment">Plaatsen</button>
             </footer>
           </div>

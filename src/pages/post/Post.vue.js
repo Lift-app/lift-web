@@ -27,6 +27,7 @@ export default {
       },
       comments: null,
       commentBody: null,
+      commentLength: 600,
       loading: false,
       topOffset: 0,
       currentUser: {}
@@ -107,6 +108,11 @@ export default {
     blurInput(e) {
       e.srcElement.classList.remove('focussed')
       document.querySelector('#app').classList.remove('nav-hidden')
+    },
+
+    commentLengthCount() {
+      let length = 600
+      this.commentLength = length - this.commentBody.length
     }
   },
   mounted() {
