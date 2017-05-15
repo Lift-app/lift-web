@@ -39,7 +39,7 @@
 
   .create-type-picker {
     @extend %absolute-view;
-    background-color: $primary-color;
+    background-image: $global-lift-gradient;
     padding: $default-padding;
     margin: 0 auto;
     text-align: center;
