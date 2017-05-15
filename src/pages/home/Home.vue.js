@@ -4,13 +4,16 @@ import { mapActions } from 'vuex'
 import Modal from '@/components/modal/Modal'
 import Card from '@/components/card/Card'
 import Preloader from '@/components/preloader/Preloader'
+import InfiniteLoading from 'vue-infinite-loading'
 
 export default {
   name: 'home',
   data() {
     return {
+      posts: [],
       postText: '',
-      loading: false
+      loading: false,
+      page: 0,
     }
   },
   computed: {
@@ -20,19 +23,36 @@ export default {
   },
   methods: {
     ...mapActions({
-      actionGetPosts: 'getPosts'
+      actionGetPosts: 'getPosts',
+      actionGetMorePosts: 'getMorePosts'
     }),
+
+    getMorePosts() {
+      this.page++
+
+      this.actionGetMorePosts(this.page)
+        .then((response) => {
+          if (response.data.length === 0) {
+            this.$refs.infiniteLoading.$emit('$InfiniteLoading:complete')
+          } else {
+            this.posts = store.state.posts
+            this.$refs.infiniteLoading.$emit('$InfiniteLoading:loaded')
+          }
+        })
+    },
 
     getPosts() {
       this.loading = true
       this.actionGetPosts().then(() => {
+        this.posts = store.state.posts
         this.loading = false
       })
     }
   },
   components: {
     Card,
-    Preloader
+    Preloader,
+    InfiniteLoading
   },
   created() {
     this.getPosts()

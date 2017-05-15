@@ -2,6 +2,10 @@ export const SET_POSTS = (state, posts) => {
   state.posts = posts.data
 }
 
+export const APPEND_POSTS = (state, posts) => {
+  posts.data.forEach((post) => state.posts.push(post))
+}
+
 export const SET_POST = (state, post) => {
   state.post = post.data
 }

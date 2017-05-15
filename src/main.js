@@ -9,6 +9,7 @@ import router from './router' // Import vue-router routes
 import notifications from './config/notifications'
 
 import moment from 'moment'
+import InfiniteLoading from 'vue-infinite-loading'
 
 Vue.config.productionTip = false
 
@@ -23,6 +24,7 @@ new Vue({
   notifications,
   template: '<App/>',
   components: {
-    App
+    App,
+    InfiniteLoading
   }
 })
