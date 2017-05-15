@@ -29,6 +29,20 @@ const actions = {
     })
   },
 
+  getMorePosts({ commit }, page) {
+    return new Promise((resolve, reject) => {
+      return axios.get(`${config.apiUrl}/posts?page=${page}`)
+        .then((response) => {
+          // Commit the data into SET_POSTS - see mutations.js
+          commit('APPEND_POSTS', response.data)
+          resolve(response.data)
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  },
+
   getPost({ commit }, id) {
     return new Promise((resolve, reject) => {
       return axios.get(`${config.apiUrl}/posts/${id}`)
