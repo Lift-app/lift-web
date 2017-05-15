@@ -21,7 +21,10 @@
 
     <transition name="slide-up">
       <div class="card-group" v-if="!loading">
-          <card v-for="post in posts" :key="post.id" :post_data="post"></card>
+        <card v-for="post in posts" :key="post.id" :post_data="post"></card>
+        <infinite-loading :on-infinite="getMorePosts" ref="infiniteLoading" spinner="spiral">
+          <span slot="no-more">Er zijn geen berichten meer!</span>
+        </infinite-loading>
       </div>
     </transition>
   </div>
