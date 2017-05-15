@@ -1,7 +1,7 @@
 .page--login {
 
   $color: $white;
-  $gradient: linear-gradient(160deg, #F8592C 25%, #FF3D95 100%);
+  $gradient: $global-lift-gradient;
   $component-padding: 60px 40px;
 
   height: 100%;
