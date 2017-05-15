@@ -21,6 +21,7 @@ export default {
       audioRecorder: null,
       recordingData: [],
       dataUrl: '',
+      audioType: 'ogg',
 
       showTextModal: false,
       showVoiceModal: false,
@@ -44,9 +45,6 @@ export default {
       }
     }
   },
-  computed: {
-
-  },
   methods: {
     ...mapActions({
       fetchCategories: 'getCategories',
@@ -61,7 +59,6 @@ export default {
     },
 
     createPost() {
-
       if (this.post_type === 'text') {
         this.showTextModal = true
       } else if (this.post_type === 'voice') {
@@ -71,7 +68,6 @@ export default {
     },
 
     sendPost() {
-
       let call_data = new FormData()
 
       call_data.append('type', 'text')
@@ -83,7 +79,7 @@ export default {
       if (this.post_type === 'voice') {
         call_data.set('type', 'audio')
         call_data.delete('body')
-        call_data.set('audio', this.audioBlob, "audio.ogg")
+        call_data.set('audio', this.audioBlob, `audio.${this.audioType}`)
       }
 
       // make the call
@@ -105,21 +101,15 @@ export default {
         this.recordingData = []
         this.dataUrl = ''
 
-        // check for browsersupport for mimeType
-        // let mimeType = 'audio/ogg'
-
-        let mimeType
         if (MediaRecorder.isTypeSupported('audio/ogg')) {
-          mimeType = 'audio/ogg'
+          this.audioType = 'ogg'
         } else if (MediaRecorder.isTypeSupported('audio/webm')) {
-          mimeType = 'audio/webm'
-        } else if (MediaRecorder.isTypeSupported('audio/wav')) {
-          mimeType = 'audio/wav'
+          this.audioType = 'webm'
         } else {
-          mimeType = 'audio/ogg'
-          this.$toasted.error('Audio opnemen wordt niet ondersteund op dit apparaat!')
-          console.log('not supported')
+          this.$toasted.error('Audio opnemen wordt niet ondersteund in deze browser!')
+          return
         }
+        const mimeType = `audio/${this.audioType}`
 
         // check for browser support for getUserMedia
         navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia
@@ -131,26 +121,24 @@ export default {
 
           this.audioRecorder = new MediaRecorder(this.stream, {
             mimeType: mimeType,
-            audioBitsPerSecond : 96000
+            audioBitsPerSecond: 96000
           })
 
           this.audioRecorder.start()
 
-          if (config.debug) {console.log('Media recorder started')}
+          if (config.debug) console.log('Media recorder started')
 
           this.audioRecorder.ondataavailable = (event) => {
             this.recordingData.push(event.data)
           }
-          this.audioRecorder.onstop = (event) => {
 
+          this.audioRecorder.onstop = (event) => {
             this.audioBlob = new Blob(this.recordingData, {type: mimeType})
             this.dataUrl = window.URL.createObjectURL(this.audioBlob)
             this.firstRecord = false
             this.isPlaying = false
-
           }
-
-        }, (error) => { // error
+        }, (error) => {
           this.$toasted.error('Er ging wat mis. Probeer opnieuw!')
           console.log(JSON.stringify(error))
         })
