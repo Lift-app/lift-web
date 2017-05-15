@@ -44,7 +44,7 @@
     position: relative;
     left: 0;
     top: 0;
-    padding: 80px 1em 50px;
+    padding: 40px 1em 50px;
 
     &:before {
       @extend %absolute-view;
@@ -236,6 +236,13 @@
           padding: $margin;
           font-weight: 400;
           font-size: 1rem;
+        }
+
+        .btn-submit {
+          @extend .btn-has-icon;
+          padding: 12px 45px 10px 15px;
+          background-image: url(./../create-post/checkmark-lift.svg);
+          background-size: 16px 16px;
         }
 
         &:before {

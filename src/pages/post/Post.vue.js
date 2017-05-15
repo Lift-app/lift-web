@@ -83,11 +83,18 @@ export default {
           console.log('posted')
           this.comments = store.state.post.comments
           this.post.comment_count++
+          this.commentBody = ''
+          this.$toasted.success('Reactie geplaatst!')
+
           function scrollTo(){
             let topPos = document.getElementById(`comment-${response.id}`).offsetTop;
             document.getElementById('view').scrollTop = topPos-10;
           }
           scrollTo()
+        })
+        .catch(() => {
+          this.commentBody = ''
+          this.$toasted.error('Er ging wat mis. Probeer opnieuw!')
         })
     },
 

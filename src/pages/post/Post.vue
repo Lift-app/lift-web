@@ -19,7 +19,8 @@
             <button class="btn category-button">{{ post.category.name }}</button>
           </header>
 
-          <h1 class="title">{{ post.body }}</h1>
+          <h1 class="title" v-if="post.type !== 'audio'">{{ post.body }}</h1>
+          <audio preload="auto" v-else :src="post.body" class="audio-post" controls></audio>
           <p class="title" aria-hidden="true" v-if="loading">Laden...</p>
 
           <footer class="post-details">
@@ -33,7 +34,8 @@
         <div class="comment create-comment">
           <aside class="comment-sidebar">
             <figure class="avatar-container">
-              <img class="avatar" v-if="currentUser && currentUser.avatar" :src="currentUser.avatar.thumbnail" :alt="currentUser.username + '\'s profielfoto'">
+              <img class="avatar" v-if="currentUser.avatar" :src="currentUser.avatar.thumbnail" :alt="currentUser.username + '\'s profielfoto'">
+              <img class="avatar" v-else src="../../assets/images/icons/anonymous.svg" :alt="currentUser.username + '\'s profielfoto'">
             </figure>
           </aside>
           <div class="comment-content">
@@ -43,7 +45,7 @@
 
               <textarea name="body" class="body" placeholder="Typ hier je reactie..." @focus="focusInput" @blur="blurInput" v-model="commentBody"></textarea>
             <footer>
-              <button class="btn btn-orange btn-submit" @click="placeComment">Plaatsen</button>
+              <button class="btn btn-green btn-submit has_icon" @click="placeComment">Plaatsen</button>
             </footer>
           </div>
         </div>
