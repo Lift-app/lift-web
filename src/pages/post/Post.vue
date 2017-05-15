@@ -33,7 +33,7 @@
         <div class="comment create-comment">
           <aside class="comment-sidebar">
             <figure class="avatar-container">
-              <img class="avatar" :src="currentUser.avatar.thumbnail" :alt="currentUser.username + '\'s profielfoto'">
+              <img class="avatar" v-if="currentUser && currentUser.avatar" :src="currentUser.avatar.thumbnail" :alt="currentUser.username + '\'s profielfoto'">
             </figure>
           </aside>
           <div class="comment-content">
