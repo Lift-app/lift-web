@@ -8,6 +8,11 @@ export default {
     type: String,
     dark: Boolean
   },
+  data() {
+    return {
+      loading: false
+    }
+  },
   computed: {
     like_message() {
       const typeName = this.type === 'posts' ? 'Vraag' : 'Reactie'
@@ -20,15 +25,21 @@ export default {
       actionUnlike: 'unlike'
     }),
     toggleLike() {
+      if (this.loading) {
+        return
+      }
+
       if (this.data.liked) {
+        store.commit('unlike', [this.data.id, this.type])
         this.actionUnlike([this.data.id, this.type])
           .then(() => {
-            store.commit('unlike', [this.data.id, this.type])
+            this.loading = false
           })
       } else {
+        store.commit('like', [this.data.id, this.type])
         this.actionLike([this.data.id, this.type])
           .then(() => {
-            store.commit('like', [this.data.id, this.type])
+            this.loading = false
           })
       }
     },
