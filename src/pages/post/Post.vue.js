@@ -6,11 +6,7 @@ import { mapActions } from 'vuex'
 
 export default {
   name: 'post',
-  components: {
-    LikeButton,
-    Avatar
-  },
-  data () {
+  data() {
     return {
       post: {
         user: {
@@ -29,8 +25,11 @@ export default {
         'like_count': 0,
         'liked': false
       },
+      comments: null,
+      commentBody: null,
       loading: false,
-      topOffset: 0
+      topOffset: 0,
+      currentUser: {}
     }
   },
   computed: {
@@ -40,7 +39,10 @@ export default {
   },
   methods: {
     ...mapActions({
-      actionGetPost: 'getPost'
+      actionGetCurrentUser: 'getCurrentUser',
+      actionGetPost: 'getPost',
+      actionGetComments: 'getComments',
+      actionPlaceComment: 'placeComment'
     }),
 
     close() {
@@ -53,19 +55,67 @@ export default {
         .then(() => {
           this.post = store.state.post
           this.loading = false
+
+
+          this.loadComments()
         })
         .catch(() => {
           router.push({name: '404'})
         })
 
     },
+
+    loadComments() {
+      this.actionGetComments(this.$route.params.id)
+        .then(() => {
+          this.comments = store.state.post.comments
+      })
+    },
+
+    placeComment() {
+      let call_data = {
+        id: this.$route.params.id,
+        type: 'text',
+        body: this.commentBody
+      }
+      this.actionPlaceComment(call_data)
+        .then((response) => {
+          console.log('posted')
+          this.comments = store.state.post.comments
+          this.post.comment_count++
+          function scrollTo(){
+            let topPos = document.getElementById(`comment-${response.id}`).offsetTop;
+            document.getElementById('view').scrollTop = topPos-10;
+          }
+          scrollTo()
+        })
+    },
+
+    // Focus and blur functions to hide the navbar
+    focusInput(e) {
+      e.srcElement.classList.add('focussed')
+      document.querySelector('#app').classList.add('nav-hidden')
+    },
+
+    blurInput(e) {
+      e.srcElement.classList.remove('focussed')
+      document.querySelector('#app').classList.remove('nav-hidden')
+    }
   },
   mounted() {
     this.loadPost()
+    this.actionGetCurrentUser()
+      .then(() => {
+        this.currentUser = store.state.user
+      })
   },
   watch: {
     '$route' (to, from) {
       this.loadPost()
     }
+  },
+  components: {
+    LikeButton,
+    Avatar
   }
 }

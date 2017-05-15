@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="18px" viewBox="0 0 24 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>ion-reply - Ionicons</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="comment" transform="translate(-359.000000, -137.000000)" fill="#849199">
+            <g id="ion-reply---Ionicons">
+                <path d="M383,155 C381.458326,152.33332 379.65626,150.604171 377.59375,149.8125 C375.53124,149.020829 372.666685,148.625 369,148.625 L369,154.375 L359,146 L369,137 L369,142 C371.166678,142 373.135408,142.447912 374.90625,143.34375 C376.677092,144.239588 378.041662,145.32291 379,146.59375 C379.958338,147.86459 380.760413,149.13541 381.40625,150.40625 C382.052087,151.67709 382.479166,152.749996 382.6875,153.625 L383,155 Z"></path>
+            </g>
+        </g>
+    </g>
+</svg>

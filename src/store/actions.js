@@ -2,6 +2,19 @@ import config from '@/config/config'
 import axios from 'axios' // We use Axios for AJAX calls
 
 const actions = {
+  getCurrentUser({ commit }) {
+    return new Promise((resolve, reject) => {
+      return axios.get(`${config.apiUrl}/users/me`)
+        .then((response) => {
+          commit('SET_USER', response.data)
+          resolve()
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  },
+
   getPosts({ commit }) {
     return new Promise((resolve, reject) => {
       return axios.get(`${config.apiUrl}/posts`)
@@ -23,6 +36,33 @@ const actions = {
           // Commit the data into SET_POST - see mutations.js
           commit('SET_POST', response.data)
           resolve()
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  },
+
+  getComments({ commit }, id) {
+    return new Promise((resolve, reject) => {
+      return axios.get(`${config.apiUrl}/posts/${id}/comments`)
+        .then((response) => {
+          commit('SET_COMMENTS', {comments: response.data.data, id: id})
+          console.log(response.data)
+          resolve()
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  },
+
+  placeComment({ commit }, data) {
+    return new Promise((resolve, reject) => {
+      return axios.post(`${config.apiUrl}/posts/${data.id}/comments`, data)
+        .then((response) => {
+          commit('SET_COMMENT', {comment: response.data.data, data: data})
+          resolve(response.data.data)
         })
         .catch((error) => {
           reject(error)
