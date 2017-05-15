@@ -7,36 +7,44 @@
     margin-left: 5px;
   }
 
-
   .like-button {
     border: 0;
     background: rgba(255, 255, 255, 0);
     width: 40px;
     outline: 0;
+    transition: all 350ms ease;
 
     &.liked {
         
       .thumb-icon {
-        
+        animation: scale 350ms ease;
+
+        @keyframes scale {
+          0% {
+            transform: scale(1.8);
+          }
+          100% {
+            transform: scale(1.0);
+          }
+        }
+
         .thumb-inner {
           fill: $white;
-          stroke-width: 0;
-          transition: fill $animation-snap .3s;
+          stroke: transparent;
         }
       }
     }
   }
   
   .thumb-icon {
-    width: 28px;
-    height: 29px;
+    width: 27px;
+    height: 28px;
     
     .thumb-inner {
-        fill: transparent;
-        stroke: $white;
-        transition: fill $animation-snap .1s;
-        
-      }
+      fill: transparent;
+      stroke: $white;
+      transition: fill $animation-snap .1s;
+    }
   }
 
 
