@@ -13,7 +13,7 @@ export default {
       posts: [],
       postText: '',
       loading: false,
-      page: 0,
+      page: 1,
     }
   },
   computed: {
