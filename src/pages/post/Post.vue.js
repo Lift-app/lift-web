@@ -27,6 +27,7 @@ export default {
       },
       comments: null,
       commentBody: null,
+      commentLength: 600,
       loading: false,
       topOffset: 0,
       currentUser: {}
@@ -35,6 +36,10 @@ export default {
   computed: {
     normalizedCategory() {
       return this.post.category.name.toLowerCase().replace(/\s/g, '-');
+    },
+    commentsTitle() {
+      const comments = this.comments || []
+      return comments.length === 1 ? 'reactie' : 'reacties'
     }
   },
   methods: {
@@ -107,6 +112,11 @@ export default {
     blurInput(e) {
       e.srcElement.classList.remove('focussed')
       document.querySelector('#app').classList.remove('nav-hidden')
+    },
+
+    commentLengthCount() {
+      let length = 600
+      this.commentLength = length - this.commentBody.length
     }
   },
   mounted() {
