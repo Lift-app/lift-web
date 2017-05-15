@@ -4,7 +4,7 @@
       <img v-if="dark" src="../../assets/images/icons/thumb-icon-dark.svg" alt="Vind ik leuk!">
       <img v-if="!dark" src="../../assets/images/icons/thumb-icon-white.svg" alt="Vind ik leuk!">
     </button>
-    <span class="count like-count" v-bind:aria-label="data.like_count">{{ data.like_count }}</span>
+    <span class="count like-count" v-bind:aria-label="data.like_count" v-if="data.like_count > 0">{{ data.like_count }}</span>
   </div>
 </template>
 
