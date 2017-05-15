@@ -117,7 +117,7 @@ export default {
           mimeType = 'audio/wav'
         } else {
           mimeType = 'audio/ogg'
-          this.$toasted.warning('Audio opnemen wordt niet ondersteund op dit apparaat!')
+          this.$toasted.error('Audio opnemen wordt niet ondersteund op dit apparaat!')
           console.log('not supported')
         }
 
@@ -151,6 +151,7 @@ export default {
           }
 
         }, (error) => { // error
+          this.$toasted.error('Er ging wat mis. Probeer opnieuw!')
           console.log(JSON.stringify(error))
         })
       }
