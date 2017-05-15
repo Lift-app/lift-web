@@ -35,6 +35,10 @@ export default {
   computed: {
     normalizedCategory() {
       return this.post.category.name.toLowerCase().replace(/\s/g, '-');
+    },
+    commentsTitle() {
+      const comments = this.comments || []
+      return comments.length === 1 ? 'reactie' : 'reacties'
     }
   },
   methods: {

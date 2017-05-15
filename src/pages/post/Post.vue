@@ -50,7 +50,7 @@
           </div>
         </div>
 
-        <h3 class="title"><span class="comment-count">{{ post.comment_count }}</span> reacties</h3>
+        <h3 class="title"><span class="comment-count">{{ post.comment_count }}</span> {{ commentsTitle }}</h3>
 
         <article v-for="(comment, index) in comments"
                  v-bind:item="comment"
