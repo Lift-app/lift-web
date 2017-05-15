@@ -15,36 +15,50 @@
     outline: 0;
 
     &.liked {
-
-      .heart {
-        .heart-fill {
-          fill: #FE6E88;
-          transition: fill $animation-snap .2s;
-        }
-
-        .heart-border {
-          fill: $red;
-          transition: fill $animation-snap .2s;
+        
+      .thumb-icon {
+        
+        .thumb-inner {
+          fill: $white;
+          stroke-width: 0;
+          transition: fill $animation-snap .3s;
         }
       }
     }
   }
-
-  .heart {
-    .heart-fill {
-      fill: transparent;
-      transition: fill $animation-snap .2s;
-    }
-
-    .heart-border {
-      fill: $white;
-      transition: fill $animation-snap .2s;
-    }
+  
+  .thumb-icon {
+    width: 28px;
+    height: 29px;
+    
+    .thumb-inner {
+        fill: transparent;
+        stroke: $white;
+        transition: fill $animation-snap .1s;
+        
+      }
   }
 
+
   &.dark {
-    .heart-border {
-      fill: $dark;
+    
+    .like-button {
+      
+      .thumb-inner {
+        fill: transparent;
+        stroke: $dark;
+        transition: fill $animation-snap .1s;
+        
+      }
+      
+      &.liked {
+        
+        .thumb-inner {
+          stroke-width: 0;
+          fill: $dark;
+          transition: fill $animation-snap .3s;
+        }
+      }
     }
   }
 }
