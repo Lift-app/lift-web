@@ -192,7 +192,15 @@ textarea {
     .dropdown-toggle {
       background: $form-bg;
       border: 0;
+      padding: 5px 10px 2px;
       border-radius: $form-radius;
+
+      .open-indicator {
+        bottom: auto;
+        top:50%;
+        margin-top: -7px;
+        right: 15px;
+      }
     }
 
     .dropdown-menu {
@@ -216,12 +224,12 @@ textarea {
       border: none;
       border-radius: $form-radius;
       height: auto;
-      padding: $form-padding;
     }
 
     input[type=search], input[type=search]:focus {
       font-size: inherit;
       padding: 0;
+      max-width: 100%;
     }
 
     .dropdown-menu .active > a {
