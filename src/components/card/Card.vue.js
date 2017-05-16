@@ -24,6 +24,9 @@ export default {
         name: 'Post',
         params: { id: this.post_data.id }
       })
+    },
+    haltAction(e) {
+      e.stopImmediatePropagation();
     }
   }
 }
