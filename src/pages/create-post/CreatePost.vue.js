@@ -28,7 +28,7 @@ export default {
       modalTextData: {
         id: 1,
         type: 'default ask-modal',
-        title: 'Vraag stellen?',
+        title: 'Bericht plaatsen?',
         submit: true,
         submitText: 'Bericht plaatsen',
         cancel: true,
@@ -37,7 +37,7 @@ export default {
       modalVoiceData: {
         id: 2,
         type: 'default ask-modal',
-        title: 'Stembericht plaatsen?',
+        title: 'Bericht plaatsen?',
         submit: true,
         submitText: 'Bericht plaatsen',
         cancel: true,

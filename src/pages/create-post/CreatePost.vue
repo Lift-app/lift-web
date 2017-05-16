@@ -43,10 +43,7 @@
           <button class="btn medium has_icon btn-green btn-create" @click="createPost">Plaatsen</button>
 
           <modal :show.sync="showTextModal" v-show="showTextModal" :modal-data="modalTextData">
-            <p>Weet je zeker dat je dit wilt plaatsen?
-              Houdt er rekening mee dat iedereen je bericht kan lezen wanneer je deze plaatst.
-              Zorg ervoor dat je geen persoonlijke, gevoelige informatie deelt.
-              Meer hierover vind je</p> <a href="#">hier</a>
+            <p>Weet je zeker dat je dit wilt plaatsen?</p>
           </modal>
         </div>
 
@@ -130,10 +127,7 @@
           <button class="btn medium has_icon btn-green btn-create" @click="createPost">Plaatsen</button>
 
           <modal :show.sync="showVoiceModal" v-show="showVoiceModal" :modal-data="modalVoiceData">
-            <p>Weet je zeker dat je dit wilt plaatsen?
-              Houdt er rekening mee dat iedereen je bericht kan lezen wanneer je deze plaatst.
-              Zorg ervoor dat je geen persoonlijke, gevoelige informatie deelt.
-              Meer hierover vind je</p> <a href="#">hier</a>
+            <p>Weet je zeker dat je dit wilt plaatsen?</p>
           </modal>
         </div>
 

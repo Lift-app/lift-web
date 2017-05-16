@@ -75,15 +75,20 @@
     justify-content: center;
 
     .footer-action {
-      padding: 0 10px;
+      padding: 0 5px;
       display: flex;
       align-items: center;
 
       .comment {
         border: 0;
-        background: rgba(255, 255, 255, 0);
-        width: 40px;
-        height: 40px;
+        background: transparent;
+        //width: 40px;
+        //height: 40px;
+
+        img {
+          display: inline-block;
+          vertical-align: bottom;
+        }
       }
 
       .count {
