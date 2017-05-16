@@ -123,6 +123,7 @@
       margin-left: auto;
       font-size: 12px;
       color: $white;
+      text-align: right;
     }
   }
 
@@ -137,10 +138,9 @@
   }
 
   .audio-post {
-    width: 100%;
-    max-width: 100%;
-    display: block;
-    margin: 20px auto;
+    width: 100% !important;
+    display: inline-block;
+    margin: 15px auto;
   }
 
   .post-details {

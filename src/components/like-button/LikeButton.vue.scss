@@ -8,11 +8,20 @@
   }
 
   .like-button {
-    border: 0;
-    background: rgba(255, 255, 255, 0);
+    background: transparent;
     width: 40px;
-    outline: 0;
+    outline: none;
+    border: none;
+    -webkit-appearance: none;
     transition: all 350ms ease;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    &:focus, &:hover {
+      outline: none;
+      border: none;
+      -webkit-appearance: none;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
 
     &.liked {
         
@@ -63,7 +72,7 @@
         
         .thumb-inner {
           stroke-width: 0;
-          fill: $dark;
+          fill: $blue;
           transition: fill $animation-snap .3s;
         }
       }
