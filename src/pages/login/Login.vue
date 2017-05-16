@@ -14,9 +14,9 @@
                 v-model="credentials.email">
         <input
                 type="password"
-                placeholder="Password"
-                v-model="credentials.password">
-        <button class="btn" v-on:click="login()">Inloggen</button>
+                placeholder="Wachtwoord"
+                v-model="credentials.password" @keyup.enter="login">
+        <button class="btn" @click="login">Inloggen</button>
       </div>
     </div>
   </div>
