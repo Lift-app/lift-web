@@ -20,6 +20,10 @@
     width: 100%;
     z-index: 1;
 
+    span {
+      padding-top: 2px;
+    }
+
     .report {
       width: auto;
       color: $white;
@@ -27,6 +31,8 @@
       border: 0;
       background: rgba(255, 255, 255, 0);
       position: relative;
+      display: flex;
+      align-items: center;
       padding-right: 30px;
       font-size: 12px;
 
