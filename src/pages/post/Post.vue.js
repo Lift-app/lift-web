@@ -89,6 +89,7 @@ export default {
           this.comments = store.state.post.comments
           this.post.comment_count++
           this.commentBody = ''
+          this.commentLength = 600
           this.$toasted.success('Reactie geplaatst!')
 
           function scrollTo(){
