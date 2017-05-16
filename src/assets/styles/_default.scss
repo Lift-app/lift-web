@@ -182,55 +182,57 @@ textarea {
 // Overrides
 // ---------------------------------------------------------------------------------------------------------------------
 
-.v-select {
-  margin-bottom: $form-margin-bottom;
-  font-family: $primary-font;
-  font-size: $form-font-size;
-  max-width: $form-max-width;
+#app {
+  .v-select {
+    margin-bottom: $form-margin-bottom;
+    font-family: $primary-font;
+    font-size: $form-font-size;
+    max-width: $form-max-width;
 
-  .dropdown-toggle {
-    background: $form-bg;
-    border: 0;
-    border-radius: $form-radius;
-  }
+    .dropdown-toggle {
+      background: $form-bg;
+      border: 0;
+      border-radius: $form-radius;
+    }
 
-  .dropdown-menu {
-    border: none;
-    text-align: left;
-    list-style: none;
-    background: $form-bg;
-    height: auto;
-    padding: 10px 0;
+    .dropdown-menu {
+      border: none;
+      text-align: left;
+      list-style: none;
+      background: $form-bg;
+      height: auto;
+      padding: 10px 0;
 
-    li {
-      a {
-        font-size: $form-font-size;
+      li {
+        a {
+          font-size: $form-font-size;
+        }
       }
     }
-  }
 
-  .selected-tag {
-    color: $form-color;
-    background-color: transparent;
-    border: none;
-    border-radius: $form-radius;
-    height: auto;
-    padding: $form-padding;
-  }
+    .selected-tag {
+      color: $form-color;
+      background-color: transparent;
+      border: none;
+      border-radius: $form-radius;
+      height: auto;
+      padding: $form-padding;
+    }
 
-  input[type=search], input[type=search]:focus {
-    font-size: inherit;
-    padding: 0;
-  }
+    input[type=search], input[type=search]:focus {
+      font-size: inherit;
+      padding: 0;
+    }
 
-  .dropdown-menu .active > a {
-    color: $form-color;
-    background: $porcelain;
-  }
+    .dropdown-menu .active > a {
+      color: $form-color;
+      background: $porcelain;
+    }
 
-  .dropdown-menu > .highlight > a {
-    background: $form-border-color-active;
-    color: $white;
+    .dropdown-menu > .highlight > a {
+      background: $form-border-color-active;
+      color: $white;
+    }
   }
 }
 
