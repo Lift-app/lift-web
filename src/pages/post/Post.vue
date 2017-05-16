@@ -20,7 +20,9 @@
           </header>
 
           <h1 class="title" v-if="post.type !== 'audio'">{{ post.body }}</h1>
-          <audio preload="auto" v-else :src="post.body" class="audio-post" controls></audio>
+          <audio preload="auto" v-else class="audio-post" controls>
+            <source :src="post.body" type="audio/wav">
+          </audio>
           <p class="title" aria-hidden="true" v-if="loading">Laden...</p>
 
           <footer class="post-details">
@@ -72,7 +74,9 @@
             </header>
 
             <h3 v-if="comment.type !== 'audio'" class="body">{{ comment.body }}</h3>
-            <audio style="width: 100%; margin: 20px 0;" preload="auto" v-else :src="comment.body" class="audio-post" controls></audio>
+            <audio preload="auto" v-else class="audio-post" controls>
+              <source :src="comment.body" type="audio/wav">
+            </audio>
 
             <footer>
               <like-button type="comments" :data="comment" :dark="true"></like-button>

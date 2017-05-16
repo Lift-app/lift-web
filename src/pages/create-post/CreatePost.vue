@@ -12,8 +12,7 @@
       <div class="create-text-post" v-if="post_type === 'text'">
         <header>
           <nav>
-            <a class="btn-back" @click="setPostType('choose')" aria-label="Terug naar: Type bericht kiezen">&lang;
-              Terug</a>
+            <a class="btn-back" @click="setPostType('choose')" aria-label="Terug naar: Type bericht kiezen"><img src="../../assets/images/icons/arrow-left-lift.svg" alt="Terug"> <span>Terug</span></a>
             <img src="../../assets/images/icons/info-lift.svg" alt="Informatie over dit scherm"
                  title="Informatie over dit scherm" class="info-icon">
           </nav>
