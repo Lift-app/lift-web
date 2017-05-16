@@ -10,7 +10,6 @@ export default {
   name: 'home',
   data() {
     return {
-      posts: [],
       postText: '',
       loading: false,
       page: 1,
