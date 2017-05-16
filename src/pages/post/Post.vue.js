@@ -89,13 +89,8 @@ export default {
           this.comments = store.state.post.comments
           this.post.comment_count++
           this.commentBody = ''
+          this.commentLength = 600
           this.$toasted.success('Reactie geplaatst!')
-
-          function scrollTo(){
-            let topPos = document.getElementById(`comment-${response.id}`).offsetTop;
-            document.getElementById('view').scrollTop = topPos-10;
-          }
-          scrollTo()
         })
         .catch(() => {
           this.commentBody = ''
@@ -105,12 +100,12 @@ export default {
 
     // Focus and blur functions to hide the navbar
     focusInput(e) {
-      e.srcElement.classList.add('focussed')
+      e.target.classList.add('focussed')
       document.querySelector('#app').classList.add('nav-hidden')
     },
 
     blurInput(e) {
-      e.srcElement.classList.remove('focussed')
+      e.target.classList.remove('focussed')
       document.querySelector('#app').classList.remove('nav-hidden')
     },
 
