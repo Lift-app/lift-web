@@ -91,12 +91,6 @@ export default {
           this.commentBody = ''
           this.commentLength = 600
           this.$toasted.success('Reactie geplaatst!')
-
-          function scrollTo(){
-            let topPos = document.getElementById(`comment-${response.id}`).offsetTop;
-            document.getElementById('view').scrollTop = topPos-10;
-          }
-          scrollTo()
         })
         .catch(() => {
           this.commentBody = ''
