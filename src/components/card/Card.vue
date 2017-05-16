@@ -15,7 +15,9 @@
 
     <section>
       <h2 class="title" v-if="post_data.type !== 'audio'">{{ post_data.body }}</h2>
-      <audio preload="auto" v-else :src="post_data.body" class="audio-post" controls></audio>
+      <audio preload="auto" v-else class="audio-post" controls>
+        <source :src="post_data.body" type="audio/wav">
+      </audio>
 
     </section>
 
