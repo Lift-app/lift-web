@@ -9,9 +9,8 @@
       c0-11.3-5.9-23.3-16.8-23.3c-5.6,0-6.3,3.3-6.9,6.5l-0.4,1.8c-1.1,4.6-7,18.9-17.7,32C78.6,63.2,79,61.7,68.3,77.3
       c-6.5,9.5-24.3,26.9-51.6,26.8c-5.7,0-9.3,5-8.7,10.5C10.4,133.8,10.7,167.3,25.3,170.1z"/>
     </svg>
-
+      <span class="count like-count" v-bind:aria-label="data.like_count">{{ data.like_count }}</span>
     </button>
-    <span class="count like-count" v-bind:aria-label="data.like_count">{{ data.like_count }}</span>
   </div>
 </template>
 

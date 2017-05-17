@@ -1,15 +1,16 @@
 .like {
   display: flex;
   align-items: center;
-  padding: 0 10px;
+  padding: 0 5px;
 
   .like-count {
     margin-left: 5px;
+
   }
 
   .like-button {
     background: transparent;
-    width: 40px;
+    width: auto;
     outline: none;
     border: none;
     -webkit-appearance: none;
@@ -22,8 +23,15 @@
       -webkit-appearance: none;
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     }
-
+    .thumb-icon {
+      display: inline-block;
+      vertical-align: bottom;
+    }
     &.liked {
+
+      .like-count {
+          font-weight: bold;
+      }
         
       .thumb-icon {
         animation: scale 350ms ease;
@@ -46,8 +54,8 @@
   }
   
   .thumb-icon {
-    width: 27px;
-    height: 28px;
+    width: 28px;
+    height: 29px;
     
     .thumb-inner {
       fill: transparent;
@@ -74,6 +82,10 @@
           stroke-width: 0;
           fill: $blue;
           transition: fill $animation-snap .3s;
+        }
+
+        .like-count {
+          color: $blue;
         }
       }
     }

@@ -23,9 +23,10 @@
       <like-button :data="post_data" type="posts"></like-button>
 
       <div class="footer-action">
-        <button class="comment" aria-label="Reageren op deze vraag"><img src="../../assets/images/icons/speech-bubble-white.svg" alt="Reageren op deze vraag" height="29" width="26"></button>
-
-        <span class="count comment-count"  :aria-label="post_data.comment_count + ' reacties'">{{ post_data.comment_count }}</span>
+        <button class="comment" aria-label="Reageren op deze vraag">
+          <img src="../../assets/images/icons/speech-bubble-white.svg" alt="Reageren op deze vraag" height="29" width="26"/>
+          <span class="count comment-count"  :aria-label="post_data.comment_count + ' reacties'">{{ post_data.comment_count }}</span>
+        </button>
       </div>
     </footer>
 
