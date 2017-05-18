@@ -83,6 +83,12 @@ export default {
         type: 'text',
         body: this.commentBody
       }
+
+      if (!this.commentBody) {
+        this.$toasted.error('Vul een bericht in!')
+        return
+      }
+
       this.actionPlaceComment(call_data)
         .then((response) => {
           console.log('posted')
