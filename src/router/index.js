@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 
 import Login from '@/pages/login/Login'
 import Home from '@/pages/home/Home'
+import Search from '@/pages/search/Search'
 
 import Post from '@/pages/post/Post'
 
@@ -39,6 +40,11 @@ export default new VueRouter({
           component: Post
         }
       ]
+    },
+    {
+      path: '/search',
+      name: 'Search',
+      component: Search
     },
     {
       path: '/login',
