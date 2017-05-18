@@ -15,6 +15,10 @@ export const SET_COMMENTS = (state, data) => {
 }
 
 export const SET_COMMENT = (state, data) => {
+  const postId = parseInt(data.data.id)
+  const postIndex = state.posts.findIndex((post) => post.id === postId)
+
+  state.posts[postIndex].comment_count++
   state.post.comments.push(data.comment)
 }
 
