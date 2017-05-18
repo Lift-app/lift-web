@@ -66,6 +66,7 @@
       text-decoration: none;
       padding: 7px 10px 5px;
       text-align: center;
+      font-size: $text-font-size - 1px;
     }
   }
 
@@ -110,7 +111,6 @@
 
       .cat-btn {
         color: $bgcolor;
-        font-size: $text-font-size - 1px;
       }
     }
   }
