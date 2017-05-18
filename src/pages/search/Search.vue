@@ -1,26 +1,27 @@
 <template>
   <div class="page--search">
     <div class="search-container">
-      <img class="logo" src="./../../assets/images/logo/white.svg">
-
-      <div class="alert alert-danger" v-if="error">
-        <p>{{ error }}</p>
-      </div>
-
-      <div class="inputs">
-        <input
-                type="email"
-                placeholder="E-mail"
-                v-model="credentials.email">
-        <input
-                type="password"
-                placeholder="Wachtwoord"
-                v-model="credentials.password" @keyup.enter="search">
-        <button class="btn" @click="search">Inloggen</button>
-      </div>
+      <header>
+        <div class="header-inner">
+          <img src="../../assets/images/icons/search-lift-white.svg" class="search-icon" alt="Zoeken"/>
+          <h3 class="search-title">Waar wil je naar zoeken?</h3>
+          <div class="search-wrapper">
+            <!--<v-select class="search-bar" label="name" v-model="category" :options="categories" placeholder="Bijvoorbeeld 'Liefde'"></v-select>-->
+            <input type="text" class="search-bar" placeholder="Bijvoorbeeld 'Liefde'" v-model="keyword">
+            <button type="submit" class="search-submit">Zoeken</button>
+          </div>
+        </div>
+      </header>
+      <section>
+        <ul class="categories">
+          <li v-for="category in filteredList" :class="normalizedCategory(category.name)">
+            <a href="#" class="mousedown"><span>{{ category.name }}</span></a>
+          </li>
+        </ul>
+      </section>
     </div>
   </div>
 </template>
-<script src="./search.vue.js"></script>
+<script src="./Search.vue.js"></script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss" src="./search.vue.scss"></style>
+<style scoped lang="scss" src="./Search.vue.scss"></style>
