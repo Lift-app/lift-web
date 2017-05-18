@@ -246,6 +246,15 @@
           font-size: 1rem;
         }
 
+        .deleted-body {
+          font-style: italic;
+          color: $regent;
+          margin: 0;
+          padding: $margin;
+          font-weight: 400;
+          font-size: 1rem;
+        }
+
         .btn-submit {
           @extend .btn-has-icon;
           padding: 12px 45px 10px 15px;

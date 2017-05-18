@@ -69,19 +69,19 @@
           <div class="comment-content">
             <header>
               <span class="username" v-if="comment.user">{{ comment.user.username }}</span>
-	          <span v-else="!comment.user">Anoniem</span>
+              <span v-else="!comment.user">Anoniem</span>
               <small class="date">{{ comment.updated_at | moment("from", "now") }}</small>
             </header>
 
-            <h3 v-if="comment.type !== 'audio'" class="body">{{ comment.body }}</h3>
+            <h3 v-if="comment.deleted" class="deleted-body">Bericht verwijderd</h3>
+            <h3 v-else-if="comment.type !== 'audio'" class="body">{{ comment.body }}</h3>
             <audio preload="auto" v-else class="audio-post" controls>
               <source :src="comment.body" type="audio/wav">
             </audio>
 
-            <footer>
+            <footer v-if="!comment.deleted">
               <like-button type="comments" :data="comment" :dark="true"></like-button>
               <button class="btn reply" aria-label="Reageren op deze comment"><img src="../../assets/images/icons/reply-lift-gray.svg" alt="Reageren op deze comment">reageren</button>
-
             </footer>
           </div>
         </article>
