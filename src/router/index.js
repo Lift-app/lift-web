@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+import Intro from '@/pages/intro/Intro'
+
 import Login from '@/pages/login/Login'
 import LoginEmail from '@/pages/login/email/LoginEmail'
 import LoginOAuth from '@/pages/login/oauth/LoginOAuth'
@@ -54,6 +56,11 @@ export default new VueRouter({
           component: CategoryPosts
         }
       ]
+    },
+    {
+      path: '/intro',
+      name: 'Intro',
+      component: Intro
     },
     {
       path: '/login',
