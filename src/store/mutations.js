@@ -19,7 +19,7 @@ export const SET_COMMENT = (state, data) => {
   const postIndex = state.posts.findIndex((post) => post.id === postId)
 
   state.posts[postIndex].comment_count++
-  state.post.comments.push(data.comment)
+  state.post.comments.unshift(data.comment)
 }
 
 export const SET_USER = (state, user) => {
