@@ -1,7 +1,7 @@
 <template>
   <div class="page--login">
     <div class="login-container">
-      <img class="logo" src="./../../assets/images/logo/white.svg">
+      <img class="logo" src="../../../assets/images/logo/white.svg">
 
       <div class="alert alert-danger" v-if="error">
         <p>{{ error }}</p>
@@ -21,6 +21,6 @@
     </div>
   </div>
 </template>
-<script src="./Login.vue.js"></script>
+<script src="./LoginType.vue.js"></script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss" src="./Login.vue.scss"></style>
+<style scoped lang="scss" src="./LoginType.vue.scss"></style>
