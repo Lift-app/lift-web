@@ -1,6 +1,7 @@
 <template>
   <div class="page--login">
-    <div class="login-container">
+  {{ type }}
+    <div class="login-container" v-if="type === 'email'">
       <img class="logo" src="../../../assets/images/logo/white.svg">
 
       <div class="inputs">
@@ -15,6 +16,9 @@
 
         <button class="btn" @click="login">Inloggen</button>
       </div>
+    </div>
+    <div v-else>
+    wwwwwwwwww
     </div>
   </div>
 </template>
