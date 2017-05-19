@@ -1,8 +1,7 @@
 <template>
-  <div class="page--login-type">
-
+  <div class="page--login">
     <div class="login-container">
-      <img class="logo" src="../../../assets/images/logo/white.svg">
+      <img class="logo" src="./../../assets/images/logo/white.svg">
 
       <div class="alert alert-danger" v-if="error">
         <p>{{ error }}</p>
@@ -15,13 +14,13 @@
                 v-model="credentials.email">
         <input
                 type="password"
-                placeholder="Password"
-                v-model="credentials.password">
-        <button class="btn" v-on:click="login()">Inloggen</button>
+                placeholder="Wachtwoord"
+                v-model="credentials.password" @keyup.enter="login">
+        <button class="btn" @click="login">Inloggen</button>
       </div>
     </div>
   </div>
 </template>
-<script src="./LoginType.vue.js"></script>
+<script src="./Login.vue.js"></script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss" src="./LoginType.vue.scss"></style>
+<style scoped lang="scss" src="./Login.vue.scss"></style>
