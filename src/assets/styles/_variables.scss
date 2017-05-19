@@ -10,13 +10,18 @@ $regent: #849199;
 $pantzer: #5E6068;
 $comet: #373940;
 $dark: #202227;
+$brown: #746c54;
+$lightbrown: #9A8F70;
 $black: #000;
 
-$red: #EF2626;
+$red: #F03B3B;
+$pink: #ff4162;
 $green: #4BC54F;
 $purple: #c077cd;
 $blue: #4A90E2;
+$lightblue: #0dbed3;
 $teal: #4dabab;
+$gold: #eac45e;
 $yellow: #FFC146;
 
 $orange: #FF7809;
@@ -27,14 +32,19 @@ $orange-pure: #FF5A0B;
 $primary-color: $orange;
 
 $global-lift-gradient: linear-gradient(160deg, #F8592C 25%, #FF3D95 100%);
+$global-lift-gradient: linear-gradient(160deg, #F8592C 25%, #FF3D95 100%);
 
 // Category colors
 // All the Lift categories, assigned to color variables in a map
 $POST_CATEGORIES: (
-        gezondheid: $green,
+        gezondheid: $pink,
+        liefde: $red,
         werk: $blue,
         financiën: $teal,
-        dagelijks-leven: $pantzer
+        dagelijks: $pantzer,
+        online: $lightblue,
+        geloof: $gold,
+        mode: $lightbrown
 );
 
 
@@ -165,6 +175,7 @@ p, ul, li, a {
 $default-radius: 4px; // Default radius for buttons, posts etc.
 $default-padding: 10px 20px; // Default padding for multiple pages.
 $box-shadow: 0 0 20px 0 rgba(163, 163, 163, 0.24); // Default box shadow
+$light-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.20);
 $top-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.10); // Default top shadow
 
 // ---------------------------------------------------------------------------------------------------------------------

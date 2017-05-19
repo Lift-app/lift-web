@@ -131,6 +131,14 @@ body {
   }
 }
 
+.mousedown {
+  transform: scale(1);
+  transition: $default-transition;
+  &:active {
+    transform: scale(.95);
+    transition: $default-transition;
+  }
+}
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Forms and inputs
@@ -167,12 +175,14 @@ select {
   max-width: $form-max-width;
   margin-bottom: $form-margin-bottom;
   resize: none;
+  transition: $default-transition;
 
   &:focus {
     outline: 0;
     border-bottom: $form-border-size solid $form-border-color-active;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+    border-bottom-left-radius: $default-radius;
+    border-bottom-right-radius: $default-radius;
+    transition: $default-transition;
   }
 }
 
