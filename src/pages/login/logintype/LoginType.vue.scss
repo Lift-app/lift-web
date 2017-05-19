@@ -1,0 +1,28 @@
+.page--login-type {
+
+  $color: $white;
+  $gradient: linear-gradient(160deg, #F8592C 25%, #FF3D95 100%);
+  $component-padding: 60px 40px;
+
+  height: 100%;
+  position: absolute;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+  z-index: 1;
+  text-align: center;
+  background-image: $gradient;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .login-container {
+    height: 100%;
+    max-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}

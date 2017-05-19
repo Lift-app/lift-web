@@ -3,8 +3,38 @@
   $color: $white;
   $gradient: $global-lift-gradient;
   $component-padding: 60px 40px;
+  $fb-color: #4267b2;
+  $g-color: #757575;
+
+  .fb-btn {
+    background: $fb-color;
+    color: $white;
+    transition: $default-transition;
+
+    &:hover, &:focus {
+      background: darken($fb-color, 5);
+      transition: $default-transition;
+    }
+  }
+
+  .g-btn {
+    background: $white;
+    color: $g-color;
+    transition: $default-transition;
+
+    &:hover, &:focus {
+      background: darken($white, 5);
+      transition: $default-transition;
+    }
+  }
 
   height: 100%;
+  position: absolute;
+  left:0;
+  top:0;
+  right:0;
+  bottom:0;
+  z-index: 2;
   text-align: center;
   background-image: $gradient;
   padding: 0 $component-padding;
@@ -15,10 +45,48 @@
 
   .login-container {
     height: 100%;
-    max-height: 60vh;
+    max-height: 568px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    .slogan {
+      margin: 0;
+      color: $white;
+    }
+
+    .login-type-buttons {
+
+      .btn {
+        display: block;
+        margin: 0 auto 15px auto;
+        width: 100%;
+        max-width: 275px;
+
+        &.fb-btn {
+          @extend .fb-btn;
+        }
+
+        &.g-btn {
+          @extend .g-btn;
+        }
+
+        &.social-btn {
+          position: relative;
+
+          img {
+            position: absolute;
+            left:20px;
+            top: 12px;
+            width: 24px;
+          }
+
+          span {
+            padding-left:30px;
+          }
+        }
+      }
+    }
   }
 
   input {

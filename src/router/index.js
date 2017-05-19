@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import Login from '@/pages/login/Login'
+import LoginType from '@/pages/login/logintype/LoginType'
 import Home from '@/pages/home/Home'
 import Search from '@/pages/search/Search'
 
@@ -49,7 +50,14 @@ export default new VueRouter({
     {
       path: '/login',
       name: 'Login',
-      component: Login
+      component: Login,
+      children: [
+        {
+          path: ':type',
+          name: 'LoginType',
+          component: LoginType
+        }
+      ]
     },
     {
       path: '/logout',
