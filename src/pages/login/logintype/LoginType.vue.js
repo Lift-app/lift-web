@@ -9,12 +9,12 @@ export default {
         email: '',
         password: ''
       },
-      error: '',
-      msg: 'login'
+      loading: false
     }
   },
   methods: {
     login() {
+      this.loading = true
       const credentials = this.credentials
       auth.login(credentials)
         .then(() => {
@@ -22,11 +22,12 @@ export default {
           if (redirect) {
             router.push(redirect)
           } else {
-            router.push({name: 'Home'})
+            router.push({name: 'VoorJou'})
           }
         })
         .catch((error) => {
-          console.log(`Failed to log in: ${error}`)
+          this.loading = false
+          this.$toasted.error('Verkeerde login, probeer opnieuw')
         })
     }
   }

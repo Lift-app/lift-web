@@ -3,19 +3,16 @@
     <div class="login-container">
       <img class="logo" src="../../../assets/images/logo/white.svg">
 
-      <div class="alert alert-danger" v-if="error">
-        <p>{{ error }}</p>
-      </div>
-
       <div class="inputs">
         <input
-                type="email"
-                placeholder="E-mail"
-                v-model="credentials.email">
+          type="email"
+          placeholder="E-mail"
+          v-model="credentials.email">
         <input
-                type="password"
-                placeholder="Wachtwoord"
-                v-model="credentials.password" @keyup.enter="login">
+          type="password"
+          placeholder="Wachtwoord"
+          v-model="credentials.password" @keyup.enter="login">
+
         <button class="btn" @click="login">Inloggen</button>
       </div>
     </div>

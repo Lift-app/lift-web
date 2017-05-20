@@ -23,7 +23,10 @@
           <audio preload="auto" v-else class="audio-post" controls>
             <source :src="post.body" type="audio/wav">
           </audio>
-          <p class="title" aria-hidden="true" v-if="loading">Laden...</p>
+
+          <p class="title" aria-hidden="true" v-if="loading">
+            <preloader></preloader>
+          </p>
 
           <footer class="post-details">
             <like-button :data="post" type="posts" :dark="true"></like-button>
@@ -32,7 +35,6 @@
       </article>
 
       <div class="comments">
-
         <div class="comment create-comment">
           <aside class="comment-sidebar">
             <figure class="avatar-container">
@@ -53,38 +55,44 @@
           </div>
         </div>
 
-        <h3 class="title"><span class="comment-count">{{ post.comment_count }}</span> {{ commentsTitle }}</h3>
+        <p aria-hidden="true" v-if="commentsLoading">
+          <preloader></preloader>
+        </p>
 
-        <article v-for="(comment, index) in comments"
-                 v-bind:item="comment"
-                 v-bind:index="index"
-                 v-bind:key="comment.id" class="comment" :id="'comment-' + comment.id">
-          <aside class="comment-sidebar">
-            <figure class="avatar-container" v-if="comment.user">
-              <img class="avatar" v-if="comment.user.avatar" :src="comment.user.avatar.thumbnail" alt="Avatar">
-              <img class="avatar anonymous" v-else src="../../assets/images/icons/anonymous.svg" alt="Anonieme profielfoto">
-            </figure>
-          </aside>
+        <div v-if="!commentsLoading">
+          <h3 class="title"><span class="comment-count">{{ post.comment_count }}</span> {{ commentsTitle }}</h3>
 
-          <div class="comment-content">
-            <header>
-              <span class="username" v-if="comment.user">{{ comment.user.username }}</span>
-              <span v-else="!comment.user">Anoniem</span>
-              <small class="date">{{ comment.updated_at | moment("from", "now") }}</small>
-            </header>
+          <article v-for="(comment, index) in comments"
+                   v-bind:item="comment"
+                   v-bind:index="index"
+                   v-bind:key="comment.id" class="comment" :id="'comment-' + comment.id">
+            <aside class="comment-sidebar">
+              <figure class="avatar-container" v-if="comment.user">
+                <img class="avatar" v-if="comment.user.avatar" :src="comment.user.avatar.thumbnail" alt="Avatar">
+                <img class="avatar anonymous" v-else src="../../assets/images/icons/anonymous.svg" alt="Anonieme profielfoto">
+              </figure>
+            </aside>
 
-            <h3 v-if="comment.deleted" class="deleted-body">Bericht verwijderd</h3>
-            <h3 v-else-if="comment.type !== 'audio'" class="body">{{ comment.body }}</h3>
-            <audio preload="auto" v-else class="audio-post" controls>
-              <source :src="comment.body" type="audio/wav">
-            </audio>
+            <div class="comment-content">
+              <header>
+                <span class="username" v-if="comment.user">{{ comment.user.username }}</span>
+                <span v-else="!comment.user">Anoniem</span>
+                <small class="date">{{ comment.updated_at | moment("from", "now") }}</small>
+              </header>
 
-            <footer v-if="!comment.deleted">
-              <like-button type="comments" :data="comment" :dark="true"></like-button>
-              <button class="btn reply" aria-label="Reageren op deze comment"><img src="../../assets/images/icons/reply-lift-gray.svg" alt="Reageren op deze comment">reageren</button>
-            </footer>
-          </div>
-        </article>
+              <h3 v-if="comment.deleted" class="deleted-body">Bericht verwijderd</h3>
+              <h3 v-else-if="comment.type !== 'audio'" class="body">{{ comment.body }}</h3>
+              <audio preload="auto" v-else class="audio-post" controls>
+                <source :src="comment.body" type="audio/wav">
+              </audio>
+
+              <footer v-if="!comment.deleted">
+                <like-button type="comments" :data="comment" :dark="true"></like-button>
+                <button class="btn reply" aria-label="Reageren op deze comment"><img src="../../assets/images/icons/reply-lift-gray.svg" alt="Reageren op deze comment">reageren</button>
+              </footer>
+            </div>
+          </article>
+        </div>
 
       </div>
     </div>

@@ -11,7 +11,6 @@ export default {
   methods: {
 
     loginWithEmail() {
-      console.log('hesbs')
       router.push({name: 'LoginType', params: {type: 'email'}})
     }
   }

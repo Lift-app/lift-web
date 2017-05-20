@@ -1,6 +1,7 @@
 import router from '@/router'
 import store from '@/store'
 import LikeButton from '@/components/like-button/LikeButton'
+import Preloader from '@/components/preloader/Preloader'
 import Avatar from '@/components/avatar/Avatar'
 import { mapActions } from 'vuex'
 
@@ -29,6 +30,7 @@ export default {
       commentBody: null,
       commentLength: 600,
       loading: false,
+      commentsLoading: true,
       topOffset: 0,
       currentUser: {}
     }
@@ -71,9 +73,11 @@ export default {
     },
 
     loadComments() {
+      this.commentsLoading = true
       this.actionGetComments(this.$route.params.id)
         .then(() => {
           this.comments = store.state.post.comments
+          this.commentsLoading = false
       })
     },
 
@@ -134,6 +138,7 @@ export default {
   },
   components: {
     LikeButton,
-    Avatar
+    Avatar,
+    Preloader
   }
 }

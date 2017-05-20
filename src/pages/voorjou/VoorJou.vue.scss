@@ -1,4 +1,4 @@
-.page--home {
+.page--voorjou {
   @extend %absolute-view;
 
   .not-found {
@@ -16,16 +16,18 @@
     }
 
     .feed-nav {
-
+      padding: 10px;
+      margin: 7px 0;
       text-align: center;
 
-       p {
-         font-style: italic;
-         font-size: $text-font-size - 2px;
-         color: #5e6068;
-         margin: 0;
-         padding: 15px;
-       }
+      .title {
+        font-weight: bold;
+        margin: 5px 0;
+      }
+
+      .description {
+        margin: 0;
+      }
     }
   }
 
