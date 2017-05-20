@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 
 import Login from '@/pages/login/Login'
 import LoginType from '@/pages/login/logintype/LoginType'
-import Home from '@/pages/home/Home'
+import VoorJou from '@/pages/voorjou/VoorJou'
 import Search from '@/pages/search/Search'
 
 import Post from '@/pages/post/Post'
@@ -31,8 +31,8 @@ export default new VueRouter({
   routes: [
     {
       path: '/',
-      name: 'Home',
-      component: Home,
+      name: 'VoorJou',
+      component: VoorJou,
       beforeEnter: requireAuth,
       children: [
         {
@@ -45,6 +45,7 @@ export default new VueRouter({
     {
       path: '/search',
       name: 'Search',
+      beforeEnter: requireAuth,
       component: Search
     },
     {

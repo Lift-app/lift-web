@@ -1,6 +1,6 @@
 <template>
   <nav class="navigation">
-    <router-link :to="{ name: 'Home' }" exact id="feed-nav" :class="$route.name === 'Post' ? 'router-link-active' : ''">Voor jou</router-link>
+    <router-link :to="{ name: 'VoorJou' }" exact id="feed-nav" :class="$route.name === 'Post' ? 'router-link-active' : ''">Voor jou</router-link>
     <a href="#" id="interests-nav">Populair</a>
     <router-link :to="{name: 'CreatePost'}" id="add_post-nav">Iets zeggen</router-link>
     <router-link :to="{name: 'Search'}" id="search-nav">Zoeken</router-link>

@@ -7,7 +7,7 @@ import Preloader from '@/components/preloader/Preloader'
 import InfiniteLoading from 'vue-infinite-loading'
 
 export default {
-  name: 'home',
+  name: 'voorjou',
   data() {
     return {
       postText: '',

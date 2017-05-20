@@ -1,19 +1,16 @@
 <template>
-  <div class="page--home">
+  <div class="page--voorjou">
     <header class="header">
       <nav class="feed-nav">
-        <p>Deze berichten zijn voor jou geselecteerd...</p>
-        <!--<ul>-->
-          <!--<li class="active"><a href="#">Voor jou <img src="./star-red-lift.svg" alt="Voor jou" class="feed-cat-img" style="max-width: 20px;"></a></li>-->
-          <!--<li><a href="#">Populair <img src="./hot-red-lift.svg" alt="Populair" class="feed-cat-img" style="max-width: 17px;"></a></li>-->
-        <!--</ul>-->
+        <h2>Voor jou</h2>
+        <p>Deze berichten zijn persoonlijk voor jou geselecteerd.</p>
       </nav>
     </header>
     <transition name="slide-right">
       <router-view></router-view>
     </transition>
 
-    <p class="not-found" v-show="!posts.length"><i>Geen berichten gevonden</i></p>
+    <p class="not-found" v-show="!posts.length && !loading"><i>Geen berichten gevonden</i></p>
 
     <div v-if="loading">
       <preloader></preloader>
@@ -30,7 +27,7 @@
   </div>
 </template>
 
-<script src="./Home.vue.js"></script>
+<script src="./VoorJou.vue.js"></script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss" src="./Home.vue.scss"></style>
+<style scoped lang="scss" src="./VoorJou.vue.scss"></style>
