@@ -51,9 +51,15 @@
     left: 0;
     top: 0;
     padding: 40px 1em 25px;
-    background-color: $clay;
     color: $text-dark;
     transition: background-color ease .4s;
+
+    &:before {
+      content: '';
+      height: 100%;
+      width: 100%;
+      background-color: $clay;
+    }
 
     // make a class for every category name in $POST_CATEGORIES and set the correct background and color
     @each $category, $cat-color in $POST_CATEGORIES {
