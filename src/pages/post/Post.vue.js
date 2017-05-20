@@ -70,7 +70,7 @@ export default {
 
           // We need this timeout to guarantee this is done when the DOM is
           // ready
-          setTimeout(() => this.updateThemeColor())
+          setTimeout(() => this.updateThemeColor(), 50)
 
           this.loadComments()
         })
@@ -117,7 +117,7 @@ export default {
 
     updateThemeColor() {
       const post = document.querySelector('.post')
-      const color = window.getComputedStyle(post, null).getPropertyValue('background-color')
+      const color = window.getComputedStyle(post).getPropertyValue('background-color')
 
       document.querySelector('meta[name=theme-color]').setAttribute('content', color)
     },

@@ -55,10 +55,11 @@
     transition: background-color ease .4s;
 
     &:before {
+      @extend %absolute-view;
       content: '';
       height: 100%;
-      width: 100%;
-      background-color: $clay;
+      background: $porcelain;
+      z-index: -1;
     }
 
     // make a class for every category name in $POST_CATEGORIES and set the correct background and color
