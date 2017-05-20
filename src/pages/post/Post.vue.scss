@@ -65,13 +65,11 @@
       &.#{$category} {
         background-color: $cat-color;
 
-        &:before {
-          // determine if the text should be black or white based on the lightness level of the given color
-          @if lightness($cat-color) > lightness(#ccc) {
-            color: $text-dark;
-          } @else {
-            color: $white;
-          }
+        // determine if the text should be black or white based on the lightness level of the given color
+        @if lightness($cat-color) > lightness(#ccc) {
+          color: $text-dark;
+        } @else {
+          color: $white;
         }
 
         .category-button {
