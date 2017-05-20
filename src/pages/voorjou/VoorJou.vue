@@ -2,7 +2,7 @@
   <div class="page--voorjou">
     <header class="header">
       <nav class="feed-nav">
-        <h2>Voor jou</h2>
+        <h2 class="title">Voor jou</h2>
         <p>Deze berichten zijn persoonlijk voor jou geselecteerd.</p>
       </nav>
     </header>
