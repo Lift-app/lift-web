@@ -71,7 +71,6 @@ body {
   cursor: pointer;
 
   &:hover, &:focus {
-    background: darken($white, 5);
     transition: $default-transition;
   }
 }
