@@ -5,6 +5,8 @@ import Preloader from '@/components/preloader/Preloader'
 import Avatar from '@/components/avatar/Avatar'
 import { mapActions } from 'vuex'
 
+const DEFAULT_THEME_COLOR = '#FF5A0B'
+
 export default {
   name: 'post',
   data() {
@@ -44,6 +46,9 @@ export default {
       return comments.length === 1 ? 'reactie' : 'reacties'
     }
   },
+  beforeDestroy() {
+    document.querySelector('meta[name=theme-color]').setAttribute('content', DEFAULT_THEME_COLOR)
+  },
   methods: {
     ...mapActions({
       actionGetCurrentUser: 'getCurrentUser',
@@ -63,6 +68,9 @@ export default {
           this.post = store.state.post
           this.loading = false
 
+          // We need this timeout to guarantee this is done when the DOM is
+          // ready
+          setTimeout(() => this.updateThemeColor())
 
           this.loadComments()
         })
@@ -106,6 +114,13 @@ export default {
           this.commentBody = ''
           this.$toasted.error('Er ging wat mis. Probeer opnieuw!')
         })
+    },
+
+    updateThemeColor() {
+      const post = document.querySelector('.post')
+      const color = window.getComputedStyle(post, null).getPropertyValue('background-color')
+
+      document.querySelector('meta[name=theme-color]').setAttribute('content', color)
     },
 
     // Focus and blur functions to hide the navbar
