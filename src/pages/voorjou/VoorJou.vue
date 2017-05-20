@@ -20,7 +20,7 @@
       <div class="card-group" v-if="!loading">
         <card v-for="post in posts" :key="post.id" :post_data="post"></card>
         <infinite-loading :on-infinite="getMorePosts" ref="infiniteLoading" spinner="spiral">
-          <span slot="no-more">Er zijn geen berichten meer!</span>
+          <span slot="no-more">Dat was het! Meer berichten hebben we op dit moment niet voor je.</span>
         </infinite-loading>
       </div>
     </transition>
