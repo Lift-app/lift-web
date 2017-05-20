@@ -22,7 +22,7 @@ export default {
         'created_at': '0000-01-01T00:00:00',
         'category': {
           'name': '',
-          'id': 0,
+          'id': 0
         },
         'body': '',
         'like_count': 0,
@@ -39,7 +39,7 @@ export default {
   },
   computed: {
     normalizedCategory() {
-      return this.post.category.name.toLowerCase().replace(/\s/g, '-');
+      return this.post.category.name.toLowerCase().replace(/\s/g, '-')
     },
     commentsTitle() {
       const comments = this.comments || []
@@ -77,7 +77,6 @@ export default {
         .catch(() => {
           router.push({name: '404'})
         })
-
     },
 
     loadComments() {
@@ -86,7 +85,7 @@ export default {
         .then(() => {
           this.comments = store.state.post.comments
           this.commentsLoading = false
-      })
+        })
     },
 
     placeComment() {

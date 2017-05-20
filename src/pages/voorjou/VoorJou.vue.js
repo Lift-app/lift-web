@@ -12,7 +12,7 @@ export default {
     return {
       postText: '',
       loading: false,
-      page: 1,
+      page: 1
     }
   },
   computed: {

@@ -88,7 +88,7 @@ const actions = {
     return new Promise((resolve, reject) => {
       axios.post(`${config.apiUrl}/posts`, arg)
         .then((response) => {
-          if(config.debug) { console.log('Post created', response) }
+          if (config.debug) { console.log('Post created', response) }
           resolve()
         })
         .catch((error) => {
@@ -102,7 +102,7 @@ const actions = {
       axios.get(`${config.apiUrl}/categories`)
         .then((response) => {
           commit('SET_CATEGORIES', response.data)
-          if(config.debug) { console.log('Get categories', response) }
+          if (config.debug) { console.log('Get categories', response) }
           resolve()
         })
         .catch((error) => {

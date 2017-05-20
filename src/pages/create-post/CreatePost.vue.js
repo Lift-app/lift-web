@@ -3,7 +3,7 @@ import router from '@/router'
 import Modal from '@/components/modal/Modal'
 import { mapActions } from 'vuex'
 import config from '@/config/config'
-import vSelect from "vue-select"
+import vSelect from 'vue-select'
 
 export default {
   name: 'createPost',
@@ -86,7 +86,7 @@ export default {
       this.placePost(call_data)
         .then(() => {
           this.$toasted.success('Wohoo! Het bericht is geplaatst!')
-          router.push({name: 'Home'});
+          router.push({name: 'Home'})
         })
         .catch((error) => {
           this.$toasted.error('Er ging wat mis. Probeer opnieuw!')
@@ -142,45 +142,43 @@ export default {
           this.$toasted.error('Er ging wat mis. Probeer opnieuw!')
           console.log(JSON.stringify(error))
         })
-      }
-      else {
+      } else {
         this.stopRecording()
       }
     },
 
     stopRecording() {
-      let track = this.stream.getTracks()[0];
-      track.stop();
+      let track = this.stream.getTracks()[0]
+      track.stop()
       this.audioRecorder.stop()
     },
 
     togglePlay() {
-
-      let audioElement = document.getElementById("audio")
+      let audioElement = document.getElementById('audio')
       if (this.isPlaying) {
-        if (config.debug) {console.log('pause')}
+        if (config.debug) { console.log('pause') }
         audioElement.pause()
       } else {
-        if (config.debug) {console.log('play')}
+        if (config.debug) { console.log('play') }
         audioElement.play()
       }
-        this.isPlaying = !this.isPlaying
+      this.isPlaying = !this.isPlaying
     },
 
     // set the post type to given name, and clean this.post if type is different then current type
     setPostType(type) {
-      if(type !== this.post_type) {this.post = {}}
+      if (type !== this.post_type) { this.post = {} }
       this.post_type = type
     },
 
     // Focus and blur functions to hide the navbar
     focusInput(e) {
-       e.target.classList.add('focussed')
+      e.target.classList.add('focussed')
       document.querySelector('#app').classList.add('nav-hidden')
     },
 
     blurInput(e) {
-       e.target.classList.remove('focussed')
+      e.target.classList.remove('focussed')
       document.querySelector('#app').classList.remove('nav-hidden')
     }
   },

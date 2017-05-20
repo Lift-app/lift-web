@@ -6,4 +6,3 @@ export const fetchPosts = state => {
 export const getPostById = (state, getters) => (id) => {
   return state.posts.find(post => post.id === id)
 }
-

@@ -15,7 +15,7 @@ export default {
   computed: {
 
     normalizedCategory() {
-      return this.post_data.category.name.toLowerCase().replace(/\s/g, '-');
+      return this.post_data.category.name.toLowerCase().replace(/\s/g, '-')
     }
   },
   methods: {
@@ -26,7 +26,7 @@ export default {
       })
     },
     haltAction(e) {
-      e.stopImmediatePropagation();
+      e.stopImmediatePropagation()
     }
   }
 }
