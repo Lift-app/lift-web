@@ -4,12 +4,13 @@
   $cat-height: 65px;
 
   height: 100%;
-  text-align: center;
   background-image: $gradient;
   //padding: $default-padding;
   box-sizing: border-box;
 
   .search-container {
+    text-align: center;
+
     header {
       width: 100%;
 
