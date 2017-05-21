@@ -89,7 +89,7 @@ const actions = {
       axios.post(`${config.apiUrl}/posts`, arg)
         .then((response) => {
           if (config.debug) { console.log('Post created', response) }
-          resolve()
+          resolve(response.data.data.id)
         })
         .catch((error) => {
           reject(error)
