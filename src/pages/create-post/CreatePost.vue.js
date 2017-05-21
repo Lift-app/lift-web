@@ -68,25 +68,25 @@ export default {
     },
 
     sendPost() {
-      let call_data = new FormData()
+      let formData = new FormData()
 
-      call_data.append('type', 'text')
-      call_data.append('user_id', 1)
-      call_data.append('category_id', this.category.id)
-      call_data.append('body', this.body)
-      call_data.append('anonymous', this.anonymous)
+      formData.append('type', 'text')
+      formData.append('user_id', 1)
+      formData.append('category_id', this.category.id)
+      formData.append('body', this.body)
+      formData.append('anonymous', this.anonymous)
 
       if (this.post_type === 'voice') {
-        call_data.set('type', 'audio')
-        call_data.delete('body')
-        call_data.set('audio', this.audioBlob, `audio.${this.audioType}`)
+        formData.set('type', 'audio')
+        formData.delete('body')
+        formData.set('audio', this.audioBlob, `audio.${this.audioType}`)
       }
 
       // make the call
-      this.placePost(call_data)
-        .then(() => {
+      this.placePost(formData)
+        .then((postId) => {
           this.$toasted.success('Wohoo! Het bericht is geplaatst!')
-          router.push({name: 'Home'})
+          router.push({name: 'Post', params: {id: postId}})
         })
         .catch((error) => {
           this.$toasted.error('Er ging wat mis. Probeer opnieuw!')
@@ -140,7 +140,7 @@ export default {
           }
         }, (error) => {
           this.$toasted.error('Er ging wat mis. Probeer opnieuw!')
-          console.log(JSON.stringify(error))
+          console.log(error)
         })
       } else {
         this.stopRecording()
