@@ -149,6 +149,30 @@ const actions = {
           reject(error)
         })
     })
+  },
+
+  getOAuthURL({ commit }, provider) {
+    return new Promise((resolve, reject) => {
+      axios.get(`${config.apiUrl}/oauth/${provider}`)
+        .then((response) => {
+          resolve(response.data.url)
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  },
+
+  oauthLogin({ commit }, [provider, code]) {
+    return new Promise((resolve, reject) => {
+      axios.get(`${config.apiUrl}/oauth/${provider}/callback?code=${code}`)
+        .then((response) => {
+          resolve(response)
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
   }
 }
 

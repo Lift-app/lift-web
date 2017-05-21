@@ -1,5 +1,5 @@
 <template>
-  <div class="page--login">
+  <div class="page--login" v-if="type === 'email'">
     <div class="login-container">
       <img class="logo" src="../../../assets/images/logo/white.svg">
 

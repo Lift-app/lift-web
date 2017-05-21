@@ -6,16 +6,19 @@ export default {
     return new Promise((resolve, reject) => {
       return axios.post(`${config.apiUrl}/tokens`, credentials)
         .then((response) => {
-          localStorage.access_token = response.data.jwt
-
-          this.setAuthHeader()
-
+          this.setAuthToken(response.data.jwt)
           resolve()
         })
         .catch((error) => {
           reject(error)
         })
     })
+  },
+
+  setAuthToken(token) {
+    localStorage.access_token = token
+
+    this.setAuthHeader()
   },
 
   logout() {

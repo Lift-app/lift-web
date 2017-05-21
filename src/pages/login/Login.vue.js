@@ -9,9 +9,12 @@ export default {
     document.querySelector('#app').classList.remove('nav-hidden')
   },
   methods: {
-
     loginWithEmail() {
       router.push({name: 'LoginType', params: {type: 'email'}})
+    },
+
+    loginWithGoogle() {
+      router.push({name: 'LoginType', params: {type: 'google'}})
     }
   }
 }

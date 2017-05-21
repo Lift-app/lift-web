@@ -8,7 +8,7 @@
       <h3 class="slogan">Dé online gemeenschap voor Wajongers</h3>
       <div class="login-type-buttons">
         <button class="btn social-btn fb-btn"><span><img src="../../assets/images/icons/facebook-lift.svg" alt="Inloggen met Facebook"> Inloggen met Facebook</span></button>
-        <button class="btn social-btn g-btn"><img src="../../assets/images/icons/google-lift.svg" alt="Inloggen met Google"><span>Inloggen met Google</span></button>
+        <button class="btn social-btn g-btn" @click="loginWithGoogle"><img src="../../assets/images/icons/google-lift.svg" alt="Inloggen met Google"><span>Inloggen met Google</span></button>
         <button class="btn sign-in-button" @click="loginWithEmail"><span>Inloggen met emailadres</span></button>
       </div>
     </div>
