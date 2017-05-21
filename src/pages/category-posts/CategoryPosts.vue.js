@@ -11,6 +11,7 @@ export default {
   data() {
     return {
       category: {},
+      posts: {},
       loading: false,
       page: 1
     }

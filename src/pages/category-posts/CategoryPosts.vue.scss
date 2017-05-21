@@ -1,6 +1,9 @@
 .page--category-posts {
   @extend %absolute-view;
 
+  background-color: $porcelain;
+  z-index: 2;
+
   .not-found {
     text-align: center;
   }
