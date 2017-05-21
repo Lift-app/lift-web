@@ -14,11 +14,6 @@
 
   export default {
     name: 'lift',
-    data() {
-      return {
-        active: 'home'
-      }
-    },
     beforeMount() {
       if (auth.isLoggedIn()) {
         auth.setAuthHeader()

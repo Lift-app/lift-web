@@ -58,11 +58,8 @@ export default {
     }),
 
     goBack() {
-      router.go(-1)
-    },
-
-    close() {
-      router.push({name: 'Home'})
+      let location = this.$route.matched[0].name
+      router.push({name: location})
     },
 
     loadPost() {
