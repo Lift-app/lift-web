@@ -2,7 +2,7 @@
   <div class="page--post">
     <div class="post-container">
       <nav>
-        <router-link to="/" class="btn btn-back" aria-label="Terug naar: Home"><img src="../../assets/images/icons/arrow-left-lift.svg" alt="Terug"> <span>Terug</span></router-link>
+        <div @click="goBack" class="btn btn-back" aria-label="Naar vorige pagina"><img src="../../assets/images/icons/arrow-left-lift.svg" alt="Terug"> <span>Terug</span></div>
         <button class="report" aria-label="rapporteren"><span>Melden</span><img src="../../assets/images/icons/warning-lift-white.svg" alt="Bericht rapporteren" class="report-icon"/></button>
       </nav>
 
