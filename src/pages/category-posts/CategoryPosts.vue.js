@@ -45,11 +45,12 @@ export default {
     getPosts() {
       this.loading = true
 
-      this.actionGetPosts(this.category.id).then(() => {
-        this.posts = store.state.posts
+      this.actionGetPosts(this.category.id)
+        .then(() => {
+          this.posts = store.state.posts
 
-        this.loading = false
-      })
+          this.loading = false
+        })
     }
   },
   components: {
