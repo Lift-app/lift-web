@@ -15,9 +15,11 @@ const actions = {
     })
   },
 
-  getPosts({ commit }) {
+  getPosts({ commit }, categoryId = null) {
+    const uri = categoryId ? `categories/${categoryId}/posts` : 'posts'
+
     return new Promise((resolve, reject) => {
-      return axios.get(`${config.apiUrl}/posts`)
+      return axios.get(`${config.apiUrl}/${uri}`)
         .then((response) => {
           // Commit the data into SET_POSTS - see mutations.js
           commit('SET_POSTS', response.data)
@@ -29,9 +31,11 @@ const actions = {
     })
   },
 
-  getMorePosts({ commit }, page) {
+  getMorePosts({ commit }, [page, categoryId = null]) {
+    const uri = categoryId ? `categories/${categoryId}/posts` : 'posts'
+
     return new Promise((resolve, reject) => {
-      return axios.get(`${config.apiUrl}/posts?page=${page}`)
+      return axios.get(`${config.apiUrl}/${uri}?page=${page}`)
         .then((response) => {
           // Commit the data into SET_POSTS - see mutations.js
           commit('APPEND_POSTS', response.data)
@@ -90,6 +94,18 @@ const actions = {
         .then((response) => {
           if (config.debug) { console.log('Post created', response) }
           resolve(response.data.data.id)
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  },
+
+  getCategory({ commit }, category) {
+    return new Promise((resolve, reject) => {
+      axios.get(`${config.apiUrl}/categories/${category}`)
+        .then((response) => {
+          resolve(response.data.data)
         })
         .catch((error) => {
           reject(error)

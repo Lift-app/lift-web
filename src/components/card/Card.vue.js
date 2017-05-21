@@ -10,19 +10,18 @@ export default {
     Avatar
   },
   props: {
-    post_data: {}
+    post: {}
   },
   computed: {
-
     normalizedCategory() {
-      return this.post_data.category.name.toLowerCase().replace(/\s/g, '-')
+      return this.post.category.name.toLowerCase().replace(/\s/g, '-')
     }
   },
   methods: {
     openPost() {
       router.push({
         name: 'Post',
-        params: { id: this.post_data.id }
+        params: { id: this.post.id }
       })
     },
     haltAction(e) {

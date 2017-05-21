@@ -3,29 +3,29 @@
 
     <header>
       <div class="user">
-        <avatar :post="post_data"></avatar>
+        <avatar :post="post"></avatar>
         <div class="user-details">
-          <h4 class="u-name" v-if="post_data.user">{{ post_data.user.username }}</h4>
+          <h4 class="u-name" v-if="post.user">{{ post.user.username }}</h4>
           <h4 class="u-name" v-else>Anoniem</h4>
-          <h5 class="u-date">{{ post_data.created_at | moment("from", "now") }}</h5>
+          <h5 class="u-date">{{ post.created_at | moment("from", "now") }}</h5>
         </div>
       </div>
-      <a href="#" class="btn cat-btn">{{ post_data.category.name }}</a>
+      <a href="#" class="btn cat-btn">{{ post.category.name }}</a>
     </header>
 
     <section>
-      <h2 class="title" v-if="post_data.type !== 'audio'">{{ post_data.body }}</h2>
-      <audio @click="haltAction" preload="auto" v-else :src="post_data.body" class="audio-post" controls></audio>
+      <h2 class="title" v-if="post.type !== 'audio'">{{ post.body }}</h2>
+      <audio @click="haltAction" preload="auto" v-else :src="post.body" class="audio-post" controls></audio>
 
     </section>
 
     <footer class="post-details">
-      <like-button :data="post_data" type="posts"></like-button>
+      <like-button :data="post" type="posts"></like-button>
 
       <div class="footer-action">
         <button class="comment" aria-label="Reageren op deze vraag">
           <img src="../../assets/images/icons/speech-bubble-white.svg" alt="Reageren op deze vraag" height="29" width="26"/>
-          <span class="count comment-count"  :aria-label="post_data.comment_count + ' reacties'">{{ post_data.comment_count }}</span>
+          <span class="count comment-count"  :aria-label="post.comment_count + ' reacties'">{{ post.comment_count }}</span>
         </button>
       </div>
     </footer>

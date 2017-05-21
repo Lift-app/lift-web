@@ -57,6 +57,10 @@ export default {
       actionPlaceComment: 'placeComment'
     }),
 
+    goBack() {
+      router.go(-1)
+    },
+
     close() {
       router.push({name: 'Home'})
     },

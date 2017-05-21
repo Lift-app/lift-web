@@ -1,9 +1,9 @@
 <template>
-  <div class="page--voorjou">
+  <div class="page--category-posts">
     <header class="header">
       <nav class="feed-nav">
-        <h2 class="title">Voor jou</h2>
-        <p class="description">Deze berichten zijn persoonlijk voor jou geselecteerd.</p>
+        <h2 class="title">{{ category.name }}</h2>
+        <p class="description" v-if="category.description">{{ category.description }}</p>
       </nav>
     </header>
     <transition name="slide-right">
@@ -27,7 +27,7 @@
   </div>
 </template>
 
-<script src="./VoorJou.vue.js"></script>
+<script src="./CategoryPosts.vue.js"></script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss" src="./VoorJou.vue.scss"></style>
+<style scoped lang="scss" src="./CategoryPosts.vue.scss"></style>
