@@ -10,6 +10,7 @@
   overflow: scroll;
   z-index: 2;
   background-color: $porcelain;
+  will-change: transform;
 
   nav {
     display: flex;
