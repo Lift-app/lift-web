@@ -5,9 +5,8 @@ import Login from '@/pages/login/Login'
 import LoginType from '@/pages/login/logintype/LoginType'
 import VoorJou from '@/pages/voorjou/VoorJou'
 import Search from '@/pages/search/Search'
-
+import CategoryPosts from '@/pages/category-posts/CategoryPosts'
 import Post from '@/pages/post/Post'
-
 import CreatePost from '@/pages/create-post/CreatePost'
 import CreatePostSuccess from '@/pages/create-post/success/Success'
 
@@ -43,10 +42,17 @@ export default new VueRouter({
       ]
     },
     {
-      path: '/search',
+      path: '/zoeken',
       name: 'Search',
       beforeEnter: requireAuth,
-      component: Search
+      component: Search,
+      children: [
+        {
+          path: 'categorie/:category',
+          name: 'CategoryPosts',
+          component: CategoryPosts
+        }
+      ]
     },
     {
       path: '/login',

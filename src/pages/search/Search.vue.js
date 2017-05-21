@@ -1,3 +1,4 @@
+import router from '@/router'
 import store from '@/store'
 import { mapActions } from 'vuex'
 import vSelect from 'vue-select'
@@ -16,7 +17,6 @@ export default {
     }),
 
     normalizedCategory(name) {
-      console.log('es', name)
       return name.toLowerCase().replace(/\s/g, '-')
     },
 
@@ -25,6 +25,11 @@ export default {
         .then(() => {
           this.categories = store.state.categories
         })
+    },
+
+    goToCategory(category) {
+      const lowercaseCategory = category.toLowerCase()
+      router.push({name: 'CategoryPosts', params: {category: lowercaseCategory}})
     }
   },
   created() {

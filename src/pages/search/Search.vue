@@ -1,5 +1,8 @@
 <template>
   <div class="page--search">
+
+    <router-view></router-view>
+
     <div class="search-container">
       <header>
         <div class="header-inner">
@@ -15,7 +18,7 @@
       <section>
         <ul class="categories">
           <li v-for="category in filteredList" :class="normalizedCategory(category.name)">
-            <a href="#" class="mousedown"><span>{{ category.name }}</span></a>
+            <a @click="goToCategory(category.name)" class="mousedown"><span>{{ category.name }}</span></a>
           </li>
         </ul>
       </section>

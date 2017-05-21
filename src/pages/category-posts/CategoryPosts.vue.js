@@ -1,4 +1,5 @@
 import store from '@/store'
+import router from '@/router'
 import { mapActions } from 'vuex'
 
 import Card from '@/components/card/Card'
@@ -6,9 +7,10 @@ import Preloader from '@/components/preloader/Preloader'
 import InfiniteLoading from 'vue-infinite-loading'
 
 export default {
-  name: 'voorjou',
+  name: 'category-posts',
   data() {
     return {
+      category: {},
       loading: false,
       page: 1
     }
@@ -21,13 +23,14 @@ export default {
   methods: {
     ...mapActions({
       actionGetPosts: 'getPosts',
+      actionGetCategory: 'getCategory',
       actionGetMorePosts: 'getMorePosts'
     }),
 
     getMorePosts() {
       this.page++
 
-      this.actionGetMorePosts([this.page])
+      this.actionGetMorePosts([this.page, this.category.id])
         .then((response) => {
           if (response.data.length === 0) {
             this.$refs.infiniteLoading.$emit('$InfiniteLoading:complete')
@@ -40,8 +43,10 @@ export default {
 
     getPosts() {
       this.loading = true
-      this.actionGetPosts().then(() => {
+
+      this.actionGetPosts(this.category.id).then(() => {
         this.posts = store.state.posts
+
         this.loading = false
       })
     }
@@ -51,7 +56,12 @@ export default {
     Preloader,
     InfiniteLoading
   },
-  created() {
-    this.getPosts()
+  beforeMount() {
+    this.actionGetCategory(this.$route.params.category)
+      .then((category) => {
+        this.category = category
+        this.getPosts()
+      })
+      .catch(_error => router.push({name: '404'}))
   }
 }
