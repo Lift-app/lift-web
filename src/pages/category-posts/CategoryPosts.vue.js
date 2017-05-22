@@ -33,7 +33,7 @@ export default {
       router.push({name: location})
     },
 
-    normalizedCategory(name) {
+    normalizedCategory(name = "") {
       return name.toLowerCase().replace(/\s/g, '-')
     },
 
