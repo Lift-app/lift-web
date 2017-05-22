@@ -10,11 +10,11 @@ export default {
   },
   methods: {
     loginWithEmail() {
-      router.push({name: 'LoginType', params: {type: 'email'}})
+      router.push({name: 'LoginEmail'})
     },
 
     loginWithGoogle() {
-      router.push({name: 'LoginType', params: {type: 'google'}})
+      router.push({name: 'LoginOAuth', params: {type: 'google'}})
     }
   }
 }

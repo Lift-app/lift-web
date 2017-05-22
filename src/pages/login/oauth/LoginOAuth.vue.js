@@ -1,36 +1,16 @@
 import router from '@/router'
 import auth from '@/auth'
+import Preloader from '@/components/preloader/Preloader'
 import { mapActions } from 'vuex'
 
 export default {
-  name: 'loginType',
-  data() {
-    return {
-      credentials: {
-        email: '',
-        password: ''
-      },
-      loading: false,
-      type: 'email'
-    }
-  },
+  name: 'loginOAuth',
   methods: {
     ...mapActions({
       actionOAuthLogin: 'oauthLogin',
       actionGetOAuthURL: 'getOAuthURL'
     }),
-    login() {
-      this.loading = true
-      const credentials = this.credentials
-      auth.login(credentials)
-        .then(() => {
-          this.completeLogin()
-        })
-        .catch((error) => {
-          this.loading = false
-          this.$toasted.error('Verkeerde login, probeer opnieuw')
-        })
-    },
+
     completeLogin() {
       const redirect = this.$route.query.redirect
       if (redirect) {
@@ -48,7 +28,7 @@ export default {
         const code = this.$route.query.code
         if (code) {
           this.actionOAuthLogin(['google', code])
-            .then((response) => {
+            .then(response => {
               const token = response.data.jwt
               auth.setAuthToken(token)
 
@@ -56,11 +36,17 @@ export default {
             })
         } else {
           this.actionGetOAuthURL('google')
-            .then((url) => {
+            .then(url => {
               window.location.href = url
             })
         }
         break
+      default:
+        router.push({name: '404'})
+        break
     }
+  },
+  components: {
+    Preloader
   }
 }

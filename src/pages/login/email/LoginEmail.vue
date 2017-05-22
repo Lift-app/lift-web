@@ -1,5 +1,5 @@
 <template>
-  <div class="page--login" v-if="type === 'email'">
+  <div class="page--login">
     <div class="login-container">
       <img class="logo" src="../../../assets/images/logo/white.svg">
 
@@ -18,6 +18,6 @@
     </div>
   </div>
 </template>
-<script src="./LoginType.vue.js"></script>
+<script src="./LoginEmail.vue.js"></script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss" src="./LoginType.vue.scss"></style>
+<style scoped lang="scss" src="./LoginEmail.vue.scss"></style>

@@ -1,0 +1,7 @@
+.page--oauth {
+  @extend %absolute-view;
+
+  background-color: $porcelain;
+  z-index: 3;
+  text-align: center;
+}
