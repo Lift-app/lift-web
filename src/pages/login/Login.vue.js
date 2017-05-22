@@ -13,8 +13,8 @@ export default {
       router.push({name: 'LoginEmail'})
     },
 
-    loginWithGoogle() {
-      router.push({name: 'LoginOAuth', params: {type: 'google'}})
+    loginWithOAuth(provider) {
+      router.push({name: 'LoginOAuth', params: {provider: provider}})
     }
   }
 }

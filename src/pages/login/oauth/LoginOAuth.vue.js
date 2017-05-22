@@ -21,9 +21,9 @@ export default {
     }
   },
   created() {
-    const type = this.$route.params.type
+    const provider = this.$route.params.provider
 
-    if (!['google', 'facebook'].includes(type)) {
+    if (!['google', 'facebook'].includes(provider)) {
       router.push({name: '404'})
       return
     }

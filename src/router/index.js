@@ -66,7 +66,7 @@ export default new VueRouter({
           component: LoginEmail
         },
         {
-          path: 'oauth/:type',
+          path: 'oauth/:provider',
           name: 'LoginOAuth',
           component: LoginOAuth
         }
