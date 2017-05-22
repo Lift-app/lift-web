@@ -4,6 +4,7 @@ import Modal from '@/components/modal/Modal'
 import { mapActions } from 'vuex'
 import config from '@/config/config'
 import vSelect from "vue-select"
+//import Player from "@/components/Player/Player"
 
 export default {
   name: 'createPost',

@@ -1,0 +1,7 @@
+.hidden {
+  display: none;
+}
+
+.buttons a:not(.active) {
+  display: none;
+}

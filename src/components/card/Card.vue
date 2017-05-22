@@ -14,9 +14,16 @@
     </header>
 
     <section>
-      <h2 class="title" v-if="post_data.type !== 'audio'">{{ post_data.body }}</h2>
-      <audio @click="haltAction" preload="auto" v-else :src="post_data.body" class="audio-post" controls></audio>
-
+      <h2 class="title"
+        v-if="post_data.type !== 'audio'">
+        {{ post_data.body }}
+      </h2>
+      <player
+        v-else
+        :url="post_data.body"
+        @click="haltAction"
+        preload="none" class="player">
+      </player>
     </section>
 
     <footer class="post-details">

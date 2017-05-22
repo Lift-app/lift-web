@@ -2,12 +2,14 @@ import router from '@/router'
 import Post from '@/pages/post/Post'
 import LikeButton from '@/components/like-button/LikeButton'
 import Avatar from '@/components/avatar/Avatar'
+import Player from '@/components/player/Player'
 
 export default {
   name: 'card',
   components: {
     LikeButton,
-    Avatar
+    Avatar,
+    Player
   },
   props: {
     post_data: {}
@@ -25,8 +27,5 @@ export default {
         params: { id: this.post_data.id }
       })
     },
-    haltAction(e) {
-      e.stopImmediatePropagation();
-    }
   }
 }
