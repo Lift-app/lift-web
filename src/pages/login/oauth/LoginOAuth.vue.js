@@ -21,29 +21,28 @@ export default {
     }
   },
   created() {
-    this.type = this.$route.params.type
+    const type = this.$route.params.type
 
-    switch (this.type) {
-      case 'google':
-        const code = this.$route.query.code
-        if (code) {
-          this.actionOAuthLogin(['google', code])
-            .then(response => {
-              const token = response.data.jwt
-              auth.setAuthToken(token)
+    if (!['google', 'facebook'].includes(type)) {
+      router.push({name: '404'})
+      return
+    }
 
-              this.completeLogin()
-            })
-        } else {
-          this.actionGetOAuthURL('google')
-            .then(url => {
-              window.location.href = url
-            })
-        }
-        break
-      default:
-        router.push({name: '404'})
-        break
+    const code = this.$route.query.code
+
+    if (code) {
+      this.actionOAuthLogin([provider, code])
+        .then(response => {
+          const token = response.data.jwt
+          auth.setAuthToken(token)
+
+          this.completeLogin()
+        })
+    } else {
+      this.actionGetOAuthURL(provider)
+        .then(url => {
+          window.location.href = url
+        })
     }
   },
   components: {
