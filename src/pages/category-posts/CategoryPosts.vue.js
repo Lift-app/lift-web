@@ -28,6 +28,15 @@ export default {
       actionGetMorePosts: 'getMorePosts'
     }),
 
+    goBack() {
+      let location = this.$route.matched[0].name
+      router.push({name: location})
+    },
+
+    normalizedCategory(name) {
+      return name.toLowerCase().replace(/\s/g, '-')
+    },
+
     getMorePosts() {
       this.page++
 
