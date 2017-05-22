@@ -2,6 +2,7 @@
 
   $gradient: $global-lift-gradient;
   $cat-height: 65px;
+  $search-container: 465px;
 
   height: 100%;
   background-image: $gradient;
@@ -28,7 +29,7 @@
 
         .search-wrapper {
           position: relative;
-          max-width: 465px;
+          max-width: $search-container;
           margin: 0 auto;
           box-shadow: $light-box-shadow;
 
@@ -60,18 +61,16 @@
       padding: 0;
 
       ul {
-        margin: 0;
+        margin: 0 auto;
         padding: $default-padding;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
 
         li {
           list-style: none;
-          margin: 0 10px 10px 0;
 
           &:nth-child(2n) {
-            margin: 0 0 10px 0;
+            a {
+              margin: 0 0 12px 0;
+            }
           }
 
           // make a class for every category name in $POST_CATEGORIES and set the correct background and color
@@ -85,7 +84,9 @@
           }
 
           a {
-            width: $cat-height * 2 + 5px;
+            width: 48%;
+            float: left;
+            margin: 0 12px 12px 0;
             height: $cat-height;
             text-align: center;
             border-radius: $default-radius;

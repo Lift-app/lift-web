@@ -11,8 +11,82 @@
   header {
     width: 100%;
     display: block;
+    height: 100px;
     top:0;
     z-index: 5;
+    padding: 0 1em;
+    margin: 0 auto 55px auto;
+
+    @each $category, $bgcolor in $POST_CATEGORIES {
+      &.#{$category} {
+          background-color: $bgcolor;
+
+        .category-posts-details {
+          background-image: url('../search/categories/#{$category}-lift.svg');
+
+          .category-posts-title {
+            color: $bgcolor;
+          }
+        }
+      }
+    }
+
+    nav {
+      padding: 0;
+    }
+
+    .category-posts-details {
+      max-width: 320px;
+      width: 100%;
+      border-radius: $default-radius;
+      margin: 20px auto 0;
+      background: $white;
+      padding: 15px 15px 15px 60px;
+      position: relative;
+      z-index: 6;
+      box-shadow: $light-box-shadow;
+      background-repeat: no-repeat;
+      background-size: 34px auto;
+      background-position: 15px;
+
+      img {
+        float: left;
+        width: 34px;
+        margin: 0 10px 0 0;
+      }
+      .category-posts-title, .category-posts-count {
+        margin: 0;
+      }
+
+      .category-posts-title {
+        padding: 4px 0 0 0;
+      }
+
+      .category-posts-count {
+        color: $regent;
+      }
+
+      figure {
+        border-left: 1px solid $clay;
+        position: absolute;
+        margin: 0;
+        width: 60px;
+        height: 60%;
+        right: 0;
+        top: 20%;
+
+        .thumb-icon {
+          width: 34px;
+          top: 10%;
+          left: 10px;
+          position: absolute;
+          fill: transparent;
+          stroke-width: 2;
+          stroke: $regent;
+        }
+      }
+    }
+  }
 
     .slideDown {
       position: fixed;
@@ -32,7 +106,6 @@
         margin: 0;
       }
     }
-  }
 
   .slide-up-item {
     display: inline-block;

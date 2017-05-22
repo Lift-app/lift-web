@@ -22,6 +22,39 @@ body {
   background: $white;
 }
 
+// Default header
+.default-header  {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  padding: 0 1em;
+  width: 100%;
+  z-index: 1;
+
+  span {
+    padding-top: 2px;
+  }
+
+  .report {
+    width: auto;
+    color: $white;
+    font-weight: 500;
+    border: 0;
+    padding-right: 0;
+    background: rgba(255, 255, 255, 0);
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+
+    .report-icon {
+      width: 20px;
+      margin-left: 10px;
+    }
+  }
+}
+
 #app {
   max-width: $max-app-width;
   margin: 0 auto;
@@ -142,6 +175,102 @@ body {
   &:active {
     transform: scale(.95);
     transition: $default-transition;
+  }
+}
+
+.like {
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+
+  .like-count {
+    margin-left: 5px;
+
+  }
+
+  .like-button {
+    background: transparent;
+    width: auto;
+    outline: none;
+    border: none;
+    -webkit-appearance: none;
+    transition: all 350ms ease;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+    &:focus, &:hover {
+      outline: none;
+      border: none;
+      -webkit-appearance: none;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    .thumb-icon {
+      display: inline-block;
+      vertical-align: bottom;
+    }
+
+    &.liked {
+
+      .like-count {
+        font-weight: bold;
+      }
+
+      .thumb-icon {
+        animation: scale 350ms ease;
+
+        @keyframes scale {
+          0% {
+            transform: scale(1.8);
+          }
+          100% {
+            transform: scale(1.0);
+          }
+        }
+
+        .thumb-inner {
+          fill: $white;
+          stroke: transparent;
+        }
+      }
+    }
+  }
+
+  .thumb-icon {
+    width: 28px;
+    height: 29px;
+
+    .thumb-inner {
+      fill: transparent;
+      stroke: $white;
+      transition: fill $animation-snap .1s;
+    }
+  }
+
+
+  &.dark {
+
+    .like-button {
+
+      .thumb-inner {
+        fill: transparent;
+        stroke: $dark;
+        transition: fill $animation-snap .1s;
+
+      }
+
+      &.liked {
+
+        .thumb-inner {
+          stroke-width: 0;
+          fill: $blue;
+          transition: fill $animation-snap .3s;
+        }
+
+        .like-count {
+          color: $blue;
+        }
+      }
+    }
   }
 }
 

@@ -9,8 +9,7 @@
           <img src="../../assets/images/icons/search-lift-white.svg" class="search-icon" alt="Zoeken"/>
           <h3 class="search-title">Waar wil je naar zoeken?</h3>
           <div class="search-wrapper">
-            <!--<v-select class="search-bar" label="name" v-model="category" :options="categories" placeholder="Bijvoorbeeld 'kinderen'"></v-select>-->
-            <input type="text" class="search-bar" placeholder="Bijvoorbeeld 'kinderen'" v-model="keyword">
+            <input type="text" class="search-bar" placeholder="Bijvoorbeeld 'zorg'" v-model="keyword">
             <button type="submit" class="search-submit">Zoeken</button>
           </div>
         </div>
