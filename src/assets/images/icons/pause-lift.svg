@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="8px" height="12px" viewBox="0 0 8 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
-    <title>ion-pause - Ionicons</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
     <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="speak-question-content-recording-copy" transform="translate(-81.000000, -213.000000)" fill="#FFF">
+        <g id="speak-question-content-recording-copy" transform="translate(-81.000000, -213.000000)" fill="#FFFFF">
             <path d="M84,224.625 C84,224.875001 83.8750012,225 83.625,225 L81.375,225 C81.1249988,225 81,224.875001 81,224.625 L81,213.375 C81,213.124999 81.1249988,213 81.375,213 L83.625,213 C83.8750012,213 84,213.124999 84,213.375 L84,224.625 Z M88.625,213 C88.8750012,213 89,213.124999 89,213.375 L89,224.625 C89,224.875001 88.8750012,225 88.625,225 L86.375,225 C86.1249988,225 86,224.875001 86,224.625 L86,213.375 C86,213.124999 86.1249988,213 86.375,213 L88.625,213 Z" id="ion-pause---Ionicons"></path>
         </g>
     </g>
