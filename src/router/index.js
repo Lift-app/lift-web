@@ -2,7 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import Login from '@/pages/login/Login'
-import LoginType from '@/pages/login/logintype/LoginType'
+import LoginEmail from '@/pages/login/email/LoginEmail'
+import LoginOAuth from '@/pages/login/oauth/LoginOAuth'
 import VoorJou from '@/pages/voorjou/VoorJou'
 import Search from '@/pages/search/Search'
 import CategoryPosts from '@/pages/category-posts/CategoryPosts'
@@ -60,9 +61,14 @@ export default new VueRouter({
       component: Login,
       children: [
         {
-          path: ':type',
-          name: 'LoginType',
-          component: LoginType
+          path: 'email',
+          name: 'LoginEmail',
+          component: LoginEmail
+        },
+        {
+          path: 'oauth/:type',
+          name: 'LoginOAuth',
+          component: LoginOAuth
         }
       ]
     },
