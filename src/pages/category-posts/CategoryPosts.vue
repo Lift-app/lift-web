@@ -3,7 +3,6 @@
     <header class="header" :class="normalizedCategory(category.name)">
       <nav class="default-header category-posts-header">
         <button @click="goBack" class="btn btn-back" aria-label="Naar vorige pagina"><img src="../../assets/images/icons/arrow-left-lift.svg" alt="Terug"> <span>Terug</span></button>
-        <button class="report" aria-label="rapporteren"><span>Melden</span><img src="../../assets/images/icons/warning-lift-white.svg" alt="Bericht rapporteren" class="report-icon"/></button>
       </nav>
       <div class="category-posts-details">
         <h3 class="category-posts-title" :class="normalizedCategory(category.name)">{{ category.name }}</h3>
@@ -30,14 +29,12 @@
       <preloader></preloader>
     </div>
 
-    <transition name="slide-up">
       <div class="card-group" v-if="!loading">
         <card v-for="post in posts" :key="post.id" :post="post"></card>
         <infinite-loading :on-infinite="getMorePosts" ref="infiniteLoading" spinner="spiral" v-if="posts.length > 4">
           <small slot="no-more">Dat was het! Meer berichten hebben we op dit moment niet voor je.</small>
         </infinite-loading>
       </div>
-    </transition>
   </div>
 </template>
 

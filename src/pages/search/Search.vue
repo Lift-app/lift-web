@@ -14,13 +14,13 @@
           </div>
         </div>
       </header>
-      <section>
-        <ul class="categories">
-          <li v-for="category in filteredList" :class="normalizedCategory(category.name)">
-            <a @click="goToCategory(category.name)" class="mousedown"><span>{{ category.name }}</span></a>
-          </li>
-        </ul>
-      </section>
+        <section>
+          <ul class="categories">
+            <li v-for="category in filteredList" :class="normalizedCategory(category.name)">
+              <a @click="goToCategory(category.name)" class="mousedown"><span>{{ category.name }}</span></a>
+            </li>
+          </ul>
+        </section>
     </div>
   </div>
 </template>

@@ -9,6 +9,7 @@
         <button class="btn has_icon create-voice-post" @click="setPostType('voice')">Mijn bericht inspreken</button>
       </div>
 
+      <transition name="slide-up">
       <div class="create-text-post" v-if="post_type === 'text'">
         <header>
           <nav>
@@ -48,6 +49,7 @@
         </div>
 
       </div>
+      </transition>
 
 
       <div class="create-voice-post" v-if="post_type === 'voice'">
