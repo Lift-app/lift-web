@@ -20,6 +20,13 @@
               <a @click="goToCategory(category.name)" class="mousedown"><span>{{ category.name }}</span></a>
             </li>
           </ul>
+          <transition name="fade">
+          <div v-if="filteredList.length === 0" class="no-results">
+            <small>We hebben helaas niks kunnen vinden...</small>
+            <h4 class="no-results-text">Wil je zelf iets zeggen?</h4>
+          <router-link :to="{name: 'CreatePost'}" class="btn btn-create-post">Iets zeggen</router-link>
+          </div>
+          </transition>
         </section>
     </div>
   </div>

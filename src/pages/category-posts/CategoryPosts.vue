@@ -6,7 +6,9 @@
       </nav>
       <div class="category-posts-details">
         <h3 class="category-posts-title" :class="normalizedCategory(category.name)">{{ category.name }}</h3>
-        <h5 class="category-posts-count">{{ category.post_count }} bericht<span v-if="category.post_count !== 1">en</span> gevonden</h5>
+        <h5 v-if="category.post_count === 0" class="category-posts-count">Geen berichten gevonden</h5>
+        <h5 v-else-if="category.post_count === 1" class="category-posts-count">{{ category.post_count }} bericht gevonden</h5>
+        <h5 v-else="category.post_count >= 2" class="category-posts-count">{{ category.post_count }} berichten gevonden</h5>
         <figure>
           <svg version="1.1" class="thumb-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
            viewBox="0 0 190 195" xml:space="preserve">
