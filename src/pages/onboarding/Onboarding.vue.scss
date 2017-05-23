@@ -2,18 +2,31 @@
   height: 100%;
   width: 100%;
   color: $black;
+  background: $white;
 
   $bullet-size: 12px;
   $offset: 35px;
 
+  .onboarding-background-container {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 0;
+  }
+  .onboarding-background {
+    width: 100%;
+    fill: $blue;
+  }
+
   .swiper-container {
     height: 100%;
     width: 100%;
+    overflow: hidden;
 
     .swiper-slide {
       height: 100%;
       text-align: center;
-      background: $white;
+      background: transparent;
     }
 
     .swiper-pagination-bullets {
