@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>small-star</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="150,15,20,15">
+        <g id="intro-2-copy" transform="translate(-368.000000, -156.000000)" stroke="#373940" stroke-width="5" fill="#FFD89F">
+            <g id="Page-1" transform="translate(56.000000, 81.000000)">
+                <path d="M346.484616,125.211636 L333.579547,132.484989 C328.765626,135.198136 325.817065,133.028161 326.997264,127.622119 L330.063893,113.575066 L319.010738,103.874906 C314.862885,100.234783 315.954838,96.8288191 321.441032,96.2683564 L336.336051,94.7466997 L342.334847,81.5921411 C344.626701,76.5664117 348.346019,76.5740616 350.634385,81.5921411 L356.633181,94.7466997 L371.528201,96.2683564 C377.018268,96.8292148 378.107136,100.234091 373.958495,103.874906 L362.90534,113.575066 L365.971968,127.622119 C367.150595,133.020955 364.203101,135.197851 359.389685,132.484989 L346.484616,125.211636 Z" id="small-star" transform="translate(346.485360, 105.739681) rotate(105.000000) translate(-346.485360, -105.739681) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -8,12 +8,10 @@ export default {
         notNextTick: true,
         grabCursor : true,
         setWrapperSize :true,
-        autoHeight: true,
         pagination : '.swiper-pagination',
         paginationClickable :true,
         prevButton:'.swiper-button-prev',
         nextButton:'.swiper-button-next',
-        scrollbar:'.swiper-scrollbar',
         mousewheelControl : true,
         onTransitionStart(swiper){
           console.log(swiper)

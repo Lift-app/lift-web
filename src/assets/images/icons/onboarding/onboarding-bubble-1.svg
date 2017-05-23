@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="122px" height="113px" viewBox="0 0 122 113" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>Text Bubbles (1)</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="intro" transform="translate(-119.000000, -220.000000)">
+            <g id="Group-5" transform="translate(123.000000, 128.000000)">
+                <g id="Group-9">
+                    <g id="Text-Bubbles-(1)" transform="translate(57.000000, 148.500000) scale(-1, 1) translate(-57.000000, -148.500000) translate(0.000000, 96.000000)">
+                        <g id="XMLID_16425_" fill-rule="nonzero" fill="#FFFFFF">
+                            <path d="M43.8461538,78.75 L105.230769,78.75 C110.053846,78.75 114,74.8125 114,70 L114,8.75 C114,3.9375 110.053846,0 105.230769,0 L8.76923077,0 C3.94615385,0 0,3.9375 0,8.75 L0,70 C0,74.8125 3.94615385,78.75 8.76923077,78.75 L17.5384615,78.75 L17.5384615,105 L43.8461538,78.75 Z" id="XMLID_16426_"></path>
+                        </g>
+                        <g id="XMLID_3_" stroke="#303338" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="300,20,500,20">
+                            <path d="M43.8461538,78.75 L105.230769,78.75 C110.053846,78.75 114,74.8125 114,70 L114,8.75 C114,3.9375 110.053846,0 105.230769,0 L8.76923077,0 C3.94615385,0 0,3.9375 0,8.75 L0,70 C0,74.8125 3.94615385,78.75 8.76923077,78.75 L17.5384615,78.75 L17.5384615,105 L43.8461538,78.75 Z" id="XMLID_4_"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
-import Intro from '@/pages/intro/Intro'
+import Onboarding from '@/pages/onboarding/Onboarding'
 
 import Login from '@/pages/login/Login'
 import LoginEmail from '@/pages/login/email/LoginEmail'
@@ -58,9 +58,9 @@ export default new VueRouter({
       ]
     },
     {
-      path: '/intro',
-      name: 'Intro',
-      component: Intro
+      path: '/onboarding',
+      name: 'Onboarding',
+      component: Onboarding
     },
     {
       path: '/login',
