@@ -32,6 +32,8 @@
         <circle class="onboarding-background" fill="#50E3C2" mask="url(#mask-2)" cx="267" cy="127" r="404"></circle>
       </g>
     </svg>
+
+    <img class="onboarding-background-circle" src="../../assets/images/icons/onboarding/onboarding-bg-circle.svg" alt="bg">
   </div>
 </template>
 

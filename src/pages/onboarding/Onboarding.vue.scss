@@ -6,6 +6,7 @@
 
   $bullet-size: 12px;
   $offset: 35px;
+  $bg-size: 470px;
 
   .onboarding-background-container {
     position: absolute;
@@ -16,6 +17,15 @@
   .onboarding-background {
     width: 100%;
     fill: $blue;
+    transition: all ease .6s;
+  }
+
+  .onboarding-background-circle {
+    position: absolute;
+    top: 120px;
+    width: 200px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .swiper-container {
