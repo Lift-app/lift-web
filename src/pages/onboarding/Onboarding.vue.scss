@@ -3,6 +3,8 @@
   width: 100%;
   color: $black;
   background: $white;
+  overflow: hidden;
+  position: relative;
 
   $bullet-size: 12px;
   $offset: 5%;
@@ -102,7 +104,7 @@
     opacity: 0;
     text-decoration: none;
     right: $offset;
-    transform: translateX(20px);
+    transform: translateX(100%);
     transition: transform $animation-snap .3s, opacity ease .4s;
 
     &.active {
@@ -114,6 +116,7 @@
     img {
       margin-top: 3px;
       margin-left: 20px;
+      display: inline-block;
     }
   }
 
@@ -197,8 +200,7 @@
 
       header {
         width: 100%;
-        height: 100%;
-        max-height: $bg-size;
+        height: $bg-size;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -207,6 +209,10 @@
 
         .o-svg {
           position: absolute;
+          top: auto;
+          left: auto;
+          right: auto;
+          bottom: auto;
         }
       }
 
@@ -221,13 +227,13 @@
 
         .onboarding-character-1 {
           height: 45%;
-          margin-top: -15%;
-          margin-left: -15%;
+          top: 15%;
+          left: 20%;
         }
         .onboarding-character-2 {
           height: 45%;
-          margin-top: 5%;
-          margin-left: 15%;
+          bottom: 20%;
+          right: 20%;
         }
       }
 
@@ -241,21 +247,21 @@
         }
 
         .onboarding-phone {
-          margin-left: 10%;
-          margin-top: 12%;
+          right: 30%;
+          bottom: 17%;
           width: 18%;
         }
 
         .onboarding-bubble-1 {
           width: 17%;
-          margin-left: -15%;
-          margin-top: 5%;
+          left: 32%;
+          top: 45%;
         }
 
         .onboarding-bubble-2 {
           width: 15%;
-          margin-left: 5%;
-          margin-top: -12%;
+          right: 33%;
+          top: 24%;
         }
       }
 
@@ -270,7 +276,8 @@
 
         .onboarding-lock {
           width: 15%;
-          margin-top: -1%;
+          top: 37%;
+          right: 42%;
         }
 
         .onboarding-cloud-1 {
@@ -297,19 +304,20 @@
 
         .onboarding-star {
           width: 22%;
-          margin-top: 0;
+          top: 36%;
+          left: 39%;
         }
 
         .onboarding-star-small-1 {
           width: 10%;
-          margin-left: 10%;
-          margin-top: -15%;
+          right: 32%;
+          top: 30%;
         }
 
         .onboarding-star-small-2 {
           width: 10%;
-          margin-top: 10%;
-          margin-left: -15%;
+          top: 60%;
+          left: 32%;
         }
       }
     }
