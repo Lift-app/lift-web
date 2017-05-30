@@ -2,6 +2,7 @@ import router from '@/router'
 import store from '@/store'
 import LikeButton from '@/components/like-button/LikeButton'
 import Avatar from '@/components/avatar/Avatar'
+import Player from '@/components/player/Player'
 import { mapActions } from 'vuex'
 
 export default {
@@ -128,6 +129,7 @@ export default {
   },
   components: {
     LikeButton,
-    Avatar
+    Avatar,
+    Player
   }
 }

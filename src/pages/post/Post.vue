@@ -20,7 +20,12 @@
           </header>
 
           <h1 class="title" v-if="post.type !== 'audio'">{{ post.body }}</h1>
-          <audio preload="auto" v-else :src="post.body" class="audio-post" controls></audio>
+          <player
+            v-else
+            :data="post"
+            preload="none" class="dark">
+          </player>
+
           <p class="title" aria-hidden="true" v-if="loading">Laden...</p>
 
           <footer class="post-details">
