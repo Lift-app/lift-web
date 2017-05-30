@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="262px" height="343px" viewBox="0 0 262 343" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>character 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="98.3916614%" id="linearGradient-1">
+            <stop stop-color="#856D5D" offset="0%"></stop>
+            <stop stop-color="#594C48" offset="100%"></stop>
+        </linearGradient>
+        <ellipse id="path-2" cx="204.379808" cy="181.611722" rx="25.7451923" ry="25.7692308"></ellipse>
+        <ellipse id="path-3" cx="50.2980769" cy="181.611722" rx="25.7451923" ry="25.7692308"></ellipse>
+        <ellipse id="path-4" cx="127.725962" cy="276.098901" rx="38.0644195" ry="38.0999605"></ellipse>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="character/2" transform="translate(3.000000, 4.000000)">
+            <g id="character-2" transform="translate(1.000000, 0.000000)">
+                <g id="Group">
+                    <ellipse id="Oval-6" stroke="#373940" stroke-width="8" fill="url(#linearGradient-1)" stroke-linecap="round" stroke-linejoin="round" cx="187.668269" cy="174.249084" rx="53.9423077" ry="53.992674"></ellipse>
+                    <g id="Oval-8">
+                        <use fill="#CDA982" fill-rule="evenodd" xlink:href="#path-2"></use>
+                        <ellipse stroke="#373940" stroke-width="8" cx="204.379808" cy="181.611722" rx="21.7451923" ry="21.7692308"></ellipse>
+                    </g>
+                    <rect id="Rectangle-14" fill="#C08D75" x="189.668269" y="174.249084" width="22.0673077" height="13.4981685" rx="6.74908425"></rect>
+                    <ellipse id="Oval-5" stroke="#373940" stroke-width="8" fill="url(#linearGradient-1)" stroke-linecap="round" stroke-linejoin="round" cx="72.3004808" cy="172.408425" rx="59.4591346" ry="59.514652"></ellipse>
+                    <g id="Oval-8">
+                        <use fill="#CDA982" fill-rule="evenodd" xlink:href="#path-3"></use>
+                        <ellipse stroke="#373940" stroke-width="8" cx="50.2980769" cy="181.611722" rx="21.7451923" ry="21.7692308"></ellipse>
+                    </g>
+                    <rect id="Rectangle-14" fill="#C08D75" x="42.9423077" y="174.249084" width="19.6153846" height="13.4981685" rx="6.74908425"></rect>
+                    <rect id="Rectangle-2" fill="#CDA982" x="65.2019231" y="77.3076923" width="123.822115" height="229.468864" rx="61.9110577"></rect>
+                    <path d="M55.3942308,162.655678 L198.831731,162.655678 L198.831731,280.498762 C198.831731,310.598965 174.438589,335 144.322906,335 L109.903056,335 C79.7986629,335 55.3942308,310.60442 55.3942308,280.498762 L55.3942308,162.655678 Z" id="Rectangle-4" stroke="#373940" stroke-width="8" fill="url(#linearGradient-1)" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="300,10,10,20"></path>
+                    <path d="M65.2019231,158.296703 L189.024038,158.296703 L189.024038,233.735611 C189.024038,253.065938 173.357576,268.736264 154.017436,268.736264 L100.208525,268.736264 C80.8749128,268.736264 65.2019231,253.059524 65.2019231,233.735611 L65.2019231,158.296703 Z" id="Combined-Shape" fill="#CDA982"></path>
+                    <path d="M59,112.893773 L195,112.893773 L195,221.895128 C195,221.895128 188.970652,219.730158 188.970652,229.765467 C135.226222,229.765467 125.201106,229.765467 65.2000892,229.765467 C65.2000892,219.312128 59,221.895128 59,221.895128 L59,112.893773 Z" id="Rectangle" fill="#CDA982"></path>
+                    <g id="Oval-12">
+                        <use fill="#CDA982" fill-rule="evenodd" xlink:href="#path-4"></use>
+                        <ellipse stroke="#373940" stroke-width="8" cx="127.725962" cy="276.098901" rx="42.0644195" ry="42.0999605"></ellipse>
+                    </g>
+                    <rect id="Rectangle-9" fill="#C08D75" x="114.240385" y="201.062271" width="25.7451923" height="43.9377289" rx="12.8725962"></rect>
+                    <path d="M115.165617,119.689772 C107.931541,145.318348 87.0767871,166.388891 60.227809,166.388891 C26.7123559,166.388891 0.224704134,136.374892 0.224704134,102.828145 C0.224704134,71.6217664 20.5541106,43.4724096 50.369532,39.6966482 C58.7248386,16.5463355 80.8742276,0 106.884615,0 C129.05711,0 148.423944,12.0236767 158.832112,29.9122797 C163.211692,27.5275477 168.116464,26.6983222 173.086538,28.2234432 C185.691579,32.0914362 197.876581,38.6400733 202.139164,49.8966116 C231.552028,54.7025214 254,80.2538674 254,111.053114 C254,145.277572 216.148553,177.133842 188.582352,168.745026 C162.238297,160.728127 132.905879,146.601444 130.356758,115.493319 C125.578454,117.525432 120.483107,118.955912 115.165617,119.689772 Z" id="Combined-Shape" stroke="#373940" stroke-width="8" fill="#6F5D52" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1,1,1"></path>
+                    <path d="M113.04549,51.8561057 C92.5707902,51.8561057 72.8750401,67.1879327 72.8750401,87.6817501" id="Oval-9" stroke="#FFFFFF" stroke-width="11" opacity="0.160767663" stroke-linecap="round" stroke-linejoin="round" transform="translate(92.960265, 69.768928) rotate(-270.000000) translate(-92.960265, -69.768928) "></path>
+                    <ellipse id="Oval-9" fill="#373940" cx="97.0769231" cy="184.065934" rx="11.0336538" ry="11.043956"></ellipse>
+                    <ellipse id="Oval-9" fill="#373940" cx="152.245192" cy="184.065934" rx="11.0336538" ry="11.043956"></ellipse>
+                    <path d="M108.168698,277.043305 C108.168698,277.043305 128.168342,294.307096 144.875,277.043305" id="Path-2" stroke="#373940" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

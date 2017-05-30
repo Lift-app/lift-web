@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="281px" height="281px" viewBox="0 0 281 281" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>world</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" opacity="0.100000001">
+        <g id="intro-2-copy" transform="translate(-137.000000, -144.000000)" stroke="#373940" stroke-width="7">
+            <g id="world" transform="translate(141.000000, 148.000000)">
+                <path d="M273,136.5 C273,211.887 211.887,273 136.5,273 C61.113,273 0,211.887 0,136.5 C0,61.113 61.113,0 136.5,0 C211.887,0 273,61.113 273,136.5 L273,136.5 Z" id="Stroke-5854"></path>
+                <path d="M136.5,273 L136.5,0" id="Stroke-5856"></path>
+                <path d="M136.5,0 C135.45675,0 134.42325,0.0585 133.384875,0.078 C93.663375,32.253 68.25,81.397875 68.25,136.5 C68.25,191.602125 93.663375,240.747 133.384875,272.922 C134.42325,272.9415 135.45675,273 136.5,273" id="Stroke-5858"></path>
+                <path d="M37.52775,42.549 C65.70525,61.829625 99.7815,73.125 136.5,73.125 C173.2185,73.125 207.29475,61.829625 235.47225,42.549" id="Stroke-5860"></path>
+                <path d="M238.20225,227.51625 C209.503125,207.0705 174.422625,195 136.5,195 C98.577375,195 63.496875,207.0705 34.79775,227.51625" id="Stroke-5862"></path>
+                <path d="M136.5,273 C137.54325,273 138.57675,272.9415 139.615125,272.922 C179.336625,240.747 204.75,191.602125 204.75,136.5 C204.75,81.397875 179.336625,32.253 139.615125,0.078 C138.57675,0.0585 137.54325,0 136.5,0" id="Stroke-5864"></path>
+                <path d="M0,136.5 L273,136.5" id="Stroke-5866"></path>
+            </g>
+        </g>
+    </g>
+</svg>

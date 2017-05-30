@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="239px" height="265px" viewBox="0 0 239 265" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 8</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFC146" offset="0%"></stop>
+            <stop stop-color="#FFB500" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="intro-2-copy" transform="translate(-145.000000, -149.000000)" stroke="#373940">
+            <g id="Group-8" transform="translate(150.000000, 154.000000)">
+                <g id="star">
+                    <circle id="Oval" stroke-width="9" fill="#B8E986" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="10,21,320,20" cx="159" cy="196" r="59"></circle>
+                    <path d="M91.0582298,214.952612 L60.8871344,233.86735 C46.3808587,242.961564 37.2927766,236.72173 40.591917,219.91204 L53.8348646,152.436934 L7.43695835,107.144474 C-4.81468362,95.1847313 -0.960540631,83.9228711 16.0612252,81.98861 L77.006876,75.0630768 L102.739796,12.2953905 C109.234765,-3.54712466 119.762599,-3.5534473 126.26016,12.2953905 L151.99308,75.0630768 L212.938731,81.98861 C229.953424,83.9220674 233.810871,95.1884101 221.562998,107.144474 L193.183624,134.8477 C182.752966,128.594713 170.546278,125 157.5,125 C119.11621,125 88,156.11621 88,194.5 C88,201.618174 89.0701095,208.486411 91.0582298,214.952612 Z" id="Combined-Shape" stroke-width="9" fill="url(#linearGradient-1)" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="570,20,10"></path>
+                    <path d="M161.738154,209.620223 L140.472889,178.093171 C139.212442,176.224482 136.673504,175.732518 134.802251,176.994694 C132.934806,178.254302 132.435929,180.795067 133.696483,182.663915 L157.610861,218.118438 C158.410501,219.303954 159.724704,219.93537 161.056543,219.91632 C162.058908,219.921035 163.064679,219.55951 163.854669,218.822833 L184.925386,199.174072 C186.568453,197.641887 186.661397,195.053317 185.122032,193.40255 C183.585799,191.755143 180.998822,191.65936 179.350853,193.196116 L161.738154,209.620223 Z" id="Combined-Shape" stroke-width="2" fill="#373940" transform="translate(159.609795, 198.105805) scale(-1, 1) translate(-159.609795, -198.105805) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
