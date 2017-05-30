@@ -45,7 +45,6 @@ export default {
   methods: {
 
     handleSlideChange(swiper) {
-      console.log(swiper.activeIndex)
       switch(swiper.activeIndex) {
         case 2:
           this.onboardingWorldElem.classList.add('active')
@@ -59,7 +58,6 @@ export default {
           break
         case 4:
           this.onboardingPaginationElem.classList.add('hidden')
-
           break
         default:
           this.onboardingWorldElem.classList.remove('active')
@@ -74,10 +72,14 @@ export default {
       }
       this.onboardingBgElem.style.fill = this.colors[swiper.activeIndex]
       document.querySelector('.swiper-pagination-bullet-active').style.backgroundColor = this.colors[swiper.activeIndex]
+      setTimeout(() => {
+        document.querySelector('meta[name=theme-color]').setAttribute('content', this.colors[swiper.activeIndex])
+      }, 120)
     }
   },
   mounted() {
     document.querySelector('#app').classList.add('nav-hidden')
+    document.querySelector('meta[name=theme-color]').setAttribute('content', this.colors[0])
   },
   beforeDestroy() {
     document.querySelector('#app').classList.remove('nav-hidden')
