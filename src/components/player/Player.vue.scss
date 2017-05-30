@@ -1,7 +1,19 @@
-.hidden {
+.buttons a:not(.active) {
   display: none;
 }
 
-.buttons a:not(.active) {
-  display: none;
+.max-time {
+  color: #FFF;
+}
+
+.player.dark {
+  .max-time {
+    color: #000;
+  }
+  .play {
+    fill: #000;
+  }
+  .pause {
+    fill: #000;
+  }
 }
