@@ -32,7 +32,9 @@
   .onboarding-background-container {
     position: absolute;
     left: 0;
-    width: 100%;
+    // width: 100%;
+    // height: 100%;
+    // max-height: $bg-size;
     top: 0;
   }
   .onboarding-background {

@@ -54,16 +54,12 @@
       <button class="swiper-button-next" slot="button-next"><img src="../../assets/images/icons/onboarding/onboarding-arrow-next.svg" alt="Vorige"></button>
     </swiper>
 
-    <svg class="onboarding-background-container" viewBox="0 0 530 561" xmlns="http://www.w3.org/2000/svg" width="100%" height="50%" preserveAspectRatio="none">
-      <defs>
-        <rect id="path-1" x="0" y="0" width="530" height="561"></rect>
-      </defs>
-      <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <mask id="mask-2">
-          <use xlink:href="#path-1"></use>
-        </mask>
-        <use id="Rectangle-12" fill="transparent" xlink:href="#path-1"></use>
-        <circle class="onboarding-background" fill="#50E3C2" mask="url(#mask-2)" cx="267" cy="127" r="404"></circle>
+    <svg class="onboarding-background-container" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="50%"
+    viewBox="0 0 100 100"
+    preserveAspectRatio="none">
+      <g class="onboarding-background">
+        <path d="M0 0 H 100 V 71 H 0 L 0 0"/>
+        <path d="M-5,70 Q50,100 105,70" />
       </g>
     </svg>
 
