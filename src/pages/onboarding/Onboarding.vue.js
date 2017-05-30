@@ -1,10 +1,12 @@
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import router from '@/router'
+import config from '@/config/config'
+
+const DEFAULT_BULLET_COLOR = '#849199' // $regent
 
 export default {
   name: 'intro',
-  data () {
-    const vue = this
+  data() {
     return {
       colors: ['#C783FF', '#50E3C2', '#90DBFF', '#FF5537'],
       swiperOption: {
@@ -17,11 +19,11 @@ export default {
         prevButton: '.swiper-button-prev',
         nextButton: '.swiper-button-next',
         mousewheelControl: true,
-        onTransitionStart(swiper) {
-          vue.changeThemeColor(swiper)
+        onTransitionStart: (swiper) => {
+          this.changeThemeColor(swiper)
         },
-        onTransitionEnd(swiper) {
-          vue.handleSlideChange(swiper)
+        onTransitionEnd: (swiper) => {
+          this.handleSlideChange(swiper)
         }
       }
     }
@@ -46,7 +48,7 @@ export default {
   methods: {
 
     handleSlideChange(swiper) {
-      switch(swiper.activeIndex) {
+      switch (swiper.activeIndex) {
         case 2:
           this.onboardingWorldElem.classList.add('active')
           this.onboardingFinishElem.classList.remove('active')
@@ -69,7 +71,7 @@ export default {
 
     changeThemeColor(swiper) {
       for (let i = 0; i < this.onboardingBulletElems.length; i++) {
-        this.onboardingBulletElems[i].style.backgroundColor = '#849199' // default background color ($regent)
+        this.onboardingBulletElems[i].style.backgroundColor = DEFAULT_BULLET_COLOR
       }
       this.onboardingBgElem.style.fill = this.colors[swiper.activeIndex]
       document.querySelector('.swiper-pagination-bullet-active').style.backgroundColor = this.colors[swiper.activeIndex]
@@ -84,11 +86,15 @@ export default {
     }
   },
   mounted() {
+    if (localStorage.onboarded) {
+      router.push({name: 'VoorJou'})
+    }
     document.querySelector('#app').classList.add('nav-hidden')
     document.querySelector('meta[name=theme-color]').setAttribute('content', this.colors[0])
   },
   beforeDestroy() {
     document.querySelector('#app').classList.remove('nav-hidden')
+    document.querySelector('meta[name=theme-color]').setAttribute('content', config.themeColor)
   },
   components: {
     swiper,

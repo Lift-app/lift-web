@@ -98,13 +98,14 @@
     display: flex;
     opacity: 0;
     text-decoration: none;
-    right: -100%;
-    transition: all $animation-snap .3s;
+    right: $offset;
+    transform: translateX(20px);
+    transition: transform $animation-snap .3s, opacity ease .4s;
 
     &.active {
       opacity: 1;
-      right: $offset;
-      transition: all $animation-snap .3s;
+      transform: translateX(0);
+      transition: transform $animation-snap .3s, opacity ease .4s;
     }
 
     img {
@@ -119,8 +120,10 @@
     position: absolute;
     z-index: 10;
     color: $white;
-    font-size: 11px;
+    font-size: 13px;
     text-decoration: none;
+    background: none;
+    border: 0;
     display: flex;
     align-items: center;
     line-height: 1;
