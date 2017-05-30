@@ -69,8 +69,8 @@
 
     <img class="onboarding-background-circle" src="../../assets/images/icons/onboarding/onboarding-bg-circle.svg" alt="bg">
     <img class="o-svg onboarding-world" data-swiper-parallax="-33%" data-swiper-parallax-duration="800" src="../../assets/images/icons/onboarding/onboarding-world.svg" alt="world">
-    <router-link :to="{name: 'VoorJou'}" class="swiper-button-skip">overslaan<img src="../../assets/images/icons/onboarding/onboarding-arrow-skip.svg" alt="Overslaan"></router-link>
-    <router-link :to="{name: 'VoorJou'}" class="swiper-button-finish">Kies jouw interesses<img src="../../assets/images/icons/onboarding/onboarding-arrow-next-white.svg" alt="Voltooien"></router-link>
+    <button @click="endOnboarding" class="swiper-button-skip">overslaan<img src="../../assets/images/icons/onboarding/onboarding-arrow-skip.svg" alt="Overslaan"></button>
+    <button @click="endOnboarding" class="swiper-button-finish">Kies jouw interesses<img src="../../assets/images/icons/onboarding/onboarding-arrow-next-white.svg" alt="Voltooien"></button>
   </div>
 </template>
 

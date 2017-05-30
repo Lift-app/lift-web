@@ -1,4 +1,5 @@
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import router from '@/router'
 
 export default {
   name: 'intro',
@@ -75,6 +76,11 @@ export default {
       setTimeout(() => {
         document.querySelector('meta[name=theme-color]').setAttribute('content', this.colors[swiper.activeIndex])
       }, 120)
+    },
+
+    endOnboarding() {
+      localStorage.setItem('onboarded', true)
+      router.push({name: 'VoorJou'})
     }
   },
   mounted() {
