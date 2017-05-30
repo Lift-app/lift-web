@@ -100,7 +100,6 @@
     @extend .swiper-button;
     background: $orange-red;
     color: $white;
-    display: flex;
     opacity: 0;
     text-decoration: none;
     right: $offset;
@@ -111,6 +110,10 @@
       opacity: 1;
       transform: translateX(0);
       transition: transform $animation-snap .3s, opacity ease .4s;
+    }
+
+    > div {
+      display: flex;
     }
 
     img {
@@ -130,9 +133,11 @@
     text-decoration: none;
     background: none;
     border: 0;
-    display: flex;
-    align-items: center;
     line-height: 1;
+
+    > div {
+      display: flex;
+    }
 
     img {
       margin-top: -2px;
