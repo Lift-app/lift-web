@@ -5,8 +5,29 @@
   background: $white;
 
   $bullet-size: 12px;
-  $offset: 35px;
-  $bg-size: 470px;
+  $offset: 5%;
+  $bg-size: 50%;
+  $first-color: #C783FF;
+  $footer-size: 100px;
+
+  footer {
+    padding: 0 30px;
+    display: flex;
+    height: 100%;
+    max-height: calc(100% - (#{$bg-size} + #{$footer-size}));
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .title {
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+
+    .description {
+      color: $regent;
+    }
+  }
 
   .onboarding-background-container {
     position: absolute;
@@ -16,16 +37,79 @@
   }
   .onboarding-background {
     width: 100%;
-    fill: $blue;
+    fill: $first-color;
     transition: all ease .6s;
   }
 
   .onboarding-background-circle {
     position: absolute;
-    top: 120px;
-    width: 200px;
+    top: 10%;
+    height: 30%;
+    width: 30%;
     left: 50%;
     transform: translateX(-50%);
+  }
+
+  .onboarding-world {
+    @extend .onboarding-background-circle;
+    top: 11%;
+    height: 28%;
+    width: 28%;
+    opacity: 0;
+    transition: opacity ease .3s;
+
+    &.active {
+      opacity: 1;
+      transition: opacity ease .3s;
+    }
+  }
+
+  .swiper-button {
+    padding: 10px 20px;
+    border: 0;
+    border-radius: $default-radius;
+    position: absolute;
+    width: auto;
+    height: auto;
+    margin-top: 0;
+    bottom: $offset;
+    top: auto;
+    z-index: 10;
+
+    img {
+      margin-bottom: -4px;
+      height: 12px;
+      width: 16px;
+    }
+
+    &:focus {
+      outline: 0;
+    }
+
+    &.swiper-button-disabled {
+      opacity: 0;
+    }
+  }
+
+  .swiper-button-finish {
+    @extend .swiper-button;
+    background: $orange-red;
+    color: $white;
+    display: flex;
+    opacity: 0;
+    right: -100%;
+    transition: all $animation-snap .3s;
+
+    &.active {
+      opacity: 1;
+      right: $offset;
+      transition: all $animation-snap .3s;
+    }
+
+    img {
+      margin-top: 3px;
+      margin-left: 20px;
+    }
   }
 
   .swiper-container {
@@ -39,8 +123,18 @@
       background: transparent;
     }
 
+    .swiper-pagination {
+      transition: opacity ease .3s;
+      opacity: 1;
+
+      &.hidden {
+        opacity: 0;
+        transition: opacity ease .3s;
+      }
+    }
+
     .swiper-pagination-bullets {
-      bottom: $offset + ($bullet-size / 2);
+      bottom: calc(#{$offset} + (#{$bullet-size} / 2));
 
       .swiper-pagination-bullet {
         background: $regent;
@@ -49,43 +143,148 @@
         transition: all $animation-snap .4s;
         line-height: 0;
       }
+
+      .swiper-pagination-bullet-active {
+        background: $first-color;
+      }
     }
 
     .swiper-button-prev,
     .swiper-button-next {
-      padding: 10px 20px;
-      border: 0;
-      border-radius: $default-radius;
+      @extend .swiper-button;
       background: $porcelain;
       color: $regent;
-      position: absolute;
-      width: auto;
-      height: auto;
-      margin-top: 0;
-      bottom: $offset;
-      top: auto;
-
-      img {
-        margin-bottom: -4px;
-        height: 12px;
-        width: 16px;
-      }
-
-      &:focus {
-        outline: 0;
-      }
-
-      &.swiper-button-disabled {
-        opacity: 0;
-      }
     }
 
     .swiper-button-prev {
-      left: 30px;
+      left: $offset;
     }
 
     .swiper-button-next {
-      right: 30px;
+      right: $offset;
+    }
+
+    // slide element specific styles
+
+    .swiper-slide {
+
+      header {
+        width: 100%;
+        height: 100%;
+        max-height: $bg-size;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+
+        .o-svg {
+          position: absolute;
+        }
+      }
+
+      &.meet-new-people {
+
+        .onboarding-confetti {
+          top: 5%;
+          left: 3%;
+          width: 100%;
+          height: 100%;
+        }
+
+        .onboarding-character-1 {
+          height: 45%;
+          margin-top: -15%;
+          margin-left: -15%;
+        }
+        .onboarding-character-2 {
+          height: 45%;
+          margin-top: 5%;
+          margin-left: 15%;
+        }
+      }
+
+      &.get-answers {
+
+        .onboarding-confetti {
+          top: 5%;
+          left: 3%;
+          width: 100%;
+          height: 100%;
+        }
+
+        .onboarding-phone {
+          margin-left: 10%;
+          margin-top: 12%;
+          width: 18%;
+        }
+
+        .onboarding-bubble-1 {
+          width: 17%;
+          margin-left: -15%;
+          margin-top: 5%;
+        }
+
+        .onboarding-bubble-2 {
+          width: 15%;
+          margin-left: 5%;
+          margin-top: -12%;
+        }
+      }
+
+      &.safe-environment {
+
+        .onboarding-confetti {
+          top: 5%;
+          left: 3%;
+          width: 100%;
+          height: 100%;
+        }
+
+        .onboarding-lock {
+          width: 15%;
+          margin-top: -1%;
+        }
+
+        .onboarding-cloud-1 {
+          width: 40%;
+          top: 5%;
+          left: 5%;
+        }
+
+        .onboarding-cloud-2 {
+          width: 40%;
+          bottom: 0;
+          right: -10%;
+        }
+      }
+
+      &.selected-for-you {
+
+        .onboarding-confetti {
+          top: 5%;
+          left: 3%;
+          width: 100%;
+          height: 100%;
+        }
+
+        .onboarding-star {
+          width: 22%;
+          margin-top: 0;
+        }
+
+        .onboarding-star-small-1 {
+          width: 10%;
+          margin-left: 10%;
+          margin-top: -15%;
+        }
+
+        .onboarding-star-small-2 {
+          width: 10%;
+          margin-top: 10%;
+          margin-left: -15%;
+        }
+      }
     }
   }
 }
