@@ -54,12 +54,12 @@
       <button class="swiper-button-next" slot="button-next"><img src="../../assets/images/icons/onboarding/onboarding-arrow-next.svg" alt="Vorige"></button>
     </swiper>
 
-    <svg class="onboarding-background-container" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="50%"
+    <svg class="onboarding-background-container" xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%"
     viewBox="0 0 100 100"
     preserveAspectRatio="none">
       <g class="onboarding-background">
-        <path d="M0 0 H 100 V 71 H 0 L 0 0"/>
-        <path d="M-5,70 Q50,100 105,70" />
+        <path d="M0 0 H 100 V 81 H 0 L 0 0"/>
+        <path d="M-5,80 Q50,120 105,80" />
       </g>
     </svg>
 
