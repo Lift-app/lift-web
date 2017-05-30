@@ -26,8 +26,22 @@ export const SET_USER = (state, user) => {
   state.user = user
 }
 
+export const SET_PROFILE = (state, profile) => {
+  state.profile = profile
+}
+
 export const SET_CATEGORIES = (state, cat) => {
   state.categories = cat.data
+}
+
+export const follow = (state, id) => {
+  state.profile.following = true
+  state.profile.follower_count++
+}
+
+export const unfollow = (state, id) => {
+  state.profile.following = false
+  state.profile.follower_count--
 }
 
 export const like = (state, [id, type]) => {
