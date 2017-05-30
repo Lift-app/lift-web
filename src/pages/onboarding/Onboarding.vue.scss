@@ -97,6 +97,7 @@
     color: $white;
     display: flex;
     opacity: 0;
+    text-decoration: none;
     right: -100%;
     transition: all $animation-snap .3s;
 
@@ -109,6 +110,26 @@
     img {
       margin-top: 3px;
       margin-left: 20px;
+    }
+  }
+
+  .swiper-button-skip {
+    top: $offset;
+    right: $offset;
+    position: absolute;
+    z-index: 10;
+    color: $white;
+    font-size: 11px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+
+    img {
+      margin-top: -2px;
+      margin-left: 5px;
+      width: 10px;
+      height: 10px;
     }
   }
 

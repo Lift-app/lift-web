@@ -44,15 +44,14 @@
           <img class="o-svg onboarding-star-small-2" data-swiper-parallax="23%" data-swiper-parallax-duration="800" src="../../assets/images/icons/onboarding/onboarding-star-small-2.svg" alt="lock">
         </header>
         <footer data-swiper-parallax="-23%" data-swiper-parallax-duration="600">
-          <h2 class="title">Geselecteerd voor jou omgeving</h2>
-          <p class="description">Gebaseerd op de categorieen waar jij in geintresseerd bent, maken wij een speciale ‘voor jou’ feed!</p>
+          <h2 class="title">Geselecteerd voor jou</h2>
+          <p class="description">Gebaseerd op de categorieen waar jij in geïnteresseerd bent, maken wij een speciale ‘voor jou’ feed!</p>
         </footer>
       </swiper-slide>
 
       <div class="swiper-pagination"  slot="pagination"></div>
       <button class="swiper-button-prev" slot="button-prev"><img src="../../assets/images/icons/onboarding/onboarding-arrow-prev.svg" alt="Vorige"></button>
       <button class="swiper-button-next" slot="button-next"><img src="../../assets/images/icons/onboarding/onboarding-arrow-next.svg" alt="Vorige"></button>
-      <!--<div class="swiper-scrollbar"   slot="scrollbar"></div>-->
     </swiper>
 
     <svg class="onboarding-background-container" viewBox="0 0 530 561" xmlns="http://www.w3.org/2000/svg" width="100%" height="50%" preserveAspectRatio="none">
@@ -70,7 +69,8 @@
 
     <img class="onboarding-background-circle" src="../../assets/images/icons/onboarding/onboarding-bg-circle.svg" alt="bg">
     <img class="o-svg onboarding-world" data-swiper-parallax="-33%" data-swiper-parallax-duration="800" src="../../assets/images/icons/onboarding/onboarding-world.svg" alt="world">
-    <button class="swiper-button-finish">Kies jouw interesses<img src="../../assets/images/icons/onboarding/onboarding-arrow-next-white.svg" alt="Voltooien"></button>
+    <router-link :to="{name: 'VoorJou'}" class="swiper-button-skip">overslaan<img src="../../assets/images/icons/onboarding/onboarding-arrow-skip.svg" alt="Overslaan"></router-link>
+    <router-link :to="{name: 'VoorJou'}" class="swiper-button-finish">Kies jouw interesses<img src="../../assets/images/icons/onboarding/onboarding-arrow-next-white.svg" alt="Voltooien"></router-link>
   </div>
 </template>
 
