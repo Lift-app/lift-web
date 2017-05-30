@@ -15,7 +15,6 @@ export default {
     post_data: {}
   },
   computed: {
-
     normalizedCategory() {
       return this.post_data.category.name.toLowerCase().replace(/\s/g, '-');
     }

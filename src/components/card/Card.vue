@@ -1,6 +1,5 @@
 <template>
   <div class="card" :class="normalizedCategory" @click="openPost">
-
     <header>
       <div class="user">
         <avatar :post="post_data"></avatar>
@@ -20,8 +19,7 @@
       </h2>
       <player
         v-else
-        :url="post_data.body"
-        @click="haltAction"
+        :data="post_data"
         preload="none" class="player">
       </player>
     </section>
