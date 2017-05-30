@@ -4,8 +4,7 @@ import LikeButton from '@/components/like-button/LikeButton'
 import Preloader from '@/components/preloader/Preloader'
 import Avatar from '@/components/avatar/Avatar'
 import { mapActions } from 'vuex'
-
-const DEFAULT_THEME_COLOR = '#FF5A0B'
+import config from '@/config/config'
 
 export default {
   name: 'post',
@@ -47,7 +46,7 @@ export default {
     }
   },
   beforeDestroy() {
-    document.querySelector('meta[name=theme-color]').setAttribute('content', DEFAULT_THEME_COLOR)
+    document.querySelector('meta[name=theme-color]').setAttribute('content', config.themeColor)
   },
   methods: {
     ...mapActions({
@@ -90,7 +89,7 @@ export default {
     },
 
     placeComment() {
-      let call_data = {
+      let callData = {
         id: this.$route.params.id,
         type: 'text',
         body: this.commentBody
@@ -101,7 +100,7 @@ export default {
         return
       }
 
-      this.actionPlaceComment(call_data)
+      this.actionPlaceComment(callData)
         .then((response) => {
           console.log('posted')
           this.comments = store.state.post.comments
