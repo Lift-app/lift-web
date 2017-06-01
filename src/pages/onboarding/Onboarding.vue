@@ -68,9 +68,12 @@
     <button @click="endOnboarding" class="swiper-button-skip"><div>
       <span>overslaan</span><img src="../../assets/images/icons/onboarding/onboarding-arrow-skip.svg" alt="Overslaan">
     </div></button>
-    <button @click="endOnboarding" class="swiper-button-finish"><div>
-      <span>Kies jouw interesses</span><img src="../../assets/images/icons/onboarding/onboarding-arrow-next-white.svg" alt="Voltooien">
-    </div></button>
+    <button @click="endOnboarding" class="swiper-button-finish">
+      <div>
+        <span>Kies jouw interesses</span>
+        <img src="../../assets/images/icons/onboarding/onboarding-arrow-next-white.svg" alt="Voltooien">
+    </div>
+    </button>
   </div>
 </template>
 

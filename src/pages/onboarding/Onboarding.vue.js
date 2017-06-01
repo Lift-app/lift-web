@@ -82,7 +82,7 @@ export default {
 
     endOnboarding() {
       localStorage.setItem('onboarded', true)
-      router.push({name: 'VoorJou'})
+      router.push({name: 'Login'})
     }
   },
   mounted() {
