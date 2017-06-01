@@ -70,7 +70,7 @@ export default {
 
           // We need this timeout to guarantee this is done when the DOM is
           // ready
-          setTimeout(() => this.updateThemeColor(), 50)
+          setTimeout(() => this.updateThemeColor(), 100)
 
           this.loadComments()
         })
