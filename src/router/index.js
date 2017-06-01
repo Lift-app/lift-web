@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import Onboarding from '@/pages/onboarding/Onboarding'
 import Login from '@/pages/login/Login'
 import Register from '@/pages/register/Register'
+import ChooseCategories from '@/pages/register/choose-categories/ChooseCategories'
 import LoginEmail from '@/pages/login/email/LoginEmail'
 import LoginOAuth from '@/pages/login/oauth/LoginOAuth'
 import VoorJou from '@/pages/voorjou/VoorJou'
@@ -92,6 +93,7 @@ export default new VueRouter({
           component: AccountCreated
         }
       ]
+      component: Register
     },
     {
       path: '/login',

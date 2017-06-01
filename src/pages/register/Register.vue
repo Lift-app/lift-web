@@ -1,19 +1,23 @@
 <template>
   <div class="page--register">
+
+    <router-view></router-view>
+
     <div class="inner">
       <img src="../../assets/images/logo/white.svg" alt="Lift logo" title="Lift - Dé online gemeenschap voor Wajongers">
-      <p>We hebben iets meer gegevens van je nodig…</p>
-      <form class="register-form">
+      <h3 class="slogan">Account aanmaken...</h3>
+      <form class="register-form" autocomplete="off">
+        <div class="form-fields">
         <label> Wat is je e-mailadres?
-          <input type="email" name="email" placeholder="jou@emailadres.nl"/>
+          <input autocomplete="off" type="email" name="email" placeholder="jou@emailadres.nl"/>
         </label>
         <label> Wat wordt je gebruikersnaam?
-          <input type="text" name="username" placeholder="Bijvoorbeeld: Peter1994"/>
+          <input autocomplete="off" type="text" name="username" placeholder="Bijvoorbeeld: Peter1994"/>
         </label>
         <label> Vul hier een wachtwoord in…
-          <input type="password" name="password" placeholder="Vertel deze tegen niemand!"/>
+          <input autocomplete="off" type="password" name="password" placeholder="Vertel deze tegen niemand!"/>
         </label>
-
+        </div>
         <button class="btn btn-register-next" v-if="">Doorgaan</button>
       </form>
     </div>

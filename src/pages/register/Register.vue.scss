@@ -3,10 +3,38 @@
   height: 100%;
   width: 100%;
   text-align: center;
+  display: table;
 
   .inner {
-    padding: $default-padding;
-    padding-top: 40px;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 20px;
     colors:$white;
+
+    .slogan {
+      color: $white;
+    }
+
+    .register-form {
+
+      .form-fields {
+        text-align: left;
+        max-width: 465px;
+        margin: 0 auto;
+
+        label, input {
+          display: block;
+          clear: both;
+        }
+
+        label {
+          color: $white;
+        }
+
+        input {
+          margin-top: 5px;
+        }
+      }
+    }
   }
 }

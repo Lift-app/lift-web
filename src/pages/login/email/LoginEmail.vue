@@ -2,8 +2,8 @@
   <div class="page--login">
     <div class="login-container">
       <img class="logo" src="../../../assets/images/logo/white.svg">
-
-      <div class="inputs">
+      <h3 class="slogan">Dé online gemeenschap voor Wajongers</h3>
+      <div class="login-email-fields">
         <input
           type="email"
           placeholder="E-mail"
@@ -14,9 +14,9 @@
           v-model="credentials.password" @keyup.enter="login">
 
         <button class="btn" @click="login">Inloggen</button>
-        <div>
-          <a href="#">Heb je al een account?</a>
-          <a href="#">Wachtwoord vergeten?</a>
+        <div class="login-options">
+          <a href="#"><small>Ik heb nog geen account</small></a>
+          <a href="#"><small>Wachtwoord vergeten?</small></a>
         </div>
       </div>
     </div>

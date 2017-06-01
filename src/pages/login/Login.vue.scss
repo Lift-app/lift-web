@@ -29,6 +29,7 @@
   }
 
   height: 100%;
+  width: 100%;
   position: absolute;
   left:0;
   top:0;
@@ -37,22 +38,17 @@
   z-index: 2;
   text-align: center;
   background-image: $gradient;
-  padding: 0 $component-padding;
+  padding: $default-padding;
   box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: table;
 
   .login-container {
-    height: 100%;
-    max-height: 568px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    display: table-cell;
+    vertical-align: middle;
 
     .slogan {
-      margin: 0;
       color: $white;
+      margin: 40px 0;
     }
 
     .login-type-buttons {

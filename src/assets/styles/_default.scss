@@ -283,7 +283,7 @@ $form-margin-bottom: 15px;
 
 $form-bg: $white;
 $form-color: $dark;
-$form-border-color: transparent;
+$form-border-color: $white;
 $form-border-color-active: $blue;
 $form-border-size: 3px;
 $form-radius: $default-radius;
@@ -318,6 +318,11 @@ select {
     border-bottom-left-radius: $default-radius;
     border-bottom-right-radius: $default-radius;
     transition: $default-transition;
+  }
+
+  /* Hide's yellow autofill color on input fields*/
+  &:-webkit-autofill {
+    box-shadow: 0 0 0 35px white inset;
   }
 }
 
