@@ -19,7 +19,7 @@
         <section>
           <ul class="categories">
             <li v-for="category in filteredList" :class="normalizedCategory(category.name)">
-              <a @click="goToCategory(category.name)" class="mousedown"><span>{{ category.name }}</span></a>
+              <a @click="goToCategory(category.name)" class="category mousedown"><span>{{ category.name }}</span></a>
             </li>
           </ul>
         </section>

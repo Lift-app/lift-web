@@ -2,12 +2,10 @@
   padding: 30px 20px 10px 20px;
 
   $gradient: $global-lift-gradient;
-  $cat-height: 65px;
   $search-container: 465px;
 
   height: 100%;
   background-image: $gradient;
-  //padding: $default-padding;
   box-sizing: border-box;
 
   .search-container {
@@ -86,6 +84,9 @@
           }
 
           a {
+            width: 48%;
+            float: left;
+            margin: 0 12px 12px 0;
             height: $cat-height;
             text-align: center;
             border-radius: $default-radius;
