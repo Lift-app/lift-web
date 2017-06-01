@@ -25,7 +25,8 @@ export default {
         onTransitionEnd: (swiper) => {
           this.handleSlideChange(swiper)
         }
-      }
+      },
+      loading: false
     }
   },
   computed: {
@@ -86,6 +87,10 @@ export default {
     }
   },
   mounted() {
+    this.loading = true
+    setTimeout(() => {
+      this.loading = false
+    }, 2200)
     document.querySelector('#app').classList.add('nav-hidden')
     document.querySelector('meta[name=theme-color]').setAttribute('content', this.colors[0])
   },

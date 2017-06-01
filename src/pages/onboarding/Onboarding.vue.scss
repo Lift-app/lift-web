@@ -6,6 +6,26 @@
   overflow: hidden;
   position: relative;
 
+  .intro {
+    @extend %absolute-view;
+    z-index: 999;
+    background: $global-lift-gradient;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    &.done {
+      left: -100%;
+      transition: left $animation-snap .3s;
+    }
+
+    .slogan {
+      color: $white;
+    }
+  }
+
   $bullet-size: 12px;
   $offset: 5%;
   $bg-size: 50%;

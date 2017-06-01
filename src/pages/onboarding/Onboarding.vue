@@ -1,5 +1,9 @@
 <template>
   <div class="page--onboarding">
+    <div class="intro" :class="loading ? 'active' : 'done'">
+      <img class="logo" src="./../../assets/images/logo/white.svg">
+      <h3 class="slogan">Dé online gemeenschap voor Wajongers</h3>
+    </div>
     <swiper :options="swiperOption" ref="swiper">
       <swiper-slide class="meet-new-people">
         <header>
