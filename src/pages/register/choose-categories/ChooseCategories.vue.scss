@@ -66,20 +66,27 @@
             &:before {
               content: '';
               position: absolute;
-              background: url('./checkmark-lift.svg') no-repeat center $white;
+              background: url('./checkmark-lift.svg') no-repeat center;
               background-size: 35px;
+              background-color: rgba(255,255,255,1);
               top: 0;
               left: 0;
               height: 100%;
               width: 100%;
               opacity: 0;
               transition: $default-transition;
+              border-radius: $default-radius;
             }
 
             &.active {
               &:before {
-                opacity: .8;
+                opacity: 1;
+                background-color: rgba(255,255,255,.8);
                 transition: $default-transition;
+
+                span {
+                  opacity: .9;
+                }
               }
             }
 
