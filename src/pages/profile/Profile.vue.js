@@ -53,8 +53,7 @@ export default {
     },
 
     prepareChanges() {
-      Object.assign(this.user, store.state.user)
-      this.changeUser = JSON.parse(JSON.stringify(this.user))
+      this.changeUser = store.state.user
 
       if (this.changeUser.interests.length) {
         this.changeInterests = this.changeUser.interests.map(interest => interest.id)
@@ -75,7 +74,7 @@ export default {
         username: username,
         email: email,
         password: password,
-        profile: Object.keys(profile).length === 0  ? undefined : profile
+        profile_info: Object.keys(profile).length === 0  ? undefined : this.formatProfile(profile)
       }
 
       this.actionUpdateUser(changes)
@@ -83,6 +82,20 @@ export default {
           localStorage.username = username
           router.push({name: 'Profile', params: {username: username}})
         })
+    },
+
+    formatProfile(profile) {
+      return Object.entries(profile).reduce((acc, [key, value]) => {
+        if (value) {
+          acc.push({
+            field: key,
+            value: value,
+            public: true
+          })
+        }
+
+        return acc
+      }, [])
     },
 
     isInterested(category) {
