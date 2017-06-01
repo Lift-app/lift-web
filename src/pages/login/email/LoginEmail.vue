@@ -14,6 +14,10 @@
           v-model="credentials.password" @keyup.enter="login">
 
         <button class="btn" @click="login">Inloggen</button>
+        <div>
+          <a href="#">Heb je al een account?</a>
+          <a href="#">Wachtwoord vergeten?</a>
+        </div>
       </div>
     </div>
   </div>

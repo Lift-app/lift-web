@@ -1,0 +1,12 @@
+.page--register {
+  background: $global-lift-gradient;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+
+  .inner {
+    padding: $default-padding;
+    padding-top: 40px;
+    colors:$white;
+  }
+}
