@@ -417,3 +417,18 @@ textarea {
   border: 2px solid #5e6068 !important;
   border-right-color: transparent !important;
 }
+
+.slide-right-enter-active, .slide-right-leave-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all $animation-snap .4s;
+}
+
+.slide-right-enter-active {
+}
+
+.slide-right-enter, .slide-right-leave-to {
+  transform: translateY(20%);
+  opacity: 0;
+  transition: all $animation-snap .4s;
+}
