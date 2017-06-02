@@ -22,6 +22,9 @@
       padding: $default-padding;
       margin: 0;
       padding: 0;
+      display: block;
+      overflow: scroll;
+      height: 300px;
 
       ul {
         margin: 0 auto;
@@ -79,14 +82,13 @@
             }
 
             &.active {
+              opacity: .9;
+              box-shadow: none !important;
+
               &:before {
                 opacity: 1;
                 background-color: rgba(255,255,255,.8);
                 transition: $default-transition;
-
-                span {
-                  opacity: .9;
-                }
               }
             }
 

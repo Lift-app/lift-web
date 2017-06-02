@@ -9,16 +9,24 @@
       <form class="register-form" autocomplete="off">
         <div class="form-fields">
         <label> Wat is je e-mailadres?
-          <input autocomplete="off" type="email" name="email" placeholder="jou@emailadres.nl"/>
+          <input type="email" autocomplete="off" name="email" placeholder="jou@emailadres.nl"/>
         </label>
         <label> Wat wordt je gebruikersnaam?
-          <input autocomplete="off" type="text" name="username" placeholder="Bijvoorbeeld: Peter1994"/>
+          <input type="text" autocomplete="off" name="username" placeholder="Bijvoorbeeld: Peter1994"/>
         </label>
         <label> Vul hier een wachtwoord in…
-          <input autocomplete="off" type="password" name="password" placeholder="Vertel deze tegen niemand!"/>
+          <input type="password" autocomplete="off" name="password" placeholder="Vertel deze tegen niemand!"/>
         </label>
+          <div class="anonymity anonymity-container">
+            <label class="anonymity anonymity-check" for="anonymous">
+              <input type="checkbox" v-model="anonymous" id="anonymous" aria-label="Ik wil anoniem blijven"/> <span>Ik wil anoniem blijven.</span>
+              <small>
+                Als je kiest om anoniem te blijven, zullen je naam en profielfoto niet op je profiel-pagina te zien zijn voor andere gebruikers.
+              </small>
+            </label>
+          </div>
         </div>
-        <button class="btn btn-register-next" v-if="">Doorgaan</button>
+        <button type="submit" v-if="" @click="ChooseCategories" class="btn btn-register-next">Doorgaan</button>
       </form>
     </div>
   </div>

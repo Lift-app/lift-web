@@ -1,5 +1,8 @@
 <template>
   <div class="page--register-choose-categories">
+
+    <router-view></router-view>
+
     <div class="inner">
       <header>
         <h3 class="title">Welke interesses lijken jou leuk?</h3>
@@ -12,6 +15,7 @@
           </li>
         </ul>
       </section>
+      <button class="btn btn-register-next">Doorgaan</button>
     </div>
   </div>
 </template>

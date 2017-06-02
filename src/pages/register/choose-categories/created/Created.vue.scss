@@ -1,0 +1,23 @@
+.page--register-created {
+  @extend .FullWidthHeight;
+  z-index: 3;
+  display: table;
+  background: $global-lift-gradient;
+  padding: $default-padding;
+
+  .inner {
+    display: table-cell;
+    vertical-align: middle;
+
+    section {
+      padding: $default-padding;
+      margin: 0;
+      padding: 0;
+
+      .title, .subtitle {
+        color: $white;
+        margin: 0 0 5px 0;
+      }
+    }
+  }
+}
