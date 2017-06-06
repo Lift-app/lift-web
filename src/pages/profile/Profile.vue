@@ -59,7 +59,7 @@
       <li>{{ interest.name }}</li>
     </ul>
 
-    <a href="/logout" v-if="isOwnProfile">Uitloggen</a>
+    <router-link :to="{name: 'Logout'}" v-if="isOwnProfile">Uitloggen</router-link>
   </div>
 </template>
 
