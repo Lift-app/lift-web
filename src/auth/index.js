@@ -6,6 +6,7 @@ export default {
     return new Promise((resolve, reject) => {
       return axios.post(`${config.apiUrl}/tokens`, credentials)
         .then((response) => {
+          localStorage.username = response.data.username
           this.setAuthToken(response.data.jwt)
           resolve()
         })
@@ -22,6 +23,7 @@ export default {
   },
 
   logout() {
+    delete localStorage.username
     delete localStorage.access_token
   },
 

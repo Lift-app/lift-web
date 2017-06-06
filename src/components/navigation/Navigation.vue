@@ -4,7 +4,7 @@
     <a href="#" id="interests-nav">Populair</a>
     <router-link :to="{name: 'CreatePost'}" id="add_post-nav">Iets zeggen</router-link>
     <router-link :to="{name: 'Search'}" id="search-nav">Zoeken</router-link>
-    <router-link :to="{name: 'Login'}" id="profile-nav">Account</router-link>
+    <router-link :to="{name: 'Profile', params: {username: current_user}}" id="profile-nav">Profiel</router-link>
   </nav>
 </template>
 

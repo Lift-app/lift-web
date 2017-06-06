@@ -1,6 +1,7 @@
 export default {
   name: 'avatar',
   props: {
-    post: {}
+    post: {},
+    user: {}
   }
 }
