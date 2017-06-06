@@ -12,11 +12,11 @@
     </button>
 
     <div v-if="isOwnProfile && editInfo">
-      <input type="text" v-model="changeUser.username" placeholder="Gebruikersnaam"></input>
-      <input type="email" v-model="changeUser.email" placeholder="E-mail adres"></input>
+      <input type="text" v-model="changeUser.username" placeholder="Gebruikersnaam">
+      <input type="email" v-model="changeUser.email" placeholder="E-mail adres">
 
-      <input type="text" v-model="changeUser.profile.first_name" placeholder="Voornaam"></input>
-      <input type="text" v-model="changeUser.profile.last_name" placeholder="Achternaam"></input>
+      <input type="text" v-model="changeUser.profile.first_name" placeholder="Voornaam">
+      <input type="text" v-model="changeUser.profile.last_name" placeholder="Achternaam">
       <textarea placeholder="Over mij" v-model="changeUser.profile.bio"></textarea>
 
       <button @click="updateUserInfo"><span>Opslaan</span></button>
