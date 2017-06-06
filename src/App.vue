@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="view" id="view">
-      <transition name="slide-right" mode="out-in">
+      <transition name="slide-right">
         <router-view></router-view>
       </transition>
     </div>
