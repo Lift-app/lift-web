@@ -18,6 +18,7 @@ export default {
       isOwnProfile: false,
       loading: false,
       editInfo: false,
+      editInterests: false,
       categories: []
     }
   },
@@ -57,6 +58,7 @@ export default {
 
       if (this.changeUser.interests.length) {
         this.changeInterests = this.changeUser.interests.map(interest => interest.id)
+        console.log(this.changeInterests)
       }
     },
 
@@ -73,14 +75,25 @@ export default {
       const changes = {
         username: username,
         email: email,
-        password: password,
-        profile_info: Object.keys(profile).length === 0  ? undefined : this.formatProfile(profile)
+        password: password
       }
 
       this.actionUpdateUser(changes)
         .then(() => {
           localStorage.username = username
           router.push({name: 'Profile', params: {username: username}})
+        })
+    },
+
+    updateInterests() {
+      const changes = {
+        categories: this.changeInterests.length === 0 ? undefined : this.changeInterests
+      }
+
+      this.actionUpdateUser(changes)
+        .then(() => {
+          this.loadUser()
+          this.editInterests = false
         })
     },
 
@@ -98,8 +111,20 @@ export default {
       }, [])
     },
 
-    isInterested(category) {
-      return this.user.interests.findIndex(interest => interest.id === category.id) !== -1
+    addInterest(categoryId) {
+      this.changeInterests.push(categoryId)
+    },
+
+    removeInterest(categoryId) {
+      const index = this.changeInterests.indexOf(categoryId)
+
+      if (index !== -1) {
+        this.changeInterests.splice(index, 1)
+      }
+    },
+
+    isInterested(categoryId) {
+      return this.changeInterests.includes(categoryId)
     }
   },
 

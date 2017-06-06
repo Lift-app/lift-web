@@ -31,14 +31,33 @@
     <p>Volgers: {{ user.follower_count }}</p>
 
     <h2>Interesses</h2>
-    <div v-for="category in categories">
-      <input
-        type="checkbox"
-        :id="category.name"
-        :value="category.id"
-        v-model="changeInterests">
-      <label for="category.name">{{ category.name }}</label>
+    <button @click="editInterests = true" v-if="isOwnProfile && !editInterests">
+      <span>Wijzigen</span>
+    </button>
+    <button @click="editInterests = false" v-else-if="isOwnProfile && editInterests">
+      <span>Annuleren</span>
+    </button>
+
+    <div v-if="isOwnProfile && editInterests">
+      <ul v-for="category in categories">
+        <div
+          v-if="isInterested(category.id)"
+          :id="category.name"
+          @click="removeInterest(category.id)">
+          *{{ category.name }}*
+        </div>
+        <div
+          v-else
+          :id="category.name"
+          @click="addInterest(category.id)">
+          {{ category.name }}
+        </div>
+      </ul>
+      <button @click="updateInterests"><span>Opslaan</span></button>
     </div>
+    <ul v-for="interest in user.interests" v-else>
+      <li>{{ interest.name }}</li>
+    </ul>
 
   </div>
 </template>
