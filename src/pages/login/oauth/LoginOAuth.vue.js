@@ -34,6 +34,7 @@ export default {
       this.actionOAuthLogin([provider, code])
         .then(response => {
           const token = response.data.jwt
+          localStorage.username = response.data.username
           auth.setAuthToken(token)
 
           this.completeLogin()
