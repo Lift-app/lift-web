@@ -16,5 +16,8 @@ export default {
     current_user() {
       return localStorage.username
     }
+  },
+  mounted() {
+    this.current_user = localStorage.username
   }
 }
