@@ -15,6 +15,19 @@ const actions = {
     })
   },
 
+  getUser({ commit }, username) {
+    return new Promise((resolve, reject) => {
+      return axios.get(`${config.apiUrl}/users/${username}`)
+        .then((response) => {
+          commit('SET_PROFILE', response.data)
+          resolve()
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  },
+
   getPosts({ commit }, categoryId = null) {
     const uri = categoryId ? `categories/${categoryId}/posts` : 'posts'
 
@@ -168,6 +181,48 @@ const actions = {
       axios.get(`${config.apiUrl}/oauth/${provider}/callback?code=${code}`)
         .then((response) => {
           resolve(response)
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  },
+
+  followUser({ commit }, id) {
+    return new Promise((resolve, reject) => {
+      axios.put(`${config.apiUrl}/users/${id}/follow`)
+        .then((response) => {
+          commit('follow')
+          resolve()
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  },
+
+  unfollowUser({ commit }, id) {
+    return new Promise((resolve, reject) => {
+      axios.put(`${config.apiUrl}/users/${id}/unfollow`)
+        .then((response) => {
+          commit('unfollow')
+          resolve()
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  },
+
+  updateUser({ commit }, user) {
+    return new Promise((resolve, reject) => {
+      axios.put(`${config.apiUrl}/users/me`, user, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+        .then((response) => {
+          resolve()
         })
         .catch((error) => {
           reject(error)

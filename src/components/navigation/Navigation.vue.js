@@ -1,3 +1,10 @@
+import auth from '@/auth'
+
 export default {
-  name: 'navigation'
+  name: 'navigation',
+  computed: {
+    current_user() {
+      return localStorage.username
+    }
+  }
 }
