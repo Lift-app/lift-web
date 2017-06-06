@@ -8,6 +8,7 @@ import LoginEmail from '@/pages/login/email/LoginEmail'
 import LoginOAuth from '@/pages/login/oauth/LoginOAuth'
 import VoorJou from '@/pages/voorjou/VoorJou'
 import Search from '@/pages/search/Search'
+import Profile from '@/pages/profile/Profile'
 import CategoryPosts from '@/pages/category-posts/CategoryPosts'
 import Post from '@/pages/post/Post'
 import CreatePost from '@/pages/create-post/CreatePost'
@@ -63,6 +64,12 @@ export default new VueRouter({
       component: Onboarding
     },
     {
+      path: '/profiel/:username',
+      name: 'Profile',
+      beforeEnter: requireAuth,
+      component: Profile
+    },
+    {
       path: '/login',
       name: 'Login',
       component: Login,
@@ -81,6 +88,7 @@ export default new VueRouter({
     },
     {
       path: '/logout',
+      name: 'Logout',
       beforeEnter(to, from, next) {
         auth.logout()
         next('/login')
