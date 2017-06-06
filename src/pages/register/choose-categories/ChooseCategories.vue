@@ -11,7 +11,7 @@
       <section>
         <ul class="categories">
           <li v-for="category in categories" :class="normalizedCategory(category.name)">
-            <span v-on:click="myFilter" v-bind:class="{ active: isActive }" class="category mousedown"><span>{{ category.name }}</span></span>
+            <span class="category mousedown" @click="$event.target.classList.toggle('active')"><span>{{ category.name }}</span></span>
           </li>
         </ul>
       </section>

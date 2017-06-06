@@ -12,9 +12,6 @@ export default {
     }
   },
   methods: {
-    myFilter: function() {
-      this.isActive = !this.isActive;
-    },
     ...mapActions({
       fetchCategories: 'getCategories'
     }),
