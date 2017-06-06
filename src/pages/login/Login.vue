@@ -1,7 +1,9 @@
 <template>
   <div class="page--login">
 
-    <router-view></router-view>
+    <transition name="slide-right">
+      <router-view></router-view>
+    </transition>
 
     <div class="login-container">
       <img class="logo" src="./../../assets/images/logo/white.svg">

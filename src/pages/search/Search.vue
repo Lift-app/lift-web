@@ -1,7 +1,9 @@
 <template>
   <div class="page--search">
 
-    <router-view></router-view>
+    <transition name="slide-right">
+      <router-view></router-view>
+    </transition>
 
     <div class="search-container">
       <header>
