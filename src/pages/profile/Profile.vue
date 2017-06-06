@@ -59,6 +59,7 @@
       <li>{{ interest.name }}</li>
     </ul>
 
+    <a href="/logout" v-if="isOwnProfile">Uitloggen</a>
   </div>
 </template>
 
