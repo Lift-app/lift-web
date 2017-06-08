@@ -74,9 +74,6 @@ export default {
     Preloader,
     InfiniteLoading
   },
-  mounted() {
-    window.scrollTo(0, 0);
-  },
   beforeMount() {
     this.actionGetCategory(this.$route.params.category)
       .then((category) => {
