@@ -21,7 +21,10 @@ export default {
     openPost() {
       router.push({
         name: 'Post',
-        params: { id: this.post.id }
+        params: {
+          id: this.post.id,
+          backRoute: this.$route
+        }
       })
     },
     haltAction(e) {
