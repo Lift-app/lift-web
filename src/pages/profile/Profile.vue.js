@@ -82,6 +82,8 @@ export default {
         .then(() => {
           localStorage.username = username
           router.push({name: 'Profile', params: {username: username}})
+          this.loadUser()
+          this.editInfo = false
         })
     },
 
