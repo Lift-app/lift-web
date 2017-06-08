@@ -9,13 +9,12 @@
         <button class="btn has_icon create-voice-post" @click="setPostType('voice')">Mijn bericht inspreken</button>
       </div>
 
-      <transition name="slide-up">
-      <div class="create-text-post" v-if="post_type === 'text'">
+      <div class="create-text-post" v-show="post_type === 'text'">
         <header>
           <nav>
             <a class="btn-back" @click="setPostType('choose')" aria-label="Terug naar: Type bericht kiezen"><img src="../../assets/images/icons/arrow-left-lift.svg" alt="Terug"> <span>Terug</span></a>
-            <img src="../../assets/images/icons/info-lift.svg" alt="Informatie over dit scherm"
-                 title="Informatie over dit scherm" class="info-icon">
+            <!--<img src="../../assets/images/icons/info-lift.svg" alt="Informatie over dit scherm"-->
+                 <!--title="Informatie over dit scherm" class="info-icon">-->
           </nav>
           <img src="../../assets/images/icons/pencil-lift-white.svg" alt="Jouw bericht typen" class="header-icon">
           <h2 class="title">Ik wil iets zeggen...</h2>
@@ -56,7 +55,6 @@
         </div>
 
       </div>
-      </transition>
 
 
       <div class="create-voice-post" v-if="post_type === 'voice'">
@@ -64,8 +62,8 @@
         <header>
           <nav>
             <a class="btn-back" @click="setPostType('choose')" aria-label="Terug naar: Type bericht kiezen"><img src="../../assets/images/icons/arrow-left-lift.svg" alt="Terug"> <span>Terug</span></a>
-            <img src="../../assets/images/icons/info-lift.svg" alt="Informatie over dit scherm"
-                 title="Informatie over dit scherm" class="info-icon">
+            <!--<img src="../../assets/images/icons/info-lift.svg" alt="Informatie over dit scherm"-->
+                 <!--title="Informatie over dit scherm" class="info-icon">-->
           </nav>
           <img src="../../assets/images/icons/microphone-lift-white.svg" alt="Jouw bericht typen" class="header-icon">
           <h2 class="title">Ik wil iets inspreken...</h2>
