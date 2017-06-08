@@ -12,25 +12,26 @@ export default {
     return {
       post: {
         user: {
-          'username': '',
-          'id': 0
+          username: '',
+          id: 0
         },
-        'updated_at': '',
-        'is_locked': false,
-        'id': 0,
-        'created_at': '0000-01-01T00:00:00',
-        'category': {
-          'name': '',
-          'id': 0
+        updated_at: '',
+        is_locked: false,
+        id: 0,
+        created_at: '0000-01-01T00:00:00',
+        category: {
+          name: '',
+          id: 0
         },
-        'body': '',
-        'like_count': 0,
-        'liked': false
+        body: '',
+        like_count: 0,
+        liked: false
       },
       comments: null,
       commentBody: null,
       commentLength: 600,
       loading: false,
+      backRoute: {},
       commentsLoading: true,
       topOffset: 0,
       currentUser: {}
@@ -57,8 +58,28 @@ export default {
     }),
 
     goBack() {
-      let location = this.$route.matched[0].name
-      router.push({name: location})
+      let backRoute = this.$route.params.backRoute
+      if (backRoute) {
+        router.push({
+          name: backRoute.name,
+          params: backRoute.params
+        })
+      } else {
+        router.push({name: 'VoorJou'})
+      }
+    },
+
+    goToUser(user) {
+      if (user) {
+        router.push({
+          name: 'Profile',
+          params: {
+            username: user
+          }
+        })
+      } else {
+        console.log('User is anonymous, cannot navigate to profile!')
+      }
     },
 
     loadPost() {

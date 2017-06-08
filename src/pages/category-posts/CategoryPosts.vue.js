@@ -29,8 +29,15 @@ export default {
     }),
 
     goBack() {
-      let location = this.$route.matched[0].name
-      router.push({name: location})
+      let backRoute = this.$route.params.backRoute
+      if (backRoute) {
+        router.push({
+          name: backRoute.name,
+          params: backRoute.params
+        })
+      } else {
+        router.push({name: 'VoorJou'})
+      }
     },
 
     normalizedCategory(name = "") {

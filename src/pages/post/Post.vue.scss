@@ -114,6 +114,7 @@
       margin: 0;
       text-align: left;
       text-transform: capitalize;
+      word-wrap: break-word;
     }
 
     .created-on {
@@ -164,11 +165,12 @@
     }
   }
 
+  $sidebar-width: 70px;
+
   .comments {
 
     $margin: 20px;
     $color: $white;
-    $sidebar-width: 70px;
 
     padding: $margin 1em $nav-height;
 
@@ -209,6 +211,7 @@
         border-radius: $default-radius;
         position: relative;
         box-shadow: $box-shadow;
+        max-width: calc(100% - #{$sidebar-width});
 
         header {
           border-bottom: 1px solid $porcelain;
@@ -237,6 +240,7 @@
           padding: $margin;
           font-weight: 400;
           font-size: 1rem;
+          word-wrap: break-word;
         }
 
         .deleted-body {

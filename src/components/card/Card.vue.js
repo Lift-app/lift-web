@@ -25,7 +25,36 @@ export default {
     openPost() {
       router.push({
         name: this.componentName,
-        params: { id: this.post.id }
+        params: {
+          id: this.post.id,
+          backRoute: this.$route
+        }
+      })
+    },
+
+    goToUser(e) {
+      e.stopImmediatePropagation()
+      if (this.post.user) {
+        router.push({
+          name: 'Profile',
+          params: {
+            username: this.post.user.username
+          }
+        })
+      } else {
+        console.log('User is anonymous, cannot navigate to profile!')
+      }
+    },
+
+    goToCategory(e) {
+      e.stopImmediatePropagation()
+      const lowercaseCategory = this.post.category.name.toLowerCase()
+      router.push({
+        name: 'CategoryPosts',
+        params: {
+          category: lowercaseCategory,
+          backRoute: this.$route
+        }
       })
     },
     haltAction(e) {

@@ -31,17 +31,22 @@
           </label>
 
           <div class="anonymity anonymity-container">
-            <label class="anonymity anonymity-check" for="anonymous">
-              <input type="checkbox" name="anonymous" v-model="anonymous" aria-label="Ik wil anoniem blijven">
-              Ik wil anoniem blijven.
+            <label class="anonymity anonymity-check custom-checkbox" for="anonymous">
+              <input type="checkbox" id="anonymous" name="anonymous" v-model="anonymous" aria-label="Ik wil anoniem blijven">
+              <span class="custom-text">
+                Ik wil anoniem blijven.
+              <small class="custom-description">
+                Als je kiest om anoniem te blijven, zullen je naam en profielfoto niet bij het bericht komen te staan.
+              </small>
+              </span>
             </label>
-            <small>
-              Als je kiest om anoniem te blijven, zullen je naam en profielfoto niet bij het bericht komen te staan.
-            </small>
           </div>
 
-          <button class="btn medium has_icon btn-orange btn-cancel" @click="post_type = 'choose'">Annuleren</button>
-          <button class="btn medium has_icon btn-green btn-create" @click="createPost">Plaatsen</button>
+          <footer class="btn-footer">
+            <button class="btn medium has_icon btn-orange btn-cancel" @click="post_type = 'choose'">Annuleren</button>
+            <button class="btn medium has_icon btn-green btn-create" @click="createPost">Plaatsen</button>
+          </footer>
+
 
           <modal :show.sync="showTextModal" v-show="showTextModal" :modal-data="modalTextData">
             <p>Weet je zeker dat je dit wilt plaatsen?</p>
@@ -56,8 +61,7 @@
 
         <header>
           <nav>
-            <a class="btn-back" @click="setPostType('choose')" aria-label="Terug naar: Type bericht kiezen">&lang;
-              Terug</a>
+            <a class="btn-back" @click="setPostType('choose')" aria-label="Terug naar: Type bericht kiezen"><img src="../../assets/images/icons/arrow-left-lift.svg" alt="Terug"> <span>Terug</span></a>
             <img src="../../assets/images/icons/info-lift.svg" alt="Informatie over dit scherm"
                  title="Informatie over dit scherm" class="info-icon">
           </nav>
@@ -116,17 +120,21 @@
           </label>
 
           <div class="anonymity anonymity-container">
-            <label class="anonymity anonymity-check" for="anonymous">
-              <input type="checkbox" name="anonymous" v-model="anonymous" aria-label="Ik wil anoniem blijven">
-              Ik wil anoniem blijven.
+            <label class="anonymity anonymity-check custom-checkbox" for="anonymous2">
+              <input type="checkbox" id="anonymous2" name="anonymous2" v-model="anonymous" aria-label="Ik wil anoniem blijven">
+              <span class="custom-text">
+                Ik wil anoniem blijven.
+              <small class="custom-description">
+                Als je kiest om anoniem te blijven, zullen je naam en profielfoto niet bij het bericht komen te staan.
+              </small>
+              </span>
             </label>
-            <small>
-              Als je kiest om anoniem te blijven, zullen je naam en profielfoto niet bij het bericht komen te staan.
-            </small>
           </div>
 
-          <button class="btn medium has_icon btn-orange btn-cancel" @click="post_type = 'choose'">Annuleren</button>
-          <button class="btn medium has_icon btn-green btn-create" @click="createPost">Plaatsen</button>
+          <footer class="btn-footer">
+            <button class="btn medium has_icon btn-orange btn-cancel" @click="post_type = 'choose'">Annuleren</button>
+            <button class="btn medium has_icon btn-green btn-create" @click="createPost">Plaatsen</button>
+          </footer>
 
           <modal :show.sync="showVoiceModal" v-show="showVoiceModal" :modal-data="modalVoiceData">
             <p>Weet je zeker dat je dit wilt plaatsen?</p>

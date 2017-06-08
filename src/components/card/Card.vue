@@ -2,15 +2,15 @@
   <div class="card" :class="normalizedCategory" @click="openPost">
 
     <header>
-      <div class="user">
+      <a class="user" @click="goToUser">
         <avatar :post="post"></avatar>
         <div class="user-details">
           <h4 class="u-name" v-if="post.user">{{ post.user.username }}</h4>
           <h4 class="u-name" v-else>Anoniem</h4>
           <h5 class="u-date">{{ post.created_at | moment("from", "now") }}</h5>
         </div>
-      </div>
-      <a href="#" class="btn cat-btn">{{ post.category.name }}</a>
+      </a>
+      <button @click="goToCategory" class="btn cat-btn">{{ post.category.name }}</button>
     </header>
 
     <section>
