@@ -1,4 +1,5 @@
 .page--search {
+  padding: 30px 20px 10px 20px;
 
   $gradient: $global-lift-gradient;
   $cat-height: 65px;
@@ -16,7 +17,6 @@
       width: 100%;
 
       .header-inner {
-        padding: 30px 20px 10px 20px;
 
         .search-title {
           color: $white;
@@ -56,22 +56,23 @@
     }
 
     section {
-      padding: $default-padding;
-      margin: 0;
-      padding: 0;
+      $spacing: 6px;
+
+      margin: 0 auto;
+      width: 100%;
+      max-width: $search-container;
 
       ul {
-        margin: 0 auto;
-        padding: $default-padding;
+        padding: 0;
+        width: 100%;
+        position: relative;
 
         li {
           list-style: none;
-
-          &:nth-child(2n) {
-            a {
-              margin: 0 0 12px 0;
-            }
-          }
+          padding: $spacing;
+          box-sizing: border-box;
+          display: inline-block;
+          width: 50%;
 
           // make a class for every category name in $POST_CATEGORIES and set the correct background and color
           @each $category, $bgcolor in $POST_CATEGORIES {
@@ -84,14 +85,13 @@
           }
 
           a {
-            width: 48%;
-            float: left;
-            margin: 0 12px 12px 0;
             height: $cat-height;
             text-align: center;
             border-radius: $default-radius;
             text-decoration: none;
-            display: table;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
             padding: 5px;
             box-shadow: $light-box-shadow;
             background-color: #fff;
@@ -100,7 +100,6 @@
             background-size: 30px 30px;
 
             span {
-              display: table-cell;
               vertical-align: bottom;
             }
           }
