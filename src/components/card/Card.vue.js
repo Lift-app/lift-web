@@ -27,6 +27,12 @@ export default {
         }
       })
     },
+    goToCategory(e) {
+      e.stopImmediatePropagation()
+      console.log(this.post.category.name)
+      const lowercaseCategory = this.post.category.name.toLowerCase()
+      router.push({name: 'CategoryPosts', params: {category: lowercaseCategory}})
+    },
     haltAction(e) {
       e.stopImmediatePropagation()
     }

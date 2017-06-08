@@ -10,7 +10,7 @@
           <h5 class="u-date">{{ post.created_at | moment("from", "now") }}</h5>
         </div>
       </div>
-      <a href="#" class="btn cat-btn">{{ post.category.name }}</a>
+      <button @click="goToCategory" class="btn cat-btn">{{ post.category.name }}</button>
     </header>
 
     <section>

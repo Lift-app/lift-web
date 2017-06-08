@@ -29,8 +29,7 @@ export default {
     }),
 
     goBack() {
-      let location = this.$route.matched[0].name
-      router.push({name: location})
+      router.go(-1)
     },
 
     normalizedCategory(name = "") {
