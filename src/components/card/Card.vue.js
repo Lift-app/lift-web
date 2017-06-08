@@ -29,9 +29,14 @@ export default {
     },
     goToCategory(e) {
       e.stopImmediatePropagation()
-      console.log(this.post.category.name)
       const lowercaseCategory = this.post.category.name.toLowerCase()
-      router.push({name: 'CategoryPosts', params: {category: lowercaseCategory}})
+      router.push({
+        name: 'CategoryPosts',
+        params: {
+          category: lowercaseCategory,
+          backRoute: this.$route
+        }
+      })
     },
     haltAction(e) {
       e.stopImmediatePropagation()

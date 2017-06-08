@@ -29,7 +29,15 @@ export default {
     }),
 
     goBack() {
-      router.go(-1)
+      let backRoute = this.$route.params.backRoute
+      if (backRoute) {
+        router.push({
+          name: backRoute.name,
+          params: backRoute.params
+        })
+      } else {
+        router.push({name: 'VoorJou'})
+      }
     },
 
     normalizedCategory(name = "") {
@@ -65,6 +73,9 @@ export default {
     Card,
     Preloader,
     InfiniteLoading
+  },
+  mounted() {
+    window.scrollTo(0, 0);
   },
   beforeMount() {
     this.actionGetCategory(this.$route.params.category)

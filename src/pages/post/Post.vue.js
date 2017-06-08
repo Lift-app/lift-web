@@ -67,7 +67,6 @@ export default {
       } else {
         router.push({name: 'VoorJou'})
       }
-
     },
 
     loadPost() {
