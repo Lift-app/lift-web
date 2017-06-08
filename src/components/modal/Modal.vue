@@ -12,8 +12,8 @@
         </section>
 
         <footer>
-          <button @click="hideModal" v-if="modalData.cancel" class="btn modal-button btn-cancel">{{modalData.cancelText}}</button>
-          <button @click="submitModal" v-if="modalData.submit" class="btn modal-button btn-submit">{{modalData.submitText}}</button>
+          <button @click="hideModal" v-if="modalData.cancel" class="btn medium has_icon btn-orange btn-cancel">{{modalData.cancelText}}</button>
+          <button @click="submitModal" v-if="modalData.submit" class="btn medium has_icon btn-green btn-create">{{modalData.submitText}}</button>
         </footer>
       </div>
     </div>

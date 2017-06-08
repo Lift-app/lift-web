@@ -28,7 +28,7 @@ export default {
       modalTextData: {
         id: 1,
         type: 'default ask-modal',
-        title: 'Bericht plaatsen?',
+        title: 'Bericht plaatsen',
         submit: true,
         submitText: 'Bericht plaatsen',
         cancel: true,
