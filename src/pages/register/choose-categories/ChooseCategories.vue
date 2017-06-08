@@ -27,7 +27,7 @@
           <li class="results-item" transition="fade" v-for="category in filteredList">{{category.name}}<span class="has-next">,&nbsp;</span></li>
         </ul>
       </div>
-      <button class="btn btn-register-next">Doorgaan</button>
+      <router-link class="btn btn-register-next" :to="{name: 'AccountCreated'}">Doorgaan</router-link>
     </div>
   </div>
 </template>

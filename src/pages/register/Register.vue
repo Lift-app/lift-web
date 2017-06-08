@@ -19,14 +19,6 @@
         <label> Vul hier een wachtwoord in…
           <input type="password" autocomplete="off" name="password" placeholder="Vertel deze tegen niemand!"/>
         </label>
-          <div class="anonymity anonymity-container">
-            <label class="anonymity anonymity-check" for="anonymous">
-              <input type="checkbox" v-model="anonymous" id="anonymous" aria-label="Ik wil anoniem blijven"/> <span>Ik wil anoniem blijven.</span>
-              <small>
-                Als je kiest om anoniem te blijven, zullen je naam en profielfoto niet op je profiel-pagina te zien zijn voor andere gebruikers.
-              </small>
-            </label>
-          </div>
         </div>
         <button type="submit" v-if="" @click="ChooseCategories" class="btn btn-register-next">Doorgaan</button>
       </form>

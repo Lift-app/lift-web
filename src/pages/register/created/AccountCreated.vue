@@ -10,6 +10,7 @@ a<template>
     </div>
   </div>
 </template>
-<script src="./Created.vue.js"></script>
+<script src="./AccountCreated.vue.js"></script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss" src="./Created.vue.scss"></style>
+<style scoped lang="scss" src="./AccountCreated.vue.scss"></style>
+

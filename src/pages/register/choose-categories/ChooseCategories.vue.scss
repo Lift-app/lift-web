@@ -1,16 +1,11 @@
 .page--register-choose-categories {
-  position: fixed;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  max-width: $max-app-width;
-  left: 0;
+  @extend %absolute-view;
   margin: 0 auto;
   overflow: scroll;
-  z-index: 2;
-  display: table;
   background: $global-lift-gradient;
   padding: $default-padding;
+  display: flex;
+  z-index: 2;
 
   header {
     margin: 0 0 30px 0;
@@ -22,11 +17,14 @@
   }
 
   .inner {
-    display: table-cell;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     vertical-align: middle;
+    margin: 0 auto;
+    max-width: 465px;
 
     section {
-      padding: $default-padding;
       margin: 0;
       padding: 0;
       display: block;
