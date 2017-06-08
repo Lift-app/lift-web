@@ -1,5 +1,10 @@
 <template>
   <div class="page--category-posts">
+
+    <transition name="slide-right">
+      <router-view></router-view>
+    </transition>
+
     <header class="header" :class="normalizedCategory(category.name)">
       <nav class="default-header category-posts-header">
         <button @click="goBack" class="btn btn-back" aria-label="Naar vorige pagina"><img src="../../assets/images/icons/arrow-left-lift.svg" alt="Terug"> <span>Terug</span></button>
@@ -19,9 +24,6 @@
         </figure>
       </div>
     </header>
-    <transition name="slide-right">
-      <router-view></router-view>
-    </transition>
 
     <p class="not-found" v-show="!posts.length && !loading"><i>Geen berichten gevonden</i></p>
 
