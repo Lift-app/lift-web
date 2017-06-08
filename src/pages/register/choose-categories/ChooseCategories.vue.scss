@@ -107,5 +107,37 @@
         }
       }
     }
+    .results {
+      color: $white;
+
+      .results-title {
+        margin: 20px 0 10px 0;
+      }
+
+      .results-list {
+        padding: 0;
+        margin: 0;
+
+        .results-item {
+          list-style: none;
+          display: inline-block;
+          transition: $default-transition;
+
+
+          &.fade-enter {
+            opacity: 1;
+          }
+          &.fade-leave {
+            opacity: 0;
+          }
+
+          &:last-child {
+            .has-next {
+              display: none;
+            }
+          }
+        }
+      }
+    }
   }
 }

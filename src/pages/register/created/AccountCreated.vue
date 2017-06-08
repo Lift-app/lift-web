@@ -1,8 +1,8 @@
-<template>
+a<template>
   <div class="page--register-created">
     <div class="inner">
       <section>
-        <img src="" alt="">
+        <img src="./checkmark-lift.svg" alt="Account aangemaakt!">
         <h3 class="title">Account aangemaakt!</h3>
         <h4 class="subtitle">Klik hieronder op de knop om naar je
           persoonlijke pagina te gaan</h4>

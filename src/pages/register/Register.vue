@@ -1,7 +1,9 @@
 <template>
   <div class="page--register">
 
-    <router-view></router-view>
+    <transition name="slide-right">
+      <router-view></router-view>
+    </transition>
 
     <div class="inner">
       <img src="../../assets/images/logo/white.svg" alt="Lift logo" title="Lift - Dé online gemeenschap voor Wajongers">

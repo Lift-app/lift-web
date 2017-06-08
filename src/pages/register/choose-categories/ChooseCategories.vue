@@ -10,11 +10,23 @@
       </header>
       <section>
         <ul class="categories">
-          <li v-for="category in categories" :class="normalizedCategory(category.name)">
-            <span class="category mousedown" @click="$event.target.classList.toggle('active')"><span>{{ category.name }}</span></span>
+          <li v-for="(category, index) in categories" :class="normalizedCategory(category.name)" :key="category.id">
+            <span
+                    class="category mousedown"
+                    @click="updateActiveCategory(category, index)"
+                    :class="category.active ? 'active' : ''">
+              <span>{{ category.name }}</span>
+            </span>
           </li>
         </ul>
       </section>
+      <div class="results">
+        <h4 class="results-title">Geselecteerd door jou:</h4>
+        <ul class="results-list">
+          <li class="results-item" v-if="filteredList.length === 0"><i>Niets geselecteerd...</i></li>
+          <li class="results-item" transition="fade" v-for="category in filteredList">{{category.name}}<span class="has-next">,&nbsp;</span></li>
+        </ul>
+      </div>
       <button class="btn btn-register-next">Doorgaan</button>
     </div>
   </div>

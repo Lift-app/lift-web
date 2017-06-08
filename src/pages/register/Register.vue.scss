@@ -13,6 +13,7 @@
 
     .slogan {
       color: $white;
+      margin: 12px 0;
     }
 
     .register-form {
@@ -38,7 +39,7 @@
         }
 
         input {
-          margin-top: 5px;
+          margin: 5px 0 14px 0;
         }
       }
 
@@ -54,11 +55,13 @@
         span {
           display: inline-block;
           position: relative;
-          top: -1px;
+          top: -2px;
+          margin: 0 0 0 5px;
         }
 
         small {
           display: block;
+          margin: 2px 0 0 0;
         }
       }
     }
