@@ -1,18 +1,14 @@
 .modal {
-  position: fixed;
-  width: 100%;
+  @extend %absolute-view;
   z-index: 999;
 
   .modal-mask {
-    position: fixed;
+    @extend %absolute-view;
+    position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9998;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     background-color: rgba(0, 0, 0, .5);
     transition: opacity .3s ease;
   }

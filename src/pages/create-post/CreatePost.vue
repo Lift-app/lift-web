@@ -48,9 +48,11 @@
           </footer>
 
 
-          <modal :show.sync="showTextModal" v-show="showTextModal" :modal-data="modalTextData">
-            <p>Weet je zeker dat je dit wilt plaatsen?</p>
-          </modal>
+          <transition name="scale">
+            <modal :show.sync="showTextModal" v-show="showTextModal" :modal-data="modalTextData">
+              <p>Weet je zeker dat je dit wilt plaatsen?</p>
+            </modal>
+          </transition>
         </div>
 
       </div>
