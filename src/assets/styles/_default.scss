@@ -133,6 +133,7 @@ body {
   padding-left: 0;
   position: relative;
   display: flex;
+  cursor: pointer;
   align-items: center;
 
   img {
@@ -322,6 +323,75 @@ select {
 
 textarea {
   min-height: $form-max-width / 3;
+}
+
+
+// ---------------------------------------------------------------------------------------------------------------------
+// Custom checkboxes
+//
+// put .custom-checkbox on a label, and .custom-text inside it.
+// example:
+// <label class="custom-checkbox" for="avocados">
+//     <input type="checkbox" id="avocados">
+//     <span class="custom-text">Avocados</span>
+// </label>
+// ---------------------------------------------------------------------------------------------------------------------
+.custom-checkbox {
+
+  $checkbox-size: 20px;
+  $checkbox-border-size: 0;
+
+  height: $checkbox-size;
+  margin: 0;
+  line-height: $checkbox-size;
+  display: inline-block;
+  cursor: pointer;
+
+  // hide the original checkbox
+  input[type=checkbox] {
+    display: none;
+  }
+
+  .custom-text {
+    margin-left: $checkbox-size + ($checkbox-size / 2);
+    color: $form-color;
+
+    &::before {
+      content: '';
+      position: absolute;
+      margin-left: - ($checkbox-size + ($checkbox-size / 2));
+      width: $checkbox-size - $checkbox-border-size;
+      height: $checkbox-size - $checkbox-border-size;
+      background: $form-bg;
+      box-sizing: border-box;
+      border-radius: $form-radius;
+
+      background-image: url('~/static/images/icons/checkbox.svg');
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 0 0;
+      transition: background-size 0.1s ease-in-out, border-color 0.1s;
+    }
+  }
+
+  .custom-description {
+    display: block;
+    margin-left: $checkbox-size + ($checkbox-size / 2);
+  }
+
+  input[type="checkbox"]:checked + .custom-text {
+
+    &::before {
+      content: '';
+      background-image: url('~/static/images/icons/checkbox.svg');
+
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 9px 9px;
+      border-radius: $form-radius;
+      transition: background-size ease-in-out 0.1s, border-color 0.2s;
+    }
+  }
 }
 
 
