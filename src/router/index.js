@@ -2,7 +2,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import Onboarding from '@/pages/onboarding/Onboarding'
-
 import Login from '@/pages/login/Login'
 import LoginEmail from '@/pages/login/email/LoginEmail'
 import LoginOAuth from '@/pages/login/oauth/LoginOAuth'
@@ -54,7 +53,14 @@ export default new VueRouter({
         {
           path: 'categorie/:category',
           name: 'CategoryPosts',
-          component: CategoryPosts
+          component: CategoryPosts,
+          children: [
+            {
+              path: 'post/:id',
+              name: 'CategoryPost',
+              component: Post
+            }
+          ]
         }
       ]
     },

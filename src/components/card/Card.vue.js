@@ -10,7 +10,11 @@ export default {
     Avatar
   },
   props: {
-    post: {}
+    post: {},
+    componentName: {
+      type: String,
+      default: 'Post'
+    }
   },
   computed: {
     normalizedCategory() {
@@ -20,7 +24,7 @@ export default {
   methods: {
     openPost() {
       router.push({
-        name: 'Post',
+        name: this.componentName,
         params: { id: this.post.id }
       })
     },
