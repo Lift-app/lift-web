@@ -1,5 +1,7 @@
 .page--create-post {
 
+  $text-containing-width: 465px;
+
   .btn.create-voice-post {
     @extend .btn-has-icon;
     background-image: url(./microphone-lift.svg);
@@ -24,14 +26,23 @@
     }
   }
 
-  .btn-create {
-    @extend .btn-has-icon;
-    background-image: url(./checkmark-lift.svg);
-  }
+  .btn-footer {
+    max-width: $text-containing-width;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 
-  .btn-cancel {
-    @extend .btn-has-icon;
-    background-image: url(./cancel-lift.svg);
+    .btn-create {
+      @extend .btn-has-icon;
+      margin-left: 20px;
+      background-image: url(./checkmark-lift.svg);
+    }
+
+    .btn-cancel {
+      @extend .btn-has-icon;
+      background-image: url(./cancel-lift.svg);
+    }
   }
 
   @extend %absolute-view;
@@ -132,8 +143,15 @@
         }
       }
 
+      .dropdown {
+        margin: 0 auto 20px;
+        max-width: $text-containing-width;
+      }
+
       .anonymity-container {
         display: block;
+        max-width: $text-containing-width;
+        margin: 0 auto;
         width: 100%;
         clear: both;
         text-align: left;
@@ -141,7 +159,7 @@
 
         small {
           display: block;
-          margin: 0 0 25px;
+          margin-bottom: 25px;
         }
       }
     }
