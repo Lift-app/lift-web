@@ -70,14 +70,16 @@ export default {
     },
 
     goToUser(user) {
-      if(user) {
+      if (user) {
         router.push({
           name: 'Profile',
           params: {
             username: user
           }
         })
-      } else console.log('User is anonymous, cannot navigate to profile!')
+      } else {
+        console.log('User is anonymous, cannot navigate to profile!')
+      }
     },
 
     loadPost() {

@@ -30,14 +30,16 @@ export default {
 
     goToUser(e) {
       e.stopImmediatePropagation()
-      if(this.post.user) {
+      if (this.post.user) {
         router.push({
           name: 'Profile',
           params: {
             username: this.post.user.username
           }
         })
-      } else console.log('User is anonymous, cannot navigate to profile!')
+      } else {
+        console.log('User is anonymous, cannot navigate to profile!')
+      }
     },
 
     goToCategory(e) {
