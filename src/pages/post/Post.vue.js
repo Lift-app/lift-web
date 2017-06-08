@@ -69,6 +69,17 @@ export default {
       }
     },
 
+    goToUser(user) {
+      if(user) {
+        router.push({
+          name: 'Profile',
+          params: {
+            username: user
+          }
+        })
+      } else console.log('User is anonymous, cannot navigate to profile!')
+    },
+
     loadPost() {
       this.loading = true
       this.actionGetPost(this.$route.params.id)

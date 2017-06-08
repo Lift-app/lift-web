@@ -9,12 +9,12 @@
       <article class="post" :class="normalizedCategory">
         <div class="inner-post">
           <header v-if="!loading">
-            <div class="user">
+            <a @click="goToUser(post.user.username)" class="user">
               <avatar :post="post"></avatar>
               <h3 class="username" v-if="post.anonymous">Anoniem</h3>
               <h3 class="username" v-else v-model="post.user.username">{{ post.user.username }}</h3>
               <span class="created-on">{{ post.created_at | moment("from", "now") }}</span>
-            </div>
+            </a>
 
             <button class="btn category-button">{{ post.category.name }}</button>
           </header>
@@ -67,17 +67,21 @@
                    v-bind:index="index"
                    v-bind:key="comment.id" class="comment" :id="'comment-' + comment.id">
             <aside class="comment-sidebar">
-              <figure class="avatar-container" v-if="comment.user">
-                <img class="avatar" v-if="comment.user.avatar" :src="comment.user.avatar.thumbnail" alt="Avatar">
-                <img class="avatar anonymous" v-else src="../../assets/images/icons/anonymous.svg" alt="Anonieme profielfoto">
-              </figure>
+              <a @click="goToUser(comment.user.username)">
+                <figure class="avatar-container" v-if="comment.user">
+                  <img class="avatar" v-if="comment.user.avatar" :src="comment.user.avatar.thumbnail" alt="Avatar">
+                  <img class="avatar anonymous" v-else src="../../assets/images/icons/anonymous.svg" alt="Anonieme profielfoto">
+                </figure>
+              </a>
             </aside>
 
             <div class="comment-content">
               <header>
-                <span class="username" v-if="comment.user">{{ comment.user.username }}</span>
-                <span v-else="!comment.user">Anoniem</span>
-                <small class="date">{{ comment.updated_at | moment("from", "now") }}</small>
+                <a @click="goToUser(comment.user.username)">
+                  <span class="username" v-if="comment.user">{{ comment.user.username }}</span>
+                  <span v-else="!comment.user">Anoniem</span>
+                  <small class="date">{{ comment.updated_at | moment("from", "now") }}</small>
+                </a>
               </header>
 
               <h3 v-if="comment.deleted" class="deleted-body">Bericht verwijderd</h3>
