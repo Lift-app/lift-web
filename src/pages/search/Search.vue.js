@@ -29,7 +29,13 @@ export default {
 
     goToCategory(category) {
       const lowercaseCategory = category.toLowerCase()
-      router.push({name: 'CategoryPosts', params: {category: lowercaseCategory}})
+      router.push({
+        name: 'CategoryPosts',
+        params: {
+          category: lowercaseCategory,
+          backRoute: this.$route
+        }
+      })
     }
   },
   created() {
