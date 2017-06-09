@@ -20,7 +20,7 @@
         <ul>
          <transition-group name="scale" mode="out-in" class="categories">
            <li v-for="category in filteredList" :class="normalizedCategory(category.name)" :key="category.id">
-             <a @click="goToCategory(category.name)" class="mousedown"><span>{{ category.name }}</span></a>
+             <a @click="goToCategory(category.name)" class="category mousedown"><span>{{ category.name }}</span></a>
            </li>
          </transition-group>
         </ul>

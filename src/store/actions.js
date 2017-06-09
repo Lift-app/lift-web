@@ -60,6 +60,34 @@ const actions = {
     })
   },
 
+  getVoorjou({ commit }) {
+    return new Promise((resolve, reject) => {
+      return axios.get(`${config.apiUrl}/posts/voorjou`)
+        .then((response) => {
+          // Commit the data into SET_POSTS - see mutations.js
+          commit('SET_POSTS', response.data)
+          resolve()
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  },
+
+  getMoreVoorjou({ commit }, page) {
+    return new Promise((resolve, reject) => {
+      return axios.get(`${config.apiUrl}/posts/voorjou?page=${page}`)
+        .then((response) => {
+          // Commit the data into SET_POSTS - see mutations.js
+          commit('APPEND_POSTS', response.data)
+          resolve(response.data)
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  },
+
   getPost({ commit }, id) {
     return new Promise((resolve, reject) => {
       return axios.get(`${config.apiUrl}/posts/${id}`)

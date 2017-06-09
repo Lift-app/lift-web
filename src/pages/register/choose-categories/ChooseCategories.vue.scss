@@ -1,0 +1,150 @@
+.page--register-choose-categories {
+
+  $gradient: $global-lift-gradient;
+  $cat-height: 65px;
+  $search-container: 465px;
+
+  @extend %absolute-view;
+  margin: 0 auto;
+  overflow: scroll;
+  background: $global-lift-gradient;
+  padding: $default-padding;
+  display: flex;
+  z-index: 2;
+
+  header {
+    margin: 0 0 15px 0;
+
+    .title, .subtitle {
+      color: $white;
+      margin: 0 0 5px 0;
+    }
+  }
+
+  .inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    vertical-align: middle;
+    margin: 0 auto;
+    max-width: 465px;
+
+    section {
+      margin: 0;
+      padding: 0;
+      display: block;
+      overflow: scroll;
+      height: 300px;
+      $spacing: 6px;
+      width: 100%;
+      display: flex;
+
+      ul {
+        margin: 0 auto;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1 1 0;
+        margin: 0 -$spacing;
+
+        li {
+          list-style: none;
+          padding: $spacing;
+          box-sizing: border-box;
+          display: inline-block;
+          width: 50%;
+
+          // make a class for every category name in $POST_CATEGORIES and set the correct background and color
+          @each $category, $bgcolor in $POST_CATEGORIES {
+            &.#{$category} {
+              .category {
+                color: $bgcolor;
+                background-image: url('./categories/#{$category}-lift.svg');
+              }
+            }
+          }
+
+          .category {
+            height: $cat-height;
+            text-align: center;
+            border-radius: $default-radius;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 5px;
+            box-shadow: $light-box-shadow;
+            background-color: #fff;
+            background-repeat: no-repeat;
+            background-position: center 8px;
+            background-size: 30px 30px;
+
+            &:before {
+              content: '';
+              position: absolute;
+              background: url('./checkmark-lift.svg') no-repeat center;
+              background-size: 35px;
+              background-color: rgba(255,255,255,1);
+              top: 0;
+              left: 0;
+              height: 100%;
+              width: 100%;
+              opacity: 0;
+              transition: $default-transition;
+              border-radius: $default-radius;
+            }
+
+            &.active {
+              opacity: .9;
+              box-shadow: none !important;
+
+              &:before {
+                opacity: 1;
+                background-color: rgba(255,255,255,.8);
+                transition: $default-transition;
+              }
+            }
+          }
+        }
+      }
+    }
+    .results {
+      color: $white;
+
+      .results-title {
+        margin: 20px 0 10px 0;
+      }
+
+      .results-list {
+        padding: 0;
+        margin: 0;
+
+        .results-item {
+          list-style: none;
+          display: inline-block;
+          transition: $default-transition;
+
+
+          &.fade-enter {
+            opacity: 1;
+          }
+          &.fade-leave {
+            opacity: 0;
+          }
+
+          &:last-child {
+            .has-next {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    .btn-register-next {
+      display: inline-block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
