@@ -461,6 +461,16 @@ textarea {
   }
 }
 
+.on-profile-page {
+
+  .avatar {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    border: 2px solid $white;
+  }
+}
+
 .avatar {
   border-radius: 50%;
   height: 50px;
@@ -472,6 +482,7 @@ textarea {
   &.anonymous {
     background: $white;
   }
+
   @media only screen and (min-width: 480px) {
     height: 60px;
     width: 60px;
