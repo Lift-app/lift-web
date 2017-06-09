@@ -20,14 +20,14 @@ export default {
   },
   methods: {
     ...mapActions({
-      actionGetPosts: 'getPosts',
-      actionGetMorePosts: 'getMorePosts'
+      actionGetVoorjou: 'getVoorjou',
+      actionGetMoreVoorjou: 'getMoreVoorjou'
     }),
 
     getMorePosts() {
       this.page++
 
-      this.actionGetMorePosts([this.page])
+      this.actionGetMoreVoorjou(this.page)
         .then((response) => {
           if (response.data.length === 0) {
             this.$refs.infiniteLoading.$emit('$InfiniteLoading:complete')
@@ -40,7 +40,7 @@ export default {
 
     getPosts() {
       this.loading = true
-      this.actionGetPosts().then(() => {
+      this.actionGetVoorjou().then(() => {
         this.posts = store.state.posts
         this.loading = false
       })
