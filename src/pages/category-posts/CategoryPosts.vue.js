@@ -11,6 +11,7 @@ export default {
   data() {
     return {
       category: {},
+      user: null,
       posts: {},
       loading: false,
       page: 1
@@ -25,7 +26,9 @@ export default {
     ...mapActions({
       actionGetPosts: 'getPosts',
       actionGetCategory: 'getCategory',
-      actionGetMorePosts: 'getMorePosts'
+      actionGetMorePosts: 'getMorePosts',
+      actionUpdateUser: 'updateUser',
+      actionGetCurrentUser: 'getCurrentUser'
     }),
 
     goBack() {
@@ -42,6 +45,24 @@ export default {
 
     normalizedCategory(name = "") {
       return name.toLowerCase().replace(/\s/g, '-')
+    },
+
+    toggleInterest() {
+      if (this.category.is_interested) {
+        this.category.is_interested = false
+        const index = this.user.interests.findIndex(category => category.id == this.category.id)
+
+        if (index !== -1) {
+          this.user.interests.splice(index, 1)
+        }
+      } else {
+        this.category.is_interested = true
+        this.user.interests.push({id: this.category.id})
+      }
+
+      const interests = this.user.interests.map(category => category.id)
+
+      this.actionUpdateUser({interests: interests})
     },
 
     getMorePosts() {
@@ -75,6 +96,10 @@ export default {
     InfiniteLoading
   },
   beforeMount() {
+    this.actionGetCurrentUser()
+      .then(() => {
+        this.user = store.state.user
+      })
     this.actionGetCategory(this.$route.params.category)
       .then((category) => {
         this.category = category
