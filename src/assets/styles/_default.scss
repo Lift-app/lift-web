@@ -90,6 +90,10 @@ body {
   }
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
 .btn {
   position: relative;
   font-family: $primary-font;
@@ -110,6 +114,10 @@ body {
 
 .btn.medium {
   padding: $medium-btn-padding;
+}
+
+.btn.small {
+  padding: $small-btn-padding;
 }
 
 .btn-orange {
@@ -464,8 +472,8 @@ textarea {
 .on-profile-page {
 
   .avatar {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     margin: 0 auto;
     border: 2px solid $white;
   }

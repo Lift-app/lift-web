@@ -21,6 +21,7 @@
       width: auto;
       color: $white;
       font-weight: 500;
+      padding: 14px 0px 14px 14px;
       border: 0;
       padding-right: 0;
       background: rgba(255, 255, 255, 0);
@@ -35,36 +36,66 @@
       }
     }
   }
-
   .profile-content {
-    position: relative;
-    z-index: 2;
-    padding: 20px;
-    width: 90%;
-    border-radius: $default-radius;
-    margin: -30px auto 0 auto;
-    background: $white;
+    padding: 0 1em;
 
-    .profile-name {
-      margin: -55px 0 0 0;
-    }
+    .profile-content-inner {
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+      width: 100%;
+      border-radius: $default-radius;
+      margin: -30px auto 0 auto;
+      background: $white;
+      box-shadow: $box-shadow;
 
-    .profile-name {
-      text-align: center;
-    }
+      .profile-name {
+        margin: -55px 0 0 0;
+        text-align: center;
+      }
 
-    .profile-followers {
-      margin: 10px 0;
-      padding: 0;
-      display: flex;
-      flex-wrap: wrap;
-      text-align: center;
+      .bio {
+        margin-bottom: 20px;
+      }
 
-      .follows, .followers {
-        list-style: none;
-        width: 50%;
-        padding: 10px;
+      .follow {
+        text-align: center;
+        margin-bottom: 25px;
+
+        .btn-follow {
+          padding: $small-btn-padding;
+          box-shadow: $light-box-shadow;
+
+          img {
+            display: inline-block;
+            width: 10px;
+            margin: 0 5px 0 0;
+            position: relative;
+            top: 1px;
+          }
+        }
+      }
+
+      .profile-followers {
+        margin: 10px 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+
+        .follows, .followers {
+          list-style: none;
+          width: 50%;
+          padding: 10px;
+        }
+      }
+
+      .btn-edit-content {
+        margin: 0 auto;
+        background: $clay;
+        color: $white;
       }
     }
   }
 }
+

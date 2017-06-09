@@ -53,6 +53,18 @@ export default {
         })
     },
 
+    goBack() {
+      let backRoute = this.$route.params.backRoute
+      if (backRoute) {
+        router.push({
+          name: backRoute.name,
+          params: backRoute.params
+        })
+      } else {
+        router.push({name: 'VoorJou'})
+      }
+    },
+
     prepareChanges() {
       this.changeUser = store.state.user
 
