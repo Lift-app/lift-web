@@ -75,7 +75,8 @@ export default {
       const changes = {
         username: username,
         email: email,
-        password: password
+        password: password,
+        profile_info: profile.length === 0 ? undefined : this.formatProfile(profile)
       }
 
       this.actionUpdateUser(changes)
