@@ -94,7 +94,6 @@ export default new VueRouter({
           component: AccountCreated
         }
       ]
-      component: Register
     },
     {
       path: '/login',

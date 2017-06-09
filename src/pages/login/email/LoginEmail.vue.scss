@@ -4,7 +4,7 @@
   $gradient: $global-lift-gradient;
   $component-padding: 60px 40px;
 
-  @extend .FullWidthHeight;
+  @extend %absolute-view;
   z-index: 1;
   text-align: center;
   background-image: $gradient;

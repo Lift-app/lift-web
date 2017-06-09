@@ -28,7 +28,7 @@
     }
   }
 
-  @extend .FullWidthHeight;
+  @extend %absolute-view;
   z-index: 2;
   text-align: center;
   background-image: $gradient;
