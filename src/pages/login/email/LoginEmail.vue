@@ -15,7 +15,7 @@
 
         <button class="btn" @click="login">Inloggen</button>
         <div class="login-options">
-          <a href="#"><small>Ik heb nog geen account</small></a>
+          <router-link class="no-account" :to="{name: 'Register'}"><small>Ik heb nog geen account</small></router-link>
           <a href="#"><small>Wachtwoord vergeten?</small></a>
         </div>
       </div>
