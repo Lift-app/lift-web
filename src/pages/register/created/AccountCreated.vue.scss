@@ -1,7 +1,10 @@
 .page--register-created {
+
   @extend %absolute-view;
   z-index: 3;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: $global-lift-gradient;
   padding: $default-padding;
 
@@ -14,9 +17,25 @@
       margin: 0;
       padding: 0;
 
+      .success-icon {
+        width: 70px;
+        margin: 0 0 20px 0;
+      }
+
+      .title {
+        margin: 0 0 10px 0;
+      }
+
+      .subtitle {
+        margin: 0 0 20px 0;
+      }
+
       .title, .subtitle {
         color: $white;
-        margin: 0 0 5px 0;
+      }
+
+      .btn-created {
+        display: inline-block;
       }
     }
   }

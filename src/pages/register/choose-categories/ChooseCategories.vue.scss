@@ -1,4 +1,9 @@
 .page--register-choose-categories {
+
+  $gradient: $global-lift-gradient;
+  $cat-height: 65px;
+  $search-container: 465px;
+
   @extend %absolute-view;
   margin: 0 auto;
   overflow: scroll;
@@ -8,7 +13,7 @@
   z-index: 2;
 
   header {
-    margin: 0 0 30px 0;
+    margin: 0 0 15px 0;
 
     .title, .subtitle {
       color: $white;
@@ -30,19 +35,24 @@
       display: block;
       overflow: scroll;
       height: 300px;
+      $spacing: 6px;
+      width: 100%;
+      display: flex;
 
       ul {
         margin: 0 auto;
         padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        flex: 1 1 0;
+        margin: 0 -$spacing;
 
         li {
           list-style: none;
-
-          &:nth-child(2n) {
-            .category {
-              margin: 0 0 12px 0;
-            }
-          }
+          padding: $spacing;
+          box-sizing: border-box;
+          display: inline-block;
+          width: 50%;
 
           // make a class for every category name in $POST_CATEGORIES and set the correct background and color
           @each $category, $bgcolor in $POST_CATEGORIES {
@@ -55,21 +65,19 @@
           }
 
           .category {
-            width: 48%;
-            float: left;
-            margin: 0 12px 12px 0;
-            height: 65px;
+            height: $cat-height;
             text-align: center;
             border-radius: $default-radius;
             text-decoration: none;
-            display: table;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
             padding: 5px;
             box-shadow: $light-box-shadow;
             background-color: #fff;
             background-repeat: no-repeat;
             background-position: center 8px;
             background-size: 30px 30px;
-            position: relative;
 
             &:before {
               content: '';
@@ -95,11 +103,6 @@
                 background-color: rgba(255,255,255,.8);
                 transition: $default-transition;
               }
-            }
-
-            span {
-              display: table-cell;
-              vertical-align: bottom;
             }
           }
         }
@@ -136,6 +139,13 @@
           }
         }
       }
+    }
+
+    .btn-register-next {
+      display: inline-block;
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 113px;
     }
   }
 }

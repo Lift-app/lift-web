@@ -3,9 +3,14 @@
   height: 100%;
   width: 100%;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   .inner {
-    vertical-align: middle;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
     padding: 20px;
     colors:$white;
 

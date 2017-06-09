@@ -112,6 +112,7 @@ body {
   outline: 0;
   transition: $default-transition;
   cursor: pointer;
+  text-decoration: none;
 
   &:hover, &:focus {
     transition: $default-transition;
