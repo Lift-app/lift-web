@@ -2,19 +2,56 @@ import router from '@/router'
 import store from '@/store'
 import { mapActions } from 'vuex'
 import vSelect from 'vue-select'
+import Card from '@/components/card/Card'
 
 export default {
   name: 'search',
   data() {
     return {
       keyword: '',
-      categories: []
+      categories: [],
+      results: {},
+      searching: false
     }
   },
   methods: {
     ...mapActions({
-      fetchCategories: 'getCategories'
+      fetchCategories: 'getCategories',
+      search: 'search'
     }),
+
+    _debounce(callback, wait, context = this) {
+      let timeout = null
+      let callbackArgs = null
+
+      const later = () => callback.apply(context, callbackArgs)
+
+      return function() {
+        callbackArgs = arguments
+        clearTimeout(timeout)
+        timeout = setTimeout(later, wait)
+      }
+    },
+
+    doSearch() {
+      let query = encodeURI(this.keyword).toLowerCase()
+      this.searching = true
+
+      if (query.length !== 0) {
+        (this._debounce(() => {
+          console.log(query)
+
+          this.search(query).then((response) => {
+            this.results = response.data.data
+            this.searching = false
+          })
+
+        }, 400))()
+      } else {
+        this.results = {}
+        this.searching = false
+      }
+    },
 
     normalizedCategory(name) {
       return name.toLowerCase().replace(/\s/g, '-')
@@ -42,7 +79,8 @@ export default {
     this.getCategories()
   },
   components: {
-    vSelect
+    vSelect,
+    Card
   },
   computed: {
     filteredList() {

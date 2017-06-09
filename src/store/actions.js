@@ -228,6 +228,18 @@ const actions = {
           reject(error)
         })
     })
+  },
+
+  search({ commit }, query) {
+    return new Promise((resolve, reject) => {
+      axios.get(`${config.apiUrl}/posts/search/${query}`)
+        .then((response) => {
+          resolve(response)
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
   }
 }
 
