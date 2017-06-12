@@ -54,32 +54,40 @@
       </button>
       </div>
 
-      <categories></categories>
-
-      <div v-if="isOwnProfile && editInterests">
-        <ul v-for="category in categories">
-          <div
-            v-if="isInterested(category.id)"
-            :id="category.name"
-            @click="removeInterest(category.id)">
-            *{{ category.name }}*
-          </div>
-          <div
-            v-else
-            :id="category.name"
-            @click="addInterest(category.id)">
-            {{ category.name }}
-          </div>
+      <section class="cat-section">
+        <div v-if="isOwnProfile && editInterests">
+          <ul class="categories" v-for="category in categories">
+            <li
+              v-if="isInterested(category.id)"
+              :id="category.name"
+              @click="removeInterest(category.id)">
+              <span class="category mousedown">
+                <span>*{{ category.name }}*</span>
+              </span>
+            </li>
+            <li
+              v-else
+              :id="category.name"
+              @click="addInterest(category.id)">
+              <span class="category mousedown">
+                <span>{{ category.name }}</span>
+              </span>
+            </li>
+          </ul>
+          <button class="btn small save-changes" @click="updateInterests"><span>Opslaan</span></button>
+        </div>
+        <ul class="categories">
+          <li v-for="interest in user.interests">
+            <span class="category mousedown">
+                <span>{{ interest.name }}</span>
+              </span>
+          </li>
         </ul>
-        <button class="btn small save-changes" @click="updateInterests"><span>Opslaan</span></button>
-      </div>
-      <ul v-for="interest in user.interests" v-else>
-        <li>{{ interest.name }}</li>
-      </ul>
+      </section>
 
-      <hr>
+      <!--<hr>-->
 
-      <h3>Jou berichten...</h3>
+      <!--<h3>Jou berichten...</h3>-->
 
       <hr>
 
