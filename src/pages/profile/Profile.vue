@@ -54,6 +54,8 @@
       </button>
       </div>
 
+      <categories></categories>
+
       <div v-if="isOwnProfile && editInterests">
         <ul v-for="category in categories">
           <div

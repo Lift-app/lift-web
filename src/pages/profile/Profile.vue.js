@@ -1,6 +1,7 @@
 import store from '@/store'
 import router from '@/router'
 import Avatar from '@/components/avatar/Avatar'
+import Categories from '@/components/categories/Categories'
 import { mapActions } from 'vuex'
 
 export default {
@@ -149,6 +150,7 @@ export default {
   },
 
   components: {
-    Avatar
+    Avatar,
+    Categories
   }
 }
