@@ -6,14 +6,53 @@
   color: #FFF;
 }
 
-.player.dark {
-  .max-time {
-    color: #000;
-  }
-  .play {
-    fill: #000;
-  }
-  .pause {
-    fill: #000;
-  }
+input[type=range] {
+  -webkit-appearance: none;
+  width: 60%; 
+  background: transparent;
+}
+
+//thumb//
+progress:not(value) {
+    /* Add your styles here. As part of this walkthrough we will focus only on determinate progress bars. */
+}
+
+/* Styling the determinate progress element */
+
+progress
+{
+	/* turn of styling */
+	appearance: none;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+
+	/* no default border in FF and Opera */
+	border: none;
+
+	/* Dimensions */
+	width: 400px;
+	height: 50px;
+}
+
+/* Firefox  */ 
+progress  {
+   background: #fee;
+   border: 5px solid red;
+}
+progress::-moz-progress-bar {
+    background: #bada55;
+}
+progress:not([value])::-moz-progress-bar {
+  background:#fdd;
+}
+
+/* Chrome */
+progress::-webkit-progress-bar {
+    background: #fee;
+}
+progress::-webkit-progress-value {
+    background: #bada55;
+}
+progress:not([value])::-webkit-progress-bar {
+  background:#fdd;
 }
