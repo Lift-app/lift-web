@@ -3,9 +3,9 @@
   $gradient: $global-lift-gradient;
   $cat-height: 65px;
   $search-container: 465px;
-  $search-container-height: 270px;
+  $search-container-height: 305px;
   $spacing: 6px;
-  $categories-height: $cat-height + $spacing * 2;
+  $categories-height: $cat-height + ($spacing * 4);
 
   height: 100%;
   min-height: 100%;
@@ -22,7 +22,7 @@
     transition: all $animation-snap .4s;
 
     &.hide-filteredlist {
-      max-height: $search-container-height - $categories-height;
+      max-height: $search-container-height - $categories-height - 18px;
 
       section {
         max-height: 0;
@@ -84,7 +84,15 @@
       margin: 0 auto;
       width: 100%;
       max-width: $search-container;
-      display: flex;
+      padding: 0 0 0 20px;
+      position: relative;
+
+      .choose-categories-text {
+        color: $white;
+        font-weight: normal;
+        display: block;
+        margin-bottom: 0;
+      }
 
       ul {
         padding: 0;
@@ -95,7 +103,7 @@
         display: flex;
         flex-wrap: wrap;
         flex: 1 1 0;
-        margin: 20px -$spacing 0 -$spacing;
+        margin: 10px -$spacing 0 -$spacing;
 
         .categories {
           overflow-x: scroll;

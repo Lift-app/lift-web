@@ -11,12 +11,13 @@
           <img src="../../assets/images/icons/search-lift-white.svg" class="search-icon" alt="Zoeken"/>
           <h3 class="search-title">Waar wil je naar zoeken?</h3>
           <div class="search-wrapper">
-            <input type="text" class="search-bar" placeholder="Bijvoorbeeld 'zorg'" v-model="keyword" @keyup="doSearch">
-            <button type="submit" class="search-submit">Zoeken</button>
+            <input type="text" class="search-bar" placeholder="Bijvoorbeeld 'Liefde'" v-model="keyword" @keyup="doSearch">
+            <button type="submit" class="search-submit" @click="doSearch">Zoeken</button>
           </div>
         </div>
       </header>
       <section>
+        <p class="choose-categories-text">Of kies een van de categorieën:</p>
         <ul>
          <transition-group name="scale" mode="out-in" class="categories">
            <li v-for="category in filteredList" :class="normalizedCategory(category.name)" :key="category.id">
@@ -29,13 +30,13 @@
 
     <section class="search-results" :class="filteredList.length === 0 ? 'expanded' : ''">
         <div class="card-group">
-          <transition name="slide-up">
-            {{results.length}}
-            <div class="no-results" v-if="results.length === 0">
-              <p>Geen zoekresultaten gevonden.</p>
+          <transition name="scale" mode="out-in">
+            <div class="no-results">
+              <p v-if="results.length === 0 || !results">Geen zoekresultaten gevonden.</p>
+              <h3 v-if="results.length >= 1">Zoekresultaten</h3>
             </div>
           </transition>
-          <transition name="slide-up">
+          <transition name="scale" mode="out-in">
             <div class="card-group">
               <card v-for="result in results" :key="result.id" :post="result"></card>
             </div>

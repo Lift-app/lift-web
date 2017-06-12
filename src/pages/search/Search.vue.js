@@ -10,7 +10,7 @@ export default {
     return {
       keyword: '',
       categories: [],
-      results: {},
+      results: [],
       searching: false
     }
   },
@@ -39,7 +39,6 @@ export default {
 
       if (query.length !== 0) {
         (this._debounce(() => {
-          console.log(query)
 
           this.search(query).then((response) => {
             this.results = response.data.data
@@ -48,7 +47,7 @@ export default {
 
         }, 400))()
       } else {
-        this.results = {}
+        this.results = []
         this.searching = false
       }
     },
