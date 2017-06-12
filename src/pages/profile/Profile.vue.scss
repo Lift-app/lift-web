@@ -1,4 +1,8 @@
 .page--profile {
+
+  $default-button: $clay;
+  $save-button: $blue;
+
   @extend %absolute-view;
 
   nav {
@@ -11,7 +15,7 @@
     width: 100%;
     z-index: 1;
     background: $orange;
-    height: 150px;
+    height: 125px;
 
     span {
       padding-top: 2px;
@@ -45,7 +49,7 @@
       padding: 20px;
       width: 100%;
       border-radius: $default-radius;
-      margin: -30px auto 0 auto;
+      margin: -30px auto 20px auto;
       background: $white;
       box-shadow: $box-shadow;
 
@@ -92,8 +96,27 @@
 
       .btn-edit-content {
         margin: 0 auto;
-        background: $clay;
+        background: $default-button;
         color: $white;
+      }
+
+      .change-section {
+        text-align: center;
+      }
+
+      .save-changes {
+        background: $save-button;
+        color: $white;
+      }
+
+      .signout-section {
+        text-align: center;
+        margin: 20px 0 0 0;
+
+        .btn-sign-out {
+          background: $blue;
+          color: $white;
+        }
       }
     }
   }

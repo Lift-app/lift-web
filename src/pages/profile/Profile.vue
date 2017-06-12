@@ -17,7 +17,7 @@
           <button class="btn small btn-edit-content" @click="editInfo = true" v-if="isOwnProfile && !editInfo">
             <span>Wijzigen</span>
           </button>
-          <button @click="editInfo = false" v-else-if="isOwnProfile && editInfo">
+          <button class="btn small btn-edit-content" @click="editInfo = false" v-else-if="isOwnProfile && editInfo">
             <span>Annuleren</span>
           </button>
         </div>
@@ -38,6 +38,7 @@
       </div>
 
       <hr>
+
       <ul class="profile-followers">
         <li class="follows">Volgt: {{ user.following_count }}</li>
         <li class="followers">Volgers: {{ user.follower_count }}</li>
@@ -48,7 +49,7 @@
       <button class="btn small btn-edit-content" @click="editInterests = true" v-if="isOwnProfile && !editInterests">
         <span>Wijzigen</span>
       </button>
-      <button @click="editInterests = false" v-else-if="isOwnProfile && editInterests">
+      <button class="btn small btn-edit-content" @click="editInterests = false" v-else-if="isOwnProfile && editInterests">
         <span>Annuleren</span>
       </button>
       </div>
@@ -78,8 +79,11 @@
 
       <h3>Jou berichten...</h3>
 
+      <hr>
 
-      <router-link :to="{name: 'Logout'}" v-if="isOwnProfile">Uitloggen</router-link>
+        <div class="signout-section">
+          <router-link class="btn small btn-sign-out" :to="{name: 'Logout'}" v-if="isOwnProfile">Uitloggen</router-link>
+        </div>
       </div>
     </section>
   </div>
