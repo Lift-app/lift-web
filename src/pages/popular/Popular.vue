@@ -19,7 +19,7 @@
 
     <transition name="slide-up">
       <div class="card-group" v-if="!loading">
-        <card v-for="post in posts" :key="post.id" :post="post" :component-name="'PopularPost'"></card>
+        <card v-for="post in posts" :key="post.id" :post="post"></card>
         <infinite-loading :on-infinite="getMorePosts" ref="infiniteLoading" spinner="spiral" v-if="posts.length > 4">
           <span slot="no-more">Dat was het! <br><small>Meer berichten hebben we op dit moment niet voor je.</small></span>
         </infinite-loading>

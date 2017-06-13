@@ -52,14 +52,7 @@ export default new VueRouter({
       path: '/populair',
       name: 'Popular',
       component: Popular,
-      beforeEnter: requireAuth,
-      children: [
-        {
-          path: 'post/:id',
-          name: 'PopularPost',
-          component: Post
-        }
-      ]
+      beforeEnter: requireAuth
     },
     {
       path: '/zoeken',
@@ -70,14 +63,7 @@ export default new VueRouter({
         {
           path: 'categorie/:category',
           name: 'CategoryPosts',
-          component: CategoryPosts,
-          children: [
-            {
-              path: 'post/:id',
-              name: 'CategoryPost',
-              component: Post
-            }
-          ]
+          component: CategoryPosts
         }
       ]
     },
