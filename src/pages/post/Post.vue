@@ -77,7 +77,7 @@
 
             <div class="comment-content">
               <header>
-                <a @click="goToUser(comment.user.username)">
+                <a @click="goToUser(comment.user)">
                   <span class="username" v-if="comment.user">{{ comment.user.username }}</span>
                   <span v-else="!comment.user">Anoniem</span>
                   <small class="date">{{ comment.updated_at | moment("from", "now") }}</small>
