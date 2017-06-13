@@ -11,7 +11,7 @@
           <img src="../../assets/images/icons/search-lift-white.svg" class="search-icon" alt="Zoeken"/>
           <h3 class="search-title">Waar wil je naar zoeken?</h3>
           <div class="search-wrapper">
-            <input type="text" class="search-bar" placeholder="Bijvoorbeeld 'Liefde'" v-model="keyword" @keyup="doSearch">
+            <input type="text" class="search-bar" placeholder="Bijvoorbeeld 'Liefde'" v-model="keyword" @keyup="doSearch" @focus="focusInput" @blur="blurInput">
             <button type="submit" class="search-submit" @click="doSearch">Zoeken</button>
           </div>
         </div>

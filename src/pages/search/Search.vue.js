@@ -72,11 +72,24 @@ export default {
           backRoute: this.$route
         }
       })
-    }
+    },
+
+    // Focus and blur functions to hide the navbar
+    focusInput(e) {
+      e.target.classList.add('focussed')
+      document.querySelector('#app').classList.add('nav-hidden')
+    },
+
+    blurInput(e) {
+      e.target.classList.remove('focussed')
+      document.querySelector('#app').classList.remove('nav-hidden')
+    },
   },
+
   created() {
     this.getCategories()
   },
+
   components: {
     vSelect,
     Card
