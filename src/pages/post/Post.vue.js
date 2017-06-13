@@ -6,6 +6,8 @@ import Avatar from '@/components/avatar/Avatar'
 import { mapActions } from 'vuex'
 import config from '@/config/config'
 
+const MAX_COMMENT_CHAR = 600
+
 export default {
   name: 'post',
   data() {
@@ -29,7 +31,7 @@ export default {
       },
       comments: null,
       commentBody: null,
-      commentLength: 600,
+      commentLength: MAX_COMMENT_CHAR,
       loading: false,
       backRoute: {},
       commentsLoading: true,
@@ -74,11 +76,12 @@ export default {
         router.push({
           name: 'Profile',
           params: {
-            username: user
+            username: user.username
           }
         })
       } else {
         console.log('User is anonymous, cannot navigate to profile!')
+        this.$toasted.info('Deze gebruiker is anoniem, je kan dus niet naar zijn / haar profiel.')
       }
     },
 
@@ -89,8 +92,7 @@ export default {
           this.post = store.state.post
           this.loading = false
 
-          // We need this timeout to guarantee this is done when the DOM is
-          // ready
+          // We need this timeout to guarantee this is done when the DOM is ready
           setTimeout(() => this.updateThemeColor(), 100)
 
           this.loadComments()
@@ -121,18 +123,23 @@ export default {
         return
       }
 
+      if (this.commentLength > MAX_COMMENT_CHAR) {
+        this.$toasted.error(`Te lange reactie. Je mag maximaal ${MAX_COMMENT_CHAR} tekens gebruiken.`)
+        return
+      }
+
       this.actionPlaceComment(callData)
         .then((response) => {
           console.log('posted')
           this.comments = store.state.post.comments
           this.post.comment_count++
           this.commentBody = ''
-          this.commentLength = 600
+          this.commentLength = MAX_COMMENT_CHAR
           this.$toasted.success('Reactie geplaatst!')
         })
         .catch(() => {
           this.commentBody = ''
-          this.$toasted.error('Er ging wat mis. Probeer opnieuw!')
+          this.$toasted.error('Er ging wat mis. Probeer het opnieuw!')
         })
     },
 
@@ -155,8 +162,7 @@ export default {
     },
 
     commentLengthCount() {
-      let length = 600
-      this.commentLength = length - this.commentBody.length
+      this.commentLength = MAX_COMMENT_CHAR - this.commentBody.length
     }
   },
   mounted() {
