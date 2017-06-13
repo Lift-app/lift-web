@@ -49,6 +49,8 @@ export default {
 
     toggleInterest() {
       if (this.category.is_interested) {
+        this.$toasted.success(`Je bent nu geïnteresseerd in ${this.category.name.toLowerCase()}!`)
+
         this.category.is_interested = false
         const index = this.user.interests.findIndex(category => category.id == this.category.id)
 
@@ -56,6 +58,8 @@ export default {
           this.user.interests.splice(index, 1)
         }
       } else {
+        this.$toasted.error(`Je bent nu niet meer geïnteresseerd in ${this.category.name.toLowerCase()}!`)
+
         this.category.is_interested = true
         this.user.interests.push({id: this.category.id})
       }
