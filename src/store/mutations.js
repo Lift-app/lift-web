@@ -6,6 +6,14 @@ export const APPEND_POSTS = (state, posts) => {
   posts.data.forEach((post) => state.posts.push(post))
 }
 
+export const SET_POPULAR_POSTS = (state, posts) => {
+  state.popular = posts.data
+}
+
+export const APPEND_POPULAR_POSTS = (state, posts) => {
+  posts.data.forEach((post) => state.popular.push(post))
+}
+
 export const SET_POST = (state, post) => {
   state.post = post.data
 }

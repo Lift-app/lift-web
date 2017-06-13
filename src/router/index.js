@@ -9,6 +9,7 @@ import AccountCreated from '@/pages/register/created/AccountCreated'
 import LoginEmail from '@/pages/login/email/LoginEmail'
 import LoginOAuth from '@/pages/login/oauth/LoginOAuth'
 import VoorJou from '@/pages/voorjou/VoorJou'
+import Popular from '@/pages/popular/Popular'
 import Search from '@/pages/search/Search'
 import Profile from '@/pages/profile/Profile'
 import CategoryPosts from '@/pages/category-posts/CategoryPosts'
@@ -43,6 +44,19 @@ export default new VueRouter({
         {
           path: 'post/:id',
           name: 'Post',
+          component: Post
+        }
+      ]
+    },
+    {
+      path: '/populair',
+      name: 'Popular',
+      component: Popular,
+      beforeEnter: requireAuth,
+      children: [
+        {
+          path: 'post/:id',
+          name: 'PopularPost',
           component: Post
         }
       ]

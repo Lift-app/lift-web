@@ -9,6 +9,7 @@ Vue.use(Vuex)
 
 const state = {
   posts: {},
+  popular: {},
   post: {},
   categories: {}
 }
