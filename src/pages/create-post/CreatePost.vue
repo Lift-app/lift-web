@@ -23,7 +23,8 @@
         <div class="inner">
 
           <textarea id="body" name="body" v-model="body" @focus="focusInput" @blur="blurInput"
-                    placeholder="Typ hier jouw bericht..."></textarea>
+                    placeholder="Typ hier jouw bericht..." maxlength="600" @keyup="postLengthCount"></textarea>
+          <span class="max-post-length">{{postLength}}</span>
 
           <label for="categories">
             <v-select label="name" v-model="category" :options="categories" :searchable="false" placeholder="Plaatsen in..."></v-select>

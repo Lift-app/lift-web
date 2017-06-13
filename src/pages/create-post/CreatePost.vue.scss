@@ -119,8 +119,10 @@
     .inner {
       background-color: transparent;
       padding: $default-padding;
-      margin-top: -$inner-overflow-amount;
       text-align: center;
+      position: relative;
+      max-width: $text-containing-width;
+      margin: -$inner-overflow-amount auto 0;
 
       #body {
         transition: .2s $animation-snap;
@@ -132,6 +134,14 @@
           background: $porcelain;
           min-height: 220px;
         }
+      }
+
+      .max-post-length {
+        position: absolute;
+        right: 30px;
+        margin-top: -50px;
+        pointer-events: none;
+        color: $regent;
       }
 
       .recording-controls {

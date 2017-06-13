@@ -5,11 +5,15 @@ import { mapActions } from 'vuex'
 import config from '@/config/config'
 import vSelect from 'vue-select'
 
+const MAX_POST_CHAR = 600
+
 export default {
   name: 'createPost',
   data () {
     return {
       body: '',
+
+      postLength: MAX_POST_CHAR,
       category: 0,
       anonymous: false,
       categories: [],
@@ -180,6 +184,10 @@ export default {
     blurInput(e) {
       e.target.classList.remove('focussed')
       document.querySelector('#app').classList.remove('nav-hidden')
+    },
+
+    postLengthCount() {
+      this.postLength = MAX_POST_CHAR - this.body.length
     }
   },
 
