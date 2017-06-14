@@ -1,0 +1,43 @@
+.page--popular {
+  @extend %absolute-view;
+
+  .not-found {
+    text-align: center;
+  }
+
+  header {
+    width: 100%;
+    display: block;
+    top:0;
+    z-index: 5;
+
+
+    .feed-nav {
+      padding: 10px;
+      margin: 7px 0;
+      text-align: center;
+
+      .title {
+        font-weight: bold;
+        margin: 5px 0;
+      }
+
+      .description {
+        margin: 0;
+      }
+    }
+  }
+
+  .slide-up-item {
+    display: inline-block;
+  }
+
+  .slide-up-enter-active, .slide-up-leave-active {
+    transition: all 1s;
+  }
+
+  .slide-up-enter, .slide-up-leave-to {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+}

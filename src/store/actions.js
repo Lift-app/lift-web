@@ -88,6 +88,34 @@ const actions = {
     })
   },
 
+  getPopular({ commit }) {
+    return new Promise((resolve, reject) => {
+      return axios.get(`${config.apiUrl}/posts/popular`)
+        .then((response) => {
+          // Commit the data into SET_POSTS - see mutations.js
+          commit('SET_POPULAR_POSTS', response.data)
+          resolve()
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  },
+
+  getMorePopular({ commit }, page) {
+    return new Promise((resolve, reject) => {
+      return axios.get(`${config.apiUrl}/posts/popular?page=${page}`)
+        .then((response) => {
+          // Commit the data into SET_POSTS - see mutations.js
+          commit('APPEND_POPULAR_POSTS', response.data)
+          resolve(response.data)
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  },
+
   getPost({ commit }, id) {
     return new Promise((resolve, reject) => {
       return axios.get(`${config.apiUrl}/posts/${id}`)

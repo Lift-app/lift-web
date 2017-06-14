@@ -517,7 +517,7 @@ textarea {
 .slide-right-enter-active, .slide-right-leave-active {
   opacity: 1;
   transform: translateY(0);
-  transition: all $animation-snap .4s;
+  transition: transform $animation-snap .4s, opacity ease .4s;
 }
 
 .slide-right-enter-active {
@@ -526,5 +526,5 @@ textarea {
 .slide-right-enter, .slide-right-leave-to {
   transform: translateY(20%);
   opacity: 0;
-  transition: all $animation-snap .4s;
+  transition: transform $animation-snap .4s, opacity ease .4s;
 }

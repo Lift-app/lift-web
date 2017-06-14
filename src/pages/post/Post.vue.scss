@@ -2,7 +2,7 @@
   position: fixed;
   top: 0;
   height: 100%;
-  width: 100%;
+  width: 100vw;
   max-width: $max-app-width;
   left: 50%;
   transform: translateX(-50%);
@@ -10,7 +10,6 @@
   overflow: scroll;
   z-index: 2;
   background-color: $porcelain;
-  will-change: transform;
 
   nav {
     display: flex;
