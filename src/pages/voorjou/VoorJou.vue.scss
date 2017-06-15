@@ -9,7 +9,8 @@
     width: 100%;
     display: block;
     top:0;
-    z-index: 5;
+    position: fixed;
+    z-index: 0;
 
     .slideDown {
       position: fixed;
@@ -19,16 +20,25 @@
       padding: 10px;
       margin: 7px 0;
       text-align: center;
+      width: 100%;
 
       .title {
         font-weight: bold;
         margin: 5px 0;
+        color: $dark;
       }
 
       .description {
         margin: 0;
+        color: $pantzer;
       }
     }
+  }
+
+  .card-group {
+    margin-top: 105px;
+    position: relative;
+    z-index: 1;
   }
 
   .slide-up-item {

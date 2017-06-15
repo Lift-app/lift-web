@@ -55,6 +55,25 @@ body {
   }
 }
 
+// Feed header
+.feed-nav {
+  padding: 10px;
+  margin: 7px 0;
+  text-align: center;
+  position: fixed;
+  z-index: 0;
+
+  .title {
+    font-weight: bold;
+    margin: 5px 0;
+  }
+
+  .description {
+    margin: 0;
+    color: $pantzer;
+  }
+}
+
 #app {
   max-width: $max-app-width;
   margin: 0 auto;
