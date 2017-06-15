@@ -96,6 +96,7 @@
           list-style: none;
           width: 50%;
           padding: 10px;
+          color: $text-dark;
         }
       }
 
@@ -131,7 +132,7 @@
         margin: 20px 0 0 0;
 
         .btn-sign-out {
-          background: $blue;
+          background: $red;
           color: $white;
         }
       }
@@ -200,7 +201,7 @@
           justify-content: flex-end;
           padding: 5px;
           box-shadow: $light-box-shadow;
-          background-color: $white;
+          background-color: $porcelain;
           background-repeat: no-repeat;
           background-position: center 8px;
           background-size: 30px 30px;

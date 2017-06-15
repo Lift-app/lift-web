@@ -37,6 +37,17 @@ export default {
       return name.toLowerCase().replace(/\s/g, '-')
     },
 
+    goToCategory(category) {
+      const lowercaseCategory = category.toLowerCase()
+      router.push({
+        name: 'CategoryPosts',
+        params: {
+          category: lowercaseCategory,
+          backRoute: this.$route
+        }
+      })
+    },
+
     loadUser() {
       this.loading = true
       this.actionGetUser(this.$route.params.username)
@@ -108,11 +119,16 @@ export default {
         categories: this.changeInterests.length === 0 ? undefined : this.changeInterests
       }
 
-      this.actionUpdateUser(changes)
-        .then(() => {
-          this.loadUser()
-          this.editInterests = false
-        })
+      if (changes.categories) {
+        this.actionUpdateUser(changes)
+          .then(() => {
+            this.loadUser()
+            this.editInterests = false
+          })
+      } else {
+        this.$toasted.error('Je moet minimaal één categorie interessant vinden!')
+        return
+      }
     },
 
     formatProfile(profile) {

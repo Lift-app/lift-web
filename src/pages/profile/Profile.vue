@@ -57,7 +57,7 @@
       <section class="cat-section">
 
         <ul class="categories" v-if="!editInterests">
-          <li v-for="interest in user.interests">
+          <li v-for="interest in user.interests" @click="goToCategory(interest.name)">
             <span class="category-item" :class="normalizedCategory(interest.name)">
               <span class="category mousedown">
                 <span>{{ interest.name }}</span>
