@@ -1,7 +1,7 @@
 .page--profile {
 
   $default-button: $regent;
-  $profile-margin: 15px 0;
+  $profile-margin: 20px 0;
   $save-button: $blue;
 
   @extend %absolute-view;
@@ -134,13 +134,14 @@
         .btn-sign-out {
           background: $red;
           color: $white;
+          display: inline-block;
         }
       }
     }
   }
 
   .cat-section {
-    padding: 20px 0;
+    padding: 0;
     width: 100%;
     display: flex;
 
