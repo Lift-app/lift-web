@@ -55,34 +55,44 @@
       </div>
 
       <section class="cat-section">
-        <div v-if="isOwnProfile && editInterests">
-          <ul class="categories" v-for="category in categories">
-            <li
-              v-if="isInterested(category.id)"
-              :id="category.name"
-              @click="removeInterest(category.id)">
+
+        <ul class="categories" v-if="!editInterests">
+          <li v-for="interest in user.interests">
+            <span class="category-item" :class="normalizedCategory(interest.name)">
               <span class="category mousedown">
-                <span>*{{ category.name }}*</span>
+                <span>{{ interest.name }}</span>
               </span>
-            </li>
-            <li
-              v-else
-              :id="category.name"
-              @click="addInterest(category.id)">
-              <span class="category mousedown">
-                <span>{{ category.name }}</span>
+            </span>
+          </li>
+        </ul>
+
+        <div v-if="isOwnProfile && editInterests">
+          <ul class="categories">
+            <li v-for="category in categories">
+              <span v-if="isInterested(category.id)"
+                    :id="category.name"
+                    @click="removeInterest(category.id)"
+                    :class="normalizedCategory(category.name)"
+                    class="active category-item">
+                <span class="category mousedown">
+                  <span>{{ category.name }}</span>
+                </span>
+              </span>
+              <span v-else
+                    class="category-item"
+                    :id="category.name"
+                    @click="addInterest(category.id)"
+                    :class="normalizedCategory(category.name)">
+                <span class="category mousedown">
+                  <span>{{ category.name }}</span>
+                </span>
               </span>
             </li>
           </ul>
-          <button class="btn small save-changes" @click="updateInterests"><span>Opslaan</span></button>
+          <div class="save-changes-container">
+            <button class="btn small save-changes" @click="updateInterests"><span>Opslaan</span></button>
+          </div>
         </div>
-        <ul class="categories">
-          <li v-for="interest in user.interests">
-            <span class="category mousedown">
-                <span>{{ interest.name }}</span>
-              </span>
-          </li>
-        </ul>
       </section>
 
       <!--<hr>-->

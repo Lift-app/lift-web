@@ -1,12 +1,12 @@
 .cat-section {
   margin: 0;
   padding: 0;
-  display: block;
   overflow: scroll;
   height: 300px;
-  $spacing: 6px;
   width: 100%;
   display: flex;
+
+  $spacing: 6px;
 
   ul {
     margin: 0 auto;
@@ -43,7 +43,7 @@
         justify-content: flex-end;
         padding: 5px;
         box-shadow: $light-box-shadow;
-        background-color: #fff;
+        background-color: $white;
         background-repeat: no-repeat;
         background-position: center 8px;
         background-size: 30px 30px;

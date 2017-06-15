@@ -33,6 +33,10 @@ export default {
       actionUnfollowUser: 'unfollowUser'
     }),
 
+    normalizedCategory(name) {
+      return name.toLowerCase().replace(/\s/g, '-')
+    },
+
     loadUser() {
       this.loading = true
       this.actionGetUser(this.$route.params.username)
