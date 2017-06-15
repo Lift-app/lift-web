@@ -10,12 +10,8 @@ export default {
   data() {
     return {
       loading: false,
-      page: 1
-    }
-  },
-  computed: {
-    posts() {
-      return store.getters.fetchPopularPosts
+      page: 1,
+      posts: []
     }
   },
   methods: {

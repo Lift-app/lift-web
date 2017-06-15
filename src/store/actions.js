@@ -93,7 +93,7 @@ const actions = {
       return axios.get(`${config.apiUrl}/posts/popular`)
         .then((response) => {
           // Commit the data into SET_POSTS - see mutations.js
-          commit('SET_POPULAR_POSTS', response.data)
+          commit('SET_POSTS', response.data)
           resolve()
         })
         .catch((error) => {
@@ -107,7 +107,7 @@ const actions = {
       return axios.get(`${config.apiUrl}/posts/popular?page=${page}`)
         .then((response) => {
           // Commit the data into SET_POSTS - see mutations.js
-          commit('APPEND_POPULAR_POSTS', response.data)
+          commit('APPEND_POSTS', response.data)
           resolve(response.data)
         })
         .catch((error) => {
