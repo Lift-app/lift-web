@@ -11,7 +11,7 @@
         <h2>{{ user.username }}</h2>
       </div>
       <p v-if="user.profile.bio" class="bio">{{ user.profile.bio }}</p>
-      <p v-else class="bio"><span class="capitalize">{{ user.username }}</span> heeft nog geen profiel omschrijving geschreven...</p>
+      <p v-else class="bio no-bio"><span class="capitalize">{{ user.username }}</span> heeft nog geen profiel omschrijving geschreven...</p>
 
         <div class="change-section">
           <button class="btn small btn-edit-content" @click="editInfo = true" v-if="isOwnProfile && !editInfo">
@@ -22,7 +22,7 @@
           </button>
         </div>
 
-      <div v-if="isOwnProfile && editInfo">
+      <div class="change-section-active" v-if="isOwnProfile && editInfo">
         <input type="text" v-model="changeUser.username" placeholder="Gebruikersnaam">
         <input type="email" v-model="changeUser.email" placeholder="E-mailadres">
         <input type="text" v-model="changeUser.profile.first_name" placeholder="Voornaam">
