@@ -90,10 +90,15 @@ body {
   }
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
 .btn {
   position: relative;
   font-family: $primary-font;
   background: $white;
+  text-decoration: none;
   color: $primary-color;
   padding: $large-btn-padding;
   border-radius: $default-radius;
@@ -111,6 +116,10 @@ body {
 
 .btn.medium {
   padding: $medium-btn-padding;
+}
+
+.btn.small {
+  padding: $small-btn-padding;
 }
 
 .btn-orange {
@@ -150,6 +159,13 @@ body {
   }
 }
 
+hr {
+  height: 1px;
+  border: none;
+  width: 100%;
+  background: $mystic;
+  margin: 15px 0;
+}
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Button icons
@@ -471,6 +487,16 @@ textarea {
   }
 }
 
+.on-profile-page {
+
+  .avatar {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+    border: 2px solid $white;
+  }
+}
+
 .avatar {
   border-radius: 50%;
   height: 50px;
@@ -482,6 +508,7 @@ textarea {
   &.anonymous {
     background: $white;
   }
+
   @media only screen and (min-width: 480px) {
     height: 60px;
     width: 60px;

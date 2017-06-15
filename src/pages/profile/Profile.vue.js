@@ -33,6 +33,21 @@ export default {
       actionUnfollowUser: 'unfollowUser'
     }),
 
+    normalizedCategory(name) {
+      return name.toLowerCase().replace(/\s/g, '-')
+    },
+
+    goToCategory(category) {
+      const lowercaseCategory = category.toLowerCase()
+      router.push({
+        name: 'CategoryPosts',
+        params: {
+          category: lowercaseCategory,
+          backRoute: this.$route
+        }
+      })
+    },
+
     loadUser() {
       this.loading = true
       this.actionGetUser(this.$route.params.username)
@@ -51,6 +66,18 @@ export default {
         .catch(() => {
           router.push({name: '404'})
         })
+    },
+
+    goBack() {
+      let backRoute = this.$route.params.backRoute
+      if (backRoute) {
+        router.push({
+          name: backRoute.name,
+          params: backRoute.params
+        })
+      } else {
+        router.push({name: 'VoorJou'})
+      }
     },
 
     prepareChanges() {
@@ -93,11 +120,15 @@ export default {
         categories: this.changeInterests.length === 0 ? undefined : this.changeInterests
       }
 
-      this.actionUpdateUser(changes)
-        .then(() => {
-          this.loadUser()
-          this.editInterests = false
-        })
+      if (changes.categories) {
+        this.actionUpdateUser(changes)
+          .then(() => {
+            this.loadUser()
+            this.editInterests = false
+          })
+      } else {
+        this.$toasted.error('Je moet minimaal één categorie interessant vinden!')
+      }
     },
 
     formatProfile(profile) {

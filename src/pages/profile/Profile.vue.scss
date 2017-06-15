@@ -1,2 +1,228 @@
 .page--profile {
+
+  $default-button: $regent;
+  $profile-margin: 15px 0;
+  $save-button: $blue;
+
+  @extend %absolute-view;
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    padding: 0 1em;
+    width: 100%;
+    z-index: 1;
+    background: $orange;
+    height: 125px;
+
+    span {
+      padding-top: 2px;
+    }
+
+    .edit {
+      width: auto;
+      color: $white;
+      font-weight: 500;
+      padding: 14px 0px 14px 14px;
+      border: 0;
+      padding-right: 0;
+      background: rgba(255, 255, 255, 0);
+      position: relative;
+      display: flex;
+      align-items: center;
+      font-size: 12px;
+
+      .edit-icon {
+        width: 20px;
+        margin-left: 10px;
+      }
+    }
+  }
+  .profile-content {
+    padding: 0 1em;
+
+    .profile-content-inner {
+      position: relative;
+      z-index: 2;
+      padding: 20px;
+      width: 100%;
+      border-radius: $default-radius;
+      margin: -30px auto 20px auto;
+      background: $white;
+      box-shadow: $box-shadow;
+
+      .profile-name {
+        margin: -55px 0 0 0;
+        text-align: center;
+      }
+
+      .bio {
+        margin-bottom: 20px;
+
+        &.no-bio {
+          color: $pantzer;
+        }
+      }
+
+      .follow {
+        text-align: center;
+        margin-bottom: 25px;
+
+        .btn-follow {
+          padding: $small-btn-padding;
+          box-shadow: $light-box-shadow;
+
+          img {
+            display: inline-block;
+            width: 10px;
+            margin: 0 5px 0 0;
+            position: relative;
+            top: 1px;
+          }
+        }
+      }
+
+      .profile-followers {
+        margin: 10px 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+
+        .follows, .followers {
+          list-style: none;
+          width: 50%;
+          padding: 10px;
+          color: $text-dark;
+        }
+      }
+
+      .btn-edit-content {
+        margin: 0 auto;
+        background: $default-button;
+        color: $white;
+      }
+
+      .change-section {
+        text-align: center;
+        margin: $profile-margin;
+      }
+
+      .change-section-active {
+        input, textarea {
+          background: $porcelain;
+        }
+      }
+
+      .save-changes-container {
+        text-align: center;
+
+        .save-changes {
+          background: $save-button;
+          color: $white;
+          margin-top: 20px;
+        }
+      }
+
+      .signout-section {
+        text-align: center;
+        margin: 20px 0 0 0;
+
+        .btn-sign-out {
+          background: $red;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .cat-section {
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+
+    $spacing: 6px;
+
+    ul {
+      margin: 0 auto;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      flex: 1 1 0;
+      margin: 0 -$spacing;
+
+      li {
+        list-style: none;
+        box-sizing: border-box;
+        display: inline-block;
+        width: 50%;
+      }
+
+      .category-item {
+        list-style: none;
+        padding: $spacing;
+        box-sizing: border-box;
+        display: inline-block;
+        width: 100%;
+
+        &.active {
+          .category {
+            opacity: .9;
+            box-shadow: none !important;
+
+            &:before {
+              opacity: 1;
+              background-color: rgba(255,255,255,.8);
+              transition: $default-transition;
+            }
+          }
+        }
+
+        // make a class for every category name in $POST_CATEGORIES and set the correct background and color
+        @each $category, $bgcolor in $POST_CATEGORIES {
+          &.#{$category} {
+            .category {
+              color: $bgcolor;
+              background-image: url('./categories/#{$category}-lift.svg');
+            }
+          }
+        }
+
+        .category {
+          height: 65px;
+          text-align: center;
+          border-radius: $default-radius;
+          text-decoration: none;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          padding: 5px;
+          box-shadow: $light-box-shadow;
+          background-color: $porcelain;
+          background-repeat: no-repeat;
+          background-position: center 8px;
+          background-size: 30px 30px;
+
+          &:before {
+            content: '';
+            position: absolute;
+            background: url('./checkmark-lift.svg') no-repeat center;
+            background-size: 35px;
+            background-color: rgba(255,255,255,1);
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            transition: $default-transition;
+            border-radius: $default-radius;
+          }
+        }
+      }
+    }
+  }
 }
+
