@@ -1,4 +1,7 @@
 .page--voorjou {
+
+  $vj-margin: 105px;
+
   @extend %absolute-view;
 
   .not-found {
@@ -8,7 +11,8 @@
   header {
     width: 100%;
     display: block;
-    top:0;
+    top: 0;
+    left: 0;
     position: fixed;
     z-index: 0;
 
@@ -21,6 +25,9 @@
       margin: 7px 0;
       text-align: center;
       width: 100%;
+      position: fixed;
+      left: 0;
+      top: 0;
 
       .title {
         font-weight: bold;
@@ -35,8 +42,12 @@
     }
   }
 
+  .loading-results {
+    margin-top: $vj-margin;
+  }
+
   .card-group {
-    margin-top: 105px;
+    margin-top: $vj-margin;
     position: relative;
     z-index: 1;
   }
