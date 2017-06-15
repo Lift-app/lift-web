@@ -10,10 +10,12 @@
       <router-view></router-view>
     </transition>
 
-    <p class="not-found" v-show="!posts.length && !loading"><i>Geen berichten gevonden</i></p>
+    <div class="loading-results">
+      <p class="not-found" v-show="!posts.length && !loading"><i>Geen berichten gevonden</i></p>
 
-    <div v-if="loading">
-      <preloader></preloader>
+      <div v-if="loading">
+        <preloader></preloader>
+      </div>
     </div>
 
     <transition name="slide-up">
