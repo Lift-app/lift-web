@@ -32,7 +32,7 @@
     </div>
 
       <div class="card-group" v-if="!loading">
-        <card v-for="post in posts" :key="post.id" :post="post" component-name="CategoryPost"></card>
+        <card v-for="post in posts" :key="post.id" :post="post" component-name="Post"></card>
         <infinite-loading :on-infinite="getMorePosts" ref="infiniteLoading" spinner="spiral" v-if="posts.length > 4">
           <small slot="no-more">Dat was het! Meer berichten hebben we op dit moment niet voor je.</small>
         </infinite-loading>
