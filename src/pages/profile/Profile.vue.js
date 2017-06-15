@@ -127,7 +127,6 @@ export default {
           })
       } else {
         this.$toasted.error('Je moet minimaal één categorie interessant vinden!')
-        return
       }
     },
 
