@@ -84,14 +84,14 @@
       margin: 0 auto;
       width: 100%;
       max-width: $search-container;
-      padding: 0 0 0 20px;
+      padding: 0 20px;
       position: relative;
 
       .choose-categories-text {
         color: $white;
         font-weight: normal;
         display: block;
-        margin-bottom: 0;
+        margin: 0;
       }
 
       ul {
