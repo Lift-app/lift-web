@@ -1,6 +1,7 @@
 .page--profile {
 
-  $default-button: $clay;
+  $default-button: $regent;
+  $profile-margin: 15px 0;
   $save-button: $blue;
 
   @extend %absolute-view;
@@ -60,6 +61,10 @@
 
       .bio {
         margin-bottom: 20px;
+
+        &.no-bio {
+          color: $pantzer;
+        }
       }
 
       .follow {
@@ -102,6 +107,13 @@
 
       .change-section {
         text-align: center;
+        margin: $profile-margin;
+      }
+
+      .change-section-active {
+        input, textarea {
+          background: $porcelain;
+        }
       }
 
       .save-changes-container {
