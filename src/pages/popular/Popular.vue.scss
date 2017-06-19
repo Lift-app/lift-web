@@ -1,6 +1,6 @@
 .page--popular {
 
-  $populair-margin: 88px;
+  $populair-margin: 90px;
 
   @extend %absolute-view;
 
@@ -50,6 +50,7 @@
     margin-top: $populair-margin;
     position: relative;
     z-index: 1;
+    background: $porcelain;
   }
 
   .slide-up-item {

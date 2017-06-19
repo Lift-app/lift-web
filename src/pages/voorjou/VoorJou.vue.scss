@@ -1,6 +1,6 @@
 .page--voorjou {
 
-  $vj-margin: 105px;
+  $vj-margin: 90px;
 
   @extend %absolute-view;
 
@@ -47,9 +47,10 @@
   }
 
   .card-group {
-    margin-top: $vj-margin;
+    //margin-top: $vj-margin;
     position: relative;
     z-index: 1;
+    background: $porcelain;
   }
 
   .slide-up-item {
