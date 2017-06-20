@@ -28,6 +28,18 @@ const actions = {
     })
   },
 
+  register({ commit }, user) {
+    return new Promise((resolve, reject) => {
+      return axios.post(`${config.apiUrl}/users`, user)
+        .then((response) => {
+          resolve()
+        })
+        .catch((error) => {
+          reject(error)
+        })
+    })
+  },
+
   getPosts({ commit }, categoryId = null) {
     const uri = categoryId ? `categories/${categoryId}/posts` : 'posts'
 

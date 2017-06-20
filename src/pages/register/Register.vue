@@ -8,20 +8,20 @@
     <div class="inner">
       <img src="../../assets/images/logo/white.svg" alt="Lift logo" title="Lift - Dé online gemeenschap voor Wajongers">
       <h3 class="slogan">Account aanmaken...</h3>
-      <form class="register-form" autocomplete="off">
+      <div class="register-form">
         <div class="form-fields">
         <label> Wat is je e-mailadres?
-          <input type="email" autocomplete="off" name="email" placeholder="jou@emailadres.nl"/>
+          <input type="email" v-model='email' autocomplete="off" name="email" placeholder="jouw@emailadres.nl"/>
         </label>
         <label> Wat wordt je gebruikersnaam?
-          <input type="text" autocomplete="off" name="username" placeholder="Bijvoorbeeld: Peter1994"/>
+          <input type="text" v-model='username' autocomplete="off" name="username" placeholder="Bijvoorbeeld: Peter1994"/>
         </label>
         <label> Vul hier een wachtwoord in…
-          <input type="password" autocomplete="off" name="password" placeholder="Vertel deze tegen niemand!"/>
+          <input type="password" v-model='password' autocomplete="off" name="password" placeholder="Vertel deze tegen niemand!"/>
         </label>
         </div>
-        <button type="submit" v-if="" @click="ChooseCategories" class="btn btn-register-next">Doorgaan</button>
-      </form>
+        <button type="submit" @click="createAccount" class="btn btn-register-next">Doorgaan</button>
+      </div>
     </div>
   </div>
 </template>
